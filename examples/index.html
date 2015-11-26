@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../config.js"></script>
+    <script type="text/javascript">
+        System.import('examples/main');
+    </script>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-controller="AppController" layout="column" ng-cloak flex>
+
+<line-plot value="timeData"></line-plot>
+<div layout="row">
+<lineage-scatter-plot value="treeData" selected="selectedNodes" flex></lineage-scatter-plot>
+
+<md-content style="height: 600px;" flex="25">
+    <md-card>
+        <md-card-content>
+            <md-list>
+                <md-subheader class="md-no-sticky">2 line item</md-subheader>
+                <md-list-item class="md-1-line" ng-repeat="item in selectedNodes">
+                    <div class="md-list-item-text">
+                        {{item}}
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</md-content>
+</div>
+
+<lineage-plot value="treeData2" selected="selectedNodes"></lineage-plot>
+<box-plot value="boxPlotData" selected="selectedNodes"></box-plot>
+<violin-plot value="violinPlotData" selected="selectedNodes"></violin-plot>
+</body>
+</html>

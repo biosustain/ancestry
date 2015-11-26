@@ -1,0 +1,89 @@
+.plotify .axis path,
+.plotify .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.plotify .tick text{
+    font-size: 12px;
+}
+
+.plotify .tick line{
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.plotify .node circle {
+    fill: #fff;
+    stroke-width: 2px;
+}
+
+.plotify .node text { font: 12px sans-serif; }
+
+.plotify .link {
+    pointer-events: none;
+    fill:none;
+    stroke:#ccc;
+    stroke-width:2
+}
+
+
+.plotify .plotify-legend text {
+    font-size: 13px;
+}
+
+.plotify .plotify-legend g.legend-item.legend-item-unfocused rect.legend-item-mouse-capture {
+    opacity: 0.5;
+}
+
+.plotify .plotify-legend g.legend-item rect.shape {
+    stroke-width: 1.5px;
+}
+
+.plotify .voronoi path {
+    fill: none;
+    stroke: none;
+    pointer-events: all;
+}
+
+.plotify-tooltip {
+    position: fixed;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 12px;
+    padding:  0 8px 8px 8px;
+    background: #323232;
+    color: #fff;
+    border-radius: 2px;
+    pointer-events: none;
+    transform: translate(-50%, -115%);
+}
+
+/* Creates a small triangle extender for the tooltip */
+.plotify-tooltip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: #323232;
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+    margin: -2px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+.plotify-tooltip div.tooltip-colour-box {
+    width: 100%;
+    height: 4px;
+    margin: 2px auto 3px auto;
+    border-radius: 2px;
+}
+
+.plotify-tooltip span {
+    display: block;
+}

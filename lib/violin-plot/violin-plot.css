@@ -1,0 +1,16 @@
+.plotify-violin-plot .violin-container {
+    font: 10px sans-serif;
+    pointer-events: all;
+}
+
+.plotify-violin-plot .violin-container .violin-name {
+    font: 12px sans-serif;
+}
+
+.plotify-violin-plot .area {
+    fill: lightgrey;
+}
+
+.plotify-violin-plot circle.dot {
+    shape-rendering: auto;
+}

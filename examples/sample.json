@@ -1,0 +1,167 @@
+{
+  "pools": [
+    {
+      "name": "SAM1",
+      "description": null,
+      "type": "pool"
+    },
+    {
+      "name": "SAM2",
+      "description": null,
+      "type": "design",
+      "parentStrain": "SAM1-1",
+      "genotype": "+geneA +geneB"
+    },
+    {
+      "name": "SAM3",
+      "description": null,
+      "type": "design",
+      "parentStrain": "SAM1-1",
+      "genotype": "+geneA +geneC"
+    }
+  ],
+  "strains": [
+    {
+      "name": "SAM1-1",
+      "description": "starting strain",
+      "pool": "SAM1",
+      "createdAt": "2015-08-25",
+      "value": 20
+    },
+    {
+      "name": "SAM2-1",
+      "parentStrain": "SAM1-1",
+      "pool": "SAM2",
+      "createdAt": "2015-08-26",
+      "value": 22
+    },
+    {
+      "name": "SAM2-2",
+      "parentStrain": "SAM2-1",
+      "pool": "SAM2",
+      "createdAt": "2015-08-27",
+      "value": 24
+    },
+    {
+      "name": "SAM2-3",
+      "parentStrain": "SAM2-2",
+      "pool": "SAM2",
+      "createdAt": "2015-08-28",
+      "value": 26
+    },
+    {
+      "name": "SAM2-4",
+      "parentStrain": "SAM2-3",
+      "pool": "SAM2",
+      "createdAt": "2015-08-30",
+      "value": 26
+    },
+    {
+      "name": "SAM2-5",
+      "parentStrain": "SAM2-4",
+      "pool": "SAM2",
+      "createdAt": "2015-08-31",
+      "value": 26
+    },
+    {
+      "name": "SAM2-6",
+      "parentStrain": "SAM2-4",
+      "pool": "SAM2",
+      "createdAt": "2015-09-01",
+      "value": 27
+    },
+    {
+      "name": "SAM3-1",
+      "parentStrain": "SAM1-1",
+      "pool": "SAM2",
+      "createdAt": "2015-08-26",
+      "value": 21
+    },
+    {
+      "name": "SAM3-2",
+      "parentStrain": "SAM1-1",
+      "pool": "SAM2",
+      "createdAt": "2015-08-27",
+      "value": 22
+    },
+    {
+      "name": "SAM3-3",
+      "parentStrain": "SAM3-2",
+      "pool": "SAM2",
+      "createdAt": "2015-08-28",
+      "value": 22
+    },
+    {
+      "name": "SAM3-4",
+      "parentStrain": "SAM1-1",
+      "pool": "SAM2",
+      "createdAt": "2015-08-29",
+      "value": 23
+    },
+    {
+      "name": "SAM3-5",
+      "parentStrain": "SAM3-3",
+      "pool": "SAM2",
+      "createdAt": "2015-08-30",
+      "value": 24
+    },
+    {
+      "name": "SAM3-6",
+      "parentStrain": "SAM3-2",
+      "pool": "SAM2",
+      "createdAt": "2015-08-31",
+      "value": 25
+    }
+  ],
+  "samples": [
+    {
+      "strain": "SAM2-1",
+      "medium": "M9",
+      "scalar": [
+        {
+          "type": "OD",
+          "unit": null,
+          "value": 1.23
+        },
+        {
+          "type": "concentration",
+          "unit": "g/L",
+          "compounds": [
+            "gold",
+            "gold monochloride"
+          ],
+          "value": 1.23
+        }
+      ],
+      "series": [
+        {
+          "type": "OD",
+          "times": [
+            1,
+            2,
+            3
+          ],
+          "values": [
+            1,
+            2,
+            4
+          ],
+          "annotation": {
+            "attributes": {
+              "growthPhases": [
+                {
+                  "start": 1,
+                  "end": 3,
+                  "rate": 1.0,
+                  "baselineValue": 1,
+                  "endValue": 4
+                }
+              ]
+            },
+            "rate": 1.00
+          }
+        }
+      ]
+    }
+  ]
+}

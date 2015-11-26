@@ -1,0 +1,27 @@
+.plotify-line-plot g.series path {
+    fill: none;
+    stroke-width: 1px;
+    shape-rendering: auto;
+}
+
+.plotify-line-plot g.series circle.series-dot {
+    stroke-width: 2px;
+}
+
+.plotify-line-plot g.series.series-unfocused-dots circle,
+.plotify-line-plot g.series.series-unfocused-path path{
+    opacity: 0.2 !important;
+}
+
+.plotify-line-plot g.series.series-focused path{
+    stroke-width: 2px;
+}
+
+.plotify-line-plot g.series.series-focused circle.series-dot {
+    stroke-width: 1px;
+}
+
+.plotify-line-plot circle#hover-focus-circle {
+    stroke-width: 1px;
+    stroke: white;
+}
