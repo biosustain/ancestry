@@ -1,5 +1,10 @@
 .plotify-lineage-plot .node circle{
     pointer-events: all;
+    stroke-width: 2px;
+}
+
+.plotify-lineage-plot path.link{
+    stroke-width: 1px;
 }
 .plotify-lineage-plot .selection-rect {
     pointer-events: none;
@@ -11,6 +16,10 @@
 }
 
 .plotify-lineage-plot text {
+    pointer-events: none;
+}
+
+.plotify-lineage-plot .node rect {
     pointer-events: none;
 }
 

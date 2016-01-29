@@ -1,8 +1,8 @@
 import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
-//import "./data.js"
-let nodesArr = createRandomLineageScatterPlotData2(96, 2);
+
+let nodesArr = createRandomLineageScatterPlotData2(120, 10);
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -305,6 +305,8 @@ let data = {
 let data2 = {
     nodes: nodesArr,
     title: "Chart Title",
+    size: 800,
+    margin: 120,
     axis: {
         title: "Generation"
     }
