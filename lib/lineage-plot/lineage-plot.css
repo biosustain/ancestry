@@ -1,6 +1,5 @@
 .plotify-lineage-plot .node circle{
     pointer-events: all;
-    stroke-width: 2px;
 }
 
 .plotify-lineage-plot path.link{

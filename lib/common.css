@@ -17,7 +17,6 @@
 
 .plotify .node circle {
     fill: #fff;
-    stroke-width: 2px;
 }
 
 .plotify .node text { font: 12px sans-serif; }

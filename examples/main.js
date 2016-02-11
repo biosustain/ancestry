@@ -223,7 +223,8 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         x: gen-1,
                         y: s * 10 + gen + j,
                         parent: parent,
-                        treeId: s
+                        treeId: s,
+                        type: Math.random() > 0.5 ? "type1" : "type"
                     };
                 _parents.push(node.name);
                 nodes.push(node);
@@ -303,12 +304,26 @@ let data = {
 };
 
 let data2 = {
-    nodes: nodesArr,
-    title: "Chart Title",
-    size: 800,
-    margin: 120,
-    axis: {
-        title: "Generation"
+    data: nodesArr,
+    layout: {
+        title: "Chart Title",
+        size: 800,
+        margin: 120,
+        axis: {
+            title: "Generation",
+            show: true,
+            valueProperty: "default"
+        },
+        nodeTypes: {
+            "type1": {
+                r: 4,
+                strokeWidth: 3
+            },
+            "type2": {
+                r: 6,
+                strokeWidth: 1
+            }
+        }
     }
 };
 
