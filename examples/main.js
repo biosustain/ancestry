@@ -224,7 +224,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         y: s * 10 + gen + j,
                         parent: parent,
                         treeId: s,
-                        type: Math.random() > 0.5 ? "type1" : "type"
+                        type: Math.random() > 0.5 ? "type1" : "type2"
                     };
                 _parents.push(node.name);
                 nodes.push(node);
@@ -245,75 +245,25 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
 
 
 let data = {
-    nodes: nodesArr/*[
-        {
-            name: "node1",
-            x: 1,
-            y: 20
-        },
-        {
-            name: "node2",
-            x: 2,
-            y: 18
-        },
-        {
-            name: "node3",
-            x: 3,
-            y: 24
-        },
-        {
-            name: "node4",
-            x: 4,
-            y: 22
-        },
-        {
-            name: "node5",
-            x: 4,
-            y: 27
+    data: nodesArr,
+    layout: {
+        title: "Chart Title",
+        nodeTypes: {
+            "type1": {
+                r: 4,
+                strokeWidth: 3
+            },
+            "type2": {
+                r: 6,
+                strokeWidth: 1
+            }
         }
-    ]*/,
-    links: [
-        {
-            sourceNode: 0,
-            targetNode: 1
-        },
-        {
-            sourceNode: 0,
-            targetNode: 3
-        },
-        {
-            sourceNode: 1,
-            targetNode: 2
-        },
-        {
-            sourceNode: 3,
-            targetNode: 4
-        }
-    ],
-    title: "Chart Title",
-    xAxis: {
-        title: "xAxisTitle",
-        units: null,
-        format: null
-    },
-    yAxis: {
-        title: "yAxisTitle",
-        units: "yAxisUnits",
-        format: null
     }
 };
 
 let data2 = {
     data: nodesArr,
     layout: {
-        title: "Chart Title",
-        size: 800,
-        margin: 120,
-        axis: {
-            title: "Generation",
-            show: true,
-            valueProperty: "default"
-        },
         nodeTypes: {
             "type1": {
                 r: 4,
