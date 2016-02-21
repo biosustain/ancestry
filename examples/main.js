@@ -273,6 +273,11 @@ let data2 = {
                 r: 6,
                 strokeWidth: 1
             }
+        },
+        axis: {
+            title: "",
+            gridOnly: true,
+            valueProperty: "default"
         }
     }
 };

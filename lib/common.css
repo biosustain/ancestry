@@ -19,13 +19,12 @@
     fill: #fff;
 }
 
-.plotify .node text { font: 12px sans-serif; }
+/*.plotify .node text { font: 12px sans-serif; }*/
 
 .plotify .link {
     pointer-events: none;
     fill:none;
     stroke:#ccc;
-    stroke-width:2
 }
 
 
