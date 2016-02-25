@@ -17,28 +17,11 @@
 <body ng-controller="AppController" layout="column" ng-cloak flex>
 
 <line-plot value="timeData"></line-plot>
-<div layout="row">
-<lineage-scatter-plot value="treeData" selected="selectedNodes" flex></lineage-scatter-plot>
-
-<md-content style="height: 600px;" flex="25">
-    <md-card>
-        <md-card-content>
-            <md-list>
-                <md-subheader class="md-no-sticky">2 line item</md-subheader>
-                <md-list-item class="md-1-line" ng-repeat="item in selectedNodes">
-                    <div class="md-list-item-text">
-                        {{item}}
-                    </div>
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</md-content>
-</div>
-
+<lineage-scatter-plot value="treeData" external-selection="selectedNodes" flex></lineage-scatter-plot>
 <radial-lineage-plot value="treeData2"></radial-lineage-plot>
-<lineage-plot value="treeData2" selected="selectedNodes"></lineage-plot>
+<lineage-plot value="treeData2" selected-nodes="selectedNodes"></lineage-plot>
 <box-plot value="boxPlotData" selected="selectedNodes"></box-plot>
 <violin-plot value="violinPlotData" selected="selectedNodes"></violin-plot>
+
 </body>
 </html>

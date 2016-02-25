@@ -247,16 +247,24 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
 let data = {
     data: nodesArr,
     layout: {
-        title: "Chart Title",
+        xAxis: {
+            title: "xAxis"
+        },
+        yAxis: {
+            title: "yAxis"
+        },
         nodeTypes: {
             "type1": {
                 r: 4,
-                strokeWidth: 3
+                "stroke-width": 3
             },
             "type2": {
                 r: 6,
-                strokeWidth: 1
+                "stroke-width": 1
             }
+        },
+        groupSelection: {
+            enabled: true
         }
     }
 };
@@ -267,17 +275,19 @@ let data2 = {
         nodeTypes: {
             "type1": {
                 r: 4,
-                strokeWidth: 3
+                "stroke-width": 3
             },
             "type2": {
                 r: 6,
-                strokeWidth: 1
+                "stroke-width": 1
             }
         },
         axis: {
-            title: "",
             gridOnly: true,
             valueProperty: "default"
+        },
+        groupSelection: {
+            enabled: true
         }
     }
 };
