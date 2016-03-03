@@ -6,7 +6,6 @@
 .plotify-lineage-scatter-plot .link {
     pointer-events: none;
     fill:none;
-    stroke:#ccc;
 }
 
 .plotify-lineage-scatter-plot .node circle{

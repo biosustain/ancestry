@@ -263,6 +263,7 @@ let data = {
                 "stroke-width": 1
             }
         },
+        labelCollisionDetection: true,
         groupSelection: {
             enabled: true
         }
@@ -286,6 +287,7 @@ let data2 = {
             gridOnly: true,
             valueProperty: "default"
         },
+        labelCollisionDetection: "onlyOnInit",
         groupSelection: {
             enabled: true
         }
