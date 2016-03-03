@@ -435,26 +435,26 @@
 
 (['0', '1', '2'], ["1","1","2","1","2","1","2","1","2","1","2","1","2","1"], function($__System) {
 
-$__System.registerDynamic("d", ["19"], true, function(require, exports, module) {
+$__System.registerDynamic("d", ["17"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = {
-    "default": require("19"),
+    "default": require("17"),
     __esModule: true
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("e", ["1a"], true, function(require, exports, module) {
+$__System.registerDynamic("e", ["18"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = {
-    "default": require("1a"),
+    "default": require("18"),
     __esModule: true
   };
   global.define = __define;
@@ -474,14 +474,27 @@ $__System.registerDynamic("f", ["1b"], true, function(require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("13", ["e", "1c"], true, function(require, exports, module) {
+$__System.registerDynamic("10", ["1c"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = {
+    "default": require("1c"),
+    __esModule: true
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("16", ["e", "1d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   "use strict";
   var _getIterator = require("e")["default"];
-  var _isIterable = require("1c")["default"];
+  var _isIterable = require("1d")["default"];
   exports["default"] = (function() {
     function sliceIterator(arr, i) {
       var _arr = [];
@@ -524,20 +537,34 @@ $__System.registerDynamic("13", ["e", "1c"], true, function(require, exports, mo
   return module.exports;
 });
 
-$__System.registerDynamic("10", ["1d"], true, function(require, exports, module) {
+$__System.registerDynamic("17", ["1e", "1f", "20", "21", "22", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = {
-    "default": require("1d"),
-    __esModule: true
-  };
+  require("1e");
+  require("1f");
+  require("20");
+  require("21");
+  require("22");
+  module.exports = require("23").Set;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("18", [], true, function(require, exports, module) {
+$__System.registerDynamic("18", ["20", "1f", "24"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("20");
+  require("1f");
+  module.exports = require("24");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1a", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -553,13 +580,13 @@ $__System.registerDynamic("18", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("17", ["1e"], true, function(require, exports, module) {
+$__System.registerDynamic("19", ["25"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   "use strict";
-  var _Object$defineProperty = require("1e")["default"];
+  var _Object$defineProperty = require("25")["default"];
   exports["default"] = (function() {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
@@ -584,57 +611,30 @@ $__System.registerDynamic("17", ["1e"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("19", ["1f", "20", "21", "22", "23", "24"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("1f");
-  require("20");
-  require("21");
-  require("22");
-  require("23");
-  module.exports = require("24").Set;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("1a", ["21", "20", "25"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("21");
-  require("20");
-  module.exports = require("25");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("1b", ["26", "24"], true, function(require, exports, module) {
+$__System.registerDynamic("1b", ["26", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   require("26");
-  module.exports = require("24").Object.keys;
+  module.exports = require("23").Object.keys;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["20", "27", "24"], true, function(require, exports, module) {
+$__System.registerDynamic("1c", ["1f", "27", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  require("20");
+  require("1f");
   require("27");
-  module.exports = require("24").Array.from;
+  module.exports = require("23").Array.from;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1c", ["28"], true, function(require, exports, module) {
+$__System.registerDynamic("1d", ["28"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -647,27 +647,32 @@ $__System.registerDynamic("1c", ["28"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("1e", ["29"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = {
-    "default": require("29"),
-    __esModule: true
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("20", ["2a", "2b"], true, function(require, exports, module) {
+$__System.registerDynamic("21", ["29", "2a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var $at = require("2a")(true);
-  require("2b")(String, 'String', function(iterated) {
+  var strong = require("29");
+  require("2a")('Set', function(get) {
+    return function Set() {
+      return get(this, arguments[0]);
+    };
+  }, {add: function add(value) {
+      return strong.def(this, value = value === 0 ? 0 : value, value);
+    }}, strong);
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1f", ["2b", "2c"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $at = require("2b")(true);
+  require("2c")(String, 'String', function(iterated) {
     this._t = String(iterated);
     this._i = 0;
   }, function() {
@@ -690,7 +695,19 @@ $__System.registerDynamic("20", ["2a", "2b"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("1f", [], true, function(require, exports, module) {
+$__System.registerDynamic("20", ["2d", "2e"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("2d");
+  var Iterators = require("2e");
+  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1e", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -700,48 +717,48 @@ $__System.registerDynamic("1f", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("21", ["2c", "2d"], true, function(require, exports, module) {
+$__System.registerDynamic("24", ["2f", "30", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  require("2c");
-  var Iterators = require("2d");
-  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+  var anObject = require("2f"),
+      get = require("30");
+  module.exports = require("23").getIterator = function(it) {
+    var iterFn = get(it);
+    if (typeof iterFn != 'function')
+      throw TypeError(it + ' is not iterable!');
+    return anObject(iterFn.call(it));
+  };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("22", ["2e", "2f"], true, function(require, exports, module) {
+$__System.registerDynamic("22", ["31", "32"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  'use strict';
-  var strong = require("2e");
-  require("2f")('Set', function(get) {
-    return function Set() {
-      return get(this, arguments[0]);
-    };
-  }, {add: function add(value) {
-      return strong.def(this, value = value === 0 ? 0 : value, value);
-    }}, strong);
+  var $def = require("31");
+  $def($def.P, 'Set', {toJSON: require("32")('Set')});
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("23", ["30", "31"], true, function(require, exports, module) {
+$__System.registerDynamic("25", ["33"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var $def = require("30");
-  $def($def.P, 'Set', {toJSON: require("31")('Set')});
+  module.exports = {
+    "default": require("33"),
+    __esModule: true
+  };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("24", [], true, function(require, exports, module) {
+$__System.registerDynamic("23", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -749,23 +766,6 @@ $__System.registerDynamic("24", [], true, function(require, exports, module) {
   var core = module.exports = {};
   if (typeof __e == 'number')
     __e = core;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("25", ["32", "33", "24"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var anObject = require("32"),
-      get = require("33");
-  module.exports = require("24").getIterator = function(it) {
-    var iterFn = get(it);
-    if (typeof iterFn != 'function')
-      throw TypeError(it + ' is not iterable!');
-    return anObject(iterFn.call(it));
-  };
   global.define = __define;
   return module.exports;
 });
@@ -785,20 +785,32 @@ $__System.registerDynamic("26", ["34", "35"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["36", "30", "34", "37", "38", "39", "33", "3a"], true, function(require, exports, module) {
+$__System.registerDynamic("28", ["20", "1f", "36"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("20");
+  require("1f");
+  module.exports = require("36");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("27", ["37", "31", "34", "38", "39", "3a", "30", "3b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var ctx = require("36"),
-      $def = require("30"),
+  var ctx = require("37"),
+      $def = require("31"),
       toObject = require("34"),
-      call = require("37"),
-      isArrayIter = require("38"),
-      toLength = require("39"),
-      getIterFn = require("33");
-  $def($def.S + $def.F * !require("3a")(function(iter) {
+      call = require("38"),
+      isArrayIter = require("39"),
+      toLength = require("3a"),
+      getIterFn = require("30");
+  $def($def.S + $def.F * !require("3b")(function(iter) {
     Array.from(iter);
   }), 'Array', {from: function from(arrayLike) {
       var O = toObject(arrayLike),
@@ -829,19 +841,7 @@ $__System.registerDynamic("27", ["36", "30", "34", "37", "38", "39", "33", "3a"]
   return module.exports;
 });
 
-$__System.registerDynamic("28", ["21", "20", "3b"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("21");
-  require("20");
-  module.exports = require("3b");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2a", ["3c", "3d"], true, function(require, exports, module) {
+$__System.registerDynamic("2b", ["3c", "3d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -865,32 +865,72 @@ $__System.registerDynamic("2a", ["3c", "3d"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("29", ["3e"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $ = require("3e");
-  module.exports = function defineProperty(it, key, desc) {
-    return $.setDesc(it, key, desc);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2b", ["3f", "30", "40", "41", "42", "43", "2d", "44", "3e", "45"], true, function(require, exports, module) {
+$__System.registerDynamic("2a", ["3e", "31", "3f", "40", "41", "42", "43", "44", "45", "46"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var LIBRARY = require("3f"),
-      $def = require("30"),
-      $redef = require("40"),
-      hide = require("41"),
-      has = require("42"),
-      SYMBOL_ITERATOR = require("43")('iterator'),
-      Iterators = require("2d"),
+  var $ = require("3e"),
+      $def = require("31"),
+      hide = require("3f"),
+      forOf = require("40"),
+      strictNew = require("41");
+  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
+    var Base = require("42")[NAME],
+        C = Base,
+        ADDER = IS_MAP ? 'set' : 'add',
+        proto = C && C.prototype,
+        O = {};
+    if (!require("43") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("44")(function() {
+      new C().entries().next();
+    }))) {
+      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
+      require("45")(C.prototype, methods);
+    } else {
+      C = wrapper(function(target, iterable) {
+        strictNew(target, C, NAME);
+        target._c = new Base;
+        if (iterable != undefined)
+          forOf(iterable, IS_MAP, target[ADDER], target);
+      });
+      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
+        var chain = KEY == 'add' || KEY == 'set';
+        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
+          hide(C.prototype, KEY, function(a, b) {
+            var result = this._c[KEY](a === 0 ? 0 : a, b);
+            return chain ? this : result;
+          });
+      });
+      if ('size' in proto)
+        $.setDesc(C.prototype, 'size', {get: function() {
+            return this._c.size;
+          }});
+    }
+    require("46")(C, NAME);
+    O[NAME] = C;
+    $def($def.G + $def.W + $def.F, O);
+    if (!IS_WEAK)
+      common.setStrong(C, NAME, IS_MAP);
+    return C;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2c", ["47", "31", "48", "3f", "49", "4a", "2e", "4b", "3e", "46"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var LIBRARY = require("47"),
+      $def = require("31"),
+      $redef = require("48"),
+      hide = require("3f"),
+      has = require("49"),
+      SYMBOL_ITERATOR = require("4a")('iterator'),
+      Iterators = require("2e"),
       BUGGY = !([].keys && 'next' in [].keys()),
       FF_ITERATOR = '@@iterator',
       KEYS = 'keys',
@@ -899,7 +939,7 @@ $__System.registerDynamic("2b", ["3f", "30", "40", "41", "42", "43", "2d", "44",
     return this;
   };
   module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE) {
-    require("44")(Constructor, NAME, next);
+    require("4b")(Constructor, NAME, next);
     var createMethod = function(kind) {
       switch (kind) {
         case KEYS:
@@ -923,7 +963,7 @@ $__System.registerDynamic("2b", ["3f", "30", "40", "41", "42", "43", "2d", "44",
         key;
     if (_native) {
       var IteratorPrototype = require("3e").getProto(_default.call(new Base));
-      require("45")(IteratorPrototype, TAG, true);
+      require("46")(IteratorPrototype, TAG, true);
       if (!LIBRARY && has(proto, FF_ITERATOR))
         hide(IteratorPrototype, SYMBOL_ITERATOR, returnThis);
     }
@@ -950,17 +990,17 @@ $__System.registerDynamic("2b", ["3f", "30", "40", "41", "42", "43", "2d", "44",
   return module.exports;
 });
 
-$__System.registerDynamic("2c", ["46", "47", "2d", "48", "2b"], true, function(require, exports, module) {
+$__System.registerDynamic("2d", ["4c", "4d", "2e", "4e", "2c"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var setUnscope = require("46"),
-      step = require("47"),
-      Iterators = require("2d"),
-      toIObject = require("48");
-  require("2b")(Array, 'Array', function(iterated, kind) {
+  var setUnscope = require("4c"),
+      step = require("4d"),
+      Iterators = require("2e"),
+      toIObject = require("4e");
+  require("2c")(Array, 'Array', function(iterated, kind) {
     this._t = toIObject(iterated);
     this._i = 0;
     this._k = kind;
@@ -986,7 +1026,23 @@ $__System.registerDynamic("2c", ["46", "47", "2d", "48", "2b"], true, function(r
   return module.exports;
 });
 
-$__System.registerDynamic("2d", [], true, function(require, exports, module) {
+$__System.registerDynamic("30", ["4f", "4a", "2e", "23"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var classof = require("4f"),
+      ITERATOR = require("4a")('iterator'),
+      Iterators = require("2e");
+  module.exports = require("23").getIteratorMethod = function(it) {
+    if (it != undefined)
+      return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2e", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -996,138 +1052,7 @@ $__System.registerDynamic("2d", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("2f", ["3e", "30", "41", "49", "4a", "4b", "4c", "4d", "4e", "45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("3e"),
-      $def = require("30"),
-      hide = require("41"),
-      forOf = require("49"),
-      strictNew = require("4a");
-  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
-    var Base = require("4b")[NAME],
-        C = Base,
-        ADDER = IS_MAP ? 'set' : 'add',
-        proto = C && C.prototype,
-        O = {};
-    if (!require("4c") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("4d")(function() {
-      new C().entries().next();
-    }))) {
-      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-      require("4e")(C.prototype, methods);
-    } else {
-      C = wrapper(function(target, iterable) {
-        strictNew(target, C, NAME);
-        target._c = new Base;
-        if (iterable != undefined)
-          forOf(iterable, IS_MAP, target[ADDER], target);
-      });
-      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
-        var chain = KEY == 'add' || KEY == 'set';
-        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
-          hide(C.prototype, KEY, function(a, b) {
-            var result = this._c[KEY](a === 0 ? 0 : a, b);
-            return chain ? this : result;
-          });
-      });
-      if ('size' in proto)
-        $.setDesc(C.prototype, 'size', {get: function() {
-            return this._c.size;
-          }});
-    }
-    require("45")(C, NAME);
-    O[NAME] = C;
-    $def($def.G + $def.W + $def.F, O);
-    if (!IS_WEAK)
-      common.setStrong(C, NAME, IS_MAP);
-    return C;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("30", ["4b", "24"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var global = require("4b"),
-      core = require("24"),
-      PROTOTYPE = 'prototype';
-  var ctx = function(fn, that) {
-    return function() {
-      return fn.apply(that, arguments);
-    };
-  };
-  var $def = function(type, name, source) {
-    var key,
-        own,
-        out,
-        exp,
-        isGlobal = type & $def.G,
-        isProto = type & $def.P,
-        target = isGlobal ? global : type & $def.S ? global[name] : (global[name] || {})[PROTOTYPE],
-        exports = isGlobal ? core : core[name] || (core[name] = {});
-    if (isGlobal)
-      source = name;
-    for (key in source) {
-      own = !(type & $def.F) && target && key in target;
-      if (own && key in exports)
-        continue;
-      out = own ? target[key] : source[key];
-      if (isGlobal && typeof target[key] != 'function')
-        exp = source[key];
-      else if (type & $def.B && own)
-        exp = ctx(out, global);
-      else if (type & $def.W && target[key] == out)
-        !function(C) {
-          exp = function(param) {
-            return this instanceof C ? new C(param) : C(param);
-          };
-          exp[PROTOTYPE] = C[PROTOTYPE];
-        }(out);
-      else
-        exp = isProto && typeof out == 'function' ? ctx(Function.call, out) : out;
-      exports[key] = exp;
-      if (isProto)
-        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
-    }
-  };
-  $def.F = 1;
-  $def.G = 2;
-  $def.S = 4;
-  $def.P = 8;
-  $def.B = 16;
-  $def.W = 32;
-  module.exports = $def;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("31", ["49", "4f"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var forOf = require("49"),
-      classof = require("4f");
-  module.exports = function(NAME) {
-    return function toJSON() {
-      if (classof(this) != NAME)
-        throw TypeError(NAME + "#toJSON isn't generic");
-      var arr = [];
-      forOf(this, false, arr.push, arr);
-      return arr;
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("32", ["50"], true, function(require, exports, module) {
+$__System.registerDynamic("2f", ["50"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1142,43 +1067,25 @@ $__System.registerDynamic("32", ["50"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("35", ["30", "24", "4d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(KEY, exec) {
-    var $def = require("30"),
-        fn = (require("24").Object || {})[KEY] || Object[KEY],
-        exp = {};
-    exp[KEY] = exec(fn);
-    $def($def.S + $def.F * require("4d")(function() {
-      fn(1);
-    }), 'Object', exp);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2e", ["3e", "41", "36", "51", "4a", "3d", "49", "47", "52", "42", "50", "4c", "4e", "2b", "24"], true, function(require, exports, module) {
+$__System.registerDynamic("29", ["3e", "3f", "37", "51", "41", "3d", "40", "4d", "52", "49", "50", "43", "45", "2c", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
   var $ = require("3e"),
-      hide = require("41"),
-      ctx = require("36"),
+      hide = require("3f"),
+      ctx = require("37"),
       species = require("51"),
-      strictNew = require("4a"),
+      strictNew = require("41"),
       defined = require("3d"),
-      forOf = require("49"),
-      step = require("47"),
+      forOf = require("40"),
+      step = require("4d"),
       ID = require("52")('id'),
-      $has = require("42"),
+      $has = require("49"),
       isObject = require("50"),
       isExtensible = Object.isExtensible || isObject,
-      SUPPORT_DESC = require("4c"),
+      SUPPORT_DESC = require("43"),
       SIZE = SUPPORT_DESC ? '_s' : 'size',
       id = 0;
   var fastKey = function(it, create) {
@@ -1214,7 +1121,7 @@ $__System.registerDynamic("2e", ["3e", "41", "36", "51", "4a", "3d", "49", "47",
         if (iterable != undefined)
           forOf(iterable, IS_MAP, that[ADDER], that);
       });
-      require("4e")(C.prototype, {
+      require("45")(C.prototype, {
         clear: function clear() {
           for (var that = this,
               data = that._i,
@@ -1293,7 +1200,7 @@ $__System.registerDynamic("2e", ["3e", "41", "36", "51", "4a", "3d", "49", "47",
     },
     getEntry: getEntry,
     setStrong: function(C, NAME, IS_MAP) {
-      require("2b")(C, NAME, function(iterated, kind) {
+      require("2c")(C, NAME, function(iterated, kind) {
         this._t = iterated;
         this._k = kind;
         this._l = undefined;
@@ -1314,14 +1221,61 @@ $__System.registerDynamic("2e", ["3e", "41", "36", "51", "4a", "3d", "49", "47",
         return step(0, [entry.k, entry.v]);
       }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
       species(C);
-      species(require("24")[NAME]);
+      species(require("23")[NAME]);
     }
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("36", ["53"], true, function(require, exports, module) {
+$__System.registerDynamic("33", ["3e"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("3e");
+  module.exports = function defineProperty(it, key, desc) {
+    return $.setDesc(it, key, desc);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("36", ["4f", "4a", "2e", "23"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var classof = require("4f"),
+      ITERATOR = require("4a")('iterator'),
+      Iterators = require("2e");
+  module.exports = require("23").isIterable = function(it) {
+    var O = Object(it);
+    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("35", ["31", "23", "44"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(KEY, exec) {
+    var $def = require("31"),
+        fn = (require("23").Object || {})[KEY] || Object[KEY],
+        exp = {};
+    exp[KEY] = exec(fn);
+    $def($def.S + $def.F * require("44")(function() {
+      fn(1);
+    }), 'Object', exp);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("37", ["53"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1353,12 +1307,46 @@ $__System.registerDynamic("36", ["53"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("37", ["32"], true, function(require, exports, module) {
+$__System.registerDynamic("39", ["2e", "4a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var anObject = require("32");
+  var Iterators = require("2e"),
+      ITERATOR = require("4a")('iterator');
+  module.exports = function(it) {
+    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("32", ["40", "4f"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var forOf = require("40"),
+      classof = require("4f");
+  module.exports = function(NAME) {
+    return function toJSON() {
+      if (classof(this) != NAME)
+        throw TypeError(NAME + "#toJSON isn't generic");
+      var arr = [];
+      forOf(this, false, arr.push, arr);
+      return arr;
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("38", ["2f"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var anObject = require("2f");
   module.exports = function(iterator, fn, value, entries) {
     try {
       return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -1373,69 +1361,12 @@ $__System.registerDynamic("37", ["32"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["4f", "43", "2d", "24"], true, function(require, exports, module) {
+$__System.registerDynamic("3b", ["4a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var classof = require("4f"),
-      ITERATOR = require("43")('iterator'),
-      Iterators = require("2d");
-  module.exports = require("24").getIteratorMethod = function(it) {
-    if (it != undefined)
-      return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("38", ["2d", "43"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var Iterators = require("2d"),
-      ITERATOR = require("43")('iterator');
-  module.exports = function(it) {
-    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("34", ["3d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var defined = require("3d");
-  module.exports = function(it) {
-    return Object(defined(it));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("39", ["3c"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toInteger = require("3c"),
-      min = Math.min;
-  module.exports = function(it) {
-    return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3a", ["43"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var SYMBOL_ITERATOR = require("43")('iterator'),
+  var SYMBOL_ITERATOR = require("4a")('iterator'),
       SAFE_CLOSING = false;
   try {
     var riter = [7][SYMBOL_ITERATOR]();
@@ -1467,17 +1398,103 @@ $__System.registerDynamic("3a", ["43"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("3b", ["4f", "43", "2d", "24"], true, function(require, exports, module) {
+$__System.registerDynamic("31", ["42", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var classof = require("4f"),
-      ITERATOR = require("43")('iterator'),
-      Iterators = require("2d");
-  module.exports = require("24").isIterable = function(it) {
-    var O = Object(it);
-    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
+  var global = require("42"),
+      core = require("23"),
+      PROTOTYPE = 'prototype';
+  var ctx = function(fn, that) {
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  };
+  var $def = function(type, name, source) {
+    var key,
+        own,
+        out,
+        exp,
+        isGlobal = type & $def.G,
+        isProto = type & $def.P,
+        target = isGlobal ? global : type & $def.S ? global[name] : (global[name] || {})[PROTOTYPE],
+        exports = isGlobal ? core : core[name] || (core[name] = {});
+    if (isGlobal)
+      source = name;
+    for (key in source) {
+      own = !(type & $def.F) && target && key in target;
+      if (own && key in exports)
+        continue;
+      out = own ? target[key] : source[key];
+      if (isGlobal && typeof target[key] != 'function')
+        exp = source[key];
+      else if (type & $def.B && own)
+        exp = ctx(out, global);
+      else if (type & $def.W && target[key] == out)
+        !function(C) {
+          exp = function(param) {
+            return this instanceof C ? new C(param) : C(param);
+          };
+          exp[PROTOTYPE] = C[PROTOTYPE];
+        }(out);
+      else
+        exp = isProto && typeof out == 'function' ? ctx(Function.call, out) : out;
+      exports[key] = exp;
+      if (isProto)
+        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+    }
+  };
+  $def.F = 1;
+  $def.G = 2;
+  $def.S = 4;
+  $def.P = 8;
+  $def.B = 16;
+  $def.W = 32;
+  module.exports = $def;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("34", ["3d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var defined = require("3d");
+  module.exports = function(it) {
+    return Object(defined(it));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3a", ["3c"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toInteger = require("3c"),
+      min = Math.min;
+  module.exports = function(it) {
+    return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3f", ["3e", "54", "43"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("3e"),
+      createDesc = require("54");
+  module.exports = require("43") ? function(object, key, value) {
+    return $.setDesc(object, key, createDesc(1, value));
+  } : function(object, key, value) {
+    object[key] = value;
+    return object;
   };
   global.define = __define;
   return module.exports;
@@ -1492,20 +1509,6 @@ $__System.registerDynamic("3d", [], true, function(require, exports, module) {
     if (it == undefined)
       throw TypeError("Can't call method on  " + it);
     return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3c", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var ceil = Math.ceil,
-      floor = Math.floor;
-  module.exports = function(it) {
-    return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
   };
   global.define = __define;
   return module.exports;
@@ -1533,139 +1536,31 @@ $__System.registerDynamic("3e", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("40", ["41"], true, function(require, exports, module) {
+$__System.registerDynamic("3c", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = require("41");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("41", ["3e", "54", "4c"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $ = require("3e"),
-      createDesc = require("54");
-  module.exports = require("4c") ? function(object, key, value) {
-    return $.setDesc(object, key, createDesc(1, value));
-  } : function(object, key, value) {
-    object[key] = value;
-    return object;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3f", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = true;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("43", ["55", "4b", "52"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var store = require("55")('wks'),
-      Symbol = require("4b").Symbol;
-  module.exports = function(name) {
-    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("52"))('Symbol.' + name));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("42", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var hasOwnProperty = {}.hasOwnProperty;
-  module.exports = function(it, key) {
-    return hasOwnProperty.call(it, key);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("44", ["3e", "41", "43", "54", "45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("3e"),
-      IteratorPrototype = {};
-  require("41")(IteratorPrototype, require("43")('iterator'), function() {
-    return this;
-  });
-  module.exports = function(Constructor, NAME, next) {
-    Constructor.prototype = $.create(IteratorPrototype, {next: require("54")(1, next)});
-    require("45")(Constructor, NAME + ' Iterator');
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("46", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function() {};
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("47", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(done, value) {
-    return {
-      value: value,
-      done: !!done
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("48", ["56", "3d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var IObject = require("56"),
-      defined = require("3d");
+  var ceil = Math.ceil,
+      floor = Math.floor;
   module.exports = function(it) {
-    return IObject(defined(it));
+    return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("49", ["36", "37", "38", "32", "39", "33"], true, function(require, exports, module) {
+$__System.registerDynamic("40", ["37", "38", "39", "2f", "3a", "30"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var ctx = require("36"),
-      call = require("37"),
-      isArrayIter = require("38"),
-      anObject = require("32"),
-      toLength = require("39"),
-      getIterFn = require("33");
+  var ctx = require("37"),
+      call = require("38"),
+      isArrayIter = require("39"),
+      anObject = require("2f"),
+      toLength = require("3a"),
+      getIterFn = require("30");
   module.exports = function(iterable, entries, fn, that) {
     var iterFn = getIterFn(iterable),
         f = ctx(fn, that, entries ? 2 : 1),
@@ -1688,28 +1583,12 @@ $__System.registerDynamic("49", ["36", "37", "38", "32", "39", "33"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("45", ["42", "41", "43"], true, function(require, exports, module) {
+$__System.registerDynamic("43", ["44"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var has = require("42"),
-      hide = require("41"),
-      TAG = require("43")('toStringTag');
-  module.exports = function(it, tag, stat) {
-    if (it && !has(it = stat ? it : it.prototype, TAG))
-      hide(it, TAG, tag);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4c", ["4d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = !require("4d")(function() {
+  module.exports = !require("44")(function() {
     return Object.defineProperty({}, 'a', {get: function() {
         return 7;
       }}).a != 7;
@@ -1718,7 +1597,34 @@ $__System.registerDynamic("4c", ["4d"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("4d", [], true, function(require, exports, module) {
+$__System.registerDynamic("41", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it, Constructor, name) {
+    if (!(it instanceof Constructor))
+      throw TypeError(name + ": use the 'new' operator!");
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("42", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var UNDEFINED = 'undefined';
+  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
+  if (typeof __g == 'number')
+    __g = global;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("44", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1734,12 +1640,12 @@ $__System.registerDynamic("4d", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("4e", ["40"], true, function(require, exports, module) {
+$__System.registerDynamic("45", ["48"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var $redef = require("40");
+  var $redef = require("48");
   module.exports = function(target, src) {
     for (var key in src)
       $redef(target, key, src[key]);
@@ -1749,52 +1655,155 @@ $__System.registerDynamic("4e", ["40"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("4a", [], true, function(require, exports, module) {
+$__System.registerDynamic("48", ["3f"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = function(it, Constructor, name) {
-    if (!(it instanceof Constructor))
-      throw TypeError(name + ": use the 'new' operator!");
-    return it;
+  module.exports = require("3f");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4a", ["55", "42", "52"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var store = require("55")('wks'),
+      Symbol = require("42").Symbol;
+  module.exports = function(name) {
+    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("52"))('Symbol.' + name));
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("4b", [], true, function(require, exports, module) {
+$__System.registerDynamic("47", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var UNDEFINED = 'undefined';
-  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
-  if (typeof __g == 'number')
-    __g = global;
+  module.exports = true;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("50", [], true, function(require, exports, module) {
+$__System.registerDynamic("49", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
+  var hasOwnProperty = {}.hasOwnProperty;
+  module.exports = function(it, key) {
+    return hasOwnProperty.call(it, key);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4b", ["3e", "3f", "4a", "54", "46"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      IteratorPrototype = {};
+  require("3f")(IteratorPrototype, require("4a")('iterator'), function() {
+    return this;
+  });
+  module.exports = function(Constructor, NAME, next) {
+    Constructor.prototype = $.create(IteratorPrototype, {next: require("54")(1, next)});
+    require("46")(Constructor, NAME + ' Iterator');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4c", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function() {};
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4e", ["56", "3d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var IObject = require("56"),
+      defined = require("3d");
   module.exports = function(it) {
-    return it !== null && (typeof it == 'object' || typeof it == 'function');
+    return IObject(defined(it));
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("4f", ["57", "43"], true, function(require, exports, module) {
+$__System.registerDynamic("4d", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(done, value) {
+    return {
+      value: value,
+      done: !!done
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("46", ["49", "3f", "4a"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var has = require("49"),
+      hide = require("3f"),
+      TAG = require("4a")('toStringTag');
+  module.exports = function(it, tag, stat) {
+    if (it && !has(it = stat ? it : it.prototype, TAG))
+      hide(it, TAG, tag);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("51", ["3e", "4a", "43"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      SPECIES = require("4a")('species');
+  module.exports = function(C) {
+    if (require("43") && !(SPECIES in C))
+      $.setDesc(C, SPECIES, {
+        configurable: true,
+        get: function() {
+          return this;
+        }
+      });
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4f", ["57", "4a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   var cof = require("57"),
-      TAG = require("43")('toStringTag'),
+      TAG = require("4a")('toStringTag'),
       ARG = cof(function() {
         return arguments;
       }()) == 'Arguments';
@@ -1803,27 +1812,6 @@ $__System.registerDynamic("4f", ["57", "43"], true, function(require, exports, m
         T,
         B;
     return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("51", ["3e", "43", "4c"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("3e"),
-      SPECIES = require("43")('species');
-  module.exports = function(C) {
-    if (require("4c") && !(SPECIES in C))
-      $.setDesc(C, SPECIES, {
-        configurable: true,
-        get: function() {
-          return this;
-        }
-      });
   };
   global.define = __define;
   return module.exports;
@@ -1843,6 +1831,18 @@ $__System.registerDynamic("53", [], true, function(require, exports, module) {
   return module.exports;
 });
 
+$__System.registerDynamic("50", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it) {
+    return it !== null && (typeof it == 'object' || typeof it == 'function');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
 $__System.registerDynamic("52", [], true, function(require, exports, module) {
   ;
   var global = this,
@@ -1857,29 +1857,16 @@ $__System.registerDynamic("52", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("55", ["4b"], true, function(require, exports, module) {
+$__System.registerDynamic("55", ["42"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var global = require("4b"),
+  var global = require("42"),
       SHARED = '__core-js_shared__',
       store = global[SHARED] || (global[SHARED] = {});
   module.exports = function(key) {
     return store[key] || (store[key] = {});
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("57", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toString = {}.toString;
-  module.exports = function(it) {
-    return toString.call(it).slice(8, -1);
   };
   global.define = __define;
   return module.exports;
@@ -1893,6 +1880,19 @@ $__System.registerDynamic("56", ["57"], true, function(require, exports, module)
   var cof = require("57");
   module.exports = 0 in Object('z') ? Object : function(it) {
     return cof(it) == 'String' ? it.split('') : Object(it);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("57", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toString = {}.toString;
+  module.exports = function(it) {
+    return toString.call(it).slice(8, -1);
   };
   global.define = __define;
   return module.exports;
@@ -2235,6 +2235,8 @@ $__System.register('4', ['1', '2', '10', 'd', 'e', 'f', 'c', 'a', 'b'], function
                         return !selectedNodes.has(d.name) ? '#FFF' : colours[d.treeId];
                     }).style("stroke", function (d) {
                         return colours[d.treeId];
+                    }).each(function (d) {
+                        d.bboxCircle = this.getBoundingClientRect();
                     }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d, i) {
                         var groupPos = this.getBoundingClientRect(),
                             xPos = (groupPos.right + groupPos.left) / 2,
@@ -2253,7 +2255,7 @@ $__System.register('4', ['1', '2', '10', 'd', 'e', 'f', 'c', 'a', 'b'], function
                     });
 
                     var maxNodeLabelLength = d3.max(label.data().map(function (d) {
-                        return d.bbox.width;
+                        return d.bboxLabel.width;
                     })),
                         searchRadius = 2 * maxNodeLabelLength;
 
@@ -2365,6 +2367,9 @@ $__System.register('4', ['1', '2', '10', 'd', 'e', 'f', 'c', 'a', 'b'], function
                                     return colours[d.treeId];
                                 });
                                 any = true;
+                            } else if (!selectedNodes.has(d.name)) {
+                                n.classed("selected", false);
+                                n.select("circle").style("fill", "#FFF");
                             }
                         });
 
@@ -2435,7 +2440,9 @@ $__System.register('4', ['1', '2', '10', 'd', 'e', 'f', 'c', 'a', 'b'], function
                         if (layout.axis.gridOnly) {
                             chart.selectAll("g.tick text").style("opacity", 1e-6);
                         }
-                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true));
+                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true)).each(function (d) {
+                            d.bboxCircle = this.getBoundingClientRect();
+                        });
                         svg.selectAll("path.link").attr(scaleProperties(layout.link, scale));
                         if (layout.labelCollisionDetection === "onInit" || layout.labelCollisionDetection === "onDelay" || layout.labelCollisionDetection === false) {
                             label.each(function (d) {
@@ -2765,7 +2772,7 @@ $__System.register('5', ['1', '2', '10', '11', 'd', 'f', 'e', 'a', 'b'], functio
                         return !selectedNodes.has(d.name) ? '#FFF' : colours[d.treeId];
                     }).each(function (d) {
                         d.bboxCircle = this.getBoundingClientRect();
-                    }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d, i) {
+                    }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d) {
                         var groupPos = this.getBoundingClientRect(),
                             xPos = (groupPos.right + groupPos.left) / 2,
                             yPos = groupPos.top,
@@ -2783,7 +2790,7 @@ $__System.register('5', ['1', '2', '10', '11', 'd', 'f', 'e', 'a', 'b'], functio
                     });
 
                     var maxNodeLabelLength = d3.max(label.data().map(function (d) {
-                        return d.bbox.width;
+                        return d.bboxLabel.width;
                     })),
                         searchRadius = 2 * maxNodeLabelLength;
 
@@ -2880,6 +2887,9 @@ $__System.register('5', ['1', '2', '10', '11', 'd', 'f', 'e', 'a', 'b'], functio
                                     return colours[d.treeId];
                                 });
                                 any = true;
+                            } else if (!selectedNodes.has(d.name)) {
+                                n.classed("selected", false);
+                                n.select("circle").style("fill", "#FFF");
                             }
                         });
 
@@ -2948,7 +2958,9 @@ $__System.register('5', ['1', '2', '10', '11', 'd', 'f', 'e', 'a', 'b'], functio
                         mouseCaptureGroup.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
                         svg.select(".x-axis.axis").call(xAxis);
                         svg.select(".y-axis.axis").call(yAxis);
-                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true));
+                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true)).each(function (d) {
+                            d.bboxCircle = this.getBoundingClientRect();
+                        });
                         svg.selectAll("path.link").attr(scaleProperties(layout.link, scale));
                         if (layout.labelCollisionDetection === "onInit" || layout.labelCollisionDetection === "onDelay" || layout.labelCollisionDetection === false) {
                             label.each(function (d) {
@@ -3169,437 +3181,7 @@ $__System.register('5', ['1', '2', '10', '11', 'd', 'f', 'e', 'a', 'b'], functio
         }
     };
 });
-$__System.register('8', ['1', '2', '9', '12', '13', 'e', 'a', 'b'], function (_export) {
-    var angular, d3, _slicedToArray, _getIterator, d3legend, d3tooltip;
-
-    function LinePlotDirective($window, WindowResize) {
-        return {
-            restrict: 'EA',
-            scope: {
-                value: '='
-            },
-            link: function link(scope, element, attributes) {
-
-                element.addClass("plotify plotify-line-plot");
-
-                var height = 0,
-                    width = 0,
-                    margin = { top: 75, right: 70, bottom: 120, left: 70 },
-                    defaultTimeFormat = "%d %b %y",
-                    defaultScalarFormat = null,
-                    xScale = null,
-                    _xScale = null,
-                    yScale = null,
-                    _yScale = null,
-                    xAxis = null,
-                    yAxis = null,
-                    defs = undefined,
-                    tooltip = undefined,
-                    colours = null,
-                    voronoi = null,
-                    voronoiGroup = null,
-                    hoverFocusCircle = undefined,
-                    chart = null,
-                    chartClipArea = null,
-                    line = null,
-                    visibleSeries = {},
-                    transitionDuration = 300;
-
-                var svg = d3.select(element[0]).append("svg").style('width', '100%');
-
-                var marginRatio = { x: 0.1, y: 0.1 },
-                    settings = {
-                    "title": "chart title",
-                    "xAxis": {
-                        "title": "time",
-                        "units": "h"
-                    },
-                    "yAxis": {
-                        "title": "yAxis",
-                        "units": "yUnits"
-                    }
-                };
-
-                tooltip = new d3tooltip(d3.select(element[0]));
-
-                function update(data) {
-
-                    data = data.filter(function (d) {
-                        return visibleSeries[d.name];
-                    });
-
-                    var _calculateExtents = calculateExtents(data);
-
-                    var _calculateExtents2 = _slicedToArray(_calculateExtents, 2);
-
-                    var xExtent = _calculateExtents2[0];
-                    var yExtent = _calculateExtents2[1];
-                    var voronoiData = [];
-
-                    _yScale = yScale.copy();
-                    _xScale = xScale.copy();
-
-                    var lineOld = d3.svg.line().interpolate("basis").x(function (d) {
-                        return _xScale(d[0]);
-                    }).y(function (d) {
-                        return _yScale(d[1]);
-                    });
-
-                    if (data.length) {
-                        xScale.domain(xExtent);
-                        yScale.domain(yExtent);
-                        var t = chart.transition().duration(transitionDuration);
-
-                        t.select("g.x-axis").call(xAxis);
-                        t.select("g.y-axis").call(yAxis);
-                    }
-
-                    defs.select("g.voronoi-clips").selectAll("clipPath.voronoi-clip").remove();
-                    voronoiGroup.selectAll("path").remove();
-
-                    var series = chartClipArea.selectAll("g.series").data(data, function (d) {
-                        return d.name;
-                    });
-
-                    var newSeries = [];
-
-                    series.enter().append("g").attr("class", "series").each(function (d) {
-                        return newSeries.push(d.name);
-                    });
-
-                    series.exit().each(function (d, i) {
-                        var sel = d3.select(this);
-                        if (d.drawLine) {
-                            sel.select("path.series-line").style("stroke", function (d) {
-                                return colours(d.name);
-                            }).transition().duration(transitionDuration).attr("d", function (d) {
-                                return line(d.values);
-                            }).style("opacity", 0).remove();
-                        }
-                        if (d.drawDot) {
-                            sel.selectAll("circle.series-dot").transition().duration(transitionDuration).attr("cx", function (d) {
-                                return xScale(d[0]);
-                            }).attr("cy", function (d) {
-                                return yScale(d[1]);
-                            }).style("opacity", 0).remove();
-                        }
-                        sel.transition().delay(transitionDuration).remove();
-                    });
-
-                    series.each(function (d, i) {
-                        var sel = d3.select(this),
-                            self = this,
-                            isNew = newSeries.indexOf(d.name) !== -1;
-
-                        var seriesLine = sel.selectAll("path.series-line").data([d], function (d) {
-                            return d.name;
-                        });
-
-                        seriesLine.enter().append("path").attr("class", "series-line");
-
-                        seriesLine.attr("d", function (d) {
-                            return lineOld(d.values);
-                        }).style("stroke", function (d) {
-                            return colours(d.name);
-                        }).style("opacity", !d.drawLine || isNew ? 0 : 1).transition().duration(transitionDuration).attr("d", function (d) {
-                            return line(d.values);
-                        }).style("opacity", d.drawLine ? 1 : 0);
-
-                        var seriesDot = sel.selectAll("circle.series-dot").data(function (d) {
-                            return d.values;
-                        });
-
-                        seriesDot.enter().append("circle").attr("class", "series-dot");
-
-                        seriesDot.attr("r", 4).attr("cx", function (d) {
-                            return _xScale(d[0]);
-                        }).attr("cy", function (d) {
-                            return _yScale(d[1]);
-                        }).attr("fill", colours(d.name)).style("opacity", !d.drawDot || isNew ? 0 : 1).style("stroke", "white").transition().duration(transitionDuration).attr("cx", function (d) {
-                            return xScale(d[0]);
-                        }).attr("cy", function (d) {
-                            return yScale(d[1]);
-                        }).style("opacity", d.drawDot ? 1 : 0);
-
-                        seriesDot.each(function (d, i) {
-                            d.circle = this;
-                            d.series = self;
-                            d[0] += Math.random() * 10E-4;
-                            d[1] += Math.random() * 10E-4;
-                            voronoiData.push(d);
-                        });
-                    });
-
-                    // define the clipPath
-                    defs.select("g.voronoi-clips").selectAll("clipPath").data(voronoiData).enter().append("clipPath").attr("id", function (d, i) {
-                        return 'lp-voronoi-clip-id' + i;
-                    }).attr("class", "voronoi-clip").append("circle").attr("cx", function (d) {
-                        return xScale(d[0]);
-                    }).attr("cy", function (d) {
-                        return yScale(d[1]);
-                    }).attr("r", 25);
-
-                    voronoiGroup.selectAll("path").data(voronoi(voronoiData)).enter().append("path").attr("d", function (d) {
-                        return "M" + d.join("L") + "Z";
-                    }).attr("clip-path", function (d, i) {
-                        return 'url(#lp-voronoi-clip-id' + i + ')';
-                    }).datum(function (d) {
-                        return d.point;
-                    }).on("mouseover", voronoiMouseover).on("mouseout", voronoiMouseout);
-
-                    function voronoiMouseover(d) {
-                        hoverFocusCircle.attr("fill", colours(d.series.__data__.name)).attr("r", 5).attr("transform", 'translate(' + xScale(d[0]) + ',' + yScale(d[1]) + ')');
-
-                        var groupPos = d.circle.getBoundingClientRect(),
-                            xPos = groupPos.left + groupPos.width / 2,
-                            yPos = groupPos.top,
-                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series.__data__.name) + '"></div>' + ('<span class="tooltip-text">' + d.series.__data__.name + '</span>') + ('<span>x: ' + d[0].toFixed(1) + '</span>') + ('<span>y: ' + d[1].toFixed(1) + '</span>');
-
-                        tooltip.position([xPos, yPos]).html(text).show();
-                    }
-                    function voronoiMouseout(d) {
-                        hoverFocusCircle.attr("transform", "translate(-200, -200)");
-                        tooltip.hide();
-                    }
-                }
-
-                function render(options) {
-
-                    // clean svg before rendering plot
-                    svg.selectAll('*').remove();
-
-                    // don't continue rendering if there is no data
-                    if (!scope.value || !scope.value.series.length) return;
-
-                    var data = scope.value.series,
-                        seriesNames = data.map(function (d) {
-                        return d.name;
-                    });
-
-                    var _iteratorNormalCompletion = true;
-                    var _didIteratorError = false;
-                    var _iteratorError = undefined;
-
-                    try {
-                        for (var _iterator = _getIterator(seriesNames), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            var _name = _step.value;
-
-                            visibleSeries[_name] = true;
-                        }
-                    } catch (err) {
-                        _didIteratorError = true;
-                        _iteratorError = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion && _iterator['return']) {
-                                _iterator['return']();
-                            }
-                        } finally {
-                            if (_didIteratorError) {
-                                throw _iteratorError;
-                            }
-                        }
-                    }
-
-                    data = data.map(function (d) {
-                        d.drawLine = !options.drawLines || options.drawLines.indexOf(d.name) !== -1;
-                        d.drawDot = !options.drawDots || !d.drawLine || options.drawDots.indexOf(d.name) !== -1;
-                        return d;
-                    });
-
-                    var elementWidth = d3.select(element[0]).node().offsetWidth;
-
-                    width = elementWidth - margin.left - margin.right;
-                    height = 600 - margin.top - margin.bottom;
-
-                    colours = d3.scale.category10().domain(data.map(function (d) {
-                        return d.name;
-                    }));
-
-                    // define x and y axes formats
-                    var xAxisFormat = d3.time.format(defaultTimeFormat),
-                        yAxisFormat = d3.format(defaultScalarFormat),
-                        xAxisLabel = settings.xAxis.title,
-                        yAxisLabel = settings.yAxis.title,
-                        xAxisUnits = settings.xAxis.units,
-                        yAxisUnits = settings.yAxis.units,
-                        chartTitle = settings.title,
-                        titleSize = 20;
-
-                    var _calculateExtents3 = calculateExtents(data);
-
-                    var _calculateExtents32 = _slicedToArray(_calculateExtents3, 2);
-
-                    var xExtent = _calculateExtents32[0];
-                    var yExtent = _calculateExtents32[1];
-
-                    // define x scale
-                    xScale = d3.scale.linear().domain(xExtent).range([0, width]);
-
-                    // define y scale
-                    yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
-
-                    // define x axis
-                    xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height).tickPadding(5);
-                    //.tickFormat(xAxisFormat);
-
-                    // define y axis
-                    yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
-                    //.tickFormat(yAxisFormat);
-
-                    line = d3.svg.line().interpolate("basis").x(function (d) {
-                        return xScale(d[0]);
-                    }).y(function (d) {
-                        return yScale(d[1]);
-                    });
-
-                    voronoi = d3.geom.voronoi().x(function (d) {
-                        return xScale(d[0]) + Math.random() * 0.001;
-                    }).y(function (d) {
-                        return yScale(d[1]) + Math.random() * 0.001;
-                    }).clipExtent([[xScale.range()[0], yScale.range()[1]], [xScale.range()[1], yScale.range()[0]]]);
-
-                    // render chart area
-                    chart = svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')');
-
-                    defs = svg.append("defs");
-
-                    var clip = defs.append("svg:clipPath").attr("id", "clip-line-plot").append("svg:rect").attr("id", "clip-rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
-
-                    defs.append("g").attr("class", "voronoi-clips");
-
-                    chartClipArea = chart.append("g").attr("id", "chart-clip-box").attr("clip-path", "url(#clip-line-plot)");
-
-                    hoverFocusCircle = chart.append("circle").attr("id", "hover-focus-circle").attr("transform", "translate(-200, -200)");
-
-                    voronoiGroup = chart.append("g").attr("class", "voronoi");
-
-                    // render x axis
-                    chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
-
-                    // render y axis
-                    chart.append("g").attr("class", "axis y-axis").call(yAxis);
-
-                    // render chart title
-                    if (chartTitle) {
-                        chart.append("text").attr("x", width / 2).attr("y", -margin.top + titleSize + 10).attr("text-anchor", "middle").style("font-size", titleSize + 'px').text(chartTitle);
-                    }
-
-                    // render x axis label if exists
-                    if (xAxisLabel) {
-                        var tickHeight = chart.selectAll("g.x-axis g.tick text")[0][0].getBBox().height;
-                        xAxisLabel += xAxisUnits ? ', ' + xAxisUnits : "";
-                        chart.append("text") // text label for the x axis
-                        .style("text-anchor", "middle").text(xAxisLabel).attr("transform", 'translate(' + width / 2 + ', ' + (height + tickHeight + 30) + ')');
-                    }
-
-                    // render y axis label if exists
-                    if (yAxisLabel) {
-                        yAxisLabel += yAxisUnits ? ', ' + yAxisUnits : "";
-                        chart.append("text") // text label for the y axis
-                        .attr("transform", "rotate(-90)").attr("y", -margin.left + 10).attr("x", -(height / 2)).attr("dy", "1em").style("text-anchor", "middle").text(yAxisLabel);
-                    }
-
-                    update(data);
-
-                    var drawLegend = d3legend().splitAfter(0).seriesNames(seriesNames).colourScale(colours).anchorHorizontal("right").anchorVertical("bottom").onMouseOver(legendMouseOver).onMouseOut(legendMouseOut).onClick(legendClick).selectedItems(visibleSeries);
-
-                    var legend = chart.append("g").attr("class", "plotify-legend").attr("transform", 'translate(' + width + ',' + 0 + ')').call(drawLegend);
-
-                    function legendMouseOver(label) {
-                        var focusItem = d3.select(this);
-                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", true);
-                        focusItem.classed("legend-item-unfocused", false);
-
-                        chart.selectAll("g.series").classed("series-unfocused-path", function (d) {
-                            return d.drawLine ? true : false;
-                        }).classed("series-unfocused-dots", function (d) {
-                            return d.drawDot ? true : false;
-                        }).filter(function (d) {
-                            return d.name === label;
-                        }).classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", true);
-                    }
-
-                    function legendMouseOut(label) {
-                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", false);
-                        chart.selectAll("g.series").classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", false);
-                    }
-
-                    function legendClick(label) {
-                        var clicked = d3.select(this);
-                        visibleSeries[label] = !visibleSeries[label];
-                        clicked.classed("legend-item-selected", visibleSeries[label]);
-                        clicked.select("rect.shape").attr("fill", visibleSeries[label] ? colours(label) : "white");
-                        update(data);
-                    }
-                }
-
-                function calculateExtents(data) {
-                    var xExtents = [],
-                        yExtents = [];
-
-                    data.forEach(function (series) {
-                        var xValues = series.values.map(function (d) {
-                            return d[0];
-                        });
-                        var yValues = series.values.map(function (d) {
-                            return d[1];
-                        });
-                        xExtents = xExtents.concat(d3.extent(xValues));
-                        yExtents = yExtents.concat(d3.extent(yValues));
-                    });
-
-                    var xExtent = d3.extent(xExtents),
-                        yExtent = d3.extent(yExtents);
-
-                    // find extent of input data and calculate margins
-                    var xMargin = marginRatio.x * (xExtent[1] - xExtent[0]) / 2,
-                        yMargin = marginRatio.y * (yExtent[1] - yExtent[0]) / 2;
-
-                    // add margins to horizontal axis data
-                    xExtent[0] -= xMargin;
-                    xExtent[1] += xMargin;
-
-                    // add margins to vertical axis data
-                    yExtent[0] -= yMargin;
-                    yExtent[1] += yMargin;
-
-                    return [xExtent, yExtent];
-                }
-
-                // Handle window resize event.
-                scope.$on('window-resize', function (event) {
-                    render({ drawLines: ["series 2", "series 3"] });
-                });
-
-                scope.$watch("value", function () {
-                    render({ drawLines: ["series 1", "series 3", "series 4", "series 5"], drawDots: ["series 1", "series 5", "series 5"] });
-                });
-            }
-        };
-    }
-
-    return {
-        setters: [function (_4) {
-            angular = _4['default'];
-        }, function (_5) {
-            d3 = _5['default'];
-        }, function (_3) {}, function (_2) {}, function (_) {
-            _slicedToArray = _['default'];
-        }, function (_e) {
-            _getIterator = _e['default'];
-        }, function (_a) {}, function (_b) {
-            d3legend = _b.d3legend;
-            d3tooltip = _b.d3tooltip;
-        }],
-        execute: function () {
-            'use strict';
-
-            _export('default', angular.module('plotify.line', ['plotify.utils']).directive('linePlot', LinePlotDirective));
-        }
-    };
-});
-$__System.register('3', ['1', '2', '14', 'e', 'f', 'a', 'b'], function (_export) {
+$__System.register('3', ['1', '2', '12', 'e', 'f', 'a', 'b'], function (_export) {
     var angular, d3, _getIterator, _Object$keys, d3tooltip, createTreeLayout, mergeTemplateLayout, createNodeTypes, createDynamicNodeAttr, layoutTemplate;
 
     function RadialLineagePlotDirective($window, WindowResize) {
@@ -4042,7 +3624,7 @@ $__System.register('3', ['1', '2', '14', 'e', 'f', 'a', 'b'], function (_export)
         }
     };
 });
-$__System.register('6', ['1', '2', '15', 'e', 'a', 'b'], function (_export) {
+$__System.register('6', ['1', '2', '13', 'e', 'a', 'b'], function (_export) {
     var angular, d3, _getIterator, d3tooltip;
 
     function BoxPlotDirective($window, WindowResize) {
@@ -4586,7 +4168,7 @@ $__System.register('6', ['1', '2', '15', 'e', 'a', 'b'], function (_export) {
         }
     };
 });
-$__System.register('7', ['1', '2', '16', 'a', 'b'], function (_export) {
+$__System.register('7', ['1', '2', '14', 'a', 'b'], function (_export) {
     'use strict';
 
     var angular, d3, d3tooltip;
@@ -4938,7 +4520,463 @@ $__System.register('7', ['1', '2', '16', 'a', 'b'], function (_export) {
         }
     };
 });
-$__System.register("b", ["10", "17", "18", "f", "d", "e"], function (_export) {
+$__System.register('8', ['1', '2', '9', '15', '16', 'e', 'a', 'b'], function (_export) {
+    var angular, d3, _slicedToArray, _getIterator, d3legend, d3tooltip;
+
+    function LinePlotDirective($window, WindowResize) {
+        return {
+            restrict: 'EA',
+            scope: {
+                value: '='
+            },
+            link: function link(scope, element, attributes) {
+
+                element.addClass("plotify plotify-line-plot");
+
+                var height = 0,
+                    width = 0,
+                    margin = { top: 75, right: 70, bottom: 120, left: 70 },
+                    defaultTimeFormat = "%d %b %y",
+                    defaultScalarFormat = null,
+                    xScale = null,
+                    _xScale = null,
+                    yScale = null,
+                    _yScale = null,
+                    xAxis = null,
+                    yAxis = null,
+                    defs = undefined,
+                    tooltip = undefined,
+                    colours = null,
+                    voronoi = null,
+                    voronoiGroup = null,
+                    hoverFocusCircle = undefined,
+                    chart = null,
+                    chartClipArea = null,
+                    line = null,
+                    visibleSeries = {},
+                    transitionDuration = 300;
+
+                var svg = d3.select(element[0]).append("svg").style('width', '100%');
+
+                var marginRatio = { x: 0.1, y: 0.1 },
+                    settings = {
+                    "title": "chart title",
+                    "xAxis": {
+                        "title": "time",
+                        "units": "h"
+                    },
+                    "yAxis": {
+                        "title": "yAxis",
+                        "units": "yUnits"
+                    }
+                };
+
+                tooltip = new d3tooltip(d3.select(element[0]));
+
+                function update(data) {
+
+                    data = data.filter(function (d) {
+                        return visibleSeries[d.name];
+                    });
+
+                    var _calculateExtents = calculateExtents(data);
+
+                    var _calculateExtents2 = _slicedToArray(_calculateExtents, 2);
+
+                    var xExtent = _calculateExtents2[0];
+                    var yExtent = _calculateExtents2[1];
+                    var voronoiData = [];
+
+                    _yScale = yScale.copy();
+                    _xScale = xScale.copy();
+
+                    var lineOld = d3.svg.line().interpolate("basis").x(function (d) {
+                        return _xScale(d[0]);
+                    }).y(function (d) {
+                        return _yScale(d[1]);
+                    });
+
+                    if (data.length) {
+                        xScale.domain(xExtent);
+                        yScale.domain(yExtent);
+                        var t = chart.transition().duration(transitionDuration);
+
+                        t.select("g.x-axis").call(xAxis);
+                        t.select("g.y-axis").call(yAxis);
+                    }
+
+                    defs.select("g.voronoi-clips").selectAll("clipPath.voronoi-clip").remove();
+                    voronoiGroup.selectAll("path").remove();
+
+                    var series = chartClipArea.selectAll("g.series").data(data, function (d) {
+                        return d.name;
+                    });
+
+                    var newSeries = [];
+
+                    series.enter().append("g").attr("class", "series").each(function (d) {
+                        return newSeries.push(d.name);
+                    });
+
+                    series.exit().each(function (d, i) {
+                        var sel = d3.select(this);
+                        if (d.drawLine) {
+                            sel.select("path.series-line").style("stroke", function (d) {
+                                return colours(d.name);
+                            }).transition().duration(transitionDuration).attr("d", function (d) {
+                                return line(d.values);
+                            }).style("opacity", 0).remove();
+                        }
+                        if (d.drawDot) {
+                            sel.selectAll("circle.series-dot").transition().duration(transitionDuration).attr("cx", function (d) {
+                                return xScale(d[0]);
+                            }).attr("cy", function (d) {
+                                return yScale(d[1]);
+                            }).style("opacity", 0).remove();
+                        }
+                        sel.transition().delay(transitionDuration).remove();
+                    });
+
+                    series.each(function (d, i) {
+                        var sel = d3.select(this),
+                            self = this,
+                            isNew = newSeries.indexOf(d.name) !== -1;
+
+                        var seriesLine = sel.selectAll("path.series-line").data([d], function (d) {
+                            return d.name;
+                        });
+
+                        seriesLine.enter().append("path").attr("class", "series-line");
+
+                        seriesLine.attr("d", function (d) {
+                            return lineOld(d.values);
+                        }).style("stroke", function (d) {
+                            return colours(d.name);
+                        }).style("opacity", !d.drawLine || isNew ? 0 : 1).transition().duration(transitionDuration).attr("d", function (d) {
+                            return line(d.values);
+                        }).style("opacity", d.drawLine ? 1 : 0);
+
+                        var seriesDot = sel.selectAll("circle.series-dot").data(function (d) {
+                            return d.values;
+                        });
+
+                        seriesDot.enter().append("circle").attr("class", "series-dot");
+
+                        seriesDot.attr("r", 4).attr("cx", function (d) {
+                            return _xScale(d[0]);
+                        }).attr("cy", function (d) {
+                            return _yScale(d[1]);
+                        }).attr("fill", colours(d.name)).style("opacity", !d.drawDot || isNew ? 0 : 1).style("stroke", "white").transition().duration(transitionDuration).attr("cx", function (d) {
+                            return xScale(d[0]);
+                        }).attr("cy", function (d) {
+                            return yScale(d[1]);
+                        }).style("opacity", d.drawDot ? 1 : 0);
+
+                        seriesDot.each(function (d, i) {
+                            d.circle = this;
+                            d.series = self;
+                            d[0] += Math.random() * 10E-4;
+                            d[1] += Math.random() * 10E-4;
+                            voronoiData.push(d);
+                        });
+                    });
+
+                    // define the clipPath
+                    defs.select("g.voronoi-clips").selectAll("clipPath").data(voronoiData).enter().append("clipPath").attr("id", function (d, i) {
+                        return 'lp-voronoi-clip-id' + i;
+                    }).attr("class", "voronoi-clip").append("circle").attr("cx", function (d) {
+                        return xScale(d[0]);
+                    }).attr("cy", function (d) {
+                        return yScale(d[1]);
+                    }).attr("r", 25);
+
+                    voronoiGroup.selectAll("path").data(voronoi(voronoiData)).enter().append("path").attr("d", function (d) {
+                        return "M" + d.join("L") + "Z";
+                    }).attr("clip-path", function (d, i) {
+                        return 'url(#lp-voronoi-clip-id' + i + ')';
+                    }).datum(function (d) {
+                        return d.point;
+                    }).on("mouseover", voronoiMouseover).on("mouseout", voronoiMouseout);
+
+                    function voronoiMouseover(d) {
+                        hoverFocusCircle.attr("fill", colours(d.series.__data__.name)).attr("r", 5).attr("transform", 'translate(' + xScale(d[0]) + ',' + yScale(d[1]) + ')');
+
+                        var groupPos = d.circle.getBoundingClientRect(),
+                            xPos = groupPos.left + groupPos.width / 2,
+                            yPos = groupPos.top,
+                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series.__data__.name) + '"></div>' + ('<span class="tooltip-text">' + d.series.__data__.name + '</span>') + ('<span>x: ' + d[0].toFixed(1) + '</span>') + ('<span>y: ' + d[1].toFixed(1) + '</span>');
+
+                        tooltip.position([xPos, yPos]).html(text).show();
+                    }
+                    function voronoiMouseout(d) {
+                        hoverFocusCircle.attr("transform", "translate(-200, -200)");
+                        tooltip.hide();
+                    }
+                }
+
+                function render(options) {
+
+                    // clean svg before rendering plot
+                    svg.selectAll('*').remove();
+
+                    // don't continue rendering if there is no data
+                    if (!scope.value || !scope.value.series.length) return;
+
+                    var data = scope.value.series,
+                        seriesNames = data.map(function (d) {
+                        return d.name;
+                    });
+
+                    var _iteratorNormalCompletion = true;
+                    var _didIteratorError = false;
+                    var _iteratorError = undefined;
+
+                    try {
+                        for (var _iterator = _getIterator(seriesNames), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var _name = _step.value;
+
+                            visibleSeries[_name] = true;
+                        }
+                    } catch (err) {
+                        _didIteratorError = true;
+                        _iteratorError = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion && _iterator['return']) {
+                                _iterator['return']();
+                            }
+                        } finally {
+                            if (_didIteratorError) {
+                                throw _iteratorError;
+                            }
+                        }
+                    }
+
+                    data = data.map(function (d) {
+                        d.drawLine = !options.drawLines || options.drawLines.indexOf(d.name) !== -1;
+                        d.drawDot = !options.drawDots || !d.drawLine || options.drawDots.indexOf(d.name) !== -1;
+                        return d;
+                    });
+
+                    var elementWidth = d3.select(element[0]).node().offsetWidth;
+
+                    width = elementWidth - margin.left - margin.right;
+                    height = 600 - margin.top - margin.bottom;
+
+                    colours = d3.scale.category10().domain(data.map(function (d) {
+                        return d.name;
+                    }));
+
+                    // define x and y axes formats
+                    var xAxisFormat = d3.time.format(defaultTimeFormat),
+                        yAxisFormat = d3.format(defaultScalarFormat),
+                        xAxisLabel = settings.xAxis.title,
+                        yAxisLabel = settings.yAxis.title,
+                        xAxisUnits = settings.xAxis.units,
+                        yAxisUnits = settings.yAxis.units,
+                        chartTitle = settings.title,
+                        titleSize = 20;
+
+                    var _calculateExtents3 = calculateExtents(data);
+
+                    var _calculateExtents32 = _slicedToArray(_calculateExtents3, 2);
+
+                    var xExtent = _calculateExtents32[0];
+                    var yExtent = _calculateExtents32[1];
+
+                    // define x scale
+                    xScale = d3.scale.linear().domain(xExtent).range([0, width]);
+
+                    // define y scale
+                    yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
+
+                    // define x axis
+                    xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height).tickPadding(5);
+                    //.tickFormat(xAxisFormat);
+
+                    // define y axis
+                    yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
+                    //.tickFormat(yAxisFormat);
+
+                    line = d3.svg.line().interpolate("basis").x(function (d) {
+                        return xScale(d[0]);
+                    }).y(function (d) {
+                        return yScale(d[1]);
+                    });
+
+                    voronoi = d3.geom.voronoi().x(function (d) {
+                        return xScale(d[0]) + Math.random() * 0.001;
+                    }).y(function (d) {
+                        return yScale(d[1]) + Math.random() * 0.001;
+                    }).clipExtent([[xScale.range()[0], yScale.range()[1]], [xScale.range()[1], yScale.range()[0]]]);
+
+                    // render chart area
+                    chart = svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')');
+
+                    defs = svg.append("defs");
+
+                    var clip = defs.append("svg:clipPath").attr("id", "clip-line-plot").append("svg:rect").attr("id", "clip-rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+
+                    defs.append("g").attr("class", "voronoi-clips");
+
+                    chartClipArea = chart.append("g").attr("id", "chart-clip-box").attr("clip-path", "url(#clip-line-plot)");
+
+                    hoverFocusCircle = chart.append("circle").attr("id", "hover-focus-circle").attr("transform", "translate(-200, -200)");
+
+                    voronoiGroup = chart.append("g").attr("class", "voronoi");
+
+                    // render x axis
+                    chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
+
+                    // render y axis
+                    chart.append("g").attr("class", "axis y-axis").call(yAxis);
+
+                    // render chart title
+                    if (chartTitle) {
+                        chart.append("text").attr("x", width / 2).attr("y", -margin.top + titleSize + 10).attr("text-anchor", "middle").style("font-size", titleSize + 'px').text(chartTitle);
+                    }
+
+                    // render x axis label if exists
+                    if (xAxisLabel) {
+                        var tickHeight = chart.selectAll("g.x-axis g.tick text")[0][0].getBBox().height;
+                        xAxisLabel += xAxisUnits ? ', ' + xAxisUnits : "";
+                        chart.append("text") // text label for the x axis
+                        .style("text-anchor", "middle").text(xAxisLabel).attr("transform", 'translate(' + width / 2 + ', ' + (height + tickHeight + 30) + ')');
+                    }
+
+                    // render y axis label if exists
+                    if (yAxisLabel) {
+                        yAxisLabel += yAxisUnits ? ', ' + yAxisUnits : "";
+                        chart.append("text") // text label for the y axis
+                        .attr("transform", "rotate(-90)").attr("y", -margin.left + 10).attr("x", -(height / 2)).attr("dy", "1em").style("text-anchor", "middle").text(yAxisLabel);
+                    }
+
+                    update(data);
+
+                    var drawLegend = d3legend().splitAfter(0).seriesNames(seriesNames).colourScale(colours).anchorHorizontal("right").anchorVertical("bottom").onMouseOver(legendMouseOver).onMouseOut(legendMouseOut).onClick(legendClick).selectedItems(visibleSeries);
+
+                    var legend = chart.append("g").attr("class", "plotify-legend").attr("transform", 'translate(' + width + ',' + 0 + ')').call(drawLegend);
+
+                    function legendMouseOver(label) {
+                        var focusItem = d3.select(this);
+                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", true);
+                        focusItem.classed("legend-item-unfocused", false);
+
+                        chart.selectAll("g.series").classed("series-unfocused-path", function (d) {
+                            return d.drawLine ? true : false;
+                        }).classed("series-unfocused-dots", function (d) {
+                            return d.drawDot ? true : false;
+                        }).filter(function (d) {
+                            return d.name === label;
+                        }).classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", true);
+                    }
+
+                    function legendMouseOut(label) {
+                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", false);
+                        chart.selectAll("g.series").classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", false);
+                    }
+
+                    function legendClick(label) {
+                        var clicked = d3.select(this);
+                        visibleSeries[label] = !visibleSeries[label];
+                        clicked.classed("legend-item-selected", visibleSeries[label]);
+                        clicked.select("rect.shape").attr("fill", visibleSeries[label] ? colours(label) : "white");
+                        update(data);
+                    }
+                }
+
+                function calculateExtents(data) {
+                    var xExtents = [],
+                        yExtents = [];
+
+                    data.forEach(function (series) {
+                        var xValues = series.values.map(function (d) {
+                            return d[0];
+                        });
+                        var yValues = series.values.map(function (d) {
+                            return d[1];
+                        });
+                        xExtents = xExtents.concat(d3.extent(xValues));
+                        yExtents = yExtents.concat(d3.extent(yValues));
+                    });
+
+                    var xExtent = d3.extent(xExtents),
+                        yExtent = d3.extent(yExtents);
+
+                    // find extent of input data and calculate margins
+                    var xMargin = marginRatio.x * (xExtent[1] - xExtent[0]) / 2,
+                        yMargin = marginRatio.y * (yExtent[1] - yExtent[0]) / 2;
+
+                    // add margins to horizontal axis data
+                    xExtent[0] -= xMargin;
+                    xExtent[1] += xMargin;
+
+                    // add margins to vertical axis data
+                    yExtent[0] -= yMargin;
+                    yExtent[1] += yMargin;
+
+                    return [xExtent, yExtent];
+                }
+
+                // Handle window resize event.
+                scope.$on('window-resize', function (event) {
+                    render({ drawLines: ["series 2", "series 3"] });
+                });
+
+                scope.$watch("value", function () {
+                    render({ drawLines: ["series 1", "series 3", "series 4", "series 5"], drawDots: ["series 1", "series 5", "series 5"] });
+                });
+            }
+        };
+    }
+
+    return {
+        setters: [function (_4) {
+            angular = _4['default'];
+        }, function (_5) {
+            d3 = _5['default'];
+        }, function (_3) {}, function (_2) {}, function (_) {
+            _slicedToArray = _['default'];
+        }, function (_e) {
+            _getIterator = _e['default'];
+        }, function (_a) {}, function (_b) {
+            d3legend = _b.d3legend;
+            d3tooltip = _b.d3tooltip;
+        }],
+        execute: function () {
+            'use strict';
+
+            _export('default', angular.module('plotify.line', ['plotify.utils']).directive('linePlot', LinePlotDirective));
+        }
+    };
+});
+$__System.register('a', ['1'], function (_export) {
+    'use strict';
+
+    var angular;
+
+    function WindowResize($window, $rootScope) {
+        var window = angular.element($window);
+        var width = window[0].innerWidth;
+
+        angular.element($window).on('resize', function (event) {
+            var newWidth = window[0].innerWidth;
+            if (width != newWidth) {
+                $rootScope.$broadcast('window-resize', width = newWidth);
+            }
+        });
+    }
+
+    return {
+        setters: [function (_) {
+            angular = _['default'];
+        }],
+        execute: function () {
+            _export('default', angular.module('plotify.utils', []).service("WindowResize", WindowResize));
+        }
+    };
+});
+$__System.register("b", ["10", "19", "1a", "f", "d", "e"], function (_export) {
     var _Array$from, _createClass, _classCallCheck, _Object$keys, _Set, _getIterator, d3tooltip, labelCollisionDetection;
 
     function d3legend() {
@@ -5252,12 +5290,12 @@ $__System.register("b", ["10", "17", "18", "f", "d", "e"], function (_export) {
     }
 
     return {
-        setters: [function (_3) {
-            _Array$from = _3["default"];
+        setters: [function (_2) {
+            _Array$from = _2["default"];
         }, function (_) {
             _createClass = _["default"];
-        }, function (_2) {
-            _classCallCheck = _2["default"];
+        }, function (_a) {
+            _classCallCheck = _a["default"];
         }, function (_f) {
             _Object$keys = _f["default"];
         }, function (_d) {
@@ -5509,39 +5547,13 @@ $__System.register("b", ["10", "17", "18", "f", "d", "e"], function (_export) {
         }
     };
 });
-$__System.register('a', ['1'], function (_export) {
-    'use strict';
-
-    var angular;
-
-    function WindowResize($window, $rootScope) {
-        var window = angular.element($window);
-        var width = window[0].innerWidth;
-
-        angular.element($window).on('resize', function (event) {
-            var newWidth = window[0].innerWidth;
-            if (width != newWidth) {
-                $rootScope.$broadcast('window-resize', width = newWidth);
-            }
-        });
-    }
-
-    return {
-        setters: [function (_) {
-            angular = _['default'];
-        }],
-        execute: function () {
-            _export('default', angular.module('plotify.utils', []).service("WindowResize", WindowResize));
-        }
-    };
-});
 $__System.register('9', [], false, function() {});
 $__System.register('c', [], false, function() {});
 $__System.register('11', [], false, function() {});
 $__System.register('12', [], false, function() {});
+$__System.register('13', [], false, function() {});
 $__System.register('14', [], false, function() {});
 $__System.register('15', [], false, function() {});
-$__System.register('16', [], false, function() {});
 })
 (function(factory) {
   if (typeof define == 'function' && define.amd)
