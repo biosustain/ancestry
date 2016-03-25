@@ -222,6 +222,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         generation: gen-1,
                         x: gen-1,
                         y: s * 10 + gen + j,
+                        z: Math.random() > 0.9 ? undefined : Math.random(),
                         parent: parent,
                         treeId: s,
                         type: Math.random() > 0.5 ? "type1" : "type2"
@@ -263,7 +264,10 @@ let data = {
                 "stroke-width": 1
             }
         },
-        labelCollisionDetection: "onDelay",
+        labelCollisionDetection: {
+            enabled: "onDelay",
+            updateDelay: 500
+        },
         groupSelection: {
             enabled: true
         }
@@ -287,8 +291,14 @@ let data2 = {
             gridOnly: true,
             valueProperty: "default"
         },
-        labelCollisionDetection: "onDelay",
+        labelCollisionDetection: {
+            enabled: "onDelay",
+            updateDelay: 500
+        },
         groupSelection: {
+            enabled: true
+        },
+        heatmap: {
             enabled: true
         }
     }

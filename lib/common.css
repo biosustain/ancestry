@@ -84,3 +84,7 @@
 .plotify-tooltip span {
     display: block;
 }
+
+.plotify-colourbar .axis line, .plotify-colourbar .axis path {
+    opacity: 0;
+}
