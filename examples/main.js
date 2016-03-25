@@ -222,7 +222,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         generation: gen-1,
                         x: gen-1,
                         y: s * 10 + gen + j,
-                        z: Math.random() > 0.9 ? undefined : Math.random(),
+                        z: Math.random() > 0.9 ? undefined : 4.5,
                         parent: parent,
                         treeId: s,
                         type: Math.random() > 0.5 ? "type1" : "type2"

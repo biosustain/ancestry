@@ -22,7 +22,6 @@
 }
 
 .plotify-lineage-plot circle.heatmap-circle {
-    opacity: 0.3;
     pointer-events: none;
 }
 
