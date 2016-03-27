@@ -304,6 +304,36 @@ let data2 = {
     }
 };
 
+let data5 = {
+    data: nodesArr,
+    layout: {
+        nodeTypes: {
+            "type1": {
+                r: 4,
+                "stroke-width": 3
+            },
+            "type2": {
+                r: 6,
+                "stroke-width": 1
+            }
+        },
+        axis: {
+            gridOnly: true,
+            valueProperty: "default"
+        },
+        labelCollisionDetection: {
+            enabled: "onDelay",
+            updateDelay: 500
+        },
+        groupSelection: {
+            enabled: true
+        },
+        heatmap: {
+            enabled: true
+        }
+    }
+};
+
 let data3 = {
     data: createRandomBoxPlotData(nodesArr)
 };
@@ -350,6 +380,7 @@ class AppController {
             $scope.treeData2 = data2;
         });
 
+        $scope.radialPlotData = data5;
         $scope.boxPlotData = data3;
         $scope.violinPlotData = data3;
         $scope.timeData = data4;
