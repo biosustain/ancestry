@@ -270,6 +270,9 @@ let data = {
         },
         groupSelection: {
             enabled: true
+        },
+        heatmap: {
+            enabled: true
         }
     }
 };
@@ -329,7 +332,10 @@ let data5 = {
             enabled: true
         },
         heatmap: {
-            enabled: true
+            enabled: true,
+            colourBar: {
+                show: true
+            }
         }
     }
 };
