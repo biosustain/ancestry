@@ -393,8 +393,9 @@ class AppController {
         $scope.boxPlotData = data3;
         $scope.violinPlotData = data3;
         $scope.timeData = data4;
-        $scope.phyloData = phylo;
         $scope.showBranchLengths = true;
+        $scope.phyloData = phylo;
+
     }
 }
 
