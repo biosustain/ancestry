@@ -1,0 +1,25 @@
+.plotify-radial-phylogenetic-tree .node circle{
+    pointer-events: all;
+    /*stroke: rgb(40,53,147);*/
+}
+
+.plotify-radial-phylogenetic-tree path.link{
+    fill: none;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
+.plotify-radial-phylogenetic-tree path.link-active {
+    stroke-width: 1.5px;
+    stroke: black !important;
+}
+.plotify-radial-phylogenetic-tree .link-extension {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .25;
+}
+
+.plotify-radial-phylogenetic-tree .link-extension-active {
+    stroke-opacity: .6;
+}
+
