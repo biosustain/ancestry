@@ -1,16 +1,13 @@
 .plotify-radial-phylogenetic-tree .node circle{
     pointer-events: all;
-    /*stroke: rgb(40,53,147);*/
 }
 
 .plotify-radial-phylogenetic-tree path.link{
     fill: none;
-    stroke: #000;
-    stroke-width: 1px;
 }
 
 .plotify-radial-phylogenetic-tree path.link-active {
-    stroke-width: 1.5px;
+    stroke-width: 2px;
     stroke: black !important;
 }
 .plotify-radial-phylogenetic-tree .link-extension {
