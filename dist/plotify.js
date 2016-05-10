@@ -435,7 +435,7 @@
 
 (['0', '1', '2'], ["1","1","2","1","2","1","2","1","2","1","2","1","2","1","2","1"], function($__System) {
 
-$__System.registerDynamic("f", ["1b"], true, function(require, exports, module) {
+$__System.registerDynamic("e", ["1b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -448,7 +448,7 @@ $__System.registerDynamic("f", ["1b"], true, function(require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("e", ["1c"], true, function(require, exports, module) {
+$__System.registerDynamic("f", ["1c"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -461,7 +461,7 @@ $__System.registerDynamic("e", ["1c"], true, function(require, exports, module) 
   return module.exports;
 });
 
-$__System.registerDynamic("12", ["1d"], true, function(require, exports, module) {
+$__System.registerDynamic("13", ["1d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -474,7 +474,7 @@ $__System.registerDynamic("12", ["1d"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("13", ["1e"], true, function(require, exports, module) {
+$__System.registerDynamic("12", ["1e"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -487,7 +487,7 @@ $__System.registerDynamic("13", ["1e"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("17", ["e", "1f"], true, function(require, exports, module) {
+$__System.registerDynamic("18", ["e", "1f"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -568,17 +568,6 @@ $__System.registerDynamic("19", ["20"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("1b", ["21", "22"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("21");
-  module.exports = require("22").Object.keys;
-  global.define = __define;
-  return module.exports;
-});
-
 $__System.registerDynamic("1a", [], true, function(require, exports, module) {
   ;
   var global = this,
@@ -595,118 +584,90 @@ $__System.registerDynamic("1a", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("1c", ["23", "24", "25"], true, function(require, exports, module) {
+$__System.registerDynamic("1b", ["21", "22", "23"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  require("23");
-  require("24");
-  module.exports = require("25");
+  require("21");
+  require("22");
+  module.exports = require("23");
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["26", "24", "23", "27", "28", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("1c", ["24", "25"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
+  require("24");
+  module.exports = require("25").Object.keys;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1d", ["22", "26", "25"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("22");
   require("26");
-  require("24");
-  require("23");
+  module.exports = require("25").Array.from;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1e", ["27", "22", "21", "28", "29", "25"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
   require("27");
+  require("22");
+  require("21");
   require("28");
-  module.exports = require("22").Set;
+  require("29");
+  module.exports = require("25").Set;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1f", ["29"], true, function(require, exports, module) {
+$__System.registerDynamic("1f", ["2a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = {
-    "default": require("29"),
+    "default": require("2a"),
     __esModule: true
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1e", ["24", "2a", "22"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("24");
-  require("2a");
-  module.exports = require("22").Array.from;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("21", ["2b", "2c"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toObject = require("2b");
-  require("2c")('keys', function($keys) {
-    return function keys(it) {
-      return $keys(toObject(it));
-    };
-  });
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("22", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var core = module.exports = {};
-  if (typeof __e == 'number')
-    __e = core;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("23", ["2d", "2e"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("2d");
-  var Iterators = require("2e");
-  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("20", ["2f"], true, function(require, exports, module) {
+$__System.registerDynamic("20", ["2b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = {
-    "default": require("2f"),
+    "default": require("2b"),
     __esModule: true
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("24", ["30", "31"], true, function(require, exports, module) {
+$__System.registerDynamic("22", ["2c", "2d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var $at = require("30")(true);
-  require("31")(String, 'String', function(iterated) {
+  var $at = require("2c")(true);
+  require("2d")(String, 'String', function(iterated) {
     this._t = String(iterated);
     this._i = 0;
   }, function() {
@@ -729,14 +690,26 @@ $__System.registerDynamic("24", ["30", "31"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("25", ["32", "33", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("21", ["2e", "2f"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var anObject = require("32"),
-      get = require("33");
-  module.exports = require("22").getIterator = function(it) {
+  require("2e");
+  var Iterators = require("2f");
+  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("23", ["30", "31", "25"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var anObject = require("30"),
+      get = require("31");
+  module.exports = require("25").getIterator = function(it) {
     var iterFn = get(it);
     if (typeof iterFn != 'function')
       throw TypeError(it + ' is not iterable!');
@@ -746,71 +719,35 @@ $__System.registerDynamic("25", ["32", "33", "22"], true, function(require, expo
   return module.exports;
 });
 
-$__System.registerDynamic("27", ["34", "35"], true, function(require, exports, module) {
+$__System.registerDynamic("24", ["32", "33"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  'use strict';
-  var strong = require("34");
-  require("35")('Set', function(get) {
-    return function Set() {
-      return get(this, arguments[0]);
+  var toObject = require("32");
+  require("33")('keys', function($keys) {
+    return function keys(it) {
+      return $keys(toObject(it));
     };
-  }, {add: function add(value) {
-      return strong.def(this, value = value === 0 ? 0 : value, value);
-    }}, strong);
+  });
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("26", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  "format cjs";
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("28", ["36", "37"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $def = require("36");
-  $def($def.P, 'Set', {toJSON: require("37")('Set')});
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("29", ["23", "24", "38"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("23");
-  require("24");
-  module.exports = require("38");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2a", ["39", "36", "2b", "3a", "3b", "3c", "33", "3d"], true, function(require, exports, module) {
+$__System.registerDynamic("26", ["34", "35", "32", "36", "37", "38", "31", "39"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var ctx = require("39"),
-      $def = require("36"),
-      toObject = require("2b"),
-      call = require("3a"),
-      isArrayIter = require("3b"),
-      toLength = require("3c"),
-      getIterFn = require("33");
-  $def($def.S + $def.F * !require("3d")(function(iter) {
+  var ctx = require("34"),
+      $def = require("35"),
+      toObject = require("32"),
+      call = require("36"),
+      isArrayIter = require("37"),
+      toLength = require("38"),
+      getIterFn = require("31");
+  $def($def.S + $def.F * !require("39")(function(iter) {
     Array.from(iter);
   }), 'Array', {from: function from(arrayLike) {
       var O = toObject(arrayLike),
@@ -841,76 +778,75 @@ $__System.registerDynamic("2a", ["39", "36", "2b", "3a", "3b", "3c", "33", "3d"]
   return module.exports;
 });
 
-$__System.registerDynamic("2d", ["3e", "3f", "2e", "40", "31"], true, function(require, exports, module) {
+$__System.registerDynamic("25", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var core = module.exports = {};
+  if (typeof __e == 'number')
+    __e = core;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("27", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  "format cjs";
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("28", ["3a", "3b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var setUnscope = require("3e"),
-      step = require("3f"),
-      Iterators = require("2e"),
-      toIObject = require("40");
-  require("31")(Array, 'Array', function(iterated, kind) {
-    this._t = toIObject(iterated);
-    this._i = 0;
-    this._k = kind;
-  }, function() {
-    var O = this._t,
-        kind = this._k,
-        index = this._i++;
-    if (!O || index >= O.length) {
-      this._t = undefined;
-      return step(1);
-    }
-    if (kind == 'keys')
-      return step(0, index);
-    if (kind == 'values')
-      return step(0, O[index]);
-    return step(0, [index, O[index]]);
-  }, 'values');
-  Iterators.Arguments = Iterators.Array;
-  setUnscope('keys');
-  setUnscope('values');
-  setUnscope('entries');
+  var strong = require("3a");
+  require("3b")('Set', function(get) {
+    return function Set() {
+      return get(this, arguments[0]);
+    };
+  }, {add: function add(value) {
+      return strong.def(this, value = value === 0 ? 0 : value, value);
+    }}, strong);
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("2e", [], true, function(require, exports, module) {
+$__System.registerDynamic("2a", ["21", "22", "3c"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = {};
+  require("21");
+  require("22");
+  module.exports = require("3c");
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("2c", ["36", "22", "41"], true, function(require, exports, module) {
+$__System.registerDynamic("29", ["35", "3d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = function(KEY, exec) {
-    var $def = require("36"),
-        fn = (require("22").Object || {})[KEY] || Object[KEY],
-        exp = {};
-    exp[KEY] = exec(fn);
-    $def($def.S + $def.F * require("41")(function() {
-      fn(1);
-    }), 'Object', exp);
-  };
+  var $def = require("35");
+  $def($def.P, 'Set', {toJSON: require("3d")('Set')});
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("2f", ["42"], true, function(require, exports, module) {
+$__System.registerDynamic("2b", ["3e"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var $ = require("42");
+  var $ = require("3e");
   module.exports = function defineProperty(it, key, desc) {
     return $.setDesc(it, key, desc);
   };
@@ -918,19 +854,43 @@ $__System.registerDynamic("2f", ["42"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("31", ["43", "36", "44", "45", "46", "47", "2e", "48", "42", "49"], true, function(require, exports, module) {
+$__System.registerDynamic("2c", ["3f", "40"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toInteger = require("3f"),
+      defined = require("40");
+  module.exports = function(TO_STRING) {
+    return function(that, pos) {
+      var s = String(defined(that)),
+          i = toInteger(pos),
+          l = s.length,
+          a,
+          b;
+      if (i < 0 || i >= l)
+        return TO_STRING ? '' : undefined;
+      a = s.charCodeAt(i);
+      return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2d", ["41", "35", "42", "43", "44", "45", "2f", "46", "3e", "47"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var LIBRARY = require("43"),
-      $def = require("36"),
-      $redef = require("44"),
-      hide = require("45"),
-      has = require("46"),
-      SYMBOL_ITERATOR = require("47")('iterator'),
-      Iterators = require("2e"),
+  var LIBRARY = require("41"),
+      $def = require("35"),
+      $redef = require("42"),
+      hide = require("43"),
+      has = require("44"),
+      SYMBOL_ITERATOR = require("45")('iterator'),
+      Iterators = require("2f"),
       BUGGY = !([].keys && 'next' in [].keys()),
       FF_ITERATOR = '@@iterator',
       KEYS = 'keys',
@@ -939,7 +899,7 @@ $__System.registerDynamic("31", ["43", "36", "44", "45", "46", "47", "2e", "48",
     return this;
   };
   module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE) {
-    require("48")(Constructor, NAME, next);
+    require("46")(Constructor, NAME, next);
     var createMethod = function(kind) {
       switch (kind) {
         case KEYS:
@@ -962,8 +922,8 @@ $__System.registerDynamic("31", ["43", "36", "44", "45", "46", "47", "2e", "48",
         methods,
         key;
     if (_native) {
-      var IteratorPrototype = require("42").getProto(_default.call(new Base));
-      require("49")(IteratorPrototype, TAG, true);
+      var IteratorPrototype = require("3e").getProto(_default.call(new Base));
+      require("47")(IteratorPrototype, TAG, true);
       if (!LIBRARY && has(proto, FF_ITERATOR))
         hide(IteratorPrototype, SYMBOL_ITERATOR, returnThis);
     }
@@ -990,36 +950,58 @@ $__System.registerDynamic("31", ["43", "36", "44", "45", "46", "47", "2e", "48",
   return module.exports;
 });
 
-$__System.registerDynamic("30", ["4a", "4b"], true, function(require, exports, module) {
+$__System.registerDynamic("2e", ["48", "49", "2f", "4a", "2d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var toInteger = require("4a"),
-      defined = require("4b");
-  module.exports = function(TO_STRING) {
-    return function(that, pos) {
-      var s = String(defined(that)),
-          i = toInteger(pos),
-          l = s.length,
-          a,
-          b;
-      if (i < 0 || i >= l)
-        return TO_STRING ? '' : undefined;
-      a = s.charCodeAt(i);
-      return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-    };
-  };
+  'use strict';
+  var setUnscope = require("48"),
+      step = require("49"),
+      Iterators = require("2f"),
+      toIObject = require("4a");
+  require("2d")(Array, 'Array', function(iterated, kind) {
+    this._t = toIObject(iterated);
+    this._i = 0;
+    this._k = kind;
+  }, function() {
+    var O = this._t,
+        kind = this._k,
+        index = this._i++;
+    if (!O || index >= O.length) {
+      this._t = undefined;
+      return step(1);
+    }
+    if (kind == 'keys')
+      return step(0, index);
+    if (kind == 'values')
+      return step(0, O[index]);
+    return step(0, [index, O[index]]);
+  }, 'values');
+  Iterators.Arguments = Iterators.Array;
+  setUnscope('keys');
+  setUnscope('values');
+  setUnscope('entries');
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("32", ["4c"], true, function(require, exports, module) {
+$__System.registerDynamic("2f", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var isObject = require("4c");
+  module.exports = {};
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("30", ["4b"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var isObject = require("4b");
   module.exports = function(it) {
     if (!isObject(it))
       throw TypeError(it + ' is not an object!');
@@ -1029,15 +1011,15 @@ $__System.registerDynamic("32", ["4c"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("33", ["4d", "47", "2e", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("31", ["4c", "45", "2f", "25"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var classof = require("4d"),
-      ITERATOR = require("47")('iterator'),
-      Iterators = require("2e");
-  module.exports = require("22").getIteratorMethod = function(it) {
+  var classof = require("4c"),
+      ITERATOR = require("45")('iterator'),
+      Iterators = require("2f");
+  module.exports = require("25").getIteratorMethod = function(it) {
     if (it != undefined)
       return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
   };
@@ -1045,12 +1027,12 @@ $__System.registerDynamic("33", ["4d", "47", "2e", "22"], true, function(require
   return module.exports;
 });
 
-$__System.registerDynamic("2b", ["4b"], true, function(require, exports, module) {
+$__System.registerDynamic("32", ["40"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var defined = require("4b");
+  var defined = require("40");
   module.exports = function(it) {
     return Object(defined(it));
   };
@@ -1058,66 +1040,63 @@ $__System.registerDynamic("2b", ["4b"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("35", ["42", "36", "45", "4e", "4f", "50", "51", "41", "52", "49"], true, function(require, exports, module) {
+$__System.registerDynamic("33", ["35", "25", "4d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  'use strict';
-  var $ = require("42"),
-      $def = require("36"),
-      hide = require("45"),
-      forOf = require("4e"),
-      strictNew = require("4f");
-  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
-    var Base = require("50")[NAME],
-        C = Base,
-        ADDER = IS_MAP ? 'set' : 'add',
-        proto = C && C.prototype,
-        O = {};
-    if (!require("51") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("41")(function() {
-      new C().entries().next();
-    }))) {
-      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-      require("52")(C.prototype, methods);
-    } else {
-      C = wrapper(function(target, iterable) {
-        strictNew(target, C, NAME);
-        target._c = new Base;
-        if (iterable != undefined)
-          forOf(iterable, IS_MAP, target[ADDER], target);
-      });
-      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
-        var chain = KEY == 'add' || KEY == 'set';
-        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
-          hide(C.prototype, KEY, function(a, b) {
-            var result = this._c[KEY](a === 0 ? 0 : a, b);
-            return chain ? this : result;
-          });
-      });
-      if ('size' in proto)
-        $.setDesc(C.prototype, 'size', {get: function() {
-            return this._c.size;
-          }});
-    }
-    require("49")(C, NAME);
-    O[NAME] = C;
-    $def($def.G + $def.W + $def.F, O);
-    if (!IS_WEAK)
-      common.setStrong(C, NAME, IS_MAP);
-    return C;
+  module.exports = function(KEY, exec) {
+    var $def = require("35"),
+        fn = (require("25").Object || {})[KEY] || Object[KEY],
+        exp = {};
+    exp[KEY] = exec(fn);
+    $def($def.S + $def.F * require("4d")(function() {
+      fn(1);
+    }), 'Object', exp);
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("36", ["50", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("34", ["4e"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var global = require("50"),
-      core = require("22"),
+  var aFunction = require("4e");
+  module.exports = function(fn, that, length) {
+    aFunction(fn);
+    if (that === undefined)
+      return fn;
+    switch (length) {
+      case 1:
+        return function(a) {
+          return fn.call(that, a);
+        };
+      case 2:
+        return function(a, b) {
+          return fn.call(that, a, b);
+        };
+      case 3:
+        return function(a, b, c) {
+          return fn.call(that, a, b, c);
+        };
+    }
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("35", ["4f", "25"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var global = require("4f"),
+      core = require("25"),
       PROTOTYPE = 'prototype';
   var ctx = function(fn, that) {
     return function() {
@@ -1169,93 +1148,110 @@ $__System.registerDynamic("36", ["50", "22"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("37", ["4e", "4d"], true, function(require, exports, module) {
+$__System.registerDynamic("36", ["30"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var forOf = require("4e"),
-      classof = require("4d");
-  module.exports = function(NAME) {
-    return function toJSON() {
-      if (classof(this) != NAME)
-        throw TypeError(NAME + "#toJSON isn't generic");
-      var arr = [];
-      forOf(this, false, arr.push, arr);
-      return arr;
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("39", ["53"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var aFunction = require("53");
-  module.exports = function(fn, that, length) {
-    aFunction(fn);
-    if (that === undefined)
-      return fn;
-    switch (length) {
-      case 1:
-        return function(a) {
-          return fn.call(that, a);
-        };
-      case 2:
-        return function(a, b) {
-          return fn.call(that, a, b);
-        };
-      case 3:
-        return function(a, b, c) {
-          return fn.call(that, a, b, c);
-        };
+  var anObject = require("30");
+  module.exports = function(iterator, fn, value, entries) {
+    try {
+      return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+    } catch (e) {
+      var ret = iterator['return'];
+      if (ret !== undefined)
+        anObject(ret.call(iterator));
+      throw e;
     }
-    return function() {
-      return fn.apply(that, arguments);
-    };
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("38", ["4d", "47", "2e", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("37", ["2f", "45"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var classof = require("4d"),
-      ITERATOR = require("47")('iterator'),
-      Iterators = require("2e");
-  module.exports = require("22").isIterable = function(it) {
-    var O = Object(it);
-    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
+  var Iterators = require("2f"),
+      ITERATOR = require("45")('iterator');
+  module.exports = function(it) {
+    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("34", ["42", "45", "39", "54", "4f", "4b", "4e", "3f", "55", "46", "4c", "51", "52", "31", "22"], true, function(require, exports, module) {
+$__System.registerDynamic("38", ["3f"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toInteger = require("3f"),
+      min = Math.min;
+  module.exports = function(it) {
+    return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("39", ["45"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var SYMBOL_ITERATOR = require("45")('iterator'),
+      SAFE_CLOSING = false;
+  try {
+    var riter = [7][SYMBOL_ITERATOR]();
+    riter['return'] = function() {
+      SAFE_CLOSING = true;
+    };
+    Array.from(riter, function() {
+      throw 2;
+    });
+  } catch (e) {}
+  module.exports = function(exec) {
+    if (!SAFE_CLOSING)
+      return false;
+    var safe = false;
+    try {
+      var arr = [7],
+          iter = arr[SYMBOL_ITERATOR]();
+      iter.next = function() {
+        safe = true;
+      };
+      arr[SYMBOL_ITERATOR] = function() {
+        return iter;
+      };
+      exec(arr);
+    } catch (e) {}
+    return safe;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3a", ["3e", "43", "34", "50", "51", "40", "52", "49", "53", "44", "4b", "54", "55", "2d", "25"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var $ = require("42"),
-      hide = require("45"),
-      ctx = require("39"),
-      species = require("54"),
-      strictNew = require("4f"),
-      defined = require("4b"),
-      forOf = require("4e"),
-      step = require("3f"),
-      ID = require("55")('id'),
-      $has = require("46"),
-      isObject = require("4c"),
+  var $ = require("3e"),
+      hide = require("43"),
+      ctx = require("34"),
+      species = require("50"),
+      strictNew = require("51"),
+      defined = require("40"),
+      forOf = require("52"),
+      step = require("49"),
+      ID = require("53")('id'),
+      $has = require("44"),
+      isObject = require("4b"),
       isExtensible = Object.isExtensible || isObject,
-      SUPPORT_DESC = require("51"),
+      SUPPORT_DESC = require("54"),
       SIZE = SUPPORT_DESC ? '_s' : 'size',
       id = 0;
   var fastKey = function(it, create) {
@@ -1291,7 +1287,7 @@ $__System.registerDynamic("34", ["42", "45", "39", "54", "4f", "4b", "4e", "3f",
         if (iterable != undefined)
           forOf(iterable, IS_MAP, that[ADDER], that);
       });
-      require("52")(C.prototype, {
+      require("55")(C.prototype, {
         clear: function clear() {
           for (var that = this,
               data = that._i,
@@ -1370,7 +1366,7 @@ $__System.registerDynamic("34", ["42", "45", "39", "54", "4f", "4b", "4e", "3f",
     },
     getEntry: getEntry,
     setStrong: function(C, NAME, IS_MAP) {
-      require("31")(C, NAME, function(iterated, kind) {
+      require("2d")(C, NAME, function(iterated, kind) {
         this._t = iterated;
         this._k = kind;
         this._l = undefined;
@@ -1391,164 +1387,103 @@ $__System.registerDynamic("34", ["42", "45", "39", "54", "4f", "4b", "4e", "3f",
         return step(0, [entry.k, entry.v]);
       }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
       species(C);
-      species(require("22")[NAME]);
+      species(require("25")[NAME]);
     }
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("3a", ["32"], true, function(require, exports, module) {
+$__System.registerDynamic("3b", ["3e", "35", "43", "52", "51", "4f", "54", "4d", "55", "47"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var anObject = require("32");
-  module.exports = function(iterator, fn, value, entries) {
-    try {
-      return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-    } catch (e) {
-      var ret = iterator['return'];
-      if (ret !== undefined)
-        anObject(ret.call(iterator));
-      throw e;
+  'use strict';
+  var $ = require("3e"),
+      $def = require("35"),
+      hide = require("43"),
+      forOf = require("52"),
+      strictNew = require("51");
+  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
+    var Base = require("4f")[NAME],
+        C = Base,
+        ADDER = IS_MAP ? 'set' : 'add',
+        proto = C && C.prototype,
+        O = {};
+    if (!require("54") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("4d")(function() {
+      new C().entries().next();
+    }))) {
+      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
+      require("55")(C.prototype, methods);
+    } else {
+      C = wrapper(function(target, iterable) {
+        strictNew(target, C, NAME);
+        target._c = new Base;
+        if (iterable != undefined)
+          forOf(iterable, IS_MAP, target[ADDER], target);
+      });
+      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
+        var chain = KEY == 'add' || KEY == 'set';
+        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
+          hide(C.prototype, KEY, function(a, b) {
+            var result = this._c[KEY](a === 0 ? 0 : a, b);
+            return chain ? this : result;
+          });
+      });
+      if ('size' in proto)
+        $.setDesc(C.prototype, 'size', {get: function() {
+            return this._c.size;
+          }});
     }
+    require("47")(C, NAME);
+    O[NAME] = C;
+    $def($def.G + $def.W + $def.F, O);
+    if (!IS_WEAK)
+      common.setStrong(C, NAME, IS_MAP);
+    return C;
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("3b", ["2e", "47"], true, function(require, exports, module) {
+$__System.registerDynamic("3c", ["4c", "45", "2f", "25"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var Iterators = require("2e"),
-      ITERATOR = require("47")('iterator');
-  module.exports = function(it) {
-    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
+  var classof = require("4c"),
+      ITERATOR = require("45")('iterator'),
+      Iterators = require("2f");
+  module.exports = require("25").isIterable = function(it) {
+    var O = Object(it);
+    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("3d", ["47"], true, function(require, exports, module) {
+$__System.registerDynamic("3d", ["52", "4c"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var SYMBOL_ITERATOR = require("47")('iterator'),
-      SAFE_CLOSING = false;
-  try {
-    var riter = [7][SYMBOL_ITERATOR]();
-    riter['return'] = function() {
-      SAFE_CLOSING = true;
+  var forOf = require("52"),
+      classof = require("4c");
+  module.exports = function(NAME) {
+    return function toJSON() {
+      if (classof(this) != NAME)
+        throw TypeError(NAME + "#toJSON isn't generic");
+      var arr = [];
+      forOf(this, false, arr.push, arr);
+      return arr;
     };
-    Array.from(riter, function() {
-      throw 2;
-    });
-  } catch (e) {}
-  module.exports = function(exec) {
-    if (!SAFE_CLOSING)
-      return false;
-    var safe = false;
-    try {
-      var arr = [7],
-          iter = arr[SYMBOL_ITERATOR]();
-      iter.next = function() {
-        safe = true;
-      };
-      arr[SYMBOL_ITERATOR] = function() {
-        return iter;
-      };
-      exec(arr);
-    } catch (e) {}
-    return safe;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3c", ["4a"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toInteger = require("4a"),
-      min = Math.min;
-  module.exports = function(it) {
-    return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
   };
   global.define = __define;
   return module.exports;
 });
 
 $__System.registerDynamic("3e", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function() {};
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3f", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(done, value) {
-    return {
-      value: value,
-      done: !!done
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("41", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(exec) {
-    try {
-      return !!exec();
-    } catch (e) {
-      return true;
-    }
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("40", ["56", "4b"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var IObject = require("56"),
-      defined = require("4b");
-  module.exports = function(it) {
-    return IObject(defined(it));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("44", ["45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = require("45");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("42", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1570,142 +1505,7 @@ $__System.registerDynamic("42", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("43", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = true;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("45", ["42", "57", "51"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $ = require("42"),
-      createDesc = require("57");
-  module.exports = require("51") ? function(object, key, value) {
-    return $.setDesc(object, key, createDesc(1, value));
-  } : function(object, key, value) {
-    object[key] = value;
-    return object;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("47", ["58", "50", "55"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var store = require("58")('wks'),
-      Symbol = require("50").Symbol;
-  module.exports = function(name) {
-    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("55"))('Symbol.' + name));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("46", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var hasOwnProperty = {}.hasOwnProperty;
-  module.exports = function(it, key) {
-    return hasOwnProperty.call(it, key);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("48", ["42", "45", "47", "57", "49"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("42"),
-      IteratorPrototype = {};
-  require("45")(IteratorPrototype, require("47")('iterator'), function() {
-    return this;
-  });
-  module.exports = function(Constructor, NAME, next) {
-    Constructor.prototype = $.create(IteratorPrototype, {next: require("57")(1, next)});
-    require("49")(Constructor, NAME + ' Iterator');
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("49", ["46", "45", "47"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var has = require("46"),
-      hide = require("45"),
-      TAG = require("47")('toStringTag');
-  module.exports = function(it, tag, stat) {
-    if (it && !has(it = stat ? it : it.prototype, TAG))
-      hide(it, TAG, tag);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4b", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it) {
-    if (it == undefined)
-      throw TypeError("Can't call method on  " + it);
-    return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4c", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it) {
-    return it !== null && (typeof it == 'object' || typeof it == 'function');
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4d", ["59", "47"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var cof = require("59"),
-      TAG = require("47")('toStringTag'),
-      ARG = cof(function() {
-        return arguments;
-      }()) == 'Arguments';
-  module.exports = function(it) {
-    var O,
-        T,
-        B;
-    return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4a", [], true, function(require, exports, module) {
+$__System.registerDynamic("3f", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1719,17 +1519,279 @@ $__System.registerDynamic("4a", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("4e", ["39", "3a", "3b", "32", "3c", "33"], true, function(require, exports, module) {
+$__System.registerDynamic("40", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var ctx = require("39"),
-      call = require("3a"),
-      isArrayIter = require("3b"),
-      anObject = require("32"),
-      toLength = require("3c"),
-      getIterFn = require("33");
+  module.exports = function(it) {
+    if (it == undefined)
+      throw TypeError("Can't call method on  " + it);
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("41", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = true;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("43", ["3e", "56", "54"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("3e"),
+      createDesc = require("56");
+  module.exports = require("54") ? function(object, key, value) {
+    return $.setDesc(object, key, createDesc(1, value));
+  } : function(object, key, value) {
+    object[key] = value;
+    return object;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("42", ["43"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("43");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("44", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var hasOwnProperty = {}.hasOwnProperty;
+  module.exports = function(it, key) {
+    return hasOwnProperty.call(it, key);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("45", ["57", "4f", "53"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var store = require("57")('wks'),
+      Symbol = require("4f").Symbol;
+  module.exports = function(name) {
+    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("53"))('Symbol.' + name));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("46", ["3e", "43", "45", "56", "47"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      IteratorPrototype = {};
+  require("43")(IteratorPrototype, require("45")('iterator'), function() {
+    return this;
+  });
+  module.exports = function(Constructor, NAME, next) {
+    Constructor.prototype = $.create(IteratorPrototype, {next: require("56")(1, next)});
+    require("47")(Constructor, NAME + ' Iterator');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("47", ["44", "43", "45"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var has = require("44"),
+      hide = require("43"),
+      TAG = require("45")('toStringTag');
+  module.exports = function(it, tag, stat) {
+    if (it && !has(it = stat ? it : it.prototype, TAG))
+      hide(it, TAG, tag);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("48", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function() {};
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("49", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(done, value) {
+    return {
+      value: value,
+      done: !!done
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4a", ["58", "40"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var IObject = require("58"),
+      defined = require("40");
+  module.exports = function(it) {
+    return IObject(defined(it));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4b", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it) {
+    return it !== null && (typeof it == 'object' || typeof it == 'function');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4c", ["59", "45"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var cof = require("59"),
+      TAG = require("45")('toStringTag'),
+      ARG = cof(function() {
+        return arguments;
+      }()) == 'Arguments';
+  module.exports = function(it) {
+    var O,
+        T,
+        B;
+    return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4d", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(exec) {
+    try {
+      return !!exec();
+    } catch (e) {
+      return true;
+    }
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4e", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it) {
+    if (typeof it != 'function')
+      throw TypeError(it + ' is not a function!');
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4f", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var UNDEFINED = 'undefined';
+  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
+  if (typeof __g == 'number')
+    __g = global;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("50", ["3e", "45", "54"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      SPECIES = require("45")('species');
+  module.exports = function(C) {
+    if (require("54") && !(SPECIES in C))
+      $.setDesc(C, SPECIES, {
+        configurable: true,
+        get: function() {
+          return this;
+        }
+      });
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("51", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it, Constructor, name) {
+    if (!(it instanceof Constructor))
+      throw TypeError(name + ": use the 'new' operator!");
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("52", ["34", "36", "37", "30", "38", "31"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var ctx = require("34"),
+      call = require("36"),
+      isArrayIter = require("37"),
+      anObject = require("30"),
+      toLength = require("38"),
+      getIterFn = require("31");
   module.exports = function(iterable, entries, fn, that) {
     var iterFn = getIterFn(iterable),
         f = ctx(fn, that, entries ? 2 : 1),
@@ -1752,12 +1814,12 @@ $__System.registerDynamic("4e", ["39", "3a", "3b", "32", "3c", "33"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("51", ["41"], true, function(require, exports, module) {
+$__System.registerDynamic("54", ["4d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = !require("41")(function() {
+  module.exports = !require("4d")(function() {
     return Object.defineProperty({}, 'a', {get: function() {
         return 7;
       }}).a != 7;
@@ -1766,84 +1828,7 @@ $__System.registerDynamic("51", ["41"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("4f", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it, Constructor, name) {
-    if (!(it instanceof Constructor))
-      throw TypeError(name + ": use the 'new' operator!");
-    return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("50", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var UNDEFINED = 'undefined';
-  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
-  if (typeof __g == 'number')
-    __g = global;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("52", ["44"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $redef = require("44");
-  module.exports = function(target, src) {
-    for (var key in src)
-      $redef(target, key, src[key]);
-    return target;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
 $__System.registerDynamic("53", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it) {
-    if (typeof it != 'function')
-      throw TypeError(it + ' is not a function!');
-    return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("54", ["42", "47", "51"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("42"),
-      SPECIES = require("47")('species');
-  module.exports = function(C) {
-    if (require("51") && !(SPECIES in C))
-      $.setDesc(C, SPECIES, {
-        configurable: true,
-        get: function() {
-          return this;
-        }
-      });
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("55", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1857,16 +1842,33 @@ $__System.registerDynamic("55", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("58", ["50"], true, function(require, exports, module) {
+$__System.registerDynamic("55", ["42"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var global = require("50"),
-      SHARED = '__core-js_shared__',
-      store = global[SHARED] || (global[SHARED] = {});
-  module.exports = function(key) {
-    return store[key] || (store[key] = {});
+  var $redef = require("42");
+  module.exports = function(target, src) {
+    for (var key in src)
+      $redef(target, key, src[key]);
+    return target;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("56", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(bitmap, value) {
+    return {
+      enumerable: !(bitmap & 1),
+      configurable: !(bitmap & 2),
+      writable: !(bitmap & 4),
+      value: value
+    };
   };
   global.define = __define;
   return module.exports;
@@ -1885,7 +1887,22 @@ $__System.registerDynamic("59", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("56", ["59"], true, function(require, exports, module) {
+$__System.registerDynamic("57", ["4f"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var global = require("4f"),
+      SHARED = '__core-js_shared__',
+      store = global[SHARED] || (global[SHARED] = {});
+  module.exports = function(key) {
+    return store[key] || (store[key] = {});
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("58", ["59"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1893,23 +1910,6 @@ $__System.registerDynamic("56", ["59"], true, function(require, exports, module)
   var cof = require("59");
   module.exports = 0 in Object('z') ? Object : function(it) {
     return cof(it) == 'String' ? it.split('') : Object(it);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("57", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(bitmap, value) {
-    return {
-      enumerable: !(bitmap & 1),
-      configurable: !(bitmap & 2),
-      writable: !(bitmap & 4),
-      value: value
-    };
   };
   global.define = __define;
   return module.exports;
@@ -2145,6 +2145,12 @@ $__System.register('3', ['1', '2', 'e', 'f', 'd', 'b', 'c'], function (_export) 
                     node.append("circle").style("stroke", function (d) {
                         return colours(d.treeId);
                     }).attr(nodeAttr);
+
+                    var maxLabelHeight = 2 * Math.PI * (multipleTreeOffset + totalTreeLength + labelOffset) / nodes.filter(function (d) {
+                        return !d.children || !d.children.length;
+                    }).length;
+
+                    layout.outerNodeLabel["font-size"] = d3.min([layout.outerNodeLabel["font-size"], maxLabelHeight]);
 
                     var label = vis.selectAll("text.outer-label").data(nodes.filter(function (d) {
                         return d.x !== undefined && !d.children;
@@ -2545,7 +2551,9 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
                     var types = createNodeTypes(treeData.data, layout.nodeTypes, defaultNode),
                         nodeAttr = createDynamicNodeAttr(types, _Object$keys(defaultNode));
 
-                    var cluster = d3.layout.cluster().size([360, 1]).sort(null).children(function (d) {
+                    var cluster = d3.layout.cluster().size([360, 1]).sort(function (a, b) {
+                        return d3.ascending(a.length, b.length);
+                    }).children(function (d) {
                         return d.children;
                     }).separation(function () {
                         return 1;
@@ -2606,20 +2614,23 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
                             return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
                         });
                     }
+
+                    removeNegativeLengths(treeData.trees);
                     setRadius(treeData.trees, treeData.trees.length = 0, totalTreeLength / maxLength(treeData.trees));
 
+                    var show = scope.branchlength !== undefined ? scope.branchlength : true;
                     linkExtension = vis.append("g").selectAll("path").data(links.filter(function (d) {
                         return !d.target.children;
                     })).enter().append("path").attr("class", "link-extension").each(function (d) {
                         d.target.linkExtensionNode = this;
                     }).attr("d", function (d) {
-                        return step2(d.target.x, d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
+                        return step2(d.target.x, show ? d.target.radius : d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
                     });
 
-                    link = vis.append("g").selectAll("path").data(links).enter().append("path").attr("class", "link").each(function (d) {
+                    link = vis.append("g").selectAll("path").data(links).enter().append("path").attr("class", "link").attr(layout.link).each(function (d) {
                         d.target.linkNode = this;
                     }).attr("d", function (d) {
-                        return step2(d.source.x, d.source.y, d.target.x, d.target.y);
+                        return step2(d.source.x, show ? d.source.radius : d.source.y, d.target.x, show ? d.target.radius : d.target.y);
                     }).style("stroke", function (d) {
                         return colours(d.treeId);
                     });
@@ -2647,6 +2658,12 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
                             return colours(d.treeId);
                         }).attr(nodeAttr);
                     }
+
+                    var maxLabelHeight = 2 * Math.PI * (multipleTreeOffset + totalTreeLength + labelOffset) / nodes.filter(function (d) {
+                        return !d.children || !d.children.length;
+                    }).length;
+
+                    layout.outerNodeLabel["font-size"] = d3.min([layout.outerNodeLabel["font-size"], maxLabelHeight]);
 
                     var label = vis.selectAll("text.outer-label").data(nodes.filter(function (d) {
                         return !!d.taxon;
@@ -2714,11 +2731,15 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
                 }
 
                 function setRadius(d, y0, k) {
-                    if (d.length < 0) d.length = 0;
                     d.radius = (y0 += d.length) * k + multipleTreeOffset;
                     if (d.children && d.children.length > 0) d.children.forEach(function (d) {
-                        setRadius(d, y0, k);
+                        return setRadius(d, y0, k);
                     });
+                }
+
+                function removeNegativeLengths(d) {
+                    if (d.length < 0) d.length = 0;
+                    if (d.children && d.children.length > 0) d.children.forEach(removeNegativeLengths);
                 }
 
                 function maxLength(d) {
@@ -2827,8 +2848,7 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
                     "font-size": 14
                 },
                 link: {
-                    stroke: "#ccc",
-                    "stroke-width": 1
+                    "stroke-width": 1.5
                 },
                 heatmap: {
                     enabled: false,
@@ -2850,7 +2870,7 @@ $__System.register('4', ['1', '2', '10', 'e', 'f', 'b', 'c'], function (_export)
     };
 });
 $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_export) {
-    var angular, d3, _Set, _Array$from, _Object$keys, d3tooltip, mergeTemplateLayout, createNodeTypes, labelCollisionDetection, createTreeLayout, spreadGenerations, createDynamicNodeAttr, scaleProperties, getNodeLabelBBox, drawColourBar, calcColourBarSize, layoutTemplate, labelPositions;
+    var angular, d3, _Set, _Array$from, _Object$keys, d3legend, d3tooltip, mergeTemplateLayout, createNodeTypes, labelCollisionDetection, createTreeLayout, spreadGenerations, createDynamicNodeAttr, scaleProperties, getNodeLabelBBox, drawColourBar, calcColourBarSize, layoutTemplate, labelPositions;
 
     function LineagePlotDirective($window, WindowResize) {
         return {
@@ -2867,7 +2887,7 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
 
                 var maxAllowedDepth = 180,
                     mouseStart = null,
-                    colours = d3.scale.category10().range(),
+                    colours = d3.scale.category10(),
                     isDrag = false,
                     selectionRect = null,
                     tooltip = new d3tooltip(d3.select(element[0])),
@@ -2883,20 +2903,34 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                 lastLCDUpdateTime = 0,
                     LCDUpdateID = undefined,
                     heatmapColourScale = null,
-                    heatmapCircle = null;
+                    heatmapCircle = null,
+                    visibleSeries = null;
 
                 function render(options) {
 
                     // clean svg before rendering plot
                     svg.selectAll('*').remove();
+                    var defs = svg.append("defs");
+
                     selectedNodes = new _Set();
 
                     if (!scope.value || !scope.value.data.length) return;
 
                     var treeData = scope.value.data,
                         layout = mergeTemplateLayout(scope.value.layout, layoutTemplate),
-                        pathname = $window.location.pathname;
-                    // do not continue rendering if there is no data
+                        pathname = $window.location.pathname,
+                        seriesNames = _Array$from(new _Set(treeData.map(function (d) {
+                        return d.series.toString();
+                    }))),
+                        legendHeight = 0,
+                        legendWidth = 0,
+                        colourbarHeight = 0,
+                        colourbarWidth = 0,
+                        colourBarOffset = layout.heatmap.colourBar.show ? 20 : 0,
+                        colourbar = d3.select(),
+                        legend = d3.select();
+
+                    visibleSeries = new _Set(seriesNames);
 
                     var initialLabelPosition = labelPositions[0];
 
@@ -2922,11 +2956,92 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
 
                     var elementWidth = d3.select(element[0]).node().offsetWidth;
 
-                    var margin = { top: 50, right: 30, bottom: 50, left: 30 },
-                        width = elementWidth - margin.right - margin.left,
+                    var margin = { top: 50, right: 30, bottom: 25, left: 30 };
+
+                    if (!layout.title) margin.top = 25;
+                    if (layout.axis.show) margin.bottom += 20;
+                    if (layout.axis.title) margin.bottom += 25;
+
+                    var width = elementWidth - margin.right - margin.left,
                         height = 600 - margin.top - margin.bottom;
 
-                    if (layout.heatmap.enabled && layout.heatmap.colourBar.show) width -= 60;
+                    // render chart area
+                    svg.attr("width", width + margin.left + margin.top).attr("height", height + margin.top + margin.bottom);
+
+                    var chart = svg.append("g");
+
+                    if (layout.heatmap.enabled) {
+
+                        var domain = d3.extent(treeData, function (node) {
+                            return node.z;
+                        });
+
+                        if (domain[0] == domain[1]) {
+                            if (domain[0] === undefined) {
+                                domain[0] = domain[1] = 0;
+                            }
+                            domain[0] -= 0.5;
+                            domain[1] += 0.5;
+                        }
+
+                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
+                            return v[1];
+                        }));
+
+                        if (layout.heatmap.colourBar.show) {
+                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
+                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
+
+                            colourbar = chart.append("g").attr("class", "plotify-colourbar");
+
+                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+
+                            var bbox = colourbar.node().getBoundingClientRect(),
+                                pos = layout.heatmap.colourBar.position;
+                            colourbarWidth = bbox.width;
+                            colourbarHeight = bbox.height;
+                            if (pos === "right" || pos === "left") margin.right += colourbarWidth + colourBarOffset;else if (pos === "top" || pos === "bottom") margin.top += colourbarHeight;
+                        }
+                    }
+
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            orientation = layout.legend.orientation;
+
+                        var splitAfter = orientation === "horizontal" ? 0 : 1;
+
+                        var drawLegend = d3legend().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).maxSize({ width: width, height: height }).onMouseOver(legendMouseOver)
+                        //.onMouseOut(legendMouseOut)
+                        //.onClick(legendClick)
+                        .selectedItems(visibleSeries);
+
+                        legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
+
+                        var bbox = legend.node().getBoundingClientRect();
+                        legendHeight = bbox.height;legendWidth = bbox.width;
+                        if (anchor.x === "outside" && pos.x !== "center") {
+                            margin[pos.x] += legendWidth;
+                        } else if (anchor.y === "outside" && pos.y !== "center") {
+                            margin[pos.y] += legendHeight;
+                        }
+                    }
+
+                    function legendMouseOver() {}
+
+                    width = elementWidth - margin.right - margin.left;
+                    height = 600 - margin.top - margin.bottom;
+
+                    colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            yAxisOffset = layout.axis.show ? 15 : 0,
+                            posX = pos.x === "left" ? 0 : pos.x === "right" ? width + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
+                            posY = pos.y === "top" ? 0 : pos.y === "bottom" ? height + (anchor.y === "outside" ? yAxisOffset : 0) : height / 2;
+
+                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
+                    }
 
                     // diagonal generator
                     var diagonal = d3.svg.diagonal().target(function (d) {
@@ -2962,43 +3077,9 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                     //.x(xScale) // TODO: can be reworked when xExtent is implemented in d3.js
                     .on("zoom", zoomed);
 
-                    if (!layout.title) margin.top = 25;
-                    if (!layout.axis.title) margin.bottom = 25;
-
-                    var defs = svg.append("defs");
-
                     var clip = defs.append("svg:clipPath").attr("id", "lineage-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
 
-                    // render chart area
-                    var chart = svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')').call(zoom).on("dblclick.zoom", onDoubleClick);
-
-                    if (layout.heatmap.enabled) {
-
-                        var domain = d3.extent(treeData, function (node) {
-                            return node.z;
-                        });
-
-                        if (domain[0] == domain[1]) {
-                            if (domain[0] === undefined) {
-                                domain[0] = domain[1] = 0;
-                            }
-                            domain[0] -= 0.5;
-                            domain[1] += 0.5;
-                        }
-
-                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
-                            return v[1];
-                        }));
-
-                        if (layout.heatmap.colourBar.show) {
-                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
-                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
-
-                            var colourbar = chart.append("g").attr("class", "plotify-colourbar").attr("transform", 'translate(' + (width + 20) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
-
-                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
-                        }
-                    }
+                    chart.attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')').call(zoom).on("dblclick.zoom", onDoubleClick);
 
                     // Define x axis and grid
                     var xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height);
@@ -3032,7 +3113,6 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
 
                     var mouseRect = mouseCaptureGroup.append("rect").attr("id", "mouse-capture").attr("x", -margin.left).attr("y", -margin.top).attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("fill", "transparent");
 
-                    // add plotting areas for each separate tree
                     var treesContainer = chart.append("g").attr("clip-path", 'url(' + pathname + '#lineage-clip-rect)').append("g").attr("id", "trees-containter");
                     //.call(zoom)
 
@@ -3060,16 +3140,16 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
 
                     // Add node circles
                     var circle = nodeEnter.append("circle").attr("class", "node-circle").attr(nodeAttr).style("fill", function (d) {
-                        return !selectedNodes.has(d.name) ? '#FFF' : colours[d.treeId];
+                        return !selectedNodes.has(d.name) ? '#FFF' : colours(d.series);
                     }).style("stroke", function (d) {
-                        return colours[d.treeId];
+                        return colours(d.series);
                     }).each(function (d) {
                         d.bboxCircle = this.getBoundingClientRect();
                     }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d, i) {
                         var groupPos = this.getBoundingClientRect(),
                             xPos = (groupPos.right + groupPos.left) / 2,
                             yPos = groupPos.top,
-                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours[d.treeId] + '"></div>' + ('<span class="tooltip-text">' + d.name + '</span>');
+                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series) + '"></div>' + ('<span class="tooltip-text">' + d.name + '</span>');
                         tooltip.html(text).position([xPos, yPos]).show();
                     }).on("mouseout", function (d) {
                         tooltip.hide();
@@ -3124,7 +3204,7 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                         if (!n.classed("selected")) {
                             n.classed("selected", true);
                             n.select("circle.node-circle").style("fill", function (d) {
-                                return colours[d.treeId];
+                                return colours(d.series);
                             });
                         } else {
                             n.classed("selected", false);
@@ -3189,7 +3269,7 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                             if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
                                 n.classed("selected", true);
                                 n.select("circle.node-circle").style("fill", function (d) {
-                                    return colours[d.treeId];
+                                    return colours(d.series);
                                 });
                                 any = true;
                             } else if (!selectedNodes.has(d.name)) {
@@ -3265,7 +3345,9 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                         if (layout.axis.gridOnly) {
                             chart.selectAll("g.x-axis g.tick text").style("opacity", 1e-6);
                         }
-                        svg.selectAll(".node circle.node-circle").attr(scaleProperties(nodeAttr, scale, true)).each(function (d) {
+                        svg.selectAll(".node circle.node-circle").attr(scaleProperties(nodeAttr, scale, true)).attr("stroke", function (d) {
+                            return colours(d.series);
+                        }).each(function (d) {
                             d.bboxCircle = this.getBoundingClientRect();
                         });
                         if (layout.heatmap.enabled) {
@@ -3327,6 +3409,7 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
         }, function (_f) {
             _Object$keys = _f['default'];
         }, function (_b) {}, function (_c) {
+            d3legend = _c.d3legend;
             d3tooltip = _c.d3tooltip;
             mergeTemplateLayout = _c.mergeTemplateLayout;
             createNodeTypes = _c.createNodeTypes;
@@ -3384,12 +3467,25 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
                     colourBar: {
                         show: true,
                         height: "90%",
-                        width: 30
+                        width: 30,
+                        position: "right"
                     },
                     circle: {
                         r: 16
                     },
                     opacity: 0.4
+                },
+                legend: {
+                    show: false,
+                    position: {
+                        x: "center",
+                        y: "top"
+                    },
+                    anchor: {
+                        x: "outside",
+                        y: "inside"
+                    },
+                    orientation: "vertical"
                 }
             };
             labelPositions = [{
@@ -3406,552 +3502,7 @@ $__System.register('5', ['1', '2', '11', '12', '13', 'f', 'b', 'c'], function (_
         }
     };
 });
-$__System.register('7', ['1', '2', '14', 'e', 'b', 'c'], function (_export) {
-    var angular, d3, _getIterator, d3tooltip;
-
-    function BoxPlotDirective($window, WindowResize) {
-        return {
-            restrict: 'EA',
-            scope: {
-                value: '=',
-                selected: '='
-            },
-            link: function link(scope, element, attributes) {
-
-                element.addClass("plotify plotify-box-plot");
-
-                var svg = d3.select(element[0]).append("svg").style('width', '100%');
-
-                var margin = { top: 40, right: 40, bottom: 120, left: 80 };
-
-                var width = undefined,
-                    height = undefined;
-
-                var boxGroupMinWidth = 8,
-                    boxGroupMaxWidth = 100,
-                    boxGroupSpacing = 10,
-                    boxGroupWidth = undefined,
-                    chartWidth = undefined,
-                    selectionMargin = 30,
-                    transitionDuration = 200;
-
-                var chart = undefined,
-                    boxPlot = undefined,
-                    tooltip = new d3tooltip(d3.select(element[0]));
-
-                var boxGroupArea = undefined,
-                    selectedBoxes = {},
-                    updated = true,
-                    colours = null,
-                    hoverBoxIndex = -1,
-                    currentScrollOffset = 0,
-                    pathname = $window.location.pathname;
-
-                // based on Mike Bostock's code for box plots
-                d3.box = function () {
-                    var width = 1,
-                        height = 1,
-                        domain = null,
-                        value = Number,
-                        whiskers = boxWhiskers,
-                        quartiles = boxQuartiles,
-                        tickFormat = null,
-                        maxWhiskerWidth = 30;
-
-                    // For each small multiple…
-                    function box(g) {
-                        g.each(function (d, i) {
-                            var _this = this;
-
-                            var name = d.name,
-                                colour = colours(d.seriesName);
-                            d = d.data.map(value).sort(d3.ascending);
-                            var g = d3.select(this),
-                                n = d.length,
-                                min = d[0],
-                                max = d[n - 1];
-
-                            // Compute quartiles. Must return exactly 3 elements.
-                            var quartileData = d.quartiles = quartiles(d);
-
-                            // Compute whiskers. Must return exactly 2 elements, or null.
-                            var whiskerIndices = whiskers && whiskers.call(this, d, i),
-                                whiskerData = whiskerIndices && whiskerIndices.map(function (i) {
-                                return d[i];
-                            });
-
-                            // Compute outliers. If no whiskers are specified, all data are "outliers".
-                            // We compute the outliers as indices, so that we can join across transitions!
-                            var outlierIndices = whiskerIndices ? d3.range(0, whiskerIndices[0]).concat(d3.range(whiskerIndices[1] + 1, n)) : d3.range(n);
-
-                            // Compute the new x-scale.
-                            var x1 = d3.scale.linear().domain(domain && domain.call(this, d, i) || [min, max]).range([height, 0]);
-
-                            // Note: the box, median, and box tick elements are fixed in number,
-                            // so we only have to handle enter and update. In contrast, the outliers
-                            // and other elements are variable, so we need to exit them! Variable
-                            // elements also fade in and out.
-
-                            // Update center line: the vertical line spanning the whiskers.
-                            var center = g.selectAll("line.center").data(whiskerData ? [whiskerData] : []);
-
-                            center.enter().insert("line", "rect").attr("class", "center");
-
-                            center.attr("x1", width / 2).attr("x2", width / 2).attr("y1", function (d) {
-                                return x1(d[0]);
-                            }).attr("y2", function (d) {
-                                return x1(d[1]);
-                            });
-
-                            // Update innerquartile box.
-                            var box = g.selectAll("rect.box").data([quartileData]);
-
-                            box.enter().append("rect").attr("class", "box");
-
-                            box.attr("x", 0).attr("y", function (d) {
-                                return x1(d[2]);
-                            }).attr("width", width).attr("height", function (d) {
-                                return x1(d[0]) - x1(d[2]);
-                            });
-
-                            // Update median line.
-                            var medianLine = g.selectAll("line.median").data([quartileData[1]]);
-
-                            medianLine.enter().append("line").attr("class", "median");
-
-                            medianLine.attr("x1", 0).attr("x2", width).attr("y1", x1).attr("y2", x1);
-
-                            // Update whiskers.
-                            var whisker = g.selectAll("line.whisker").data(whiskerData || []);
-
-                            whisker.enter().insert("line", "circle, text").attr("class", "whisker");
-
-                            var whiskerWidth = width.clamp(0, maxWhiskerWidth);
-
-                            whisker.attr("x1", (width - whiskerWidth) / 2).attr("x2", (width + whiskerWidth) / 2).attr("y1", x1).attr("y2", x1);
-
-                            // Update outliers.
-                            var outlier = g.selectAll("circle.outlier").data(outlierIndices, Number);
-
-                            outlier.enter().insert("circle", "text").attr("class", "outlier");
-
-                            outlier.attr("r", 3).attr("cx", width / 2).attr("cy", function (i) {
-                                return x1(d[i]);
-                            }).style("opacity", 1);
-
-                            // Compute the tick format.
-                            var format = tickFormat || x1.tickFormat(100);
-
-                            // Update box ticks.
-                            var boxTick = g.selectAll("text.box").data(quartileData);
-
-                            if (selectedBoxes[name]) {
-                                boxTick.enter().append("text").attr("class", "box");
-
-                                boxTick.attr("dy", ".3em").attr("dx", function (d, i) {
-                                    return i & 1 ? 6 : -6;
-                                }).attr("x", function (d, i) {
-                                    return i & 1 ? width : 0;
-                                }).attr("y", x1).attr("text-anchor", function (d, i) {
-                                    return i & 1 ? "start" : "end";
-                                }).text(format);
-                            } else {
-                                boxTick.remove();
-                            }
-
-                            // Update whisker ticks. These are handled separately from the box
-                            // ticks because they may or may not exist, and we want don't want
-                            // to join box ticks pre-transition with whisker ticks post-.
-                            var whiskerTick = g.selectAll("text.whisker").data(whiskerData || []);
-
-                            if (selectedBoxes[name]) {
-                                whiskerTick.enter().append("text").attr("class", "whisker");
-
-                                whiskerTick.attr("dy", ".3em").attr("dx", 6).attr("x", (width + whiskerWidth) / 2).attr("y", function (d, i) {
-                                    return i ? x1(d) - 3 : x1(d) + 3;
-                                }).text(format);
-                            } else {
-                                whiskerTick.remove();
-                            }
-
-                            var label = g.selectAll("text.box-name").data([name]);
-
-                            label.enter().append("text").attr("class", "box-name");
-
-                            label.attr("dy", "5px").attr("text-anchor", "end").attr("transform", 'translate(' + width / 2 + ',' + (height + 5) + ') rotate(-90)').style("fill", colour).text(function (d) {
-                                return d;
-                            });
-
-                            label.each(function (d) {
-                                var rect = this.getBoundingClientRect();
-                                if (rect.height > margin.bottom) {
-                                    d3.select(this).text(d.slice(0, margin.bottom / rect.height * d.length - 3) + "...");
-                                }
-                            });
-
-                            var clickRect = g.selectAll("rect.click-capture").data([1]);
-
-                            clickRect.enter().append('rect').attr('class', 'click-capture').style('visibility', 'hidden');
-
-                            clickRect.attr('x', function () {
-                                return selectedBoxes[name] ? -selectionMargin : 0;
-                            }).attr('y', 0).attr('width', function () {
-                                return selectedBoxes[name] ? width + 2 * selectionMargin : width;
-                            }).attr('height', height);
-
-                            if (selectedBoxes[name]) {
-                                selectBox();
-                            }
-
-                            clickRect.on("mouseover", function () {
-                                hoverBoxIndex = i;
-                                if (!selectedBoxes[name]) g.call(applyColour);
-                                var text = '<div class="tooltip-colour-box" style="background-color: ' + colour + '"></div>' + ('<span class="tooltip-text">' + name + '</span>');
-                                tooltip.html(text).show().position(getTooltipPosition(_this));
-                            }).on("mouseout", function (d) {
-                                if (!selectedBoxes[name]) g.call(unapplyColour);
-                                tooltip.hide();
-                            }).on("click", click);
-
-                            function getTooltipPosition(boxElement) {
-                                var groupPos = boxElement.getBoundingClientRect();
-                                return [(groupPos.right + groupPos.left) / 2, groupPos.top];
-                            }
-
-                            function click(d) {
-                                if (d3.event.defaultPrevented) return;
-                                if (selectedBoxes[name]) {
-                                    selectedBoxes[name] = false;
-                                    deselectBox();
-                                } else {
-                                    selectedBoxes[name] = true;
-                                    selectBox();
-                                }
-                                update(boxGroupArea, true);
-                                //let tooltipPos = tooltip.position();
-                                //tooltipPos[0] += selectedBoxes[name] ? selectionMargin : -selectionMargin;
-                            }
-
-                            function selectBox() {
-                                g.call(applyColour);
-                            }
-
-                            function deselectBox() {
-                                g.call(unapplyColour);
-                            }
-                        });
-                        d3.timer.flush();
-                    }
-
-                    box.width = function (x) {
-                        if (!arguments.length) return width;
-                        width = x;
-                        return box;
-                    };
-
-                    box.height = function (x) {
-                        if (!arguments.length) return height;
-                        height = x;
-                        return box;
-                    };
-
-                    box.tickFormat = function (x) {
-                        if (!arguments.length) return tickFormat;
-                        tickFormat = x;
-                        return box;
-                    };
-
-                    box.domain = function (x) {
-                        if (!arguments.length) return domain;
-                        domain = x == null ? x : d3.functor(x);
-                        return box;
-                    };
-
-                    box.value = function (x) {
-                        if (!arguments.length) return value;
-                        value = x;
-                        return box;
-                    };
-
-                    box.whiskers = function (x) {
-                        if (!arguments.length) return whiskers;
-                        whiskers = x;
-                        return box;
-                    };
-
-                    box.quartiles = function (x) {
-                        if (!arguments.length) return quartiles;
-                        quartiles = x;
-                        return box;
-                    };
-
-                    return box;
-                };
-
-                function update(target, transitions, newData) {
-                    var selectedCount = 0;
-
-                    var boxContainers = target.selectAll("g.box-container");
-
-                    var data = scope.value.data;
-
-                    if (scope.selected.length) {
-                        data = data.filter(function (d) {
-                            return scope.selected.indexOf(d.name) !== -1;
-                        });
-                    }
-
-                    var extents = [];
-                    // calculate extents of values of every node
-                    data.forEach(function (series) {
-                        extents = extents.concat(d3.extent(series.values));
-                    });
-                    var extent = d3.extent(extents),
-                        min = extent[0],
-                        max = extent[1],
-                        marginRatio = 0.05;
-
-                    var selectedNum = 0;
-
-                    var _iteratorNormalCompletion = true;
-                    var _didIteratorError = false;
-                    var _iteratorError = undefined;
-
-                    try {
-                        for (var _iterator = _getIterator(data), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            var b = _step.value;
-
-                            selectedNum += selectedBoxes[b.name] ? 1 : 0;
-                        }
-
-                        // calculate optimal width of a box plot
-                    } catch (err) {
-                        _didIteratorError = true;
-                        _iteratorError = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion && _iterator['return']) {
-                                _iterator['return']();
-                            }
-                        } finally {
-                            if (_didIteratorError) {
-                                throw _iteratorError;
-                            }
-                        }
-                    }
-
-                    boxGroupWidth = ((width - boxGroupSpacing * (data.length - 1) - selectedNum * selectionMargin * 2) / data.length).clamp(boxGroupMinWidth, boxGroupMaxWidth);
-
-                    // calculate the total width of the whole chart
-                    chartWidth = data.length * (boxGroupWidth + boxGroupSpacing) + selectedNum * selectionMargin * 2 - boxGroupSpacing;
-
-                    // define function for plotting box plots
-                    boxPlot = d3.box().whiskers(iqr(1.5)).width(boxGroupWidth).height(height).domain([(1 - marginRatio) * min, max]);
-
-                    // calculate offset for the left margin to align the plot to the center
-                    var leftMargin = ((width + margin.right + margin.left) / 2 - chartWidth / 2).clamp(margin.left, Infinity);
-
-                    if (leftMargin !== margin.left) currentScrollOffset = 0;
-
-                    var yScale = d3.scale.linear().domain([0.95 * min, max]).range([height, 0]);
-
-                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
-
-                    chart.attr("transform", 'translate(' + 0 + ', ' + margin.top + ')');
-
-                    svg.select("g.axis").attr("transform", 'translate(' + (margin.left - 10) + ',0)').call(yAxis);
-
-                    data = data.map(function (d, i) {
-                        return {
-                            name: d.name,
-                            data: d.values,
-                            seriesName: d.seriesName,
-                            i: i
-                        };
-                    });
-
-                    // bind data
-                    boxContainers = boxContainers.data(data, function (d) {
-                        return d.name;
-                    });
-
-                    // add new containers for new data
-                    boxContainers.enter().append("g").attr("class", "box-container");
-
-                    boxContainers.call(boxPlot);
-
-                    // remove unbound containers
-                    var boxExit = boxContainers.exit();
-                    boxExit.each(function (d) {
-                        return selectedBoxes[d.name] = false;
-                    });
-                    boxExit.remove();
-
-                    var tooltipPos = -100;
-                    // update translation
-                    boxContainers.each(function (d, i) {
-                        var isSelected = selectedBoxes[d.name],
-                            selectedOffset = isSelected ? selectionMargin : 0;
-
-                        d.x = leftMargin + d.i * (boxGroupWidth + boxGroupSpacing) + selectedOffset + (isSelected ? selectedCount++ : selectedCount) * 2 * selectionMargin;
-
-                        if (i === hoverBoxIndex) tooltipPos = [d.x + boxGroupWidth / 2 + currentScrollOffset, this.getBoundingClientRect().top];
-                    });
-
-                    //tooltip.position(tooltipPos);console.log(tooltipPos);
-                    tooltip.move(tooltipPos, transitionDuration);
-
-                    if (width >= Math.floor(chartWidth)) {
-                        updated = true;
-                        d3.select("g.scrollable-box-container").attr("transform", 'translate(0,0)');
-                    }
-
-                    if (transitions) boxContainers = boxContainers.transition().duration(transitionDuration);
-
-                    boxContainers.attr("transform", function (d) {
-                        return 'translate(' + d.x + ', 0)';
-                    });
-                }
-
-                function applyColour(g) {
-                    g.each(function (d, i) {
-                        var n = d3.select(this),
-                            elems = n.selectAll("line, rect, circle"),
-                            circle = n.selectAll("circle"),
-                            colour = colours(d.seriesName);
-
-                        elems.style("stroke", colour);
-                        elems.style("stroke-width", "2px");
-                    });
-                }
-
-                function unapplyColour(g) {
-                    g.each(function (d, i) {
-                        var n = d3.select(this),
-                            elems = n.selectAll("line, rect, circle"),
-                            circle = n.selectAll("circle");
-
-                        elems.style("stroke", "#000");
-                        circle.style("stroke", "#ccc");
-                        elems.style("stroke-width", "1px");
-                    });
-                }
-
-                function render(options) {
-
-                    // clean svg before rendering plot
-                    svg.selectAll('*').remove();
-
-                    var elementWidth = d3.select(element[0]).node().offsetWidth;
-
-                    height = 400 - margin.top - margin.bottom;
-                    width = elementWidth - margin.left - margin.right;
-
-                    // don't continue rendering if there is no data
-                    if (!scope.value) console.warn("No data to render.");
-
-                    colours = d3.scale.category10().domain(scope.value.data.map(function (d) {
-                        return d.seriesName;
-                    }));
-
-                    // set up svg and bind scroll behaviour on drag
-                    svg.data([{ x: 0, y: 0 }]).attr("width", "100%").attr("height", height + margin.top + margin.bottom).call(scroll(dragmove, dragEnd));
-
-                    // define a clip path to clip the box plots outside the scroll area
-                    var clip = svg.append("defs").append("svg:clipPath").attr("id", "clip-box-plot").append("svg:rect").attr("x", margin.left - 5).attr("y", "-20").attr("width", width + 10).attr("height", height * 2);
-
-                    chart = svg.append("g");
-
-                    chart.append("g").attr("class", "axis");
-
-                    var clipBox = chart.append("g").attr("id", "scroll-clip-box").attr("clip-path", 'url(' + pathname + '#clip-box-plot)');
-
-                    boxGroupArea = clipBox.append("g").attr("class", "scrollable-box-container");
-
-                    update(boxGroupArea, options.transitions);
-                }
-
-                function dragEnd() {
-                    d3.event.sourceEvent.stopPropagation();
-                }
-
-                function dragmove(d) {
-                    if (updated) {
-                        d.x = 0;
-                        updated = false;
-                    }
-                    d.x = (d.x + d3.event.dx).clamp(width - chartWidth, 0);
-                    currentScrollOffset = d.x;
-
-                    d3.select("g.scrollable-box-container").attr("transform", 'translate(' + d.x + ',' + d.y + ')');
-                }
-
-                // Handle window resize event.
-                scope.$on('window-resize', function (event) {
-                    render({ transitions: false });
-                });
-
-                scope.$watch("value", function () {
-                    selectedBoxes = {};
-                    render({ transitions: true });
-                });
-
-                scope.$watch("selected", function (selected) {
-                    update(boxGroupArea, true, true);
-                });
-            }
-        };
-    }
-
-    function boxWhiskers(d) {
-        return [0, d.length - 1];
-    }
-
-    function boxQuartiles(d) {
-        return [d3.quantile(d, .25), d3.quantile(d, .5), d3.quantile(d, .75)];
-    }
-
-    // Returns a function to compute the interquartile range.
-    function iqr(k) {
-        return function (d, di) {
-            var q1 = d.quartiles[0],
-                q3 = d.quartiles[2],
-                iqr = (q3 - q1) * k,
-                i = -1,
-                j = d.length;
-            while (d[++i] < q1 - iqr);
-            while (d[--j] > q3 + iqr);
-            return [i, j];
-        };
-    }
-
-    function scroll(dragHandler, dragStopHandler) {
-        var drag = d3.behavior.drag();
-        drag.on("drag", dragHandler).on("dragend", dragStopHandler);
-        return drag;
-    }
-
-    return {
-        setters: [function (_2) {
-            angular = _2['default'];
-        }, function (_3) {
-            d3 = _3['default'];
-        }, function (_) {}, function (_e) {
-            _getIterator = _e['default'];
-        }, function (_b) {}, function (_c) {
-            d3tooltip = _c.d3tooltip;
-        }],
-        execute: function () {
-            'use strict';
-
-            Number.prototype.clamp = function (min, max) {
-                return Math.min(Math.max(this, min), max);
-            };
-            _export('default', angular.module('plotify.box', ['plotify.utils']).directive('boxPlot', BoxPlotDirective));
-        }
-    };
-});
-$__System.register('6', ['1', '2', '12', '13', '15', 'f', 'e', 'b', 'c'], function (_export) {
+$__System.register('6', ['1', '2', '12', '13', '14', 'f', 'e', 'b', 'c'], function (_export) {
     var angular, d3, _Set, _Array$from, _Object$keys, _getIterator, d3tooltip, mergeTemplateLayout, createNodeTypes, createDynamicNodeAttr, roundOffFix, labelCollisionDetection, scaleProperties, getNodeLabelBBox, calcColourBarSize, drawColourBar, layoutTemplate, labelPositions;
 
     function LineageScatterPlotDirective($window, WindowResize) {
@@ -4634,223 +4185,325 @@ $__System.register('6', ['1', '2', '12', '13', '15', 'f', 'e', 'b', 'c'], functi
         }
     };
 });
-$__System.register('9', ['1', '2', '16', '17', 'e', 'a', 'b', 'c'], function (_export) {
-    var angular, d3, _slicedToArray, _getIterator, d3legend, d3tooltip;
+$__System.register('7', ['1', '2', '15', 'e', 'b', 'c'], function (_export) {
+    var angular, d3, _getIterator, d3tooltip;
 
-    function LinePlotDirective($window, WindowResize) {
+    function BoxPlotDirective($window, WindowResize) {
         return {
             restrict: 'EA',
             scope: {
-                value: '='
+                value: '=',
+                selected: '='
             },
             link: function link(scope, element, attributes) {
 
-                element.addClass("plotify plotify-line-plot");
-
-                var height = 0,
-                    width = 0,
-                    margin = { top: 75, right: 70, bottom: 120, left: 70 },
-                    defaultTimeFormat = "%d %b %y",
-                    defaultScalarFormat = null,
-                    xScale = null,
-                    _xScale = null,
-                    yScale = null,
-                    _yScale = null,
-                    xAxis = null,
-                    yAxis = null,
-                    defs = undefined,
-                    tooltip = undefined,
-                    colours = null,
-                    voronoi = null,
-                    voronoiGroup = null,
-                    hoverFocusCircle = undefined,
-                    chart = null,
-                    chartClipArea = null,
-                    line = null,
-                    visibleSeries = {},
-                    transitionDuration = 300;
+                element.addClass("plotify plotify-box-plot");
 
                 var svg = d3.select(element[0]).append("svg").style('width', '100%');
 
-                var marginRatio = { x: 0.1, y: 0.1 },
-                    settings = {
-                    "title": "chart title",
-                    "xAxis": {
-                        "title": "time",
-                        "units": "h"
-                    },
-                    "yAxis": {
-                        "title": "yAxis",
-                        "units": "yUnits"
+                var margin = { top: 40, right: 40, bottom: 120, left: 80 };
+
+                var width = undefined,
+                    height = undefined;
+
+                var boxGroupMinWidth = 8,
+                    boxGroupMaxWidth = 100,
+                    boxGroupSpacing = 10,
+                    boxGroupWidth = undefined,
+                    chartWidth = undefined,
+                    selectionMargin = 30,
+                    transitionDuration = 200;
+
+                var chart = undefined,
+                    boxPlot = undefined,
+                    tooltip = new d3tooltip(d3.select(element[0]));
+
+                var boxGroupArea = undefined,
+                    selectedBoxes = {},
+                    updated = true,
+                    colours = null,
+                    hoverBoxIndex = -1,
+                    currentScrollOffset = 0,
+                    pathname = $window.location.pathname;
+
+                // based on Mike Bostock's code for box plots
+                d3.box = function () {
+                    var width = 1,
+                        height = 1,
+                        domain = null,
+                        value = Number,
+                        whiskers = boxWhiskers,
+                        quartiles = boxQuartiles,
+                        tickFormat = null,
+                        maxWhiskerWidth = 30;
+
+                    // For each small multiple…
+                    function box(g) {
+                        g.each(function (d, i) {
+                            var _this = this;
+
+                            var name = d.name,
+                                colour = colours(d.seriesName);
+                            d = d.data.map(value).sort(d3.ascending);
+                            var g = d3.select(this),
+                                n = d.length,
+                                min = d[0],
+                                max = d[n - 1];
+
+                            // Compute quartiles. Must return exactly 3 elements.
+                            var quartileData = d.quartiles = quartiles(d);
+
+                            // Compute whiskers. Must return exactly 2 elements, or null.
+                            var whiskerIndices = whiskers && whiskers.call(this, d, i),
+                                whiskerData = whiskerIndices && whiskerIndices.map(function (i) {
+                                return d[i];
+                            });
+
+                            // Compute outliers. If no whiskers are specified, all data are "outliers".
+                            // We compute the outliers as indices, so that we can join across transitions!
+                            var outlierIndices = whiskerIndices ? d3.range(0, whiskerIndices[0]).concat(d3.range(whiskerIndices[1] + 1, n)) : d3.range(n);
+
+                            // Compute the new x-scale.
+                            var x1 = d3.scale.linear().domain(domain && domain.call(this, d, i) || [min, max]).range([height, 0]);
+
+                            // Note: the box, median, and box tick elements are fixed in number,
+                            // so we only have to handle enter and update. In contrast, the outliers
+                            // and other elements are variable, so we need to exit them! Variable
+                            // elements also fade in and out.
+
+                            // Update center line: the vertical line spanning the whiskers.
+                            var center = g.selectAll("line.center").data(whiskerData ? [whiskerData] : []);
+
+                            center.enter().insert("line", "rect").attr("class", "center");
+
+                            center.attr("x1", width / 2).attr("x2", width / 2).attr("y1", function (d) {
+                                return x1(d[0]);
+                            }).attr("y2", function (d) {
+                                return x1(d[1]);
+                            });
+
+                            // Update innerquartile box.
+                            var box = g.selectAll("rect.box").data([quartileData]);
+
+                            box.enter().append("rect").attr("class", "box");
+
+                            box.attr("x", 0).attr("y", function (d) {
+                                return x1(d[2]);
+                            }).attr("width", width).attr("height", function (d) {
+                                return x1(d[0]) - x1(d[2]);
+                            });
+
+                            // Update median line.
+                            var medianLine = g.selectAll("line.median").data([quartileData[1]]);
+
+                            medianLine.enter().append("line").attr("class", "median");
+
+                            medianLine.attr("x1", 0).attr("x2", width).attr("y1", x1).attr("y2", x1);
+
+                            // Update whiskers.
+                            var whisker = g.selectAll("line.whisker").data(whiskerData || []);
+
+                            whisker.enter().insert("line", "circle, text").attr("class", "whisker");
+
+                            var whiskerWidth = width.clamp(0, maxWhiskerWidth);
+
+                            whisker.attr("x1", (width - whiskerWidth) / 2).attr("x2", (width + whiskerWidth) / 2).attr("y1", x1).attr("y2", x1);
+
+                            // Update outliers.
+                            var outlier = g.selectAll("circle.outlier").data(outlierIndices, Number);
+
+                            outlier.enter().insert("circle", "text").attr("class", "outlier");
+
+                            outlier.attr("r", 3).attr("cx", width / 2).attr("cy", function (i) {
+                                return x1(d[i]);
+                            }).style("opacity", 1);
+
+                            // Compute the tick format.
+                            var format = tickFormat || x1.tickFormat(100);
+
+                            // Update box ticks.
+                            var boxTick = g.selectAll("text.box").data(quartileData);
+
+                            if (selectedBoxes[name]) {
+                                boxTick.enter().append("text").attr("class", "box");
+
+                                boxTick.attr("dy", ".3em").attr("dx", function (d, i) {
+                                    return i & 1 ? 6 : -6;
+                                }).attr("x", function (d, i) {
+                                    return i & 1 ? width : 0;
+                                }).attr("y", x1).attr("text-anchor", function (d, i) {
+                                    return i & 1 ? "start" : "end";
+                                }).text(format);
+                            } else {
+                                boxTick.remove();
+                            }
+
+                            // Update whisker ticks. These are handled separately from the box
+                            // ticks because they may or may not exist, and we want don't want
+                            // to join box ticks pre-transition with whisker ticks post-.
+                            var whiskerTick = g.selectAll("text.whisker").data(whiskerData || []);
+
+                            if (selectedBoxes[name]) {
+                                whiskerTick.enter().append("text").attr("class", "whisker");
+
+                                whiskerTick.attr("dy", ".3em").attr("dx", 6).attr("x", (width + whiskerWidth) / 2).attr("y", function (d, i) {
+                                    return i ? x1(d) - 3 : x1(d) + 3;
+                                }).text(format);
+                            } else {
+                                whiskerTick.remove();
+                            }
+
+                            var label = g.selectAll("text.box-name").data([name]);
+
+                            label.enter().append("text").attr("class", "box-name");
+
+                            label.attr("dy", "5px").attr("text-anchor", "end").attr("transform", 'translate(' + width / 2 + ',' + (height + 5) + ') rotate(-90)').style("fill", colour).text(function (d) {
+                                return d;
+                            });
+
+                            label.each(function (d) {
+                                var rect = this.getBoundingClientRect();
+                                if (rect.height > margin.bottom) {
+                                    d3.select(this).text(d.slice(0, margin.bottom / rect.height * d.length - 3) + "...");
+                                }
+                            });
+
+                            var clickRect = g.selectAll("rect.click-capture").data([1]);
+
+                            clickRect.enter().append('rect').attr('class', 'click-capture').style('visibility', 'hidden');
+
+                            clickRect.attr('x', function () {
+                                return selectedBoxes[name] ? -selectionMargin : 0;
+                            }).attr('y', 0).attr('width', function () {
+                                return selectedBoxes[name] ? width + 2 * selectionMargin : width;
+                            }).attr('height', height);
+
+                            if (selectedBoxes[name]) {
+                                selectBox();
+                            }
+
+                            clickRect.on("mouseover", function () {
+                                hoverBoxIndex = i;
+                                if (!selectedBoxes[name]) g.call(applyColour);
+                                var text = '<div class="tooltip-colour-box" style="background-color: ' + colour + '"></div>' + ('<span class="tooltip-text">' + name + '</span>');
+                                tooltip.html(text).show().position(getTooltipPosition(_this));
+                            }).on("mouseout", function (d) {
+                                if (!selectedBoxes[name]) g.call(unapplyColour);
+                                tooltip.hide();
+                            }).on("click", click);
+
+                            function getTooltipPosition(boxElement) {
+                                var groupPos = boxElement.getBoundingClientRect();
+                                return [(groupPos.right + groupPos.left) / 2, groupPos.top];
+                            }
+
+                            function click(d) {
+                                if (d3.event.defaultPrevented) return;
+                                if (selectedBoxes[name]) {
+                                    selectedBoxes[name] = false;
+                                    deselectBox();
+                                } else {
+                                    selectedBoxes[name] = true;
+                                    selectBox();
+                                }
+                                update(boxGroupArea, true);
+                                //let tooltipPos = tooltip.position();
+                                //tooltipPos[0] += selectedBoxes[name] ? selectionMargin : -selectionMargin;
+                            }
+
+                            function selectBox() {
+                                g.call(applyColour);
+                            }
+
+                            function deselectBox() {
+                                g.call(unapplyColour);
+                            }
+                        });
+                        d3.timer.flush();
                     }
+
+                    box.width = function (x) {
+                        if (!arguments.length) return width;
+                        width = x;
+                        return box;
+                    };
+
+                    box.height = function (x) {
+                        if (!arguments.length) return height;
+                        height = x;
+                        return box;
+                    };
+
+                    box.tickFormat = function (x) {
+                        if (!arguments.length) return tickFormat;
+                        tickFormat = x;
+                        return box;
+                    };
+
+                    box.domain = function (x) {
+                        if (!arguments.length) return domain;
+                        domain = x == null ? x : d3.functor(x);
+                        return box;
+                    };
+
+                    box.value = function (x) {
+                        if (!arguments.length) return value;
+                        value = x;
+                        return box;
+                    };
+
+                    box.whiskers = function (x) {
+                        if (!arguments.length) return whiskers;
+                        whiskers = x;
+                        return box;
+                    };
+
+                    box.quartiles = function (x) {
+                        if (!arguments.length) return quartiles;
+                        quartiles = x;
+                        return box;
+                    };
+
+                    return box;
                 };
 
-                tooltip = new d3tooltip(d3.select(element[0]));
+                function update(target, transitions, newData) {
+                    var selectedCount = 0;
 
-                function update(data) {
+                    var boxContainers = target.selectAll("g.box-container");
 
-                    data = data.filter(function (d) {
-                        return visibleSeries[d.name];
-                    });
+                    var data = scope.value.data;
 
-                    var _calculateExtents = calculateExtents(data);
-
-                    var _calculateExtents2 = _slicedToArray(_calculateExtents, 2);
-
-                    var xExtent = _calculateExtents2[0];
-                    var yExtent = _calculateExtents2[1];
-                    var voronoiData = [];
-
-                    _yScale = yScale.copy();
-                    _xScale = xScale.copy();
-
-                    var lineOld = d3.svg.line().interpolate("basis").x(function (d) {
-                        return _xScale(d[0]);
-                    }).y(function (d) {
-                        return _yScale(d[1]);
-                    });
-
-                    if (data.length) {
-                        xScale.domain(xExtent);
-                        yScale.domain(yExtent);
-                        var t = chart.transition().duration(transitionDuration);
-
-                        t.select("g.x-axis").call(xAxis);
-                        t.select("g.y-axis").call(yAxis);
+                    if (scope.selected.length) {
+                        data = data.filter(function (d) {
+                            return scope.selected.indexOf(d.name) !== -1;
+                        });
                     }
 
-                    defs.select("g.voronoi-clips").selectAll("clipPath.voronoi-clip").remove();
-                    voronoiGroup.selectAll("path").remove();
-
-                    var series = chartClipArea.selectAll("g.series").data(data, function (d) {
-                        return d.name;
+                    var extents = [];
+                    // calculate extents of values of every node
+                    data.forEach(function (series) {
+                        extents = extents.concat(d3.extent(series.values));
                     });
+                    var extent = d3.extent(extents),
+                        min = extent[0],
+                        max = extent[1],
+                        marginRatio = 0.05;
 
-                    var newSeries = [];
-
-                    series.enter().append("g").attr("class", "series").each(function (d) {
-                        return newSeries.push(d.name);
-                    });
-
-                    series.exit().each(function (d, i) {
-                        var sel = d3.select(this);
-                        if (d.drawLine) {
-                            sel.select("path.series-line").style("stroke", function (d) {
-                                return colours(d.name);
-                            }).transition().duration(transitionDuration).attr("d", function (d) {
-                                return line(d.values);
-                            }).style("opacity", 0).remove();
-                        }
-                        if (d.drawDot) {
-                            sel.selectAll("circle.series-dot").transition().duration(transitionDuration).attr("cx", function (d) {
-                                return xScale(d[0]);
-                            }).attr("cy", function (d) {
-                                return yScale(d[1]);
-                            }).style("opacity", 0).remove();
-                        }
-                        sel.transition().delay(transitionDuration).remove();
-                    });
-
-                    series.each(function (d, i) {
-                        var sel = d3.select(this),
-                            self = this,
-                            isNew = newSeries.indexOf(d.name) !== -1;
-
-                        var seriesLine = sel.selectAll("path.series-line").data([d], function (d) {
-                            return d.name;
-                        });
-
-                        seriesLine.enter().append("path").attr("class", "series-line");
-
-                        seriesLine.attr("d", function (d) {
-                            return lineOld(d.values);
-                        }).style("stroke", function (d) {
-                            return colours(d.name);
-                        }).style("opacity", !d.drawLine || isNew ? 0 : 1).transition().duration(transitionDuration).attr("d", function (d) {
-                            return line(d.values);
-                        }).style("opacity", d.drawLine ? 1 : 0);
-
-                        var seriesDot = sel.selectAll("circle.series-dot").data(function (d) {
-                            return d.values;
-                        });
-
-                        seriesDot.enter().append("circle").attr("class", "series-dot");
-
-                        seriesDot.attr("r", 4).attr("cx", function (d) {
-                            return _xScale(d[0]);
-                        }).attr("cy", function (d) {
-                            return _yScale(d[1]);
-                        }).attr("fill", colours(d.name)).style("opacity", !d.drawDot || isNew ? 0 : 1).style("stroke", "white").transition().duration(transitionDuration).attr("cx", function (d) {
-                            return xScale(d[0]);
-                        }).attr("cy", function (d) {
-                            return yScale(d[1]);
-                        }).style("opacity", d.drawDot ? 1 : 0);
-
-                        seriesDot.each(function (d, i) {
-                            d.circle = this;
-                            d.series = self;
-                            d[0] += Math.random() * 10E-4;
-                            d[1] += Math.random() * 10E-4;
-                            voronoiData.push(d);
-                        });
-                    });
-
-                    // define the clipPath
-                    defs.select("g.voronoi-clips").selectAll("clipPath").data(voronoiData).enter().append("clipPath").attr("id", function (d, i) {
-                        return 'lp-voronoi-clip-id' + i;
-                    }).attr("class", "voronoi-clip").append("circle").attr("cx", function (d) {
-                        return xScale(d[0]);
-                    }).attr("cy", function (d) {
-                        return yScale(d[1]);
-                    }).attr("r", 25);
-
-                    voronoiGroup.selectAll("path").data(voronoi(voronoiData)).enter().append("path").attr("d", function (d) {
-                        return "M" + d.join("L") + "Z";
-                    }).attr("clip-path", function (d, i) {
-                        return 'url(#lp-voronoi-clip-id' + i + ')';
-                    }).datum(function (d) {
-                        return d.point;
-                    }).on("mouseover", voronoiMouseover).on("mouseout", voronoiMouseout);
-
-                    function voronoiMouseover(d) {
-                        hoverFocusCircle.attr("fill", colours(d.series.__data__.name)).attr("r", 5).attr("transform", 'translate(' + xScale(d[0]) + ',' + yScale(d[1]) + ')');
-
-                        var groupPos = d.circle.getBoundingClientRect(),
-                            xPos = groupPos.left + groupPos.width / 2,
-                            yPos = groupPos.top,
-                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series.__data__.name) + '"></div>' + ('<span class="tooltip-text">' + d.series.__data__.name + '</span>') + ('<span>x: ' + d[0].toFixed(1) + '</span>') + ('<span>y: ' + d[1].toFixed(1) + '</span>');
-
-                        tooltip.position([xPos, yPos]).html(text).show();
-                    }
-                    function voronoiMouseout(d) {
-                        hoverFocusCircle.attr("transform", "translate(-200, -200)");
-                        tooltip.hide();
-                    }
-                }
-
-                function render(options) {
-
-                    // clean svg before rendering plot
-                    svg.selectAll('*').remove();
-
-                    // don't continue rendering if there is no data
-                    if (!scope.value || !scope.value.series.length) return;
-
-                    var data = scope.value.series,
-                        seriesNames = data.map(function (d) {
-                        return d.name;
-                    });
+                    var selectedNum = 0;
 
                     var _iteratorNormalCompletion = true;
                     var _didIteratorError = false;
                     var _iteratorError = undefined;
 
                     try {
-                        for (var _iterator = _getIterator(seriesNames), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            var _name = _step.value;
+                        for (var _iterator = _getIterator(data), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var b = _step.value;
 
-                            visibleSeries[_name] = true;
+                            selectedNum += selectedBoxes[b.name] ? 1 : 0;
                         }
+
+                        // calculate optimal width of a box plot
                     } catch (err) {
                         _didIteratorError = true;
                         _iteratorError = err;
@@ -4866,205 +4519,218 @@ $__System.register('9', ['1', '2', '16', '17', 'e', 'a', 'b', 'c'], function (_e
                         }
                     }
 
-                    data = data.map(function (d) {
-                        d.drawLine = !options.drawLines || options.drawLines.indexOf(d.name) !== -1;
-                        d.drawDot = !options.drawDots || !d.drawLine || options.drawDots.indexOf(d.name) !== -1;
-                        return d;
+                    boxGroupWidth = ((width - boxGroupSpacing * (data.length - 1) - selectedNum * selectionMargin * 2) / data.length).clamp(boxGroupMinWidth, boxGroupMaxWidth);
+
+                    // calculate the total width of the whole chart
+                    chartWidth = data.length * (boxGroupWidth + boxGroupSpacing) + selectedNum * selectionMargin * 2 - boxGroupSpacing;
+
+                    // define function for plotting box plots
+                    boxPlot = d3.box().whiskers(iqr(1.5)).width(boxGroupWidth).height(height).domain([(1 - marginRatio) * min, max]);
+
+                    // calculate offset for the left margin to align the plot to the center
+                    var leftMargin = ((width + margin.right + margin.left) / 2 - chartWidth / 2).clamp(margin.left, Infinity);
+
+                    if (leftMargin !== margin.left) currentScrollOffset = 0;
+
+                    var yScale = d3.scale.linear().domain([0.95 * min, max]).range([height, 0]);
+
+                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
+
+                    chart.attr("transform", 'translate(' + 0 + ', ' + margin.top + ')');
+
+                    svg.select("g.axis").attr("transform", 'translate(' + (margin.left - 10) + ',0)').call(yAxis);
+
+                    data = data.map(function (d, i) {
+                        return {
+                            name: d.name,
+                            data: d.values,
+                            seriesName: d.seriesName,
+                            i: i
+                        };
                     });
+
+                    // bind data
+                    boxContainers = boxContainers.data(data, function (d) {
+                        return d.name;
+                    });
+
+                    // add new containers for new data
+                    boxContainers.enter().append("g").attr("class", "box-container");
+
+                    boxContainers.call(boxPlot);
+
+                    // remove unbound containers
+                    var boxExit = boxContainers.exit();
+                    boxExit.each(function (d) {
+                        return selectedBoxes[d.name] = false;
+                    });
+                    boxExit.remove();
+
+                    var tooltipPos = -100;
+                    // update translation
+                    boxContainers.each(function (d, i) {
+                        var isSelected = selectedBoxes[d.name],
+                            selectedOffset = isSelected ? selectionMargin : 0;
+
+                        d.x = leftMargin + d.i * (boxGroupWidth + boxGroupSpacing) + selectedOffset + (isSelected ? selectedCount++ : selectedCount) * 2 * selectionMargin;
+
+                        if (i === hoverBoxIndex) tooltipPos = [d.x + boxGroupWidth / 2 + currentScrollOffset, this.getBoundingClientRect().top];
+                    });
+
+                    //tooltip.position(tooltipPos);console.log(tooltipPos);
+                    tooltip.move(tooltipPos, transitionDuration);
+
+                    if (width >= Math.floor(chartWidth)) {
+                        updated = true;
+                        d3.select("g.scrollable-box-container").attr("transform", 'translate(0,0)');
+                    }
+
+                    if (transitions) boxContainers = boxContainers.transition().duration(transitionDuration);
+
+                    boxContainers.attr("transform", function (d) {
+                        return 'translate(' + d.x + ', 0)';
+                    });
+                }
+
+                function applyColour(g) {
+                    g.each(function (d, i) {
+                        var n = d3.select(this),
+                            elems = n.selectAll("line, rect, circle"),
+                            circle = n.selectAll("circle"),
+                            colour = colours(d.seriesName);
+
+                        elems.style("stroke", colour);
+                        elems.style("stroke-width", "2px");
+                    });
+                }
+
+                function unapplyColour(g) {
+                    g.each(function (d, i) {
+                        var n = d3.select(this),
+                            elems = n.selectAll("line, rect, circle"),
+                            circle = n.selectAll("circle");
+
+                        elems.style("stroke", "#000");
+                        circle.style("stroke", "#ccc");
+                        elems.style("stroke-width", "1px");
+                    });
+                }
+
+                function render(options) {
+
+                    // clean svg before rendering plot
+                    svg.selectAll('*').remove();
 
                     var elementWidth = d3.select(element[0]).node().offsetWidth;
 
+                    height = 400 - margin.top - margin.bottom;
                     width = elementWidth - margin.left - margin.right;
-                    height = 600 - margin.top - margin.bottom;
 
-                    colours = d3.scale.category10().domain(data.map(function (d) {
-                        return d.name;
+                    // don't continue rendering if there is no data
+                    if (!scope.value) console.warn("No data to render.");
+
+                    colours = d3.scale.category10().domain(scope.value.data.map(function (d) {
+                        return d.seriesName;
                     }));
 
-                    // define x and y axes formats
-                    var xAxisFormat = d3.time.format(defaultTimeFormat),
-                        yAxisFormat = d3.format(defaultScalarFormat),
-                        xAxisLabel = settings.xAxis.title,
-                        yAxisLabel = settings.yAxis.title,
-                        xAxisUnits = settings.xAxis.units,
-                        yAxisUnits = settings.yAxis.units,
-                        chartTitle = settings.title,
-                        titleSize = 20;
+                    // set up svg and bind scroll behaviour on drag
+                    svg.data([{ x: 0, y: 0 }]).attr("width", "100%").attr("height", height + margin.top + margin.bottom).call(scroll(dragmove, dragEnd));
 
-                    var _calculateExtents3 = calculateExtents(data);
+                    // define a clip path to clip the box plots outside the scroll area
+                    var clip = svg.append("defs").append("svg:clipPath").attr("id", "clip-box-plot").append("svg:rect").attr("x", margin.left - 5).attr("y", "-20").attr("width", width + 10).attr("height", height * 2);
 
-                    var _calculateExtents32 = _slicedToArray(_calculateExtents3, 2);
+                    chart = svg.append("g");
 
-                    var xExtent = _calculateExtents32[0];
-                    var yExtent = _calculateExtents32[1];
+                    chart.append("g").attr("class", "axis");
 
-                    // define x scale
-                    xScale = d3.scale.linear().domain(xExtent).range([0, width]);
+                    var clipBox = chart.append("g").attr("id", "scroll-clip-box").attr("clip-path", 'url(' + pathname + '#clip-box-plot)');
 
-                    // define y scale
-                    yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
+                    boxGroupArea = clipBox.append("g").attr("class", "scrollable-box-container");
 
-                    // define x axis
-                    xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height).tickPadding(5);
-                    //.tickFormat(xAxisFormat);
-
-                    // define y axis
-                    yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
-                    //.tickFormat(yAxisFormat);
-
-                    line = d3.svg.line().interpolate("basis").x(function (d) {
-                        return xScale(d[0]);
-                    }).y(function (d) {
-                        return yScale(d[1]);
-                    });
-
-                    voronoi = d3.geom.voronoi().x(function (d) {
-                        return xScale(d[0]) + Math.random() * 0.001;
-                    }).y(function (d) {
-                        return yScale(d[1]) + Math.random() * 0.001;
-                    }).clipExtent([[xScale.range()[0], yScale.range()[1]], [xScale.range()[1], yScale.range()[0]]]);
-
-                    // render chart area
-                    chart = svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')');
-
-                    defs = svg.append("defs");
-
-                    var clip = defs.append("svg:clipPath").attr("id", "clip-line-plot").append("svg:rect").attr("id", "clip-rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
-
-                    defs.append("g").attr("class", "voronoi-clips");
-
-                    chartClipArea = chart.append("g").attr("id", "chart-clip-box").attr("clip-path", "url(#clip-line-plot)");
-
-                    hoverFocusCircle = chart.append("circle").attr("id", "hover-focus-circle").attr("transform", "translate(-200, -200)");
-
-                    voronoiGroup = chart.append("g").attr("class", "voronoi");
-
-                    // render x axis
-                    chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
-
-                    // render y axis
-                    chart.append("g").attr("class", "axis y-axis").call(yAxis);
-
-                    // render chart title
-                    if (chartTitle) {
-                        chart.append("text").attr("x", width / 2).attr("y", -margin.top + titleSize + 10).attr("text-anchor", "middle").style("font-size", titleSize + 'px').text(chartTitle);
-                    }
-
-                    // render x axis label if exists
-                    if (xAxisLabel) {
-                        var tickHeight = chart.selectAll("g.x-axis g.tick text")[0][0].getBBox().height;
-                        xAxisLabel += xAxisUnits ? ', ' + xAxisUnits : "";
-                        chart.append("text") // text label for the x axis
-                        .style("text-anchor", "middle").text(xAxisLabel).attr("transform", 'translate(' + width / 2 + ', ' + (height + tickHeight + 30) + ')');
-                    }
-
-                    // render y axis label if exists
-                    if (yAxisLabel) {
-                        yAxisLabel += yAxisUnits ? ', ' + yAxisUnits : "";
-                        chart.append("text") // text label for the y axis
-                        .attr("transform", "rotate(-90)").attr("y", -margin.left + 10).attr("x", -(height / 2)).attr("dy", "1em").style("text-anchor", "middle").text(yAxisLabel);
-                    }
-
-                    update(data);
-
-                    var drawLegend = d3legend().splitAfter(0).seriesNames(seriesNames).colourScale(colours).anchorHorizontal("right").anchorVertical("bottom").onMouseOver(legendMouseOver).onMouseOut(legendMouseOut).onClick(legendClick).selectedItems(visibleSeries);
-
-                    var legend = chart.append("g").attr("class", "plotify-legend").attr("transform", 'translate(' + width + ',' + 0 + ')').call(drawLegend);
-
-                    function legendMouseOver(label) {
-                        var focusItem = d3.select(this);
-                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", true);
-                        focusItem.classed("legend-item-unfocused", false);
-
-                        chart.selectAll("g.series").classed("series-unfocused-path", function (d) {
-                            return d.drawLine ? true : false;
-                        }).classed("series-unfocused-dots", function (d) {
-                            return d.drawDot ? true : false;
-                        }).filter(function (d) {
-                            return d.name === label;
-                        }).classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", true);
-                    }
-
-                    function legendMouseOut(label) {
-                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", false);
-                        chart.selectAll("g.series").classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", false);
-                    }
-
-                    function legendClick(label) {
-                        var clicked = d3.select(this);
-                        visibleSeries[label] = !visibleSeries[label];
-                        clicked.classed("legend-item-selected", visibleSeries[label]);
-                        clicked.select("rect.shape").attr("fill", visibleSeries[label] ? colours(label) : "white");
-                        update(data);
-                    }
+                    update(boxGroupArea, options.transitions);
                 }
 
-                function calculateExtents(data) {
-                    var xExtents = [],
-                        yExtents = [];
+                function dragEnd() {
+                    d3.event.sourceEvent.stopPropagation();
+                }
 
-                    data.forEach(function (series) {
-                        var xValues = series.values.map(function (d) {
-                            return d[0];
-                        });
-                        var yValues = series.values.map(function (d) {
-                            return d[1];
-                        });
-                        xExtents = xExtents.concat(d3.extent(xValues));
-                        yExtents = yExtents.concat(d3.extent(yValues));
-                    });
+                function dragmove(d) {
+                    if (updated) {
+                        d.x = 0;
+                        updated = false;
+                    }
+                    d.x = (d.x + d3.event.dx).clamp(width - chartWidth, 0);
+                    currentScrollOffset = d.x;
 
-                    var xExtent = d3.extent(xExtents),
-                        yExtent = d3.extent(yExtents);
-
-                    // find extent of input data and calculate margins
-                    var xMargin = marginRatio.x * (xExtent[1] - xExtent[0]) / 2,
-                        yMargin = marginRatio.y * (yExtent[1] - yExtent[0]) / 2;
-
-                    // add margins to horizontal axis data
-                    xExtent[0] -= xMargin;
-                    xExtent[1] += xMargin;
-
-                    // add margins to vertical axis data
-                    yExtent[0] -= yMargin;
-                    yExtent[1] += yMargin;
-
-                    return [xExtent, yExtent];
+                    d3.select("g.scrollable-box-container").attr("transform", 'translate(' + d.x + ',' + d.y + ')');
                 }
 
                 // Handle window resize event.
                 scope.$on('window-resize', function (event) {
-                    render({ drawLines: ["series 2", "series 3"] });
+                    render({ transitions: false });
                 });
 
                 scope.$watch("value", function () {
-                    render({ drawLines: ["series 1", "series 3", "series 4", "series 5"], drawDots: ["series 1", "series 5", "series 5"] });
+                    selectedBoxes = {};
+                    render({ transitions: true });
+                });
+
+                scope.$watch("selected", function (selected) {
+                    update(boxGroupArea, true, true);
                 });
             }
         };
     }
 
+    function boxWhiskers(d) {
+        return [0, d.length - 1];
+    }
+
+    function boxQuartiles(d) {
+        return [d3.quantile(d, .25), d3.quantile(d, .5), d3.quantile(d, .75)];
+    }
+
+    // Returns a function to compute the interquartile range.
+    function iqr(k) {
+        return function (d, di) {
+            var q1 = d.quartiles[0],
+                q3 = d.quartiles[2],
+                iqr = (q3 - q1) * k,
+                i = -1,
+                j = d.length;
+            while (d[++i] < q1 - iqr);
+            while (d[--j] > q3 + iqr);
+            return [i, j];
+        };
+    }
+
+    function scroll(dragHandler, dragStopHandler) {
+        var drag = d3.behavior.drag();
+        drag.on("drag", dragHandler).on("dragend", dragStopHandler);
+        return drag;
+    }
+
     return {
-        setters: [function (_3) {
-            angular = _3['default'];
-        }, function (_4) {
-            d3 = _4['default'];
-        }, function (_2) {}, function (_) {
-            _slicedToArray = _['default'];
-        }, function (_e) {
+        setters: [function (_2) {
+            angular = _2['default'];
+        }, function (_3) {
+            d3 = _3['default'];
+        }, function (_) {}, function (_e) {
             _getIterator = _e['default'];
-        }, function (_a) {}, function (_b) {}, function (_c) {
-            d3legend = _c.d3legend;
+        }, function (_b) {}, function (_c) {
             d3tooltip = _c.d3tooltip;
         }],
         execute: function () {
             'use strict';
 
-            _export('default', angular.module('plotify.line', ['plotify.utils']).directive('linePlot', LinePlotDirective));
+            Number.prototype.clamp = function (min, max) {
+                return Math.min(Math.max(this, min), max);
+            };
+            _export('default', angular.module('plotify.box', ['plotify.utils']).directive('boxPlot', BoxPlotDirective));
         }
     };
 });
-$__System.register('8', ['1', '2', '18', 'b', 'c'], function (_export) {
+$__System.register('8', ['1', '2', '16', 'b', 'c'], function (_export) {
     'use strict';
 
     var angular, d3, d3tooltip;
@@ -5416,29 +5082,449 @@ $__System.register('8', ['1', '2', '18', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.register('b', ['1'], function (_export) {
-    'use strict';
+$__System.register('9', ['1', '2', '12', '17', '18', 'e', 'a', 'b', 'c'], function (_export) {
+    var angular, d3, _Set, _slicedToArray, _getIterator, d3legend, d3tooltip;
 
-    var angular;
+    function LinePlotDirective($window, WindowResize) {
+        return {
+            restrict: 'EA',
+            scope: {
+                value: '='
+            },
+            link: function link(scope, element, attributes) {
 
-    function WindowResize($window, $rootScope) {
-        var window = angular.element($window);
-        var width = window[0].innerWidth;
+                element.addClass("plotify plotify-line-plot");
 
-        angular.element($window).on('resize', function (event) {
-            var newWidth = window[0].innerWidth;
-            if (width != newWidth) {
-                $rootScope.$broadcast('window-resize', width = newWidth);
+                var height = 0,
+                    width = 0,
+                    margin = { top: 75, right: 70, bottom: 120, left: 70 },
+                    defaultTimeFormat = "%d %b %y",
+                    defaultScalarFormat = null,
+                    xScale = null,
+                    _xScale = null,
+                    yScale = null,
+                    _yScale = null,
+                    xAxis = null,
+                    yAxis = null,
+                    defs = undefined,
+                    tooltip = undefined,
+                    colours = null,
+                    voronoi = null,
+                    voronoiGroup = null,
+                    hoverFocusCircle = undefined,
+                    chart = null,
+                    chartClipArea = null,
+                    line = null,
+                    visibleSeries = new _Set(),
+                    transitionDuration = 300;
+
+                var svg = d3.select(element[0]).append("svg").style('width', '100%');
+
+                var marginRatio = { x: 0.1, y: 0.1 },
+                    settings = {
+                    "title": "chart title",
+                    "xAxis": {
+                        "title": "time",
+                        "units": "h"
+                    },
+                    "yAxis": {
+                        "title": "yAxis",
+                        "units": "yUnits"
+                    }
+                };
+
+                tooltip = new d3tooltip(d3.select(element[0]));
+
+                function update(data) {
+
+                    data = data.filter(function (d) {
+                        return visibleSeries.has(d.name);
+                    });
+
+                    var _calculateExtents = calculateExtents(data);
+
+                    var _calculateExtents2 = _slicedToArray(_calculateExtents, 2);
+
+                    var xExtent = _calculateExtents2[0];
+                    var yExtent = _calculateExtents2[1];
+                    var voronoiData = [];
+
+                    _yScale = yScale.copy();
+                    _xScale = xScale.copy();
+
+                    var lineOld = d3.svg.line().interpolate("basis").x(function (d) {
+                        return _xScale(d[0]);
+                    }).y(function (d) {
+                        return _yScale(d[1]);
+                    });
+
+                    if (data.length) {
+                        xScale.domain(xExtent);
+                        yScale.domain(yExtent);
+                        var t = chart.transition().duration(transitionDuration);
+
+                        t.select("g.x-axis").call(xAxis);
+                        t.select("g.y-axis").call(yAxis);
+                    }
+
+                    defs.select("g.voronoi-clips").selectAll("clipPath.voronoi-clip").remove();
+                    voronoiGroup.selectAll("path").remove();
+
+                    var series = chartClipArea.selectAll("g.series").data(data, function (d) {
+                        return d.name;
+                    });
+
+                    var newSeries = [];
+
+                    series.enter().append("g").attr("class", "series").each(function (d) {
+                        return newSeries.push(d.name);
+                    });
+
+                    series.exit().each(function (d, i) {
+                        var sel = d3.select(this);
+                        if (d.drawLine) {
+                            sel.select("path.series-line").style("stroke", function (d) {
+                                return colours(d.name);
+                            }).transition().duration(transitionDuration).attr("d", function (d) {
+                                return line(d.values);
+                            }).style("opacity", 0).remove();
+                        }
+                        if (d.drawDot) {
+                            sel.selectAll("circle.series-dot").transition().duration(transitionDuration).attr("cx", function (d) {
+                                return xScale(d[0]);
+                            }).attr("cy", function (d) {
+                                return yScale(d[1]);
+                            }).style("opacity", 0).remove();
+                        }
+                        sel.transition().delay(transitionDuration).remove();
+                    });
+
+                    series.each(function (d, i) {
+                        var sel = d3.select(this),
+                            self = this,
+                            isNew = newSeries.indexOf(d.name) !== -1;
+
+                        var seriesLine = sel.selectAll("path.series-line").data([d], function (d) {
+                            return d.name;
+                        });
+
+                        seriesLine.enter().append("path").attr("class", "series-line");
+
+                        seriesLine.attr("d", function (d) {
+                            return lineOld(d.values);
+                        }).style("stroke", function (d) {
+                            return colours(d.name);
+                        }).style("opacity", !d.drawLine || isNew ? 0 : 1).transition().duration(transitionDuration).attr("d", function (d) {
+                            return line(d.values);
+                        }).style("opacity", d.drawLine ? 1 : 0);
+
+                        var seriesDot = sel.selectAll("circle.series-dot").data(function (d) {
+                            return d.values;
+                        });
+
+                        seriesDot.enter().append("circle").attr("class", "series-dot");
+
+                        seriesDot.attr("r", 4).attr("cx", function (d) {
+                            return _xScale(d[0]);
+                        }).attr("cy", function (d) {
+                            return _yScale(d[1]);
+                        }).attr("fill", colours(d.name)).style("opacity", !d.drawDot || isNew ? 0 : 1).style("stroke", "white").transition().duration(transitionDuration).attr("cx", function (d) {
+                            return xScale(d[0]);
+                        }).attr("cy", function (d) {
+                            return yScale(d[1]);
+                        }).style("opacity", d.drawDot ? 1 : 0);
+
+                        seriesDot.each(function (d, i) {
+                            d.circle = this;
+                            d.series = self;
+                            d[0] += Math.random() * 10E-4;
+                            d[1] += Math.random() * 10E-4;
+                            voronoiData.push(d);
+                        });
+                    });
+
+                    // define the clipPath
+                    defs.select("g.voronoi-clips").selectAll("clipPath").data(voronoiData).enter().append("clipPath").attr("id", function (d, i) {
+                        return 'lp-voronoi-clip-id' + i;
+                    }).attr("class", "voronoi-clip").append("circle").attr("cx", function (d) {
+                        return xScale(d[0]);
+                    }).attr("cy", function (d) {
+                        return yScale(d[1]);
+                    }).attr("r", 25);
+
+                    voronoiGroup.selectAll("path").data(voronoi(voronoiData)).enter().append("path").attr("d", function (d) {
+                        return "M" + d.join("L") + "Z";
+                    }).attr("clip-path", function (d, i) {
+                        return 'url(#lp-voronoi-clip-id' + i + ')';
+                    }).datum(function (d) {
+                        return d.point;
+                    }).on("mouseover", voronoiMouseover).on("mouseout", voronoiMouseout);
+
+                    function voronoiMouseover(d) {
+                        hoverFocusCircle.attr("fill", colours(d.series.__data__.name)).attr("r", 5).attr("transform", 'translate(' + xScale(d[0]) + ',' + yScale(d[1]) + ')');
+
+                        var groupPos = d.circle.getBoundingClientRect(),
+                            xPos = groupPos.left + groupPos.width / 2,
+                            yPos = groupPos.top,
+                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series.__data__.name) + '"></div>' + ('<span class="tooltip-text">' + d.series.__data__.name + '</span>') + ('<span>x: ' + d[0].toFixed(1) + '</span>') + ('<span>y: ' + d[1].toFixed(1) + '</span>');
+
+                        tooltip.position([xPos, yPos]).html(text).show();
+                    }
+                    function voronoiMouseout(d) {
+                        hoverFocusCircle.attr("transform", "translate(-200, -200)");
+                        tooltip.hide();
+                    }
+                }
+
+                function render(options) {
+
+                    // clean svg before rendering plot
+                    svg.selectAll('*').remove();
+
+                    // don't continue rendering if there is no data
+                    if (!scope.value || !scope.value.series.length) return;
+
+                    var data = scope.value.series,
+                        seriesNames = data.map(function (d) {
+                        return d.name;
+                    });
+
+                    var _iteratorNormalCompletion = true;
+                    var _didIteratorError = false;
+                    var _iteratorError = undefined;
+
+                    try {
+                        for (var _iterator = _getIterator(seriesNames), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var _name = _step.value;
+
+                            visibleSeries.add(_name);
+                        }
+                    } catch (err) {
+                        _didIteratorError = true;
+                        _iteratorError = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion && _iterator['return']) {
+                                _iterator['return']();
+                            }
+                        } finally {
+                            if (_didIteratorError) {
+                                throw _iteratorError;
+                            }
+                        }
+                    }
+
+                    data = data.map(function (d) {
+                        d.drawLine = !options.drawLines || options.drawLines.indexOf(d.name) !== -1;
+                        d.drawDot = !options.drawDots || !d.drawLine || options.drawDots.indexOf(d.name) !== -1;
+                        return d;
+                    });
+
+                    var elementWidth = d3.select(element[0]).node().offsetWidth;
+
+                    width = elementWidth - margin.left - margin.right;
+                    height = 600 - margin.top - margin.bottom;
+
+                    colours = d3.scale.category10().domain(data.map(function (d) {
+                        return d.name;
+                    }));
+
+                    // define x and y axes formats
+                    var xAxisFormat = d3.time.format(defaultTimeFormat),
+                        yAxisFormat = d3.format(defaultScalarFormat),
+                        xAxisLabel = settings.xAxis.title,
+                        yAxisLabel = settings.yAxis.title,
+                        xAxisUnits = settings.xAxis.units,
+                        yAxisUnits = settings.yAxis.units,
+                        chartTitle = settings.title,
+                        titleSize = 20;
+
+                    var _calculateExtents3 = calculateExtents(data);
+
+                    var _calculateExtents32 = _slicedToArray(_calculateExtents3, 2);
+
+                    var xExtent = _calculateExtents32[0];
+                    var yExtent = _calculateExtents32[1];
+
+                    // define x scale
+                    xScale = d3.scale.linear().domain(xExtent).range([0, width]);
+
+                    // define y scale
+                    yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
+
+                    // define x axis
+                    xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height).tickPadding(5);
+                    //.tickFormat(xAxisFormat);
+
+                    // define y axis
+                    yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
+                    //.tickFormat(yAxisFormat);
+
+                    line = d3.svg.line().interpolate("basis").x(function (d) {
+                        return xScale(d[0]);
+                    }).y(function (d) {
+                        return yScale(d[1]);
+                    });
+
+                    voronoi = d3.geom.voronoi().x(function (d) {
+                        return xScale(d[0]) + Math.random() * 0.001;
+                    }).y(function (d) {
+                        return yScale(d[1]) + Math.random() * 0.001;
+                    }).clipExtent([[xScale.range()[0], yScale.range()[1]], [xScale.range()[1], yScale.range()[0]]]);
+
+                    // render chart area
+                    chart = svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')');
+
+                    defs = svg.append("defs");
+
+                    var clip = defs.append("svg:clipPath").attr("id", "clip-line-plot").append("svg:rect").attr("id", "clip-rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+
+                    defs.append("g").attr("class", "voronoi-clips");
+
+                    chartClipArea = chart.append("g").attr("id", "chart-clip-box").attr("clip-path", "url(#clip-line-plot)");
+
+                    hoverFocusCircle = chart.append("circle").attr("id", "hover-focus-circle").attr("transform", "translate(-200, -200)");
+
+                    voronoiGroup = chart.append("g").attr("class", "voronoi");
+
+                    // render x axis
+                    chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
+
+                    // render y axis
+                    chart.append("g").attr("class", "axis y-axis").call(yAxis);
+
+                    // render chart title
+                    if (chartTitle) {
+                        chart.append("text").attr("x", width / 2).attr("y", -margin.top + titleSize + 10).attr("text-anchor", "middle").style("font-size", titleSize + 'px').text(chartTitle);
+                    }
+
+                    // render x axis label if exists
+                    if (xAxisLabel) {
+                        var tickHeight = chart.selectAll("g.x-axis g.tick text")[0][0].getBBox().height;
+                        xAxisLabel += xAxisUnits ? ', ' + xAxisUnits : "";
+                        chart.append("text") // text label for the x axis
+                        .style("text-anchor", "middle").text(xAxisLabel).attr("transform", 'translate(' + width / 2 + ', ' + (height + tickHeight + 30) + ')');
+                    }
+
+                    // render y axis label if exists
+                    if (yAxisLabel) {
+                        yAxisLabel += yAxisUnits ? ', ' + yAxisUnits : "";
+                        chart.append("text") // text label for the y axis
+                        .attr("transform", "rotate(-90)").attr("y", -margin.left + 10).attr("x", -(height / 2)).attr("dy", "1em").style("text-anchor", "middle").text(yAxisLabel);
+                    }
+
+                    update(data);
+
+                    //let drawLegend = d3legend()
+                    //    .splitAfter(0)
+                    //    .seriesNames(seriesNames)
+                    //    .colourScale(colours)
+                    //    .anchorHorizontal("right")
+                    //    .anchorVertical("bottom")
+                    //    .maxSize({width, height})
+                    //    .onMouseOver(legendMouseOver)
+                    //    .onMouseOut(legendMouseOut)
+                    //    .onClick(legendClick)
+                    //    .selectedItems(visibleSeries);
+                    //
+                    //
+                    //let legend = chart.append("g")
+                    //    .attr("class", "plotify-legend")
+                    //    .attr("transform", `translate(${width},${0})`)
+                    //    .call(drawLegend);
+
+                    function legendMouseOver(label) {
+                        var focusItem = d3.select(this);
+                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", true);
+                        focusItem.classed("legend-item-unfocused", false);
+
+                        chart.selectAll("g.series").classed("series-unfocused-path", function (d) {
+                            return d.drawLine ? true : false;
+                        }).classed("series-unfocused-dots", function (d) {
+                            return d.drawDot ? true : false;
+                        }).filter(function (d) {
+                            return d.name === label;
+                        }).classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", true);
+                    }
+
+                    function legendMouseOut(label) {
+                        legend.selectAll("g.legend-item").classed("legend-item-unfocused", false);
+                        chart.selectAll("g.series").classed("series-unfocused-dots series-unfocused-path", false).classed("series-focused", false);
+                    }
+
+                    function legendClick(label) {
+                        var clicked = d3.select(this);
+                        if (visibleSeries.has(label)) visibleSeries['delete'](label);else visibleSeries.add(label);
+                        clicked.classed("legend-item-selected", visibleSeries.has(label));
+                        clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
+                        update(data);
+                    }
+                }
+
+                function calculateExtents(data) {
+                    var xExtents = [],
+                        yExtents = [];
+
+                    data.forEach(function (series) {
+                        var xValues = series.values.map(function (d) {
+                            return d[0];
+                        });
+                        var yValues = series.values.map(function (d) {
+                            return d[1];
+                        });
+                        xExtents = xExtents.concat(d3.extent(xValues));
+                        yExtents = yExtents.concat(d3.extent(yValues));
+                    });
+
+                    var xExtent = d3.extent(xExtents),
+                        yExtent = d3.extent(yExtents);
+
+                    // find extent of input data and calculate margins
+                    var xMargin = marginRatio.x * (xExtent[1] - xExtent[0]) / 2,
+                        yMargin = marginRatio.y * (yExtent[1] - yExtent[0]) / 2;
+
+                    // add margins to horizontal axis data
+                    xExtent[0] -= xMargin;
+                    xExtent[1] += xMargin;
+
+                    // add margins to vertical axis data
+                    yExtent[0] -= yMargin;
+                    yExtent[1] += yMargin;
+
+                    return [xExtent, yExtent];
+                }
+
+                // Handle window resize event.
+                scope.$on('window-resize', function (event) {
+                    render({ drawLines: ["series 2", "series 3"] });
+                });
+
+                scope.$watch("value", function () {
+                    render({ drawLines: ["series 1", "series 3", "series 4", "series 5"], drawDots: ["series 1", "series 5", "series 5"] });
+                });
             }
-        });
+        };
     }
 
     return {
-        setters: [function (_) {
-            angular = _['default'];
+        setters: [function (_4) {
+            angular = _4['default'];
+        }, function (_5) {
+            d3 = _5['default'];
+        }, function (_2) {
+            _Set = _2['default'];
+        }, function (_3) {}, function (_) {
+            _slicedToArray = _['default'];
+        }, function (_e) {
+            _getIterator = _e['default'];
+        }, function (_a) {}, function (_b) {}, function (_c) {
+            d3legend = _c.d3legend;
+            d3tooltip = _c.d3tooltip;
         }],
         execute: function () {
-            _export('default', angular.module('plotify.utils', []).service("WindowResize", WindowResize));
+            'use strict';
+
+            _export('default', angular.module('plotify.line', ['plotify.utils']).directive('linePlot', LinePlotDirective));
         }
     };
 });
@@ -5446,21 +5532,20 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
     var _Set, _Array$from, _createClass, _classCallCheck, _Object$keys, _getIterator, d3tooltip, labelCollisionDetection, colourBarID;
 
     function d3legend() {
-        var width = 0,
-            height = 0,
-            splitAfter = 0,
-            anchorVertical = "center",
-            anchorHorizontal = "right",
+        var splitAfter = 0,
+            anchor = { x: "outside", y: "inside" },
+            position = { x: "right", y: "center" },
             seriesNames = null,
             colourScale = null,
             onMouseOver = null,
             onMouseOut = null,
             onClick = null,
-            selectedItems = null,
+            selectedItems = new _Set(),
             verticalItemSpacing = 10,
             horizontalItemSpacing = 20,
             padding = 10,
-            shapeSize = 10;
+            shapeSize = 10,
+            maxSize = { width: -1, height: -1 };
 
         // For each small multiple…
         function legend(g) {
@@ -5476,8 +5561,13 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
             lengthTestString.remove();
 
             var columnWidth = box.width + shapeSize + 5,
-                rowHeight = box.height,
-                rows = splitAfter > 0 ? Math.ceil(seriesNames.length / splitAfter) : 1,
+                rowHeight = box.height;
+
+            if (padding + splitAfter * (columnWidth + horizontalItemSpacing) > maxSize.width) splitAfter = Math.floor((maxSize.width - padding) / (columnWidth + horizontalItemSpacing));
+
+            if (padding + Math.floor(seriesNames.length / splitAfter) * (rowHeight + verticalItemSpacing) > maxSize.height) splitAfter = Math.ceil(1.0 / ((maxSize.height - padding) / (rowHeight + verticalItemSpacing) / seriesNames.length));
+
+            var rows = splitAfter > 0 ? Math.ceil(seriesNames.length / splitAfter) : 1,
                 cols = splitAfter > 0 ? splitAfter : seriesNames.length,
                 w = cols * columnWidth + (cols - 1) * horizontalItemSpacing + 2 * padding,
                 h = rows * rowHeight + (rows - 1) * verticalItemSpacing + 2 * padding,
@@ -5486,29 +5576,9 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
                 legendHorizontalOffset = 0,
                 legendVerticalOffset = 0;
 
-            switch (anchorHorizontal) {
-                case "left":
-                    legendHorizontalOffset = 0;
-                    break;
-                case "center":
-                    legendHorizontalOffset = -w / 2;
-                    break;
-                case "right":
-                    legendHorizontalOffset = -w;
-                    break;
-            }
+            if (position.y === "top" && anchor.y === "inside" || position.y === "bottom" && anchor.y === "outside") legendVerticalOffset = 0;else if (position.y === "top" && anchor.y === "outside" || position.y === "bottom" && anchor.y === "inside") legendVerticalOffset = -h;else if (position.y === "center" && (position.x === "right" || position.x === "left")) legendVerticalOffset = -h / 2;
 
-            switch (anchorVertical) {
-                case "top":
-                    legendVerticalOffset = 0;
-                    break;
-                case "center":
-                    legendVerticalOffset = -h / 2;
-                    break;
-                case "bottom":
-                    legendVerticalOffset = -h;
-                    break;
-            }
+            if (position.x === "left" && anchor.x === "inside" || position.x === "right" && anchor.x === "outside") legendHorizontalOffset = 0;else if (position.x === "left" && anchor.x === "outside" || position.x === "right" && anchor.x === "inside") legendHorizontalOffset = -w;else if (position.x === "center" && (position.y === "top" || position.y === "bottom")) legendHorizontalOffset = -w / 2;
 
             var item = g.selectAll("g.legend-item").data(seriesNames);
 
@@ -5521,7 +5591,7 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
             item.each(function (d, i) {
                 var sel = d3.select(this);
 
-                sel.append("rect").attr("class", "shape").attr("x", 2).attr("y", shapeVerticalOffset).attr("width", shapeSize).attr("height", shapeSize).attr("fill", selectedItems[d] ? colourScale(d) : "white").attr("stroke", colourScale(d));
+                sel.append("rect").attr("class", "shape").attr("x", 2).attr("y", shapeVerticalOffset).attr("width", shapeSize).attr("height", shapeSize).attr("fill", selectedItems.has(d) ? colourScale(d) : "white").attr("stroke", colourScale(d));
 
                 sel.append("text").attr("x", shapeSize + 5).attr("y", textVerticalOffset).attr("fill", "black").text(d);
 
@@ -5533,33 +5603,36 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
             if (onClick) item.on("click", onClick);
         }
 
-        legend.width = function (x) {
-            if (!arguments.length) return width;
-            width = x;
-            return legend;
-        };
-
-        legend.height = function (x) {
-            if (!arguments.length) return height;
-            height = x;
-            return legend;
-        };
-
         legend.splitAfter = function (x) {
             if (!arguments.length) return splitAfter;
             splitAfter = x;
             return legend;
         };
 
-        legend.anchorVertical = function (x) {
-            if (!arguments.length) return anchorVertical;
-            if (x === "top" || x === "center" || x === "bottom") anchorVertical = x;
+        legend.position = function (x) {
+            if (!arguments.length) return position;
+            position = x;
             return legend;
+        };
+
+        legend.anchor = function (x) {
+            if (!arguments.length) return anchor;
+            if (x.x == "outside" && x.y == "outside") {
+                console.warn('Anchor x and y should not be both set to "outside". Setting both to "inside"');
+                anchor = { x: "inside", y: "inside" };
+            } else anchor = x;
+            return this;
         };
 
         legend.anchorHorizontal = function (x) {
             if (!arguments.length) return anchorHorizontal;
-            if (x !== "left" || x === "center" || x === "right") anchorHorizontal = x;
+            if (x === "left" || x === "center" || x === "right") anchorHorizontal = x;
+            return legend;
+        };
+
+        legend.maxSize = function (x) {
+            if (!arguments.length) return maxSize;
+            if (x.width !== undefined && x.height !== undefined) maxSize = x;
             return legend;
         };
 
@@ -5601,6 +5674,129 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
 
         return legend;
     }
+
+    //export class d3legend2 {
+    //    _splitAfter = 0;
+    //    _anchor = {x: "outside", y: "inside"};
+    //    _position = {x: "right", y: "center"};
+    //    _seriesNames = null;
+    //    _colourScale = null;
+    //    _onMouseOver = null;
+    //    _onMouseOut = null;
+    //    _onClick = null;
+    //    _selectedItems = null;
+    //    _maxSize = {width: -1, height: -1};
+    //    verticalItemSpacing = 10;
+    //    horizontalItemSpacing = 20;
+    //    padding = 10;
+    //    shapeSize = 10;
+    //
+    //    constructor() {
+    //        return this;
+    //    }
+    //    // For each small multiple…
+    //    draw(g) {
+    //        this._splitAfter = this._splitAfter.clamp(0, _seriesNames.length);
+    //        if (this._splitAfter === 0) this._splitAfter = _seriesNames.length;
+    //        let longestName = _seriesNames.reduce((a, b) => a.length > b.length ? a : b);
+    //
+    //        let lengthTestString = g.append("text").attr("visibility", false).text(longestName);
+    //        let box = lengthTestString[0][0].getBBox();
+    //        box.height = parseInt(window.getComputedStyle(lengthTestString[0][0]).fontSize, 10);
+    //        lengthTestString.remove();
+    //
+    //        let columnWidth = box.width + shapeSize + 5,
+    //            rowHeight = box.height;
+    //
+    //        if (padding + this._splitAfter * (columnWidth + horizontalItemSpacing) > _maxSize.width)
+    //            this._splitAfter = Math.floor((_maxSize.width - padding) / (columnWidth + horizontalItemSpacing));
+    //
+    //        if (padding + Math.floor(_seriesNames.length / this._splitAfter) * (rowHeight + verticalItemSpacing) > _maxSize.height)
+    //            this._splitAfter = Math.floor(1.0 / ((_maxSize.height - padding) / (rowHeight + verticalItemSpacing) / _seriesNames.length));
+    //
+    //        let rows = this._splitAfter > 0 ? Math.ceil(_seriesNames.length / this._splitAfter) : 1,
+    //            cols = this._splitAfter > 0 ? this._splitAfter : _seriesNames.length,
+    //            w = cols * columnWidth + (cols - 1) * horizontalItemSpacing + 2 * padding,
+    //            h = rows * rowHeight + (rows - 1) * verticalItemSpacing + 2 * padding,
+    //            shapeVerticalOffset = (rowHeight - shapeSize) / 2,
+    //            textVerticalOffset = (rowHeight + box.height) / 2 - 2,
+    //            legendHorizontalOffset = 0,
+    //            legendVerticalOffset = 0;
+    //
+    //        if ((_position.y === "top" && _anchor.y === "inside") || (_position.y === "bottom" && _anchor.y === "outside"))
+    //            legendVerticalOffset = 0;
+    //        else if ((_position.y === "top" && _anchor.y === "outside") || (_position.y === "bottom" && _anchor.y === "inside"))
+    //            legendVerticalOffset = -h;
+    //        else if (_position.y === "center" && (_position.x === "right" ||  _position.x === "left"))
+    //            legendVerticalOffset = -h / 2;
+    //
+    //        if ((_position.y === "left" && _anchor.x === "inside") || (_position.y === "right" && _anchor.x === "outside"))
+    //            legendHorizontalOffset = 0;
+    //        else if ((_position.y === "left" && _anchor.x === "outside") || (_position.y === "right" && _anchor.x === "inside"))
+    //            legendHorizontalOffset = -w;
+    //        else if (_position.x === "center" && (_position.y === "top" ||  _position.y === "bottom"))
+    //            legendHorizontalOffset = -w / 2;
+    //
+    //        let item = g.selectAll("g.legend-item").data(_seriesNames);
+    //
+    //        item.enter()
+    //            .append("g")
+    //            .attr("class", "legend-item");
+    //
+    //        item.attr("transform", (d, i) => `translate(${legendHorizontalOffset + padding + (i % this._splitAfter) * (columnWidth + horizontalItemSpacing)},
+    //                                            ${legendVerticalOffset + padding + Math.floor(i / this._splitAfter) * (rowHeight + verticalItemSpacing)})`);
+    //
+    //        item.each(function (d, i) {
+    //            let sel = d3.select(this);
+    //
+    //            sel.append("rect")
+    //                .attr("class", "shape")
+    //                .attr("x", 2)
+    //                .attr("y", shapeVerticalOffset)
+    //                .attr("width", shapeSize)
+    //                .attr("height", shapeSize)
+    //                .attr("fill", _selectedItems[d] ? _colourScale(d) : "white")
+    //                .attr("stroke", _colourScale(d));
+    //
+    //            sel.append("text")
+    //                .attr("x", shapeSize + 5)
+    //                .attr("y", textVerticalOffset)
+    //                .attr("fill", "black")
+    //                .text(d);
+    //
+    //            sel.append("rect")
+    //                .attr("class", "legend-item-mouse-capture")
+    //                .attr("x", 0)
+    //                .attr("y", 0)
+    //                .attr("width", columnWidth)
+    //                .attr("height", rowHeight)
+    //                .attr("fill", "white")
+    //                .attr("opacity", 0);
+    //        });
+    //
+    //        if (_onMouseOver) item.on("mouseover", _onMouseOver);
+    //        if (_onMouseOut) item.on("mouseout", _onMouseOut);
+    //        if (_onClick) item.on("click", _onClick);
+    //    }
+    //
+    //    set splitAfter(splitAfter) { this._splitAfter = splitAfter; return this; };
+    //    set anchor(anchor) {
+    //        if (anchor.x == "outside" && anchor.y == "outside") {
+    //            console.warn('Anchor x and y should not be both set to "outside". Setting both to "inside"');
+    //            this._anchor = {x: "inside", y: "inside"};
+    //        }
+    //        else this._anchor = anchor;
+    //        return this;
+    //    };
+    //    set position(position) { this._position = position; return this; };
+    //    set maxSize(maxSize) { this._maxSize = maxSize; return this; };
+    //    set seriesNames(seriesNames) { this._seriesNames = seriesNames; return this; };
+    //    set colourScale(colourScale) { this._colourScale = colourScale; return this; };
+    //    set onMouseOver(onMouseOver) { this._onMouseOver = onMouseOver; return this; };
+    //    set onMouseOut(onMouseOut) { this._onMouseOut = onMouseOut; return this; };
+    //    set onClick(onClick) { this._onClick = onClick; return this; };
+    //    set selectedItems(selectedItems) { this._selectedItems = selectedItems; return this; };
+    //}
 
     function mergeTemplateLayout(layout, templateLayout) {
         for (var p in templateLayout) {
@@ -5785,10 +5981,10 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
     }
 
     return {
-        setters: [function (_3) {
-            _Set = _3["default"];
-        }, function (_2) {
-            _Array$from = _2["default"];
+        setters: [function (_2) {
+            _Set = _2["default"];
+        }, function (_3) {
+            _Array$from = _3["default"];
         }, function (_) {
             _createClass = _["default"];
         }, function (_a) {
@@ -6048,6 +6244,32 @@ $__System.register("c", ["12", "13", "19", "1a", "f", "e"], function (_export) {
         }
     };
 });
+$__System.register('b', ['1'], function (_export) {
+    'use strict';
+
+    var angular;
+
+    function WindowResize($window, $rootScope) {
+        var window = angular.element($window);
+        var width = window[0].innerWidth;
+
+        angular.element($window).on('resize', function (event) {
+            var newWidth = window[0].innerWidth;
+            if (width != newWidth) {
+                $rootScope.$broadcast('window-resize', width = newWidth);
+            }
+        });
+    }
+
+    return {
+        setters: [function (_) {
+            angular = _['default'];
+        }],
+        execute: function () {
+            _export('default', angular.module('plotify.utils', []).service("WindowResize", WindowResize));
+        }
+    };
+});
 $__System.register('a', [], false, function() {});
 $__System.register('d', [], false, function() {});
 $__System.register('10', [], false, function() {});
@@ -6055,7 +6277,7 @@ $__System.register('11', [], false, function() {});
 $__System.register('14', [], false, function() {});
 $__System.register('15', [], false, function() {});
 $__System.register('16', [], false, function() {});
-$__System.register('18', [], false, function() {});
+$__System.register('17', [], false, function() {});
 })
 (function(factory) {
   if (typeof define == 'function' && define.amd)
