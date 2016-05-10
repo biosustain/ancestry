@@ -19,7 +19,7 @@ function createTreeLayout(nodesArray) {
             parent: node.parent,
             generation: node.generation,
             children: [],
-            treeId: node.treeId
+            series: node.series
         };
     }
 
@@ -90,7 +90,7 @@ function createRandomBoxPlotData(nodes) {
     let boxPlotData = [];
     for (let node of nodes) {
         let values = generateRandomValues(20);
-        boxPlotData.push({name: node.name, values: values, seriesName: "series " + node.treeId})
+        boxPlotData.push({name: node.name, values: values, seriesName: "series " + node.series})
     }
     return boxPlotData;
 }
@@ -137,7 +137,7 @@ function createRandomLineageScatterPlotData(n) {
                 x: gen-1,
                 y: gen + j,
                 parent: parent,
-                treeId: i == 0 ? j : nodes.filter((d) => d.name == parent)[0].treeId
+                series: Math.floor(Math.random() * 20)//i == 0 ? j : nodes.filter((d) => d.name == parent)[0].series
             };
             _parents.push(node.name);
             nodes.push(node);
@@ -224,7 +224,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         y: s * 10 + gen + j,
                         z: Math.random() > 0.7 ? undefined : Math.random() * 10,
                         parent: parent,
-                        treeId: s,
+                        series: 231 * Math.floor(Math.random() * 30),
                         type: Math.random() > 0.5 ? "type1" : "type2"
                     };
                 _parents.push(node.name);
@@ -291,7 +291,8 @@ let data2 = {
             }
         },
         axis: {
-            gridOnly: true,
+            show: true,
+            //gridOnly: true,
             valueProperty: "default"
         },
         labelCollisionDetection: {
@@ -302,7 +303,22 @@ let data2 = {
             enabled: true
         },
         heatmap: {
-            enabled: true
+            enabled: true,
+            colourBar: {
+                show: true
+            }
+        },
+        legend: {
+            show: true,
+            position: {
+                "x": "right",
+                "y": "center"
+            },
+            anchor: {
+                "x": "outside",
+                "y": "inside"
+            },
+            orientation: "vertical"
         }
     }
 };
@@ -375,7 +391,7 @@ for (let s = 0; s < data4.series.length; s++) {
     }
 }
 
-let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"treeId":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"treeId":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"treeId":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"treeId":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"treeId":0,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","treeId":0,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"treeId":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"treeId":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"treeId":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"maxZoom":50,"title":"","size":600,"axis":{"title":"","show":true,"gridOnly":false,"valueProperty":"default"},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true,"height":"70%","width":30},"circle":{"r":16},"opacity":0.4}}}');
+let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"series":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"series":0,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","series":0,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"series":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"series":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"series":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"maxZoom":50,"title":"","size":600,"axis":{"title":"","show":true,"gridOnly":false,"valueProperty":"default"},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true,"height":"70%","width":30},"circle":{"r":16},"opacity":0.4}}}');
 phylo.data.push(JSON.parse(JSON.stringify(phylo.data[0])));
 
 class AppController {
