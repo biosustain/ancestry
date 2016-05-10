@@ -137,7 +137,7 @@ function createRandomLineageScatterPlotData(n) {
                 x: gen-1,
                 y: gen + j,
                 parent: parent,
-                series: Math.floor(Math.random() * 20)//i == 0 ? j : nodes.filter((d) => d.name == parent)[0].series
+                series: 10 + Math.floor(Math.random() * 4)//i == 0 ? j : nodes.filter((d) => d.name == parent)[0].series
             };
             _parents.push(node.name);
             nodes.push(node);
@@ -224,7 +224,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         y: s * 10 + gen + j,
                         z: Math.random() > 0.7 ? undefined : Math.random() * 10,
                         parent: parent,
-                        series: 231 * Math.floor(Math.random() * 30),
+                        series: 10 + Math.floor(Math.random() * 4),
                         type: Math.random() > 0.5 ? "type1" : "type2"
                     };
                 _parents.push(node.name);

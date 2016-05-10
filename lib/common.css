@@ -88,3 +88,7 @@
 .plotify-colourbar .axis line, .plotify-colourbar .axis path {
     opacity: 0;
 }
+
+.plotify circle.heatmap-circle{
+    pointer-events: none;
+}
