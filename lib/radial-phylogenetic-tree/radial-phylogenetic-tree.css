@@ -7,7 +7,7 @@
 }
 
 .plotify-radial-phylogenetic-tree path.link-active {
-    stroke-width: 2px;
+    stroke-width: 2.5px;
     stroke: black !important;
 }
 .plotify-radial-phylogenetic-tree .link-extension {
@@ -17,6 +17,7 @@
 }
 
 .plotify-radial-phylogenetic-tree .link-extension-active {
+    stroke-width: 1.25px;
     stroke-opacity: .6;
 }
 
