@@ -1,0 +1,11 @@
+span.prop-type {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+span.prop-desc {
+    display: block;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
