@@ -1,0 +1,27 @@
+{
+  "layout": {
+    "labelCollisionDetection": {
+      "enabled": "never"
+    }
+  },
+  "data": [
+    {
+      "name": "node A",
+      "parent": null,
+      "x": 5,
+      "y": 3
+    },
+    {
+      "name": "node B",
+      "parent": "node A",
+      "x": 7,
+      "y": 6
+    },
+    {
+      "name": "node C",
+      "parent": "node A",
+      "x": 6,
+      "y": 1
+    }
+  ]
+}
