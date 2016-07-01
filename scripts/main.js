@@ -17,8 +17,16 @@ var AppController = function AppController($scope, $http) {
 
     $http.get('data/lineage_data.json').then((response) => {
         $scope.lineageExampleData = response.data;
+    });
+
+    $http.get('data/lineage_scatter_data.json').then((response) => {
         $scope.lineageScatterExampleData = response.data;
     });
+
+    $http.get('data/radial_lineage_data.json').then((response) => {
+        $scope.radialLineageExampleData = response.data;
+    });
+
 };
 
 var App = _angular2.default.module('Visualizer', ["plotify"]).controller('AppController', AppController);
