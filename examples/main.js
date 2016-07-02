@@ -2,7 +2,7 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(25, 1);
+let nodesArr = createRandomLineageScatterPlotData2(25, 2);
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -263,19 +263,21 @@ let data = {
             enabled: true
         },
         heatmap: {
-            enabled: false
+            enabled: true,
+            title: "z values",
+            colourBar: {height: "90%"}
         },
         legend: {
             show: true,
-            //position: {
-            //    "x": "center",
-            //    "y": "top"
-            //},
-            //anchor: {
-            //    "x": "inside",
-            //    "y": "inside"
-            //},
-            //orientation: "horizontal"
+            position: {
+                "x": "right",
+                "y": "center"
+            },
+            anchor: {
+                "x": "inside",
+                "y": "inside"
+            },
+            orientation: "vertical"
         }
     }
 };
@@ -295,7 +297,7 @@ let data2 = {
         },
         axis: {
             show: true,
-            //gridOnly: true,
+            gridOnly: true,
             valueProperty: "default"
         },
         //labelCollisionDetection: {
@@ -307,6 +309,7 @@ let data2 = {
         },
         heatmap: {
             enabled: true,
+            title: "z values",
             colourBar: {
                 show: true
             }
@@ -314,14 +317,14 @@ let data2 = {
         legend: {
             show: true,
             position: {
-                "x": "center",
-                "y": "top"
+                "x": "left",
+                "y": "center"
             },
             anchor: {
-                "x": "inside",
-                "y": "outside"
+                "x": "outside",
+                "y": "inside"
             },
-            orientation: "horizontal"
+            orientation: "vertical"
         }
     }
 };
@@ -329,6 +332,8 @@ let data2 = {
 let data5 = {
     data: nodesArr,
     layout: {
+        xAxis:{title:"x Values"},
+        yAxis:{title:"y Values"},
         nodeTypes: {
             "type1": {
                 r: 4,
@@ -352,6 +357,7 @@ let data5 = {
         },
         heatmap: {
             enabled: true,
+            title: "z values",
             colourBar: {
                 show: true
             }
@@ -406,19 +412,20 @@ for (let s = 0; s < data4.series.length; s++) {
     }
 }
 
-let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"series":1,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"series":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"series":1,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","series":1,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"series":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"series":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"series":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"axis":{"title":"","show":true,"gridOnly":false,"valueProperty":"default"},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true,"height":"70%","width":30},"circle":{"r":16},"opacity":0.4}}}');
+let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"series":1,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"series":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"series":1,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","series":1,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"series":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"series":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"series":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"axis":{"title":"","show":true,"gridOnly":false,"valueProperty":"default"},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"title":null,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true},"circle":{"r":16},"opacity":0.4}}}');
 phylo.data.push(JSON.parse(JSON.stringify(phylo.data[0])));
+phylo.layout.heatmap.title = "z values";
 phylo.layout.legend = {
     show: true,
     position: {
-        "x": "left",
-        "y": "center"
+        "x": "center",
+        "y": "top"
     },
     anchor: {
-        "x": "outside",
-        "y": "inside"
+        "x": "inside",
+        "y": "outside"
     },
-    orientation: "vertical"
+    orientation: "horizontal"
 };
 
 class AppController {

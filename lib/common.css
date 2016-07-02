@@ -92,3 +92,7 @@
 .plotify circle.heatmap-circle{
     pointer-events: none;
 }
+
+.plotify text.axis-title{
+    font-size: 15px;
+}
