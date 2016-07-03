@@ -15,6 +15,11 @@
     },
     "groupSelection":{
       "enabled":true
+    },
+    "heatmap": {
+      "colourBar": {
+        "show": false
+      }
     }
   },
   "data":[

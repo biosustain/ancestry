@@ -1,7 +1,6 @@
 {
   "layout": {
     "height": 500,
-    "title": "Lineage-scatter plot example",
     "axis": {
       "show": true,
       "title": "x values",
@@ -22,6 +21,7 @@
     },
     "heatmap": {
       "enabled": true,
+      "title": "z values",
       "colourBar": {
         "height": "80%"
       }

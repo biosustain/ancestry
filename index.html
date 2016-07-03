@@ -16,8 +16,8 @@
     <script type="text/javascript">
         System.paths['angular'] = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js";
         System.paths['d3'] = "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js";
-//        System.paths['plotify'] = "https://rawgit.com/biosustain/plotify/master/dist/plotify.js";
-        System.paths['plotify'] = "https://dl.dropboxusercontent.com/s/auixyd4c44tvatw/plotify.js?dl=0";
+        System.paths['plotify'] = "https://rawgit.com/biosustain/plotify/master/dist/plotify.js";
+//        System.paths['plotify'] = "https://dl.dropboxusercontent.com/s/auixyd4c44tvatw/plotify.js?dl=0";
         System.import('./scripts/main.js');
     </script>
     <style type="text/css">
@@ -28,7 +28,15 @@
         }
         .gist-file {
             margin-bottom: 0 !important;
-            border: 0px !important;
+            border: 0 !important;
+        }
+        #show-length {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #phylo-tab {
+            position:relative !important;
         }
     </style>
 </head>
@@ -243,6 +251,27 @@
         </div>
         <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
         Directive: <code>&lt;radial-phylogenetic-tree&gt;&lt;/radial-phylogenetic-tree&gt;</code>
+        <h4>Example</h4>
+        <div id="tab-group-4">
+            <ul class="tab">
+                <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
+                <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
+            </ul>
+            <div class="tabcontent tab-plot" id="phylo-tab">
+                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData" branchlength="showLengths"></radial-phylogenetic-tree>
+                <label id="show-length">
+                    <input type="checkbox" ng-model="showLengths"> Show branch length
+                </label>
+            </div>
+
+            <div class="tabcontent tab-json">
+                <script type="text/javascript">
+
+                </script>
+                <!--<script src="https://gist.github.com/maciejkorzepa/a561fd78d15cd918af47f3ad17dd975d.js"></script>-->
+                <!--<script src="scripts/gisttest.js"></script>-->
+            </div>
+        </div>
     </div>
     <h2>Shared features</h2>
 
@@ -401,7 +430,7 @@
 </section>
 
 <script>
-    var tabGroups = ['tab-group-1', 'tab-group-2', 'tab-group-3'];
+    var tabGroups = ['tab-group-1', 'tab-group-2', 'tab-group-3', 'tab-group-4'];
     for (var i = 0; i < tabGroups.length; i++) {
         openTab(tabGroups[i], 'plot');
     }

@@ -27,6 +27,12 @@ var AppController = function AppController($scope, $http) {
         $scope.radialLineageExampleData = response.data;
     });
 
+    $scope.showLengths = true;
+
+    $http.get('data/radial_phylogenetic_tree_data.json').then((response) => {
+        $scope.radialPhylogeneticTreeExampleData = response.data;
+    });
+
 };
 
 var App = _angular2.default.module('Visualizer', ["plotify"]).controller('AppController', AppController);
