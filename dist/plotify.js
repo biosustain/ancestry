@@ -487,7 +487,7 @@ $__System.registerDynamic("11", ["1e"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("18", ["10", "1f"], true, function(require, exports, module) {
+$__System.registerDynamic("17", ["10", "1f"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -537,28 +537,13 @@ $__System.registerDynamic("18", ["10", "1f"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("1b", ["20", "21", "22", "23", "24", "25"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("20");
-  require("21");
-  require("22");
-  require("23");
-  require("24");
-  module.exports = require("25").Set;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("19", ["26"], true, function(require, exports, module) {
+$__System.registerDynamic("19", ["20"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   "use strict";
-  var _Object$defineProperty = require("26")["default"];
+  var _Object$defineProperty = require("20")["default"];
   exports["default"] = (function() {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
@@ -583,25 +568,57 @@ $__System.registerDynamic("19", ["26"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("1d", ["22", "21", "27"], true, function(require, exports, module) {
+$__System.registerDynamic("1a", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  "use strict";
+  exports["default"] = function(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  };
+  exports.__esModule = true;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1b", ["21", "22", "23", "24", "25", "26"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("21");
+  require("22");
+  require("23");
+  require("24");
+  require("25");
+  module.exports = require("26").Set;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("1c", ["22", "27", "26"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   require("22");
-  require("21");
-  module.exports = require("27");
+  require("27");
+  module.exports = require("26").Array.from;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1e", ["28", "25"], true, function(require, exports, module) {
+$__System.registerDynamic("1d", ["23", "22", "28"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  require("28");
-  module.exports = require("25").Object.keys;
+  require("23");
+  require("22");
+  module.exports = require("28");
   global.define = __define;
   return module.exports;
 });
@@ -619,47 +636,31 @@ $__System.registerDynamic("1f", ["29"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("1c", ["21", "2a", "25"], true, function(require, exports, module) {
+$__System.registerDynamic("1e", ["2a", "26"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  require("21");
   require("2a");
-  module.exports = require("25").Array.from;
+  module.exports = require("26").Object.keys;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("1a", [], true, function(require, exports, module) {
+$__System.registerDynamic("20", ["2b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  "use strict";
-  exports["default"] = function(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
+  module.exports = {
+    "default": require("2b"),
+    __esModule: true
   };
-  exports.__esModule = true;
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("22", ["2b", "2c"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("2b");
-  var Iterators = require("2c");
-  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("20", [], true, function(require, exports, module) {
+$__System.registerDynamic("21", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -669,14 +670,37 @@ $__System.registerDynamic("20", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("23", ["2d", "2e"], true, function(require, exports, module) {
+$__System.registerDynamic("23", ["2c", "2d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("2c");
+  var Iterators = require("2d");
+  Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("25", ["2e", "2f"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $def = require("2e");
+  $def($def.P, 'Set', {toJSON: require("2f")('Set')});
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("24", ["30", "31"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var strong = require("2d");
-  require("2e")('Set', function(get) {
+  var strong = require("30");
+  require("31")('Set', function(get) {
     return function Set() {
       return get(this, arguments[0]);
     };
@@ -687,48 +711,7 @@ $__System.registerDynamic("23", ["2d", "2e"], true, function(require, exports, m
   return module.exports;
 });
 
-$__System.registerDynamic("21", ["2f", "30"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $at = require("2f")(true);
-  require("30")(String, 'String', function(iterated) {
-    this._t = String(iterated);
-    this._i = 0;
-  }, function() {
-    var O = this._t,
-        index = this._i,
-        point;
-    if (index >= O.length)
-      return {
-        value: undefined,
-        done: true
-      };
-    point = $at(O, index);
-    this._i += point.length;
-    return {
-      value: point,
-      done: false
-    };
-  });
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("24", ["31", "32"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $def = require("31");
-  $def($def.P, 'Set', {toJSON: require("32")('Set')});
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("25", [], true, function(require, exports, module) {
+$__System.registerDynamic("26", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -740,77 +723,20 @@ $__System.registerDynamic("25", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("26", ["33"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = {
-    "default": require("33"),
-    __esModule: true
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("27", ["34", "35", "25"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var anObject = require("34"),
-      get = require("35");
-  module.exports = require("25").getIterator = function(it) {
-    var iterFn = get(it);
-    if (typeof iterFn != 'function')
-      throw TypeError(it + ' is not iterable!');
-    return anObject(iterFn.call(it));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("28", ["36", "37"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toObject = require("36");
-  require("37")('keys', function($keys) {
-    return function keys(it) {
-      return $keys(toObject(it));
-    };
-  });
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("29", ["22", "21", "38"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  require("22");
-  require("21");
-  module.exports = require("38");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2a", ["39", "31", "36", "3a", "3b", "3c", "35", "3d"], true, function(require, exports, module) {
+$__System.registerDynamic("27", ["32", "2e", "33", "34", "35", "36", "37", "38"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var ctx = require("39"),
-      $def = require("31"),
-      toObject = require("36"),
-      call = require("3a"),
-      isArrayIter = require("3b"),
-      toLength = require("3c"),
-      getIterFn = require("35");
-  $def($def.S + $def.F * !require("3d")(function(iter) {
+  var ctx = require("32"),
+      $def = require("2e"),
+      toObject = require("33"),
+      call = require("34"),
+      isArrayIter = require("35"),
+      toLength = require("36"),
+      getIterFn = require("37");
+  $def($def.S + $def.F * !require("38")(function(iter) {
     Array.from(iter);
   }), 'Array', {from: function from(arrayLike) {
       var O = toObject(arrayLike),
@@ -841,17 +767,104 @@ $__System.registerDynamic("2a", ["39", "31", "36", "3a", "3b", "3c", "35", "3d"]
   return module.exports;
 });
 
-$__System.registerDynamic("2b", ["3e", "3f", "2c", "40", "30"], true, function(require, exports, module) {
+$__System.registerDynamic("29", ["23", "22", "39"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  require("23");
+  require("22");
+  module.exports = require("39");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2a", ["33", "3a"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toObject = require("33");
+  require("3a")('keys', function($keys) {
+    return function keys(it) {
+      return $keys(toObject(it));
+    };
+  });
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("28", ["3b", "37", "26"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var anObject = require("3b"),
+      get = require("37");
+  module.exports = require("26").getIterator = function(it) {
+    var iterFn = get(it);
+    if (typeof iterFn != 'function')
+      throw TypeError(it + ' is not iterable!');
+    return anObject(iterFn.call(it));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("22", ["3c", "3d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var setUnscope = require("3e"),
-      step = require("3f"),
-      Iterators = require("2c"),
-      toIObject = require("40");
-  require("30")(Array, 'Array', function(iterated, kind) {
+  var $at = require("3c")(true);
+  require("3d")(String, 'String', function(iterated) {
+    this._t = String(iterated);
+    this._i = 0;
+  }, function() {
+    var O = this._t,
+        index = this._i,
+        point;
+    if (index >= O.length)
+      return {
+        value: undefined,
+        done: true
+      };
+    point = $at(O, index);
+    this._i += point.length;
+    return {
+      value: point,
+      done: false
+    };
+  });
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2b", ["3e"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("3e");
+  module.exports = function defineProperty(it, key, desc) {
+    return $.setDesc(it, key, desc);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2c", ["3f", "40", "2d", "41", "3d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var setUnscope = require("3f"),
+      step = require("40"),
+      Iterators = require("2d"),
+      toIObject = require("41");
+  require("3d")(Array, 'Array', function(iterated, kind) {
     this._t = toIObject(iterated);
     this._i = 0;
     this._k = kind;
@@ -877,25 +890,198 @@ $__System.registerDynamic("2b", ["3e", "3f", "2c", "40", "30"], true, function(r
   return module.exports;
 });
 
-$__System.registerDynamic("2d", ["41", "42", "39", "43", "44", "45", "46", "3f", "47", "48", "49", "4a", "4b", "30", "25"], true, function(require, exports, module) {
+$__System.registerDynamic("2d", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = {};
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2e", ["42", "26"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var global = require("42"),
+      core = require("26"),
+      PROTOTYPE = 'prototype';
+  var ctx = function(fn, that) {
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  };
+  var $def = function(type, name, source) {
+    var key,
+        own,
+        out,
+        exp,
+        isGlobal = type & $def.G,
+        isProto = type & $def.P,
+        target = isGlobal ? global : type & $def.S ? global[name] : (global[name] || {})[PROTOTYPE],
+        exports = isGlobal ? core : core[name] || (core[name] = {});
+    if (isGlobal)
+      source = name;
+    for (key in source) {
+      own = !(type & $def.F) && target && key in target;
+      if (own && key in exports)
+        continue;
+      out = own ? target[key] : source[key];
+      if (isGlobal && typeof target[key] != 'function')
+        exp = source[key];
+      else if (type & $def.B && own)
+        exp = ctx(out, global);
+      else if (type & $def.W && target[key] == out)
+        !function(C) {
+          exp = function(param) {
+            return this instanceof C ? new C(param) : C(param);
+          };
+          exp[PROTOTYPE] = C[PROTOTYPE];
+        }(out);
+      else
+        exp = isProto && typeof out == 'function' ? ctx(Function.call, out) : out;
+      exports[key] = exp;
+      if (isProto)
+        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+    }
+  };
+  $def.F = 1;
+  $def.G = 2;
+  $def.S = 4;
+  $def.P = 8;
+  $def.B = 16;
+  $def.W = 32;
+  module.exports = $def;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("2f", ["43", "44"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var forOf = require("43"),
+      classof = require("44");
+  module.exports = function(NAME) {
+    return function toJSON() {
+      if (classof(this) != NAME)
+        throw TypeError(NAME + "#toJSON isn't generic");
+      var arr = [];
+      forOf(this, false, arr.push, arr);
+      return arr;
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("31", ["3e", "2e", "45", "43", "46", "42", "47", "48", "49", "4a"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
   'use strict';
-  var $ = require("41"),
-      hide = require("42"),
-      ctx = require("39"),
-      species = require("43"),
-      strictNew = require("44"),
-      defined = require("45"),
-      forOf = require("46"),
-      step = require("3f"),
-      ID = require("47")('id'),
-      $has = require("48"),
-      isObject = require("49"),
+  var $ = require("3e"),
+      $def = require("2e"),
+      hide = require("45"),
+      forOf = require("43"),
+      strictNew = require("46");
+  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
+    var Base = require("42")[NAME],
+        C = Base,
+        ADDER = IS_MAP ? 'set' : 'add',
+        proto = C && C.prototype,
+        O = {};
+    if (!require("47") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("48")(function() {
+      new C().entries().next();
+    }))) {
+      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
+      require("49")(C.prototype, methods);
+    } else {
+      C = wrapper(function(target, iterable) {
+        strictNew(target, C, NAME);
+        target._c = new Base;
+        if (iterable != undefined)
+          forOf(iterable, IS_MAP, target[ADDER], target);
+      });
+      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
+        var chain = KEY == 'add' || KEY == 'set';
+        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
+          hide(C.prototype, KEY, function(a, b) {
+            var result = this._c[KEY](a === 0 ? 0 : a, b);
+            return chain ? this : result;
+          });
+      });
+      if ('size' in proto)
+        $.setDesc(C.prototype, 'size', {get: function() {
+            return this._c.size;
+          }});
+    }
+    require("4a")(C, NAME);
+    O[NAME] = C;
+    $def($def.G + $def.W + $def.F, O);
+    if (!IS_WEAK)
+      common.setStrong(C, NAME, IS_MAP);
+    return C;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("32", ["4b"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var aFunction = require("4b");
+  module.exports = function(fn, that, length) {
+    aFunction(fn);
+    if (that === undefined)
+      return fn;
+    switch (length) {
+      case 1:
+        return function(a) {
+          return fn.call(that, a);
+        };
+      case 2:
+        return function(a, b) {
+          return fn.call(that, a, b);
+        };
+      case 3:
+        return function(a, b, c) {
+          return fn.call(that, a, b, c);
+        };
+    }
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("30", ["3e", "45", "32", "4c", "46", "4d", "43", "40", "4e", "4f", "50", "47", "49", "3d", "26"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      hide = require("45"),
+      ctx = require("32"),
+      species = require("4c"),
+      strictNew = require("46"),
+      defined = require("4d"),
+      forOf = require("43"),
+      step = require("40"),
+      ID = require("4e")('id'),
+      $has = require("4f"),
+      isObject = require("50"),
       isExtensible = Object.isExtensible || isObject,
-      SUPPORT_DESC = require("4a"),
+      SUPPORT_DESC = require("47"),
       SIZE = SUPPORT_DESC ? '_s' : 'size',
       id = 0;
   var fastKey = function(it, create) {
@@ -931,7 +1117,7 @@ $__System.registerDynamic("2d", ["41", "42", "39", "43", "44", "45", "46", "3f",
         if (iterable != undefined)
           forOf(iterable, IS_MAP, that[ADDER], that);
       });
-      require("4b")(C.prototype, {
+      require("49")(C.prototype, {
         clear: function clear() {
           for (var that = this,
               data = that._i,
@@ -1010,7 +1196,7 @@ $__System.registerDynamic("2d", ["41", "42", "39", "43", "44", "45", "46", "3f",
     },
     getEntry: getEntry,
     setStrong: function(C, NAME, IS_MAP) {
-      require("30")(C, NAME, function(iterated, kind) {
+      require("3d")(C, NAME, function(iterated, kind) {
         this._t = iterated;
         this._k = kind;
         this._l = undefined;
@@ -1031,318 +1217,19 @@ $__System.registerDynamic("2d", ["41", "42", "39", "43", "44", "45", "46", "3f",
         return step(0, [entry.k, entry.v]);
       }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
       species(C);
-      species(require("25")[NAME]);
+      species(require("26")[NAME]);
     }
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("2c", [], true, function(require, exports, module) {
+$__System.registerDynamic("33", ["4d"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = {};
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2e", ["41", "31", "42", "46", "44", "4c", "4a", "4d", "4b", "4e"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("41"),
-      $def = require("31"),
-      hide = require("42"),
-      forOf = require("46"),
-      strictNew = require("44");
-  module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
-    var Base = require("4c")[NAME],
-        C = Base,
-        ADDER = IS_MAP ? 'set' : 'add',
-        proto = C && C.prototype,
-        O = {};
-    if (!require("4a") || typeof C != 'function' || !(IS_WEAK || proto.forEach && !require("4d")(function() {
-      new C().entries().next();
-    }))) {
-      C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-      require("4b")(C.prototype, methods);
-    } else {
-      C = wrapper(function(target, iterable) {
-        strictNew(target, C, NAME);
-        target._c = new Base;
-        if (iterable != undefined)
-          forOf(iterable, IS_MAP, target[ADDER], target);
-      });
-      $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','), function(KEY) {
-        var chain = KEY == 'add' || KEY == 'set';
-        if (KEY in proto && !(IS_WEAK && KEY == 'clear'))
-          hide(C.prototype, KEY, function(a, b) {
-            var result = this._c[KEY](a === 0 ? 0 : a, b);
-            return chain ? this : result;
-          });
-      });
-      if ('size' in proto)
-        $.setDesc(C.prototype, 'size', {get: function() {
-            return this._c.size;
-          }});
-    }
-    require("4e")(C, NAME);
-    O[NAME] = C;
-    $def($def.G + $def.W + $def.F, O);
-    if (!IS_WEAK)
-      common.setStrong(C, NAME, IS_MAP);
-    return C;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("2f", ["4f", "45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var toInteger = require("4f"),
-      defined = require("45");
-  module.exports = function(TO_STRING) {
-    return function(that, pos) {
-      var s = String(defined(that)),
-          i = toInteger(pos),
-          l = s.length,
-          a,
-          b;
-      if (i < 0 || i >= l)
-        return TO_STRING ? '' : undefined;
-      a = s.charCodeAt(i);
-      return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("30", ["50", "31", "51", "42", "48", "52", "2c", "53", "41", "4e"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var LIBRARY = require("50"),
-      $def = require("31"),
-      $redef = require("51"),
-      hide = require("42"),
-      has = require("48"),
-      SYMBOL_ITERATOR = require("52")('iterator'),
-      Iterators = require("2c"),
-      BUGGY = !([].keys && 'next' in [].keys()),
-      FF_ITERATOR = '@@iterator',
-      KEYS = 'keys',
-      VALUES = 'values';
-  var returnThis = function() {
-    return this;
-  };
-  module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE) {
-    require("53")(Constructor, NAME, next);
-    var createMethod = function(kind) {
-      switch (kind) {
-        case KEYS:
-          return function keys() {
-            return new Constructor(this, kind);
-          };
-        case VALUES:
-          return function values() {
-            return new Constructor(this, kind);
-          };
-      }
-      return function entries() {
-        return new Constructor(this, kind);
-      };
-    };
-    var TAG = NAME + ' Iterator',
-        proto = Base.prototype,
-        _native = proto[SYMBOL_ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT],
-        _default = _native || createMethod(DEFAULT),
-        methods,
-        key;
-    if (_native) {
-      var IteratorPrototype = require("41").getProto(_default.call(new Base));
-      require("4e")(IteratorPrototype, TAG, true);
-      if (!LIBRARY && has(proto, FF_ITERATOR))
-        hide(IteratorPrototype, SYMBOL_ITERATOR, returnThis);
-    }
-    if (!LIBRARY || FORCE)
-      hide(proto, SYMBOL_ITERATOR, _default);
-    Iterators[NAME] = _default;
-    Iterators[TAG] = returnThis;
-    if (DEFAULT) {
-      methods = {
-        keys: IS_SET ? _default : createMethod(KEYS),
-        values: DEFAULT == VALUES ? _default : createMethod(VALUES),
-        entries: DEFAULT != VALUES ? _default : createMethod('entries')
-      };
-      if (FORCE)
-        for (key in methods) {
-          if (!(key in proto))
-            $redef(proto, key, methods[key]);
-        }
-      else
-        $def($def.P + $def.F * BUGGY, NAME, methods);
-    }
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("31", ["4c", "25"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var global = require("4c"),
-      core = require("25"),
-      PROTOTYPE = 'prototype';
-  var ctx = function(fn, that) {
-    return function() {
-      return fn.apply(that, arguments);
-    };
-  };
-  var $def = function(type, name, source) {
-    var key,
-        own,
-        out,
-        exp,
-        isGlobal = type & $def.G,
-        isProto = type & $def.P,
-        target = isGlobal ? global : type & $def.S ? global[name] : (global[name] || {})[PROTOTYPE],
-        exports = isGlobal ? core : core[name] || (core[name] = {});
-    if (isGlobal)
-      source = name;
-    for (key in source) {
-      own = !(type & $def.F) && target && key in target;
-      if (own && key in exports)
-        continue;
-      out = own ? target[key] : source[key];
-      if (isGlobal && typeof target[key] != 'function')
-        exp = source[key];
-      else if (type & $def.B && own)
-        exp = ctx(out, global);
-      else if (type & $def.W && target[key] == out)
-        !function(C) {
-          exp = function(param) {
-            return this instanceof C ? new C(param) : C(param);
-          };
-          exp[PROTOTYPE] = C[PROTOTYPE];
-        }(out);
-      else
-        exp = isProto && typeof out == 'function' ? ctx(Function.call, out) : out;
-      exports[key] = exp;
-      if (isProto)
-        (exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
-    }
-  };
-  $def.F = 1;
-  $def.G = 2;
-  $def.S = 4;
-  $def.P = 8;
-  $def.B = 16;
-  $def.W = 32;
-  module.exports = $def;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("32", ["46", "54"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var forOf = require("46"),
-      classof = require("54");
-  module.exports = function(NAME) {
-    return function toJSON() {
-      if (classof(this) != NAME)
-        throw TypeError(NAME + "#toJSON isn't generic");
-      var arr = [];
-      forOf(this, false, arr.push, arr);
-      return arr;
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("34", ["49"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var isObject = require("49");
-  module.exports = function(it) {
-    if (!isObject(it))
-      throw TypeError(it + ' is not an object!');
-    return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("33", ["41"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $ = require("41");
-  module.exports = function defineProperty(it, key, desc) {
-    return $.setDesc(it, key, desc);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("35", ["54", "52", "2c", "25"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var classof = require("54"),
-      ITERATOR = require("52")('iterator'),
-      Iterators = require("2c");
-  module.exports = require("25").getIteratorMethod = function(it) {
-    if (it != undefined)
-      return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("37", ["31", "25", "4d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(KEY, exec) {
-    var $def = require("31"),
-        fn = (require("25").Object || {})[KEY] || Object[KEY],
-        exp = {};
-    exp[KEY] = exec(fn);
-    $def($def.S + $def.F * require("4d")(function() {
-      fn(1);
-    }), 'Object', exp);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("36", ["45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var defined = require("45");
+  var defined = require("4d");
   module.exports = function(it) {
     return Object(defined(it));
   };
@@ -1350,74 +1237,12 @@ $__System.registerDynamic("36", ["45"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("38", ["54", "52", "2c", "25"], true, function(require, exports, module) {
+$__System.registerDynamic("34", ["3b"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var classof = require("54"),
-      ITERATOR = require("52")('iterator'),
-      Iterators = require("2c");
-  module.exports = require("25").isIterable = function(it) {
-    var O = Object(it);
-    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("39", ["55"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var aFunction = require("55");
-  module.exports = function(fn, that, length) {
-    aFunction(fn);
-    if (that === undefined)
-      return fn;
-    switch (length) {
-      case 1:
-        return function(a) {
-          return fn.call(that, a);
-        };
-      case 2:
-        return function(a, b) {
-          return fn.call(that, a, b);
-        };
-      case 3:
-        return function(a, b, c) {
-          return fn.call(that, a, b, c);
-        };
-    }
-    return function() {
-      return fn.apply(that, arguments);
-    };
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3b", ["2c", "52"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var Iterators = require("2c"),
-      ITERATOR = require("52")('iterator');
-  module.exports = function(it) {
-    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("3a", ["34"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var anObject = require("34");
+  var anObject = require("3b");
   module.exports = function(iterator, fn, value, entries) {
     try {
       return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -1432,12 +1257,26 @@ $__System.registerDynamic("3a", ["34"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("3c", ["4f"], true, function(require, exports, module) {
+$__System.registerDynamic("35", ["2d", "51"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var toInteger = require("4f"),
+  var Iterators = require("2d"),
+      ITERATOR = require("51")('iterator');
+  module.exports = function(it) {
+    return (Iterators.Array || Array.prototype[ITERATOR]) === it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("36", ["52"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toInteger = require("52"),
       min = Math.min;
   module.exports = function(it) {
     return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
@@ -1446,12 +1285,28 @@ $__System.registerDynamic("3c", ["4f"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("3d", ["52"], true, function(require, exports, module) {
+$__System.registerDynamic("37", ["44", "51", "2d", "26"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var SYMBOL_ITERATOR = require("52")('iterator'),
+  var classof = require("44"),
+      ITERATOR = require("51")('iterator'),
+      Iterators = require("2d");
+  module.exports = require("26").getIteratorMethod = function(it) {
+    if (it != undefined)
+      return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("38", ["51"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var SYMBOL_ITERATOR = require("51")('iterator'),
       SAFE_CLOSING = false;
   try {
     var riter = [7][SYMBOL_ITERATOR]();
@@ -1483,46 +1338,152 @@ $__System.registerDynamic("3d", ["52"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("3e", [], true, function(require, exports, module) {
+$__System.registerDynamic("39", ["44", "51", "2d", "26"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = function() {};
+  var classof = require("44"),
+      ITERATOR = require("51")('iterator'),
+      Iterators = require("2d");
+  module.exports = require("26").isIterable = function(it) {
+    var O = Object(it);
+    return ITERATOR in O || '@@iterator' in O || Iterators.hasOwnProperty(classof(O));
+  };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("3f", [], true, function(require, exports, module) {
+$__System.registerDynamic("3a", ["2e", "26", "48"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = function(done, value) {
-    return {
-      value: value,
-      done: !!done
+  module.exports = function(KEY, exec) {
+    var $def = require("2e"),
+        fn = (require("26").Object || {})[KEY] || Object[KEY],
+        exp = {};
+    exp[KEY] = exec(fn);
+    $def($def.S + $def.F * require("48")(function() {
+      fn(1);
+    }), 'Object', exp);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3b", ["50"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var isObject = require("50");
+  module.exports = function(it) {
+    if (!isObject(it))
+      throw TypeError(it + ' is not an object!');
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3d", ["53", "2e", "54", "45", "4f", "51", "2d", "55", "3e", "4a"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var LIBRARY = require("53"),
+      $def = require("2e"),
+      $redef = require("54"),
+      hide = require("45"),
+      has = require("4f"),
+      SYMBOL_ITERATOR = require("51")('iterator'),
+      Iterators = require("2d"),
+      BUGGY = !([].keys && 'next' in [].keys()),
+      FF_ITERATOR = '@@iterator',
+      KEYS = 'keys',
+      VALUES = 'values';
+  var returnThis = function() {
+    return this;
+  };
+  module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE) {
+    require("55")(Constructor, NAME, next);
+    var createMethod = function(kind) {
+      switch (kind) {
+        case KEYS:
+          return function keys() {
+            return new Constructor(this, kind);
+          };
+        case VALUES:
+          return function values() {
+            return new Constructor(this, kind);
+          };
+      }
+      return function entries() {
+        return new Constructor(this, kind);
+      };
+    };
+    var TAG = NAME + ' Iterator',
+        proto = Base.prototype,
+        _native = proto[SYMBOL_ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT],
+        _default = _native || createMethod(DEFAULT),
+        methods,
+        key;
+    if (_native) {
+      var IteratorPrototype = require("3e").getProto(_default.call(new Base));
+      require("4a")(IteratorPrototype, TAG, true);
+      if (!LIBRARY && has(proto, FF_ITERATOR))
+        hide(IteratorPrototype, SYMBOL_ITERATOR, returnThis);
+    }
+    if (!LIBRARY || FORCE)
+      hide(proto, SYMBOL_ITERATOR, _default);
+    Iterators[NAME] = _default;
+    Iterators[TAG] = returnThis;
+    if (DEFAULT) {
+      methods = {
+        keys: IS_SET ? _default : createMethod(KEYS),
+        values: DEFAULT == VALUES ? _default : createMethod(VALUES),
+        entries: DEFAULT != VALUES ? _default : createMethod('entries')
+      };
+      if (FORCE)
+        for (key in methods) {
+          if (!(key in proto))
+            $redef(proto, key, methods[key]);
+        }
+      else
+        $def($def.P + $def.F * BUGGY, NAME, methods);
+    }
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("3c", ["52", "4d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var toInteger = require("52"),
+      defined = require("4d");
+  module.exports = function(TO_STRING) {
+    return function(that, pos) {
+      var s = String(defined(that)),
+          i = toInteger(pos),
+          l = s.length,
+          a,
+          b;
+      if (i < 0 || i >= l)
+        return TO_STRING ? '' : undefined;
+      a = s.charCodeAt(i);
+      return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
     };
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("40", ["56", "45"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var IObject = require("56"),
-      defined = require("45");
-  module.exports = function(it) {
-    return IObject(defined(it));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("41", [], true, function(require, exports, module) {
+$__System.registerDynamic("3e", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1544,14 +1505,86 @@ $__System.registerDynamic("41", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("42", ["41", "57", "4a"], true, function(require, exports, module) {
+$__System.registerDynamic("3f", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var $ = require("41"),
-      createDesc = require("57");
-  module.exports = require("4a") ? function(object, key, value) {
+  module.exports = function() {};
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("40", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(done, value) {
+    return {
+      value: value,
+      done: !!done
+    };
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("41", ["56", "4d"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var IObject = require("56"),
+      defined = require("4d");
+  module.exports = function(it) {
+    return IObject(defined(it));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("42", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var UNDEFINED = 'undefined';
+  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
+  if (typeof __g == 'number')
+    __g = global;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("44", ["57", "51"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var cof = require("57"),
+      TAG = require("51")('toStringTag'),
+      ARG = cof(function() {
+        return arguments;
+      }()) == 'Arguments';
+  module.exports = function(it) {
+    var O,
+        T,
+        B;
+    return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("45", ["3e", "58", "47"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var $ = require("3e"),
+      createDesc = require("58");
+  module.exports = require("47") ? function(object, key, value) {
     return $.setDesc(object, key, createDesc(1, value));
   } : function(object, key, value) {
     object[key] = value;
@@ -1561,42 +1594,7 @@ $__System.registerDynamic("42", ["41", "57", "4a"], true, function(require, expo
   return module.exports;
 });
 
-$__System.registerDynamic("43", ["41", "52", "4a"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("41"),
-      SPECIES = require("52")('species');
-  module.exports = function(C) {
-    if (require("4a") && !(SPECIES in C))
-      $.setDesc(C, SPECIES, {
-        configurable: true,
-        get: function() {
-          return this;
-        }
-      });
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("45", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it) {
-    if (it == undefined)
-      throw TypeError("Can't call method on  " + it);
-    return it;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("44", [], true, function(require, exports, module) {
+$__System.registerDynamic("46", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1610,31 +1608,47 @@ $__System.registerDynamic("44", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("47", [], true, function(require, exports, module) {
+$__System.registerDynamic("47", ["48"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var id = 0,
-      px = Math.random();
-  module.exports = function(key) {
-    return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+  module.exports = !require("48")(function() {
+    return Object.defineProperty({}, 'a', {get: function() {
+        return 7;
+      }}).a != 7;
+  });
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("48", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(exec) {
+    try {
+      return !!exec();
+    } catch (e) {
+      return true;
+    }
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("46", ["39", "3a", "3b", "34", "3c", "35"], true, function(require, exports, module) {
+$__System.registerDynamic("43", ["32", "34", "35", "3b", "36", "37"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var ctx = require("39"),
-      call = require("3a"),
-      isArrayIter = require("3b"),
-      anObject = require("34"),
-      toLength = require("3c"),
-      getIterFn = require("35");
+  var ctx = require("32"),
+      call = require("34"),
+      isArrayIter = require("35"),
+      anObject = require("3b"),
+      toLength = require("36"),
+      getIterFn = require("37");
   module.exports = function(iterable, entries, fn, that) {
     var iterFn = getIterFn(iterable),
         f = ctx(fn, that, entries ? 2 : 1),
@@ -1657,51 +1671,12 @@ $__System.registerDynamic("46", ["39", "3a", "3b", "34", "3c", "35"], true, func
   return module.exports;
 });
 
-$__System.registerDynamic("48", [], true, function(require, exports, module) {
+$__System.registerDynamic("49", ["54"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var hasOwnProperty = {}.hasOwnProperty;
-  module.exports = function(it, key) {
-    return hasOwnProperty.call(it, key);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("49", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(it) {
-    return it !== null && (typeof it == 'object' || typeof it == 'function');
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4a", ["4d"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = !require("4d")(function() {
-    return Object.defineProperty({}, 'a', {get: function() {
-        return 7;
-      }}).a != 7;
-  });
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4b", ["51"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var $redef = require("51");
+  var $redef = require("54");
   module.exports = function(target, src) {
     for (var key in src)
       $redef(target, key, src[key]);
@@ -1711,27 +1686,14 @@ $__System.registerDynamic("4b", ["51"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("4c", [], true, function(require, exports, module) {
+$__System.registerDynamic("4a", ["4f", "45", "51"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var UNDEFINED = 'undefined';
-  var global = module.exports = typeof window != UNDEFINED && window.Math == Math ? window : typeof self != UNDEFINED && self.Math == Math ? self : Function('return this')();
-  if (typeof __g == 'number')
-    __g = global;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4e", ["48", "42", "52"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var has = require("48"),
-      hide = require("42"),
-      TAG = require("52")('toStringTag');
+  var has = require("4f"),
+      hide = require("45"),
+      TAG = require("51")('toStringTag');
   module.exports = function(it, tag, stat) {
     if (it && !has(it = stat ? it : it.prototype, TAG))
       hide(it, TAG, tag);
@@ -1740,110 +1702,7 @@ $__System.registerDynamic("4e", ["48", "42", "52"], true, function(require, expo
   return module.exports;
 });
 
-$__System.registerDynamic("4d", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = function(exec) {
-    try {
-      return !!exec();
-    } catch (e) {
-      return true;
-    }
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("4f", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var ceil = Math.ceil,
-      floor = Math.floor;
-  module.exports = function(it) {
-    return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("50", [], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = true;
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("51", ["42"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = require("42");
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("52", ["58", "4c", "47"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var store = require("58")('wks'),
-      Symbol = require("4c").Symbol;
-  module.exports = function(name) {
-    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("47"))('Symbol.' + name));
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("54", ["59", "52"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  var cof = require("59"),
-      TAG = require("52")('toStringTag'),
-      ARG = cof(function() {
-        return arguments;
-      }()) == 'Arguments';
-  module.exports = function(it) {
-    var O,
-        T,
-        B;
-    return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof(T = (O = Object(it))[TAG]) == 'string' ? T : ARG ? cof(O) : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("53", ["41", "42", "52", "57", "4e"], true, function(require, exports, module) {
-  ;
-  var global = this,
-      __define = global.define;
-  global.define = undefined;
-  'use strict';
-  var $ = require("41"),
-      IteratorPrototype = {};
-  require("42")(IteratorPrototype, require("52")('iterator'), function() {
-    return this;
-  });
-  module.exports = function(Constructor, NAME, next) {
-    Constructor.prototype = $.create(IteratorPrototype, {next: require("57")(1, next)});
-    require("4e")(Constructor, NAME + ' Iterator');
-  };
-  global.define = __define;
-  return module.exports;
-});
-
-$__System.registerDynamic("55", [], true, function(require, exports, module) {
+$__System.registerDynamic("4b", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
@@ -1857,12 +1716,153 @@ $__System.registerDynamic("55", [], true, function(require, exports, module) {
   return module.exports;
 });
 
-$__System.registerDynamic("56", ["59"], true, function(require, exports, module) {
+$__System.registerDynamic("4d", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var cof = require("59");
+  module.exports = function(it) {
+    if (it == undefined)
+      throw TypeError("Can't call method on  " + it);
+    return it;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4c", ["3e", "51", "47"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      SPECIES = require("51")('species');
+  module.exports = function(C) {
+    if (require("47") && !(SPECIES in C))
+      $.setDesc(C, SPECIES, {
+        configurable: true,
+        get: function() {
+          return this;
+        }
+      });
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4e", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var id = 0,
+      px = Math.random();
+  module.exports = function(key) {
+    return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("4f", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var hasOwnProperty = {}.hasOwnProperty;
+  module.exports = function(it, key) {
+    return hasOwnProperty.call(it, key);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("50", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function(it) {
+    return it !== null && (typeof it == 'object' || typeof it == 'function');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("51", ["59", "42", "4e"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var store = require("59")('wks'),
+      Symbol = require("42").Symbol;
+  module.exports = function(name) {
+    return store[name] || (store[name] = Symbol && Symbol[name] || (Symbol || require("4e"))('Symbol.' + name));
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("52", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var ceil = Math.ceil,
+      floor = Math.floor;
+  module.exports = function(it) {
+    return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("55", ["3e", "45", "51", "58", "4a"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  'use strict';
+  var $ = require("3e"),
+      IteratorPrototype = {};
+  require("45")(IteratorPrototype, require("51")('iterator'), function() {
+    return this;
+  });
+  module.exports = function(Constructor, NAME, next) {
+    Constructor.prototype = $.create(IteratorPrototype, {next: require("58")(1, next)});
+    require("4a")(Constructor, NAME + ' Iterator');
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("54", ["45"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("45");
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("53", [], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = true;
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.registerDynamic("56", ["57"], true, function(require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  var cof = require("57");
   module.exports = 0 in Object('z') ? Object : function(it) {
     return cof(it) == 'String' ? it.split('') : Object(it);
   };
@@ -1875,24 +1875,20 @@ $__System.registerDynamic("57", [], true, function(require, exports, module) {
   var global = this,
       __define = global.define;
   global.define = undefined;
-  module.exports = function(bitmap, value) {
-    return {
-      enumerable: !(bitmap & 1),
-      configurable: !(bitmap & 2),
-      writable: !(bitmap & 4),
-      value: value
-    };
+  var toString = {}.toString;
+  module.exports = function(it) {
+    return toString.call(it).slice(8, -1);
   };
   global.define = __define;
   return module.exports;
 });
 
-$__System.registerDynamic("58", ["4c"], true, function(require, exports, module) {
+$__System.registerDynamic("59", ["42"], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var global = require("4c"),
+  var global = require("42"),
       SHARED = '__core-js_shared__',
       store = global[SHARED] || (global[SHARED] = {});
   module.exports = function(key) {
@@ -1902,14 +1898,18 @@ $__System.registerDynamic("58", ["4c"], true, function(require, exports, module)
   return module.exports;
 });
 
-$__System.registerDynamic("59", [], true, function(require, exports, module) {
+$__System.registerDynamic("58", [], true, function(require, exports, module) {
   ;
   var global = this,
       __define = global.define;
   global.define = undefined;
-  var toString = {}.toString;
-  module.exports = function(it) {
-    return toString.call(it).slice(8, -1);
+  module.exports = function(bitmap, value) {
+    return {
+      enumerable: !(bitmap & 1),
+      configurable: !(bitmap & 2),
+      writable: !(bitmap & 4),
+      value: value
+    };
   };
   global.define = __define;
   return module.exports;
@@ -1941,7 +1941,7 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
 
                 element.addClass("plotify plotify-radial-lineage-plot");
 
-                var svg = d3.select(element[0]).append("svg");
+                var svg = d3.select(element[0]).append("svg").style("width", "100%");
 
                 var colours = d3.scale.category10(),
                     tooltip = new d3tooltip(d3.select(element[0])),
@@ -1986,9 +1986,6 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
 
                     var elementWidth = element[0].offsetWidth;
 
-                    var margin = layout.margin;
-                    if (layout.title) margin.top += 20;
-
                     var isMultipleTree = treeData.length > 1,
                         multipleTreeOffset = isMultipleTree ? 30 : 0,
                         maxLabelLength = testLabelLength(svg, longestNodeName, layout.outerNodeLabel),
@@ -2006,11 +2003,24 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                         legendWidth = 0,
                         colourbarHeight = 0,
                         colourbarWidth = 0,
+                        legendOut = { top: false, right: false, bottom: false, left: false },
+                        showHeatmapTitle = layout.heatmap.enabled && layout.heatmap.title !== null,
+                        colourBarOrigWidth = layout.heatmap.colourBar.width,
+                        colourBarOrigHeight = layout.heatmap.colourBar.height,
                         legend = d3.select(),
-                        colourbar = d3.select();
+                        colourbar = d3.select(),
+                        titleSVG = d3.select();
 
                     var width = layout.width || elementWidth,
                         height = layout.height;
+
+                    if (layout.legend.show) {
+                        if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
+                        if (layout.legend.anchor.y == "outside") legendOut[layout.legend.position.y] = true;
+                    }
+
+                    var margin = layout.margin;
+                    if (layout.title) margin.top += legendOut.top ? 26 : 25;
 
                     var chart = svg.append("g").attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -2043,7 +2053,7 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                             var bbox = colourbar.node().getBoundingClientRect();
 
                             colourbarWidth = bbox.width;
-                            margin.right += colourbarWidth + colourBarOffset;
+                            margin.right += colourbarWidth - (showHeatmapTitle ? 1 : 0) + colourBarOffset;
                             colourbarHeight = bbox.height;
                         }
                     }
@@ -2062,9 +2072,9 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                         var bbox = legend.node().getBoundingClientRect();
                         legendHeight = bbox.height;legendWidth = bbox.width;
                         if (anchor.x === "outside" && pos.x !== "center") {
-                            margin[pos.x] += legendWidth;
+                            margin[pos.x] += legendOut.right ? legendWidth - 10 : legendOut.left ? legendWidth - 11 : legendWidth;
                         } else if (anchor.y === "outside" && pos.y !== "center") {
-                            margin[pos.y] += legendHeight;
+                            margin[pos.y] += legendOut.bottom ? legendHeight - 11 : legendOut.top ? legendHeight - 11 : legendHeight;
                         }
                     }
 
@@ -2082,7 +2092,6 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                     var r = Math.min(height, width) / 2,
                         totalTreeLength = r - maxLabelLength - labelOffset - multipleTreeOffset;
 
-                    colourbar.attr("transform", 'translate(' + (width / 2 + r + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
                     chart.attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
 
                     if (layout.legend.show) {
@@ -2164,12 +2173,20 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
 
                     // render chart title
                     if (layout.title) {
-                        chart.append("text").attr("x", width / 2).attr("y", -(layout.legend.position.y == "top" && layout.legend.anchor.y == "outside" ? legendHeight : 10)).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
+                        titleSVG = chart.append("text").attr("x", width / 2).attr("y", height / 2 - r - (layout.legend.position.y == "top" && layout.legend.anchor.y == "outside" ? legendHeight : 10)).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
                     }
 
                     // TODO: implement equidistant generations
                     //let maxGen = 15;//d3.max(treeData.trees[0].map(d => d.generation));
                     //nodes.forEach(function(d){d.y = d.generation / maxGen * 300});
+
+                    if (layout.heatmap.colourBar.show) {
+                        layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, 2 * r);
+                        layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
+
+                        drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+                        colourbar.attr("transform", 'translate(' + (width / 2 + r + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
+                    }
 
                     if (layout.heatmap.enabled) {
                         heatmapCircle = vis.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodes.filter(function (n) {
@@ -2238,6 +2255,9 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                     }).text(function (d) {
                         return d.name;
                     });
+
+                    legend.each(moveToFront);
+                    titleSVG.each(moveToFront);
 
                     function mouseovered(active) {
                         return function (d) {
@@ -2590,7 +2610,7 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
                     colourScale: [[0, '#008ae5'], [1, 'yellow']],
                     colourBar: {
                         show: true,
-                        height: "70%",
+                        height: "90%",
                         width: 30
                     },
                     circle: {
@@ -2616,657 +2636,7 @@ $__System.register('3', ['1', '2', '10', '11', 'e', 'f', 'd', 'b', 'c'], functio
         }
     };
 });
-$__System.register('4', ['1', '2', '10', '11', '12', 'e', 'f', 'b', 'c'], function (_export) {
-    var angular, d3, _getIterator, _Object$keys, _Set, _Array$from, d3legend, createTreeLayout, mergeTemplateLayout, calcColourBarSize, drawColourBar, createNodeTypes, createDynamicNodeAttr, testLabelLength, layoutTemplate;
-
-    function RadialPhylogeneticTreeDirective($window, WindowResize) {
-        return {
-            restrict: 'EA',
-            scope: {
-                value: '=',
-                branchlength: '='
-            },
-            link: function link(scope, element, attributes) {
-
-                element.addClass("plotify plotify-radial-phylogenetic-tree");
-
-                var svg = d3.select(element[0]).append("svg");
-
-                var hovering = false,
-                    virtualRoot = null,
-                    virtualRootName = "virtual_root",
-                    r = undefined,
-                    labelOffset = 20,
-                    defaultNode = {
-                    r: 4,
-                    "stroke-width": 2
-                },
-                    link = null,
-                    node = null,
-                    linkExtension = null,
-                    totalTreeLength = undefined,
-                    multipleTreeOffset = 0,
-                    visibleSeries = new _Set(),
-                    colours = d3.scale.category10();
-
-                function render(options) {
-
-                    // clean svg before rendering plot
-                    svg.selectAll('*').remove();
-
-                    var defs = svg.append("defs");
-
-                    // do not continue rendering if there is no data
-                    if (!scope.value || !scope.value.data.length) return;
-
-                    var seriesNames = _Array$from(new _Set(extractProp(scope.value.data, "series")));
-
-                    if (options.isNewData) {
-                        colours.domain([]);
-                        visibleSeries = new _Set(seriesNames);
-                    }
-
-                    var copy = angular.copy(scope.value),
-                        treeData = copy.data,
-                        layout = mergeTemplateLayout(copy.layout, layoutTemplate),
-                        pathname = $window.location.pathname,
-                        longestNodeName = treeData.length ? extractProp(treeData, "name").reduce(function (a, b) {
-                        return a.length > b.length ? a : b;
-                    }) : "";
-
-                    var elementWidth = element[0].offsetWidth;
-
-                    var _iteratorNormalCompletion = true;
-                    var _didIteratorError = false;
-                    var _iteratorError = undefined;
-
-                    try {
-                        for (var _iterator = _getIterator(treeData), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            var t = _step.value;
-
-                            collapseSeries(t, visibleSeries);
-                        }
-                    } catch (err) {
-                        _didIteratorError = true;
-                        _iteratorError = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion && _iterator['return']) {
-                                _iterator['return']();
-                            }
-                        } finally {
-                            if (_didIteratorError) {
-                                throw _iteratorError;
-                            }
-                        }
-                    }
-
-                    var margin = layout.margin;
-                    if (layout.title) margin.top += 20;
-
-                    var isMultipleTree = treeData.length > 1,
-                        maxLabelLength = testLabelLength(svg, longestNodeName, layout.outerNodeLabel),
-                        colourBarOffset = 20,
-                        start = null,
-                        rotate = 0,
-                        heatmapColourScale = null,
-                        heatmapCircle = null,
-                        trees = null,
-                        legendHeight = 0,
-                        legendWidth = 0,
-                        colourbarHeight = 0,
-                        colourbarWidth = 0,
-                        legend = d3.select(),
-                        colourbar = d3.select();
-
-                    var width = layout.width || elementWidth,
-                        height = layout.height;
-
-                    var chart = svg.append("g");
-
-                    multipleTreeOffset = isMultipleTree ? 30 : 0;
-
-                    if (layout.heatmap.enabled) {
-
-                        var domain = d3.extent(copy.data, function (node) {
-                            return node.z;
-                        });
-
-                        if (domain[0] == domain[1]) {
-                            if (domain[0] === undefined) {
-                                domain[0] = domain[1] = 0;
-                            }
-                            domain[0] -= 0.5;
-                            domain[1] += 0.5;
-                        }
-
-                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
-                            return v[1];
-                        }));
-
-                        if (layout.heatmap.colourBar.show) {
-                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
-                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
-
-                            colourbar = chart.append("g").attr("class", "plotify-colourbar").attr("transform", "translate(0,0)");
-
-                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
-
-                            var bbox = colourbar.node().getBoundingClientRect();
-
-                            colourbarWidth = bbox.width;
-                            margin.right += colourbarWidth + colourBarOffset;
-                            colourbarHeight = bbox.height;
-                        }
-                    }
-
-                    if (layout.legend.show) {
-                        var pos = layout.legend.position,
-                            anchor = layout.legend.anchor,
-                            orientation = layout.legend.orientation;
-
-                        var splitAfter = orientation === "horizontal" ? 0 : 1;
-
-                        var drawLegend = d3legend().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
-
-                        legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
-
-                        var bbox = legend.node().getBoundingClientRect();
-                        legendHeight = bbox.height;legendWidth = bbox.width;
-                        if (anchor.x === "outside" && pos.x !== "center") {
-                            margin[pos.x] += legendWidth;
-                        } else if (anchor.y === "outside" && pos.y !== "center") {
-                            margin[pos.y] += legendHeight;
-                        }
-                    }
-
-                    function legendClick(label) {
-                        var clicked = d3.select(this);
-                        if (visibleSeries.has(label)) visibleSeries['delete'](label);else visibleSeries.add(label);
-                        clicked.classed("legend-item-selected", visibleSeries.has(label));
-                        clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
-                        render({ isNewData: false });
-                    }
-
-                    width = (layout.width || elementWidth) - margin.right - margin.left;
-                    height = layout.height - margin.top - margin.bottom;
-
-                    var r = Math.min(height, width) / 2,
-                        totalTreeLength = r - maxLabelLength - labelOffset - multipleTreeOffset;
-
-                    chart.attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
-                    colourbar.attr("transform", 'translate(' + (width / 2 + r + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
-
-                    if (layout.legend.show) {
-                        var pos = layout.legend.position,
-                            anchor = layout.legend.anchor,
-                            posX = pos.x === "left" ? width / 2 - r : pos.x === "right" ? width / 2 + r + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
-                            posY = pos.y === "top" ? height / 2 - r : pos.y === "bottom" ? height / 2 + r : height / 2;
-
-                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
-                    }
-
-                    if (isMultipleTree) {
-                        virtualRoot = {
-                            name: virtualRootName,
-                            parent: null,
-                            children: [],
-                            series: 0,
-                            _depth: 0,
-                            length: 0,
-                            type: undefined
-                        };
-
-                        var _iteratorNormalCompletion2 = true;
-                        var _didIteratorError2 = false;
-                        var _iteratorError2 = undefined;
-
-                        try {
-                            for (var _iterator2 = _getIterator(treeData), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                                var tree = _step2.value;
-
-                                spreadNodes(tree);
-                                tree.parent = virtualRootName;
-                                virtualRoot.children.push(tree);
-                            }
-                        } catch (err) {
-                            _didIteratorError2 = true;
-                            _iteratorError2 = err;
-                        } finally {
-                            try {
-                                if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-                                    _iterator2['return']();
-                                }
-                            } finally {
-                                if (_didIteratorError2) {
-                                    throw _iteratorError2;
-                                }
-                            }
-                        }
-
-                        trees = virtualRoot;
-                    } else {
-                        trees = treeData[0];
-                        spreadNodes(trees);
-                    }
-
-                    var types = createNodeTypes(treeData, layout.nodeTypes, defaultNode),
-                        nodeAttr = createDynamicNodeAttr(types, _Object$keys(defaultNode));
-
-                    var cluster = d3.layout.cluster().size([360, 1]).sort(function (a, b) {
-                        return d3.ascending(a.length, b.length);
-                    }).children(function (d) {
-                        return d.children;
-                    }).separation(function () {
-                        return 1;
-                    });
-
-                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("-webkit-backface-visibility", "hidden");
-
-                    // Catch mouse events in Safari.
-                    svg.append("rect").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).attr("fill", "none");
-
-                    var visTranslate = [width / 2, height / 2],
-                        vis = chart.append("g").attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')');
-
-                    var nodes = cluster.nodes(trees),
-                        links = cluster.links(nodes);
-
-                    nodes.forEach(function (d) {
-                        d.y = d.name === virtualRootName ? 0 : multipleTreeOffset + d._depth * totalTreeLength;
-                    });
-
-                    // render chart title
-                    if (layout.title) {
-                        chart.append("text").attr("x", width / 2).attr("y", -(layout.legend.position.y == "top" && layout.legend.anchor.y == "outside" ? legendHeight : 10)).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
-                    }
-
-                    if (layout.heatmap.enabled) {
-                        heatmapCircle = vis.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodes.filter(function (n) {
-                            return n.taxon && n.taxon.name !== null && !isNaN(parseFloat(n.taxon.z));
-                        })).enter().append("circle").attr("class", "heatmap-circle").style("fill", function (d) {
-                            return heatmapColourScale(d.taxon.z);
-                        }).style("opacity", layout.heatmap.opacity).attr(layout.heatmap.circle).attr("transform", function (d) {
-                            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
-                        });
-                    }
-
-                    removeNegativeLengths(trees);
-                    setRadius(trees, trees.length = 0, totalTreeLength / maxLength(trees));
-
-                    var show = scope.branchlength !== undefined ? scope.branchlength : true;
-                    linkExtension = vis.append("g").selectAll("path").data(links.filter(function (d) {
-                        return !d.target.children;
-                    })).enter().append("path").attr("class", "link-extension").each(function (d) {
-                        d.target.linkExtensionNode = this;
-                    }).attr("d", function (d) {
-                        return step2(d.target.x, show ? d.target.radius : d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
-                    });
-
-                    link = vis.append("g").selectAll("path").data(links).enter().append("path").attr("class", "link").attr(layout.link).each(function (d) {
-                        d.target.linkNode = this;
-                    }).attr("d", function (d) {
-                        return step2(d.source.x, show ? d.source.radius : d.source.y, d.target.x, show ? d.target.radius : d.target.y);
-                    }).style("stroke", "black");
-
-                    if (isMultipleTree) {
-                        link.filter(function (d) {
-                            return d.source.name === virtualRootName;
-                        }).style("opacity", 0);
-                    }
-
-                    if (layout.showLeafNodes) {
-                        node = vis.selectAll("g.node").data(nodes).enter().append("g")
-                        //.attr("id", d => d.name)
-                        .attr("class", "node").attr("transform", function (d) {
-                            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
-                        }).on("mouseover", mouseovered(true)).on("mouseout", mouseovered(false)).each(function (d) {
-                            d.nodeGroupNode = this;
-                        });
-
-                        node.filter(function (d) {
-                            return !d.taxon;
-                        }).style("opacity", 0);
-
-                        node.append("circle").style("stroke", function (d) {
-                            return d.taxon && d.name !== virtualRootName ? colours(d.taxon.series) : "none";
-                        }).attr(nodeAttr);
-                    }
-
-                    var maxLabelHeight = 2 * Math.PI * (multipleTreeOffset + totalTreeLength + labelOffset) / nodes.filter(function (d) {
-                        return !d.children || !d.children.length;
-                    }).length;
-
-                    layout.outerNodeLabel["font-size"] = d3.min([layout.outerNodeLabel["font-size"], maxLabelHeight]);
-
-                    var label = vis.selectAll("text.outer-label").data(nodes.filter(function (d) {
-                        return !!d.taxon;
-                    })).enter().append("text").attr(layout.outerNodeLabel).attr("class", "outer-label").attr("dy", ".31em").attr("text-anchor", function (d) {
-                        return d.x < 180 ? "start" : "end";
-                    }).attr("transform", function (d) {
-                        return 'rotate(' + (d.x - 90) + ')\n                                             translate(' + (totalTreeLength + labelOffset + multipleTreeOffset) + ')\n                                             rotate(' + (d.x < 180 ? 0 : 180) + ')';
-                    }).text(function (d) {
-                        return d.taxon.name;
-                    }).on("mouseover", mouseovered(true)).on("mouseout", mouseovered(false));
-
-                    function mouseovered(active) {
-                        return function (d) {
-                            d3.select(this).classed("label-active", active);
-                            d3.select(d.linkExtensionNode).classed("link-extension-active", active).each(moveToFront);
-                            do d3.select(d.linkNode).classed("link-active", active).each(moveToFront); while (d = d.parent);
-                        };
-                    }
-
-                    svg.on("mousedown", function () {
-                        if (!hovering) {
-                            svg.style("cursor", "move");
-                            start = mouse(this);
-                            d3.event.preventDefault();
-                        }
-                    });
-                    svg.on("mouseup", function () {
-                        if (start && !hovering) {
-                            svg.style("cursor", "auto");
-                            var m = mouse(svg.node());
-                            rotate += Math.atan2(cross(start, m), dot(start, m)) * 180 / Math.PI;
-                            if (rotate > 360) rotate %= 360;else if (rotate < 0) rotate = (360 + rotate) % 360;
-                            start = null;
-                            vis.attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')rotate(' + rotate + ')').selectAll("text.outer-label").attr("text-anchor", function (d) {
-                                return (d.x + rotate) % 360 < 180 ? "start" : "end";
-                            }).attr("transform", function (d) {
-                                return 'rotate(' + (d.x - 90) + ')\n                                                             translate(' + (totalTreeLength + labelOffset + multipleTreeOffset) + ')\n                                                             rotate(' + ((d.x + rotate) % 360 < 180 ? 0 : 180) + ')';
-                            });
-                        }
-                    }).on("mousemove", function () {
-                        if (start) {
-                            var m = mouse(svg.node());
-                            var delta = Math.atan2(cross(start, m), dot(start, m)) * 180 / Math.PI;
-                            vis.attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')rotate(' + (rotate + delta) + ')');
-                        }
-                    });
-
-                    function mouse(element) {
-                        return d3.mouse(element).map(function (d, i) {
-                            return d - visTranslate[i];
-                        });
-                    }
-
-                    function moveToFront() {
-                        this.parentNode.appendChild(this);
-                    }
-
-                    function cross(a, b) {
-                        return a[0] * b[1] - a[1] * b[0];
-                    }
-
-                    function dot(a, b) {
-                        return a[0] * b[0] + a[1] * b[1];
-                    }
-                }
-
-                function setRadius(d, y0, k) {
-                    d.radius = (y0 += d.length) * k + multipleTreeOffset;
-                    if (d.children && d.children.length > 0) d.children.forEach(function (d) {
-                        return setRadius(d, y0, k);
-                    });
-                }
-
-                function removeNegativeLengths(d) {
-                    if (d.length < 0) d.length = 0;
-                    if (d.children && d.children.length > 0) d.children.forEach(removeNegativeLengths);
-                }
-
-                function maxLength(d) {
-                    return d.length + (d.children && d.children.length > 0 ? d3.max(d.children, maxLength) : 0);
-                }
-
-                function step2(startAngle, startRadius, endAngle, endRadius) {
-                    var c0 = Math.cos(startAngle = (startAngle - 90) / 180 * Math.PI),
-                        s0 = Math.sin(startAngle),
-                        c1 = Math.cos(endAngle = (endAngle - 90) / 180 * Math.PI),
-                        s1 = Math.sin(endAngle);
-                    return "M" + startRadius * c0 + "," + startRadius * s0 + (endAngle === startAngle ? "" : "A" + startRadius + "," + startRadius + " 0 0 " + (endAngle > startAngle ? 1 : 0) + " " + startRadius * c1 + "," + startRadius * s1) + "L" + endRadius * c1 + "," + endRadius * s1;
-                }
-
-                function extractProp(trees, prop) {
-                    var names = [];
-                    var _iteratorNormalCompletion3 = true;
-                    var _didIteratorError3 = false;
-                    var _iteratorError3 = undefined;
-
-                    try {
-                        for (var _iterator3 = _getIterator(trees), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                            var tree = _step3.value;
-
-                            extract(tree);
-                        }
-                    } catch (err) {
-                        _didIteratorError3 = true;
-                        _iteratorError3 = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion3 && _iterator3['return']) {
-                                _iterator3['return']();
-                            }
-                        } finally {
-                            if (_didIteratorError3) {
-                                throw _iteratorError3;
-                            }
-                        }
-                    }
-
-                    function extract(tree) {
-                        if (tree.taxon !== null) names.push(tree.taxon[prop]);else {
-                            extract(tree.children[0]);
-                            extract(tree.children[1]);
-                        }
-                    }
-                    return names;
-                }
-
-                // Handle window resize event.
-                scope.$on('window-resize', function (event) {
-                    render({ isNewData: false });
-                });
-
-                scope.$watch("value", function () {
-                    render({ isNewData: true });
-                });
-
-                scope.$watch("branchlength", function (show) {
-                    if (!linkExtension || !link || !totalTreeLength) return;
-                    d3.transition().duration(750).each(function () {
-                        linkExtension.transition().attr("d", function (d) {
-                            return step2(d.target.x, show ? d.target.radius : d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
-                        });
-                        link.transition().attr("d", function (d) {
-                            return step2(d.source.x, show ? d.source.radius : d.source.y, d.target.x, show ? d.target.radius : d.target.y);
-                        });
-                    });
-                });
-            }
-        };
-    }
-
-    function spreadNodes(node) {
-        var level = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
-
-        if (!node.children || !node.children.length) {
-            node._depth = 1;
-            return level;
-        }
-        var max = 1,
-            childMax = undefined;
-        var _iteratorNormalCompletion4 = true;
-        var _didIteratorError4 = false;
-        var _iteratorError4 = undefined;
-
-        try {
-            for (var _iterator4 = _getIterator(node.children), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                var child = _step4.value;
-
-                childMax = spreadNodes(child, level + 1);
-                if (childMax > max) {
-                    max = childMax;
-                }
-            }
-        } catch (err) {
-            _didIteratorError4 = true;
-            _iteratorError4 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion4 && _iterator4['return']) {
-                    _iterator4['return']();
-                }
-            } finally {
-                if (_didIteratorError4) {
-                    throw _iteratorError4;
-                }
-            }
-        }
-
-        node._depth = level / max;
-        return max;
-    }
-
-    function collapseSeries(tree, visibleSeries) {
-
-        var leaves = [];
-        (function findLeaves(t) {
-            if (t.taxon !== null) {
-                leaves.push(t);
-                return;
-            }
-            findLeaves(t.children[0]);
-            findLeaves(t.children[1]);
-        })(tree);
-        (function addParents(t, parent) {
-            if (parent) {
-                t.parent = parent;
-            }
-            if (t.taxon !== null) {
-                return;
-            }
-            addParents(t.children[0], t);
-            addParents(t.children[1], t);
-        })(tree, null);
-        var leavesOut = leaves.filter(function (l) {
-            return !visibleSeries.has(l.taxon.series);
-        });
-
-        var _iteratorNormalCompletion5 = true;
-        var _didIteratorError5 = false;
-        var _iteratorError5 = undefined;
-
-        try {
-            for (var _iterator5 = _getIterator(leavesOut), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-                var leaf = _step5.value;
-
-                var _parent = leaf.parent;
-                if (!_parent && leaf.taxon) {
-                    return null;
-                }
-                var sibling = _parent.children[_parent.children.indexOf(leaf) ^ 1];
-                var parent2 = _parent.parent;
-                if (!parent2) {
-                    return sibling;
-                }
-                parent2.children[parent2.children.indexOf(_parent)] = sibling;
-                sibling.length += _parent.length;
-                sibling.parent = parent2;
-            }
-        } catch (err) {
-            _didIteratorError5 = true;
-            _iteratorError5 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion5 && _iterator5['return']) {
-                    _iterator5['return']();
-                }
-            } finally {
-                if (_didIteratorError5) {
-                    throw _iteratorError5;
-                }
-            }
-        }
-    }
-
-    return {
-        setters: [function (_4) {
-            angular = _4['default'];
-        }, function (_5) {
-            d3 = _5['default'];
-        }, function (_) {
-            _getIterator = _['default'];
-        }, function (_2) {
-            _Object$keys = _2['default'];
-        }, function (_3) {}, function (_e) {
-            _Set = _e['default'];
-        }, function (_f) {
-            _Array$from = _f['default'];
-        }, function (_b) {}, function (_c) {
-            d3legend = _c.d3legend;
-            createTreeLayout = _c.createTreeLayout;
-            mergeTemplateLayout = _c.mergeTemplateLayout;
-            calcColourBarSize = _c.calcColourBarSize;
-            drawColourBar = _c.drawColourBar;
-            createNodeTypes = _c.createNodeTypes;
-            createDynamicNodeAttr = _c.createDynamicNodeAttr;
-            testLabelLength = _c.testLabelLength;
-        }],
-        execute: function () {
-            'use strict';
-
-            layoutTemplate = {
-                title: null,
-                width: null,
-                height: 600,
-                margin: {
-                    top: 10,
-                    bottom: 10,
-                    right: 10,
-                    left: 10
-                },
-                nodeTypes: {},
-                showLeafNodes: true,
-                outerNodeLabel: {
-                    "font-size": 14
-                },
-                link: {
-                    "stroke-width": 1.5
-                },
-                heatmap: {
-                    enabled: false,
-                    colourScale: [[0, '#008ae5'], [1, 'yellow']],
-                    colourBar: {
-                        show: true,
-                        height: "70%",
-                        width: 30
-                    },
-                    circle: {
-                        r: 16
-                    },
-                    opacity: 0.4
-                },
-                legend: {
-                    show: false,
-                    position: {
-                        x: "right",
-                        y: "center"
-                    },
-                    anchor: {
-                        x: "outside",
-                        y: "inside"
-                    },
-                    orientation: "vertical"
-                }
-            };
-
-            _export('default', angular.module('plotify.radial-phylogenetic-tree', ['plotify.utils']).directive('radialPhylogeneticTree', RadialPhylogeneticTreeDirective));
-        }
-    };
-});
-$__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], function (_export) {
+$__System.register('5', ['1', '2', '10', '11', '12', 'e', 'f', 'b', 'c'], function (_export) {
     var angular, d3, _getIterator, _Object$keys, _Set, _Array$from, d3legend, d3tooltip, mergeTemplateLayout, createNodeTypes, labelCollisionDetection, createTreeLayout, spreadGenerations, createDynamicNodeAttr, scaleProperties, getNodeLabelBBox, drawColourBar, calcColourBarSize, layoutTemplate, labelPositions;
 
     function LineagePlotDirective($window, WindowResize) {
@@ -3330,10 +2700,22 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                         legendWidth = 0,
                         colourbarHeight = 0,
                         colourbarWidth = 0,
-                        colourBarOffset = layout.heatmap.colourBar.show ? 20 : 0,
+                        legendOut = { top: false, right: false, bottom: false, left: false },
+                        showAxisTitle = layout.axis.show && !layout.axis.gridOnly && layout.axis.title,
+                        showHeatmapTitle = layout.heatmap.enabled && layout.heatmap.title !== null,
+                        colourBarOrigWidth = layout.heatmap.colourBar.width,
+                        colourBarOrigHeight = layout.heatmap.colourBar.height,
+                        colourBarOffset = layout.heatmap.colourBar.show ? 15 : 0,
                         colourbar = d3.select(),
                         legend = d3.select(),
-                        xAxisOffset = layout.axis.show ? 15 : 0;
+                        xAxisOffset = 0,
+                        titleSVG = d3.select(),
+                        axisSVG = d3.select();
+
+                    if (layout.legend.show) {
+                        if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
+                        if (layout.legend.anchor.y == "outside") legendOut[layout.legend.position.y] = true;
+                    }
 
                     var initialLabelPosition = labelPositions[0];
 
@@ -3361,10 +2743,9 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
 
                     var margin = layout.margin;
 
-                    if (layout.title) margin.top += 20;
+                    if (layout.title) margin.top += legendOut.top ? 26 : 25;
                     //if (!(layout.legend.position.y == "top" && layout.legend.anchor.y == "outside")) margin.top += 10;
-                    if (layout.axis.show && !layout.axis.gridOnly) margin.bottom += xAxisOffset;
-                    if (layout.axis.title) margin.bottom += 16;
+                    if (showAxisTitle) margin.bottom += legendOut.bottom ? 16 : 18;
 
                     var width = layout.width || elementWidth,
                         height = layout.height;
@@ -3393,8 +2774,8 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                         }));
 
                         if (layout.heatmap.colourBar.show) {
-                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
-                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
+                            layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, height);
+                            layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
 
                             colourbar = chart.append("g").attr("class", "plotify-colourbar");
 
@@ -3404,7 +2785,9 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                                 pos = layout.heatmap.colourBar.position;
                             colourbarWidth = bbox.width;
                             colourbarHeight = bbox.height;
-                            if (pos === "right" || pos === "left") margin.right += colourbarWidth + colourBarOffset;else if (pos === "top" || pos === "bottom") margin.top += colourbarHeight;
+                            if (pos === "right" || pos === "left") margin.right += colourbarWidth - (showHeatmapTitle ? 1 : 0) + colourBarOffset;
+                            //else if (pos === "top" || pos === "bottom")
+                            //    margin.top += colourbarHeight;
                         }
                     }
 
@@ -3420,13 +2803,17 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                         legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
 
                         var bbox = legend.node().getBoundingClientRect();
-                        legendHeight = bbox.height;legendWidth = bbox.width;
+                        legendHeight = bbox.height;
+                        legendWidth = bbox.width;
+
                         if (anchor.x === "outside" && pos.x !== "center") {
-                            margin[pos.x] += legendWidth;
+                            margin[pos.x] += legendOut.right ? legendWidth - 10 : legendOut.left ? legendWidth - 11 : legendWidth;
                         } else if (anchor.y === "outside" && pos.y !== "center") {
-                            margin[pos.y] += legendHeight;
+                            margin[pos.y] += legendOut.bottom ? layout.axis.show && !layout.axis.gridOnly ? legendHeight - 9 : legendHeight - 12 : legendOut.top ? legendHeight - 11 : legendHeight;
                         }
                     }
+
+                    width = (layout.width || elementWidth) - margin.right - margin.left;
 
                     function legendClick(label) {
                         var clicked = d3.select(this);
@@ -3434,22 +2821,6 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                         clicked.classed("legend-item-selected", visibleSeries.has(label));
                         clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
                         render({ isNewData: false });
-                    }
-
-                    width = (layout.width || elementWidth) - margin.right - margin.left;
-                    height = layout.height - margin.top - margin.bottom;
-
-                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
-
-                    colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
-                    if (layout.legend.show) {
-                        var pos = layout.legend.position,
-                            anchor = layout.legend.anchor,
-                            titleOffset = layout.axis.title ? 16 : 0,
-                            posX = pos.x === "left" ? 0 : pos.x === "right" ? width + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
-                            posY = pos.y === "top" ? 0 : pos.y === "bottom" ? height + (anchor.y === "outside" ? xAxisOffset + titleOffset : 0) : height / 2;
-
-                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
                     }
 
                     // diagonal generator
@@ -3461,14 +2832,12 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                         return [d.y, d.x];
                     });
 
-                    var treeLayout = d3.layout.tree().size([height, width]),
-                        nodes = treeLayout.nodes(root).reverse(),
-                        links = treeLayout.links(nodes),
-                        generationExtent = d3.extent(nodes, function (node) {
+                    var generationExtent = d3.extent(treeData, function (node) {
                         return node.generation;
                     });
 
                     generationExtent[1] += 1;
+                    generationExtent[0] -= 1;
                     var depth = width / (generationExtent[1] - generationExtent[0]);
 
                     // trim depth if exceeds maximum allowed depth
@@ -3486,36 +2855,70 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                     //.x(xScale) // TODO: can be reworked when xExtent is implemented in d3.js
                     .on("zoom", zoomed);
 
-                    var clip = defs.append("svg:clipPath").attr("id", "lineage-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
-
                     chart.attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')').call(zoom).on("dblclick.zoom", onDoubleClick);
 
                     // Define x axis and grid
-                    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height);
+                    var xAxis = d3.svg.axis().scale(xScale).innerTickSize(0).outerTickSize(0).orient("bottom");
+
+                    //render x axis
+                    if (layout.axis.show) {
+                        axisSVG = chart.append("g").attr("class", "axis x-axis").call(xAxis);
+
+                        if (!layout.axis.gridOnly) {
+                            xAxisOffset = axisSVG.node().getBBox().height;
+                            margin.bottom += xAxisOffset - 3;
+                        }
+                    }
+
+                    height = layout.height - margin.top - margin.bottom;
+                    xAxis.innerTickSize(-height);
+                    axisSVG.attr("transform", 'translate(0, ' + height + ')').call(xAxis);
+
+                    var treeLayout = d3.layout.tree().size([height, width]),
+                        nodes = treeLayout.nodes(root).reverse(),
+                        links = treeLayout.links(nodes);
 
                     // Calculate depth positions.
                     nodes.forEach(function (node) {
                         node.y = node.x;
                         node.x = xScale(node.generation);
                     });
-                    //render x axis
-                    if (layout.axis.show) {
-                        chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
-                    }
+
+                    var clip = defs.append("svg:clipPath").attr("id", "lineage-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+
+                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
 
                     // render chart title
                     if (layout.title) {
-                        chart.append("text").attr("x", width / 2).attr("y", -(layout.legend.position.y == "top" && layout.legend.anchor.y == "outside" ? legendHeight : 10)).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
+                        titleSVG = chart.append("text").attr("x", width / 2).attr("y", legendOut.top ? -legendHeight : -10).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
                     }
 
                     // render x axis label if exists
-                    if (layout.axis.title && layout.axis.show) {
+                    if (showAxisTitle) {
                         chart.append("text") // text label for the x axis
-                        .attr("class", "axis-title").style("text-anchor", "middle").text(layout.axis.title).style("font-size", "16px").attr("transform", 'translate(' + width / 2 + ', ' + (height + xAxisOffset + 16) + ')');
+                        .attr("class", "axis-title").style("text-anchor", "middle").text(layout.axis.title).attr("transform", 'translate(' + width / 2 + ', ' + (height + xAxisOffset + 15) + ')');
                     }
 
                     if (layout.axis.gridOnly) {
-                        chart.selectAll("g.x-axis path.domain, g.x-axis g.tick text, text.axis-title").style("opacity", 1e-6);
+                        chart.selectAll("g.x-axis path.domain, g.x-axis g.tick text").style("opacity", 1e-6);
+                    }
+
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            titleOffset = showAxisTitle ? 16 : 0,
+                            posX = pos.x === "left" ? 0 : pos.x === "right" ? width + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
+                            posY = pos.y === "top" ? 0 : pos.y === "bottom" ? height - 1 + (anchor.y === "outside" ? xAxisOffset + titleOffset : 0) : height / 2;
+
+                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
+                    }
+
+                    if (layout.heatmap.colourBar.show) {
+                        layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, height);
+                        layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
+
+                        drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+                        colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
                     }
 
                     var mouseCaptureGroup = chart.append("g");
@@ -3594,6 +2997,9 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                     link.enter().insert("path", "g").attr("class", "link").attr("d", diagonal).attr(layout.link);
 
                     legend.each(function () {
+                        this.parentNode.appendChild(this);
+                    });
+                    titleSVG.each(function () {
                         this.parentNode.appendChild(this);
                     });
 
@@ -3956,6 +3362,7 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
                 maxZoom: 10,
                 heatmap: {
                     enabled: false,
+                    title: null,
                     colourScale: [[0, '#008ae5'], [1, 'yellow']],
                     colourBar: {
                         show: true,
@@ -3995,764 +3402,7 @@ $__System.register('5', ['1', '2', '10', '11', '13', 'e', 'f', 'b', 'c'], functi
         }
     };
 });
-$__System.register('6', ['1', '2', '10', '11', '14', 'e', 'f', 'b', 'c'], function (_export) {
-    var angular, d3, _getIterator, _Object$keys, _Set, _Array$from, d3legend, d3tooltip, mergeTemplateLayout, createNodeTypes, createDynamicNodeAttr, roundOffFix, labelCollisionDetection, scaleProperties, getNodeLabelBBox, calcColourBarSize, drawColourBar, layoutTemplate, labelPositions;
-
-    function LineageScatterPlotDirective($window, WindowResize) {
-        return {
-            restrict: 'EA',
-            scope: {
-                value: '=',
-                selectedNodes: '='
-            },
-            link: function link(scope, element, attributes) {
-
-                element.addClass("plotify plotify-lineage-scatter-plot");
-
-                var defaultTimeFormat = "%d %b %y",
-                    defaultScalarFormat = "g";
-
-                var svg = d3.select(element[0]).append("svg").style('width', '100%');
-
-                var //links,
-                mouseStart = undefined,
-                    colours = d3.scale.category10(),
-                    isDrag = false,
-                    selectionRect = null,
-                    tooltip = new d3tooltip(d3.select(element[0])),
-                    defaultNode = {
-                    r: 4,
-                    "stroke-width": 2
-                },
-                    scale = 1,
-                    translate = [0, 0],
-                    selectedNodes = null,
-                    LCD = null,
-                    //label collision detection
-                lastLCDUpdateTime = 0,
-                    LCDUpdateID = undefined,
-                    heatmapColourScale = null,
-                    heatmapCircle = null,
-                    visibleSeries = new _Set();
-
-                function render(options) {
-
-                    // clean svg before rendering plot
-                    svg.selectAll('*').remove();
-
-                    var elementWidth = d3.select(element[0]).node().offsetWidth;
-
-                    var marginRatio = { axisX: 0.15, axisY: 0.1 };
-
-                    // don't continue rendering if there is no data
-                    if (!scope.value || !scope.value.data.length) return;
-
-                    selectedNodes = new _Set();
-
-                    var seriesNames = _Array$from(new _Set(scope.value.data.map(function (d) {
-                        return d.series;
-                    })));
-
-                    if (options.isNewData) {
-                        colours.domain([]);
-                        visibleSeries = new _Set(seriesNames);
-                    }
-
-                    var copy = angular.copy(scope.value);
-
-                    var _createLinks = createLinks(copy.data, visibleSeries);
-
-                    var nodesData = _createLinks.nodesData;
-                    var links = _createLinks.links;
-                    var layout = mergeTemplateLayout(copy.layout, layoutTemplate);
-                    var pathname = $window.location.pathname;
-                    var legendHeight = 0;var legendWidth = 0;var colourbarHeight = 0;var colourbarWidth = 0;
-                    var colourBarOffset = layout.heatmap.enabled && layout.heatmap.colourBar.show ? 20 : 0;
-                    var colourbar = d3.select();
-                    var legend = d3.select();
-                    var xAxisLabelSVG = d3.select();
-                    var yAxisLabelSVG = d3.select();
-
-                    var margin = layout.margin,
-                        width = layout.width || elementWidth,
-                        height = layout.height;
-
-                    if (layout.title) margin.top += 50;
-                    if (layout.xAxis.title) margin.bottom += 20;
-                    if (layout.yAxis.title) margin.left += 20;
-
-                    var chart = svg.append("g");
-                    var defs = chart.append("svg:defs");
-
-                    if (layout.heatmap.enabled) {
-
-                        var domain = d3.extent(nodesData, function (node) {
-                            return node.z;
-                        });
-
-                        if (domain[0] == domain[1]) {
-                            if (domain[0] === undefined) {
-                                domain[0] = domain[1] = 0;
-                            }
-                            domain[0] -= 0.5;
-                            domain[1] += 0.5;
-                        }
-
-                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
-                            return v[1];
-                        }));
-
-                        if (layout.heatmap.colourBar.show) {
-                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
-                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
-
-                            colourbar = chart.append("g").attr("class", "plotify-colourbar");
-
-                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
-
-                            var bbox = colourbar.node().getBoundingClientRect(),
-                                pos = layout.heatmap.colourBar.position;
-                            colourbarWidth = bbox.width;
-                            colourbarHeight = bbox.height;
-                            if (pos === "right" || pos === "left") margin.right += colourbarWidth + colourBarOffset;else if (pos === "top" || pos === "bottom") margin.top += colourbarHeight;
-                        }
-                    }
-
-                    if (layout.legend.show) {
-                        var pos = layout.legend.position,
-                            anchor = layout.legend.anchor,
-                            orientation = layout.legend.orientation;
-
-                        var splitAfter = orientation === "horizontal" ? 0 : 1;
-
-                        var drawLegend = d3legend().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
-
-                        legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
-
-                        var bbox = legend.node().getBoundingClientRect();
-                        legendHeight = bbox.height;legendWidth = bbox.width;
-                        if (anchor.x === "outside" && pos.x !== "center") {
-                            margin[pos.x] += legendWidth;
-                        } else if (anchor.y === "outside" && pos.y !== "center") {
-                            margin[pos.y] += legendHeight;
-                        }
-                    }
-
-                    function legendClick(label) {
-                        var clicked = d3.select(this);
-                        if (visibleSeries.has(label)) visibleSeries['delete'](label);else visibleSeries.add(label);
-                        clicked.classed("legend-item-selected", visibleSeries.has(label));
-                        clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
-                        render({ isNewData: false });
-                    }
-
-                    var initialLabelPosition = labelPositions[0];
-
-                    var types = createNodeTypes(nodesData, layout.nodeTypes, defaultNode),
-                        nodeAttr = createDynamicNodeAttr(types, _Object$keys(defaultNode));
-
-                    // check if x axis data is time data
-                    //let isTimePlot = nodesData[0].x instanceof Date;
-                    var isTimePlot = false;
-
-                    // define x and y axes formats
-                    var xAxisFormat = isTimePlot ? d3.time.format(layout.xAxis.format || defaultTimeFormat) : d3.format(layout.xAxis.format || defaultScalarFormat),
-                        yAxisFormat = d3.format(layout.yAxis.format || defaultScalarFormat);
-
-                    // find extent of input data and calculate margins
-                    var xExtent = d3.extent(nodesData, function (node) {
-                        return node.x;
-                    }),
-                        yExtent = d3.extent(nodesData, function (node) {
-                        return node.y;
-                    });
-
-                    if (xExtent[0] === undefined || yExtent[0] === undefined) {
-                        xExtent[0] = xExtent[1] = 0;
-                        yExtent[0] = yExtent[1] = 0;
-                    }
-
-                    var xMargin = marginRatio.axisX * (xExtent[1] - xExtent[0]) / 2,
-                        yMargin = marginRatio.axisY * (yExtent[1] - yExtent[0]) / 2;
-
-                    // add margins to horizontal axis data
-                    if (isTimePlot) {
-                        xExtent[0] = new Date(xExtent[0].getTime() - xMargin);
-                        xExtent[1] = new Date(xExtent[1].getTime() + xMargin);
-                    } else {
-                        if (xMargin == 0) xMargin = 0.5;
-                        if (yMargin == 0) yMargin = 0.5;
-                        xExtent[0] -= xMargin;xExtent[1] += xMargin;
-                    }
-
-                    // add margins to vertical axis data
-                    yExtent[0] -= yMargin;yExtent[1] += yMargin;
-
-                    height = layout.height - margin.top - margin.bottom;
-
-                    // define x scale
-                    var xScale = (isTimePlot ? d3.time.scale() : d3.scale.linear()).domain(xExtent).range([0, width]);
-
-                    // define y scale
-                    var yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
-
-                    var zoom = d3.behavior.zoom().scaleExtent([1, layout.maxZoom])
-                    //.x(xScale) // TODO: can be reworked when xExtent is implemented in d3.js
-                    .on("zoom", zoomed);
-
-                    // define x axis
-                    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(-height).tickFormat(roundOffFix(xAxisFormat));
-
-                    // define y axis
-                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width).tickFormat(roundOffFix(yAxisFormat));
-
-                    // read x and y axes labels
-                    var xAxisLabel = layout.xAxis.title;
-                    var yAxisLabel = layout.yAxis.title;
-
-                    // define node link function
-                    var nodeLink = d3.svg.line().x(function (node) {
-                        return xScale(node.x);
-                    }).y(function (node) {
-                        return yScale(node.y);
-                    });
-
-                    var mouseCaptureGroup = chart.append("g");
-
-                    // render x axis
-                    var xAxisSVG = chart.append("g").attr("class", "axis x-axis").attr("transform", 'translate(0, ' + height + ')').call(xAxis);
-
-                    // rotate tick labels if time plot
-                    if (isTimePlot) {
-                        xAxisSVG.selectAll("text").style("text-anchor", "end").attr("dx", "-.8em").attr("dy", ".15em").attr("transform", "rotate(-65)");
-                    }
-
-                    // render x axis label if exists
-                    var tickHeight = chart.selectAll("g.x-axis g.tick text")[0][0].getBBox().height;
-                    margin.bottom += tickHeight;
-                    if (xAxisLabel) {
-                        xAxisLabelSVG = chart.append("text") // text label for the x axis
-                        .style("text-anchor", "middle").text(xAxisLabel);
-                    }
-
-                    // render y axis
-                    var yAxisSVG = chart.append("g").attr("class", "axis y-axis").call(yAxis);
-
-                    // render y axis label if exists
-                    if (yAxisLabel) {
-                        yAxisLabelSVG = chart.append("text") // text label for the y axis
-                        .attr("transform", "rotate(-90)").attr("y", 0).attr("x", -(height / 2)).attr("dy", "1em").style("text-anchor", "middle").text(yAxisLabel);
-                    }
-
-                    var yAxisOffset = yAxisSVG.node().getBBox().x;
-                    margin.left += Math.abs(yAxisOffset);
-                    width = (layout.width || elementWidth) - margin.right - margin.left;
-                    yAxisLabelSVG.attr("y", yAxisOffset - 25);
-                    xAxisLabelSVG.attr("transform", 'translate(' + width / 2 + ', ' + (height + tickHeight + 20) + ')');
-
-                    // render chart title
-                    if (layout.title) {
-                        chart.append("text").attr("x", width / 2).attr("y", 0 - margin.top / 2).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
-                    }
-
-                    colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
-                    if (layout.legend.show) {
-                        var pos = layout.legend.position,
-                            anchor = layout.legend.anchor,
-                            xOffset = yAxisOffset - (layout.yAxis.title ? 25 : 0),
-                            yOffset = 15 + (layout.xAxis.title ? 25 : 0),
-                            posX = pos.x === "left" ? xOffset : pos.x === "right" ? width + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
-                            posY = pos.y === "top" ? 0 : pos.y === "bottom" ? height + (anchor.y === "outside" ? yOffset : 0) : height / 2;
-
-                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
-                    }
-
-                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
-
-                    yScale.range([height, 0]);
-                    xScale.range([0, width]);
-
-                    var xScale0 = xScale.copy(),
-                        yScale0 = yScale.copy();
-
-                    xAxis.innerTickSize(-height);yAxis.innerTickSize(-width);
-                    xAxisSVG.call(xAxis);
-                    yAxisSVG.call(yAxis);
-
-                    var mouseRect = mouseCaptureGroup.append("rect").attr("id", "mouse-capture").attr("x", -margin.left).attr("y", -margin.top).attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("fill", "transparent");
-
-                    // render chart area
-                    chart.attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')').call(zoom).on("dblclick.zoom", onDoubleClick);
-
-                    // define arrowhead
-
-                    defs.append("marker").attr({
-                        "id": "marker-arrowhead",
-                        "viewBox": "0 -5 10 10",
-                        "refX": 15,
-                        "refY": 0,
-                        "markerWidth": 8,
-                        "markerHeight": 8,
-                        "orient": "auto"
-                    }).append("path").attr("d", "M0,-4L10,0L0,4").attr("fill", layout.link.stroke).attr("class", "arrowHead");
-
-                    defs.append("svg:clipPath").attr("id", "lineage-scatter-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
-
-                    // render links
-                    var plotArea = chart.append("g").attr("id", "scatter-plot-area").attr("clip-path", 'url(' + pathname + '#lineage-scatter-clip-rect)').append("g");
-
-                    if (layout.heatmap.enabled) {
-                        heatmapCircle = plotArea.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodesData.filter(function (n) {
-                            return !isNaN(parseFloat(n.z));
-                        })).enter().append("circle").attr("class", "heatmap-circle").style("fill", function (d) {
-                            return heatmapColourScale(d.z);
-                        }).style("opacity", layout.heatmap.opacity).attr(layout.heatmap.circle).attr("transform", function (d) {
-                            return 'translate(' + xScale(d.x) + ',' + yScale(d.y) + ')';
-                        });
-                    }
-
-                    plotArea.selectAll(".link").data(links).enter().append("svg:path").attr("stroke-dasharray", "3, 3").attr("d", function (conn) {
-                        return nodeLink(conn);
-                    }).attr(layout.link).attr("class", "link").attr("marker-end", 'url(' + pathname + '#marker-arrowhead)');
-
-                    // create node groups
-                    var node = plotArea.selectAll("g.node").data(nodesData).enter().append("g").attr("class", "node").attr("transform", function (node) {
-                        return 'translate(' + xScale(node.x) + ', ' + yScale(node.y) + ')';
-                    });
-
-                    //render node circles
-                    var circle = node.append("circle").attr(nodeAttr).style("stroke", function (d) {
-                        return colours(d.series);
-                    }).style("fill", function (d) {
-                        return !selectedNodes.has(d.name) ? '#FFF' : colours(d.series);
-                    }).each(function (d) {
-                        d.bboxCircle = this.getBoundingClientRect();
-                    }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d) {
-                        var groupPos = this.getBoundingClientRect(),
-                            xPos = (groupPos.right + groupPos.left) / 2,
-                            yPos = groupPos.top,
-                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series) + '"></div>' + ('<span class="tooltip-text">' + d.name + '</span>') + ('<span class="tooltip-text">x: ' + d.x.toPrecision(3) + '</span>') + ('<span class="tooltip-text">y: ' + d.y.toPrecision(3) + '</span>');
-                        tooltip.html(text).position([xPos, yPos]).show();
-                    }).on("mouseout", function (d) {
-                        tooltip.hide();
-                    });
-
-                    // render node labels
-                    var label = node.append("text").attr("dy", ".35em").attr(layout.nodeLabel).attr(initialLabelPosition).text(function (node) {
-                        return node.name;
-                    }).style("opacity", 1).each(getNodeLabelBBox).each(function (d) {
-                        return d.labelPos = initialLabelPosition;
-                    });
-
-                    var maxNodeLabelLength = d3.max(label.data().map(function (d) {
-                        return d.bboxLabel.width;
-                    })),
-                        searchRadius = 2 * maxNodeLabelLength + 13;
-
-                    if (layout.labelCollisionDetection.enabled === "onEveryChange" || layout.labelCollisionDetection.enabled === "onInit" || layout.labelCollisionDetection.enabled === "onDelay") {
-                        LCD = new labelCollisionDetection(nodesData, labelPositions, layout.nodeLabel, xScale, yScale, width, height, searchRadius);
-                        LCD.initializeLabelPositions(label);
-                    }
-
-                    legend.each(function () {
-                        this.parentNode.appendChild(this);
-                    });
-
-                    if (layout.groupSelection.enabled) {
-                        mouseRect.on("mousedown", mouseDown).on("mousemove", mouseMove).on("mouseup", mouseUp).on("mouseout", mouseOut);
-
-                        selectionRect = mouseCaptureGroup.append("rect").attr(layout.groupSelection.selectionRectangle).attr("class", "selection-rect");
-                    }
-
-                    function mouseDown() {
-                        if (!d3.event.ctrlKey) return;
-                        d3.event.preventDefault();
-                        isDrag = true;
-                        mouseStart = d3.mouse(this);
-                        circle.style("pointer-events", "none");
-                    }
-
-                    function click(d) {
-                        d3.event.preventDefault();
-                        var n = d3.select(this.parentNode);
-                        if (!n.classed("selected")) {
-                            n.classed("selected", true);
-                            n.select("circle").style("fill", function (d) {
-                                return colours(d.series);
-                            });
-                        } else {
-                            n.classed("selected", false);
-                            n.select("circle").style("fill", "#FFF");
-                        }
-                        updateSelection();
-                    }
-
-                    function mouseUp(pos) {
-                        if (!isDrag || !mouseStart) return;
-
-                        var p = arguments.length == 1 ? pos : d3.mouse(this);
-                        if (!selectPoints(selectionRect) && mouseStart[0] != p[0] && mouseStart[1] != p[1]) {
-                            node.classed("selected", false).selectAll("circle").style("fill", "#FFF");
-                        }
-                        selectionRect.attr("width", 0);
-                        updateSelection();
-                        mouseStart = null;
-                        isDrag = false;
-                        circle.style("pointer-events", "all");
-                    }
-
-                    function mouseOut() {
-                        if (!isDrag) return;
-                        selectionRect.attr("width", 0);
-                        updateSelection();
-                        mouseStart = null;
-                        isDrag = false;
-                        circle.style("pointer-events", "all");
-                    }
-
-                    function mouseMove() {
-                        if (!isDrag) return;
-                        var p = d3.mouse(this);
-                        if (!d3.event.ctrlKey) {
-                            mouseUp(p);
-                            return;
-                        }
-                        var d = {
-                            x: p[0] < mouseStart[0] ? p[0] : mouseStart[0],
-                            y: p[1] < mouseStart[1] ? p[1] : mouseStart[1],
-                            height: Math.abs(p[1] - mouseStart[1]),
-                            width: Math.abs(p[0] - mouseStart[0])
-                        };
-                        selectionRect.attr(d);
-                        selectPoints(selectionRect);
-                    }
-
-                    function selectPoints(rect) {
-                        var rect_x1 = +rect.attr("x"),
-                            rect_y1 = +rect.attr("y"),
-                            rect_x2 = +rect.attr("width") + rect_x1,
-                            rect_y2 = +rect.attr("height") + rect_y1,
-                            any = false;
-
-                        node.each(function (d, i, j) {
-                            var n = d3.select(this);
-                            var t = d3.transform(n.attr("transform")),
-                                tx = t.translate[0],
-                                ty = t.translate[1];
-
-                            if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
-                                n.classed("selected", true);
-                                n.select("circle").style("fill", function (d) {
-                                    return colours(d.series);
-                                });
-                                any = true;
-                            } else if (!selectedNodes.has(d.name)) {
-                                n.classed("selected", false);
-                                n.select("circle").style("fill", "#FFF");
-                            }
-                        });
-
-                        return any;
-                    }
-
-                    function updateSelection() {
-                        var wasChange = false;
-
-                        svg.selectAll("g.node.selected").each(function (d) {
-                            if (!selectedNodes.has(d.name)) {
-                                selectedNodes.add(d.name);
-                                wasChange = true;
-                            }
-                        });
-
-                        svg.selectAll("g.node:not(.selected)").each(function (d) {
-                            if (selectedNodes.has(d.name)) {
-                                selectedNodes['delete'](d.name);
-                                wasChange = true;
-                            }
-                        });
-
-                        if (wasChange && scope.selected) {
-                            scope.selectedNodes = _Array$from(selectedNodes);
-                            scope.$apply();
-                        }
-                    }
-
-                    function zoomed() {
-                        if (d3.event.sourceEvent.ctrlKey) {
-                            zoom.translate(translate);
-                            zoom.scale(scale);
-                            return;
-                        }
-
-                        var t = zoom.translate(),
-                            s = zoom.scale(),
-                            now = performance.now();
-                        if (s == scale && t[0] == translate[0] && t[1] == translate[1]) return;
-                        scale = s;
-                        translate = t;
-                        translate[0] = translate[0].clamp((1 - scale) * width, 0);
-                        translate[1] = translate[1].clamp((1 - scale) * height, 0);
-                        zoom.translate(translate);
-                        xScale.domain(xScale0.range().map(function (x) {
-                            return (x - translate[0]) / scale;
-                        }).map(xScale0.invert));
-                        yScale.domain(yScale0.range().map(function (y) {
-                            return (y - translate[1]) / scale;
-                        }).map(yScale0.invert));
-                        applyZoom();
-                        if (layout.labelCollisionDetection.enabled === "onEveryChange") {
-                            LCD.recalculateLabelPositions(label, scale);
-                        } else if (layout.labelCollisionDetection.enabled === "onDelay") {
-                            window.clearTimeout(LCDUpdateID);
-                            LCDUpdateID = window.setTimeout(function () {
-                                LCD.recalculateLabelPositions(label, scale);
-                            }, layout.labelCollisionDetection.updateDelay);
-                            lastLCDUpdateTime = now;
-                        }
-                    }
-
-                    function applyZoom() {
-                        plotArea.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-                        mouseCaptureGroup.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-                        svg.select(".x-axis.axis").call(xAxis);
-                        svg.select(".y-axis.axis").call(yAxis);
-                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true)).each(function (d) {
-                            d.bboxCircle = this.getBoundingClientRect();
-                        });
-                        svg.selectAll("path.link").attr(scaleProperties(layout.link, scale));
-                        if (layout.heatmap.enabled) {
-                            heatmapCircle.attr(scaleProperties(layout.heatmap.circle, scale));
-                        }
-                        if (layout.labelCollisionDetection.enabled === "onInit" || layout.labelCollisionDetection.enabled === "onDelay" || layout.labelCollisionDetection.enabled === false) {
-                            label.each(function (d) {
-                                var self = d3.select(this);
-                                self.attr(scaleProperties(layout.nodeLabel, scale)).attr(scaleProperties(d.labelPos, scale));
-                            });
-                        }
-                        if (layout.groupSelection.enabled) {
-                            selectionRect.attr(scaleProperties(layout.groupSelection.selectionRectangle, scale));
-                        }
-                    }
-
-                    function onDoubleClick() {
-                        var now = performance.now();
-                        scale = 1;
-                        translate = [0, 0];
-                        zoom.scale(1);
-                        xScale.domain(xScale0.domain());
-                        yScale.domain(yScale0.domain());
-                        applyZoom();
-                        if (layout.labelCollisionDetection.enabled === "onEveryChange") {
-                            LCD.recalculateLabelPositions(label, scale);
-                        } else if (layout.labelCollisionDetection.enabled === "onDelay") {
-                            window.clearTimeout(LCDUpdateID);
-                            LCDUpdateID = window.setTimeout(function () {
-                                LCD.recalculateLabelPositions(label, scale);
-                            }, layout.labelCollisionDetection.enabled.updateDelay);
-                            lastLCDUpdateTime = now;
-                        }
-                    }
-                }
-
-                // Handle window resize event.
-                scope.$on('window-resize', function (event) {
-                    render({ isNewData: false });
-                });
-
-                scope.$watch("value", function () {
-                    render({ isNewData: true });
-                });
-            }
-        };
-    }
-
-    function createLinks(nodes, activeSeries) {
-        var filteredNodes = [],
-            nodesDict = {},
-            parent = undefined,
-            links = [];
-
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-            for (var _iterator = _getIterator(nodes), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var node = _step.value;
-
-                nodesDict[node.name] = node;
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator['return']) {
-                    _iterator['return']();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-
-        var _iteratorNormalCompletion2 = true;
-        var _didIteratorError2 = false;
-        var _iteratorError2 = undefined;
-
-        try {
-            for (var _iterator2 = _getIterator(nodes), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var node = _step2.value;
-
-                var currentNode = node;
-                if (!activeSeries.has(currentNode.series)) continue;
-                while (parent = currentNode.parent) {
-                    var parentNode = nodesDict[parent];
-                    if (activeSeries.has(parentNode.series)) {
-                        node.parent = parent;
-                        links.push([parentNode, node]);
-                        break;
-                    }
-                    currentNode = parentNode;
-                }
-                if (node.parent && !activeSeries.has(nodesDict[node.parent].series)) {
-                    node.parent = null;
-                }
-                filteredNodes.push(node);
-            }
-        } catch (err) {
-            _didIteratorError2 = true;
-            _iteratorError2 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-                    _iterator2['return']();
-                }
-            } finally {
-                if (_didIteratorError2) {
-                    throw _iteratorError2;
-                }
-            }
-        }
-
-        return { nodesData: filteredNodes, links: links };
-    }
-
-    return {
-        setters: [function (_4) {
-            angular = _4['default'];
-        }, function (_5) {
-            d3 = _5['default'];
-        }, function (_2) {
-            _getIterator = _2['default'];
-        }, function (_) {
-            _Object$keys = _['default'];
-        }, function (_3) {}, function (_e) {
-            _Set = _e['default'];
-        }, function (_f) {
-            _Array$from = _f['default'];
-        }, function (_b) {}, function (_c) {
-            d3legend = _c.d3legend;
-            d3tooltip = _c.d3tooltip;
-            mergeTemplateLayout = _c.mergeTemplateLayout;
-            createNodeTypes = _c.createNodeTypes;
-            createDynamicNodeAttr = _c.createDynamicNodeAttr;
-            roundOffFix = _c.roundOffFix;
-            labelCollisionDetection = _c.labelCollisionDetection;
-            scaleProperties = _c.scaleProperties;
-            getNodeLabelBBox = _c.getNodeLabelBBox;
-            calcColourBarSize = _c.calcColourBarSize;
-            drawColourBar = _c.drawColourBar;
-        }],
-        execute: function () {
-            'use strict';
-
-            layoutTemplate = {
-                title: null,
-                width: null,
-                height: 600,
-                margin: {
-                    right: 10,
-                    left: 10,
-                    top: 10,
-                    bottom: 10
-                },
-                xAxis: {
-                    title: null,
-                    format: null
-                },
-                yAxis: {
-                    title: null,
-                    format: null
-                },
-                nodeTypes: {},
-                nodeLabel: {
-                    "font-size": 12
-                },
-                labelCollisionDetection: {
-                    enabled: "never",
-                    updateDelay: 500
-                },
-                link: {
-                    stroke: "#838383",
-                    "stroke-width": 1,
-                    "stroke-dasharray": 4
-                },
-                groupSelection: {
-                    enabled: false,
-                    selectionRectangle: {
-                        "stroke-width": 1,
-                        "stroke-dasharray": 4,
-                        rx: 3,
-                        ry: 3,
-                        stroke: "steelblue"
-                    }
-                },
-                maxZoom: 10,
-                heatmap: {
-                    enabled: false,
-                    colourScale: [[0, '#008ae5'], [1, 'yellow']],
-                    colourBar: {
-                        show: true,
-                        height: "90%",
-                        width: 30,
-                        position: "right"
-                    },
-                    circle: {
-                        r: 16
-                    },
-                    opacity: 0.4
-                },
-                legend: {
-                    show: false,
-                    position: {
-                        x: "right",
-                        y: "center"
-                    },
-                    anchor: {
-                        x: "outside",
-                        y: "inside"
-                    },
-                    orientation: "vertical"
-                }
-            };
-            labelPositions = [{
-                x: 13,
-                y: 0,
-                "text-anchor": "start"
-            }, {
-                x: -13,
-                y: 0,
-                "text-anchor": "end"
-            }];
-
-            _export('default', angular.module('plotify.lineage-scatter', ['plotify.utils']).directive('lineageScatterPlot', LineageScatterPlotDirective));
-        }
-    };
-});
-$__System.register('7', ['1', '2', '10', '15', 'b', 'c'], function (_export) {
+$__System.register('7', ['1', '2', '10', '13', 'b', 'c'], function (_export) {
     var angular, d3, _getIterator, d3tooltip;
 
     function BoxPlotDirective($window, WindowResize) {
@@ -5297,271 +3947,715 @@ $__System.register('7', ['1', '2', '10', '15', 'b', 'c'], function (_export) {
         }
     };
 });
-$__System.register('8', ['1', '2', '16', 'b', 'c'], function (_export) {
-    'use strict';
+$__System.register('4', ['1', '2', '10', '11', '14', 'e', 'f', 'b', 'c'], function (_export) {
+    var angular, d3, _getIterator, _Object$keys, _Set, _Array$from, d3legend, createTreeLayout, mergeTemplateLayout, calcColourBarSize, drawColourBar, createNodeTypes, createDynamicNodeAttr, testLabelLength, layoutTemplate;
 
-    var angular, d3, d3tooltip;
-
-    function ViolinPlotDirective($window, WindowResize) {
+    function RadialPhylogeneticTreeDirective($window, WindowResize) {
         return {
             restrict: 'EA',
             scope: {
                 value: '=',
-                selected: '='
+                branchlength: '='
             },
             link: function link(scope, element, attributes) {
-                element.addClass("plotify plotify-violin-plot");
+
+                element.addClass("plotify plotify-radial-phylogenetic-tree");
+
+                var svg = d3.select(element[0]).append("svg");
+
+                var hovering = false,
+                    virtualRoot = null,
+                    virtualRootName = "virtual_root",
+                    r = undefined,
+                    labelOffset = 20,
+                    defaultNode = {
+                    r: 4,
+                    "stroke-width": 2
+                },
+                    link = null,
+                    node = null,
+                    linkExtension = null,
+                    totalTreeLength = undefined,
+                    multipleTreeOffset = 0,
+                    visibleSeries = new _Set(),
+                    colours = d3.scale.category10();
+
+                function render(options) {
+
+                    // clean svg before rendering plot
+                    svg.selectAll('*').remove();
+
+                    var defs = svg.append("defs");
+
+                    // do not continue rendering if there is no data
+                    if (!scope.value || !scope.value.data.length) return;
+
+                    var seriesNames = _Array$from(new _Set(extractProp(scope.value.data, "series")));
+
+                    if (options.isNewData) {
+                        colours.domain([]);
+                        visibleSeries = new _Set(seriesNames);
+                    }
+
+                    var copy = angular.copy(scope.value),
+                        treeData = copy.data,
+                        layout = mergeTemplateLayout(copy.layout, layoutTemplate),
+                        pathname = $window.location.pathname,
+                        longestNodeName = treeData.length ? extractProp(treeData, "name").reduce(function (a, b) {
+                        return a.length > b.length ? a : b;
+                    }) : "";
+
+                    var elementWidth = element[0].offsetWidth;
+
+                    var _iteratorNormalCompletion = true;
+                    var _didIteratorError = false;
+                    var _iteratorError = undefined;
+
+                    try {
+                        for (var _iterator = _getIterator(treeData), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var t = _step.value;
+
+                            collapseSeries(t, visibleSeries);
+                        }
+                    } catch (err) {
+                        _didIteratorError = true;
+                        _iteratorError = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion && _iterator['return']) {
+                                _iterator['return']();
+                            }
+                        } finally {
+                            if (_didIteratorError) {
+                                throw _iteratorError;
+                            }
+                        }
+                    }
+
+                    var isMultipleTree = treeData.length > 1,
+                        maxLabelLength = testLabelLength(svg, longestNodeName, layout.outerNodeLabel),
+                        colourBarOffset = 20,
+                        start = null,
+                        rotate = 0,
+                        heatmapColourScale = null,
+                        heatmapCircle = null,
+                        trees = null,
+                        legendHeight = 0,
+                        legendWidth = 0,
+                        colourbarHeight = 0,
+                        colourbarWidth = 0,
+                        legendOut = { top: false, right: false, bottom: false, left: false },
+                        colourBarOrigWidth = layout.heatmap.colourBar.width,
+                        colourBarOrigHeight = layout.heatmap.colourBar.height,
+                        showHeatmapTitle = layout.heatmap.enabled && layout.heatmap.title !== null,
+                        legend = d3.select(),
+                        colourbar = d3.select(),
+                        titleSVG = d3.select();
+
+                    var width = layout.width || elementWidth,
+                        height = layout.height;
+
+                    if (layout.legend.show) {
+                        if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
+                        if (layout.legend.anchor.y == "outside") legendOut[layout.legend.position.y] = true;
+                    }
+
+                    var margin = layout.margin;
+                    if (layout.title) margin.top += legendOut.top ? 26 : 25;
+
+                    var chart = svg.append("g");
+
+                    multipleTreeOffset = isMultipleTree ? 30 : 0;
+
+                    if (layout.heatmap.enabled) {
+
+                        var domain = d3.extent(copy.data, function (node) {
+                            return node.z;
+                        });
+
+                        if (domain[0] == domain[1]) {
+                            if (domain[0] === undefined) {
+                                domain[0] = domain[1] = 0;
+                            }
+                            domain[0] -= 0.5;
+                            domain[1] += 0.5;
+                        }
+
+                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
+                            return v[1];
+                        }));
+
+                        if (layout.heatmap.colourBar.show) {
+                            layout.heatmap.colourBar.height = calcColourBarSize(layout.heatmap.colourBar.height, height);
+                            layout.heatmap.colourBar.width = calcColourBarSize(layout.heatmap.colourBar.width, width);
+
+                            colourbar = chart.append("g").attr("class", "plotify-colourbar").attr("transform", "translate(0,0)");
+
+                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+
+                            var bbox = colourbar.node().getBoundingClientRect();
+
+                            colourbarWidth = bbox.width;
+                            margin.right += colourbarWidth - (showHeatmapTitle ? 1 : 0) + colourBarOffset;
+                            colourbarHeight = bbox.height;
+                        }
+                    }
+
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            orientation = layout.legend.orientation;
+
+                        var splitAfter = orientation === "horizontal" ? 0 : 1;
+
+                        var drawLegend = d3legend().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
+
+                        legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
+
+                        var bbox = legend.node().getBoundingClientRect();
+                        legendHeight = bbox.height;legendWidth = bbox.width;
+                        if (anchor.x === "outside" && pos.x !== "center") {
+                            margin[pos.x] += legendOut.right ? legendWidth - 10 : legendOut.left ? legendWidth - 11 : legendWidth;
+                        } else if (anchor.y === "outside" && pos.y !== "center") {
+                            margin[pos.y] += legendOut.bottom ? legendHeight - 11 : legendOut.top ? legendHeight - 11 : legendHeight;
+                        }
+                    }
+
+                    function legendClick(label) {
+                        var clicked = d3.select(this);
+                        if (visibleSeries.has(label)) visibleSeries['delete'](label);else visibleSeries.add(label);
+                        clicked.classed("legend-item-selected", visibleSeries.has(label));
+                        clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
+                        render({ isNewData: false });
+                    }
+
+                    width = (layout.width || elementWidth) - margin.right - margin.left;
+                    height = layout.height - margin.top - margin.bottom;
+
+                    var r = Math.min(height, width) / 2,
+                        totalTreeLength = r - maxLabelLength - labelOffset - multipleTreeOffset;
+
+                    chart.attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
+
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            posX = pos.x === "left" ? width / 2 - r : pos.x === "right" ? width / 2 + r + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
+                            posY = pos.y === "top" ? height / 2 - r : pos.y === "bottom" ? height / 2 + r : height / 2;
+
+                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
+                    }
+
+                    if (isMultipleTree) {
+                        virtualRoot = {
+                            name: virtualRootName,
+                            parent: null,
+                            children: [],
+                            series: 0,
+                            _depth: 0,
+                            length: 0,
+                            type: undefined
+                        };
+
+                        var _iteratorNormalCompletion2 = true;
+                        var _didIteratorError2 = false;
+                        var _iteratorError2 = undefined;
+
+                        try {
+                            for (var _iterator2 = _getIterator(treeData), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                                var tree = _step2.value;
+
+                                spreadNodes(tree);
+                                tree.parent = virtualRootName;
+                                virtualRoot.children.push(tree);
+                            }
+                        } catch (err) {
+                            _didIteratorError2 = true;
+                            _iteratorError2 = err;
+                        } finally {
+                            try {
+                                if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+                                    _iterator2['return']();
+                                }
+                            } finally {
+                                if (_didIteratorError2) {
+                                    throw _iteratorError2;
+                                }
+                            }
+                        }
+
+                        trees = virtualRoot;
+                    } else {
+                        trees = treeData[0];
+                        spreadNodes(trees);
+                    }
+
+                    var types = createNodeTypes(treeData, layout.nodeTypes, defaultNode),
+                        nodeAttr = createDynamicNodeAttr(types, _Object$keys(defaultNode));
+
+                    var cluster = d3.layout.cluster().size([360, 1]).sort(function (a, b) {
+                        return d3.ascending(a.length, b.length);
+                    }).children(function (d) {
+                        return d.children;
+                    }).separation(function () {
+                        return 1;
+                    });
+
+                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("-webkit-backface-visibility", "hidden");
+
+                    // Catch mouse events in Safari.
+                    svg.append("rect").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).attr("fill", "none");
+
+                    var visTranslate = [width / 2, height / 2],
+                        vis = chart.append("g").attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')');
+
+                    var nodes = cluster.nodes(trees),
+                        links = cluster.links(nodes);
+
+                    nodes.forEach(function (d) {
+                        d.y = d.name === virtualRootName ? 0 : multipleTreeOffset + d._depth * totalTreeLength;
+                    });
+
+                    // render chart title
+                    if (layout.title) {
+                        titleSVG = chart.append("text").attr("x", width / 2).attr("y", height / 2 - r - (layout.legend.position.y == "top" && layout.legend.anchor.y == "outside" ? legendHeight : 10)).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
+                    }
+
+                    if (layout.heatmap.colourBar.show) {
+                        layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, 2 * r);
+                        layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
+
+                        drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+                        colourbar.attr("transform", 'translate(' + (width / 2 + r + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
+                    }
+
+                    if (layout.heatmap.enabled) {
+                        heatmapCircle = vis.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodes.filter(function (n) {
+                            return n.taxon && n.taxon.name !== null && !isNaN(parseFloat(n.taxon.z));
+                        })).enter().append("circle").attr("class", "heatmap-circle").style("fill", function (d) {
+                            return heatmapColourScale(d.taxon.z);
+                        }).style("opacity", layout.heatmap.opacity).attr(layout.heatmap.circle).attr("transform", function (d) {
+                            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
+                        });
+                    }
+
+                    removeNegativeLengths(trees);
+                    setRadius(trees, trees.length = 0, totalTreeLength / maxLength(trees));
+
+                    var show = scope.branchlength !== undefined ? scope.branchlength : true;
+                    linkExtension = vis.append("g").selectAll("path").data(links.filter(function (d) {
+                        return !d.target.children;
+                    })).enter().append("path").attr("class", "link-extension").each(function (d) {
+                        d.target.linkExtensionNode = this;
+                    }).attr("d", function (d) {
+                        return step2(d.target.x, show ? d.target.radius : d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
+                    });
+
+                    link = vis.append("g").selectAll("path").data(links).enter().append("path").attr("class", "link").attr(layout.link).each(function (d) {
+                        d.target.linkNode = this;
+                    }).attr("d", function (d) {
+                        return step2(d.source.x, show ? d.source.radius : d.source.y, d.target.x, show ? d.target.radius : d.target.y);
+                    }).style("stroke", "black");
+
+                    if (isMultipleTree) {
+                        link.filter(function (d) {
+                            return d.source.name === virtualRootName;
+                        }).style("opacity", 0);
+                    }
+
+                    if (layout.showLeafNodes) {
+                        node = vis.selectAll("g.node").data(nodes).enter().append("g")
+                        //.attr("id", d => d.name)
+                        .attr("class", "node").attr("transform", function (d) {
+                            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
+                        }).on("mouseover", mouseovered(true)).on("mouseout", mouseovered(false)).each(function (d) {
+                            d.nodeGroupNode = this;
+                        });
+
+                        node.filter(function (d) {
+                            return !d.taxon;
+                        }).style("opacity", 0);
+
+                        node.append("circle").style("stroke", function (d) {
+                            return d.taxon && d.name !== virtualRootName ? colours(d.taxon.series) : "none";
+                        }).attr(nodeAttr);
+                    }
+
+                    var maxLabelHeight = 2 * Math.PI * (multipleTreeOffset + totalTreeLength + labelOffset) / nodes.filter(function (d) {
+                        return !d.children || !d.children.length;
+                    }).length;
+
+                    layout.outerNodeLabel["font-size"] = d3.min([layout.outerNodeLabel["font-size"], maxLabelHeight]);
+
+                    var label = vis.selectAll("text.outer-label").data(nodes.filter(function (d) {
+                        return !!d.taxon;
+                    })).enter().append("text").attr(layout.outerNodeLabel).attr("class", "outer-label").attr("dy", ".31em").attr("text-anchor", function (d) {
+                        return d.x < 180 ? "start" : "end";
+                    }).attr("transform", function (d) {
+                        return 'rotate(' + (d.x - 90) + ')\n                                             translate(' + (totalTreeLength + labelOffset + multipleTreeOffset) + ')\n                                             rotate(' + (d.x < 180 ? 0 : 180) + ')';
+                    }).text(function (d) {
+                        return d.taxon.name;
+                    }).on("mouseover", mouseovered(true)).on("mouseout", mouseovered(false));
+
+                    legend.each(moveToFront);
+                    titleSVG.each(moveToFront);
+
+                    function mouseovered(active) {
+                        return function (d) {
+                            d3.select(this).classed("label-active", active);
+                            d3.select(d.linkExtensionNode).classed("link-extension-active", active).each(moveToFront);
+                            do d3.select(d.linkNode).classed("link-active", active).each(moveToFront); while (d = d.parent);
+                        };
+                    }
+
+                    svg.on("mousedown", function () {
+                        if (!hovering) {
+                            svg.style("cursor", "move");
+                            start = mouse(this);
+                            d3.event.preventDefault();
+                        }
+                    });
+                    svg.on("mouseup", function () {
+                        if (start && !hovering) {
+                            svg.style("cursor", "auto");
+                            var m = mouse(svg.node());
+                            rotate += Math.atan2(cross(start, m), dot(start, m)) * 180 / Math.PI;
+                            if (rotate > 360) rotate %= 360;else if (rotate < 0) rotate = (360 + rotate) % 360;
+                            start = null;
+                            vis.attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')rotate(' + rotate + ')').selectAll("text.outer-label").attr("text-anchor", function (d) {
+                                return (d.x + rotate) % 360 < 180 ? "start" : "end";
+                            }).attr("transform", function (d) {
+                                return 'rotate(' + (d.x - 90) + ')\n                                                             translate(' + (totalTreeLength + labelOffset + multipleTreeOffset) + ')\n                                                             rotate(' + ((d.x + rotate) % 360 < 180 ? 0 : 180) + ')';
+                            });
+                        }
+                    }).on("mousemove", function () {
+                        if (start) {
+                            var m = mouse(svg.node());
+                            var delta = Math.atan2(cross(start, m), dot(start, m)) * 180 / Math.PI;
+                            vis.attr("transform", 'translate(' + visTranslate[0] + ',' + visTranslate[1] + ')rotate(' + (rotate + delta) + ')');
+                        }
+                    });
+
+                    function mouse(element) {
+                        return d3.mouse(element).map(function (d, i) {
+                            return d - visTranslate[i];
+                        });
+                    }
+
+                    function moveToFront() {
+                        this.parentNode.appendChild(this);
+                    }
+
+                    function cross(a, b) {
+                        return a[0] * b[1] - a[1] * b[0];
+                    }
+
+                    function dot(a, b) {
+                        return a[0] * b[0] + a[1] * b[1];
+                    }
+                }
+
+                function setRadius(d, y0, k) {
+                    d.radius = (y0 += d.length) * k + multipleTreeOffset;
+                    if (d.children && d.children.length > 0) d.children.forEach(function (d) {
+                        return setRadius(d, y0, k);
+                    });
+                }
+
+                function removeNegativeLengths(d) {
+                    if (d.length < 0) d.length = 0;
+                    if (d.children && d.children.length > 0) d.children.forEach(removeNegativeLengths);
+                }
+
+                function maxLength(d) {
+                    return d.length + (d.children && d.children.length > 0 ? d3.max(d.children, maxLength) : 0);
+                }
+
+                function step2(startAngle, startRadius, endAngle, endRadius) {
+                    var c0 = Math.cos(startAngle = (startAngle - 90) / 180 * Math.PI),
+                        s0 = Math.sin(startAngle),
+                        c1 = Math.cos(endAngle = (endAngle - 90) / 180 * Math.PI),
+                        s1 = Math.sin(endAngle);
+                    return "M" + startRadius * c0 + "," + startRadius * s0 + (endAngle === startAngle ? "" : "A" + startRadius + "," + startRadius + " 0 0 " + (endAngle > startAngle ? 1 : 0) + " " + startRadius * c1 + "," + startRadius * s1) + "L" + endRadius * c1 + "," + endRadius * s1;
+                }
+
+                function extractProp(trees, prop) {
+                    var names = [];
+                    var _iteratorNormalCompletion3 = true;
+                    var _didIteratorError3 = false;
+                    var _iteratorError3 = undefined;
+
+                    try {
+                        for (var _iterator3 = _getIterator(trees), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                            var tree = _step3.value;
+
+                            extract(tree);
+                        }
+                    } catch (err) {
+                        _didIteratorError3 = true;
+                        _iteratorError3 = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion3 && _iterator3['return']) {
+                                _iterator3['return']();
+                            }
+                        } finally {
+                            if (_didIteratorError3) {
+                                throw _iteratorError3;
+                            }
+                        }
+                    }
+
+                    function extract(tree) {
+                        if (tree.taxon !== null) names.push(tree.taxon[prop]);else {
+                            extract(tree.children[0]);
+                            extract(tree.children[1]);
+                        }
+                    }
+                    return names;
+                }
+
+                // Handle window resize event.
+                scope.$on('window-resize', function (event) {
+                    render({ isNewData: false });
+                });
+
+                scope.$watch("value", function () {
+                    render({ isNewData: true });
+                });
+
+                scope.$watch("branchlength", function (show) {
+                    if (!linkExtension || !link || !totalTreeLength) return;
+                    d3.transition().duration(750).each(function () {
+                        linkExtension.transition().attr("d", function (d) {
+                            return step2(d.target.x, show ? d.target.radius : d.target.y, d.target.x, totalTreeLength + multipleTreeOffset);
+                        });
+                        link.transition().attr("d", function (d) {
+                            return step2(d.source.x, show ? d.source.radius : d.source.y, d.target.x, show ? d.target.radius : d.target.y);
+                        });
+                    });
+                });
+            }
+        };
+    }
+
+    function spreadNodes(node) {
+        var level = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+
+        if (!node.children || !node.children.length) {
+            node._depth = 1;
+            return level;
+        }
+        var max = 1,
+            childMax = undefined;
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
+
+        try {
+            for (var _iterator4 = _getIterator(node.children), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                var child = _step4.value;
+
+                childMax = spreadNodes(child, level + 1);
+                if (childMax > max) {
+                    max = childMax;
+                }
+            }
+        } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion4 && _iterator4['return']) {
+                    _iterator4['return']();
+                }
+            } finally {
+                if (_didIteratorError4) {
+                    throw _iteratorError4;
+                }
+            }
+        }
+
+        node._depth = level / max;
+        return max;
+    }
+
+    function collapseSeries(tree, visibleSeries) {
+
+        var leaves = [];
+        (function findLeaves(t) {
+            if (t.taxon !== null) {
+                leaves.push(t);
+                return;
+            }
+            findLeaves(t.children[0]);
+            findLeaves(t.children[1]);
+        })(tree);
+        (function addParents(t, parent) {
+            if (parent) {
+                t.parent = parent;
+            }
+            if (t.taxon !== null) {
+                return;
+            }
+            addParents(t.children[0], t);
+            addParents(t.children[1], t);
+        })(tree, null);
+        var leavesOut = leaves.filter(function (l) {
+            return !visibleSeries.has(l.taxon.series);
+        });
+
+        var _iteratorNormalCompletion5 = true;
+        var _didIteratorError5 = false;
+        var _iteratorError5 = undefined;
+
+        try {
+            for (var _iterator5 = _getIterator(leavesOut), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                var leaf = _step5.value;
+
+                var _parent = leaf.parent;
+                if (!_parent && leaf.taxon) {
+                    return null;
+                }
+                var sibling = _parent.children[_parent.children.indexOf(leaf) ^ 1];
+                var parent2 = _parent.parent;
+                if (!parent2) {
+                    return sibling;
+                }
+                parent2.children[parent2.children.indexOf(_parent)] = sibling;
+                sibling.length += _parent.length;
+                sibling.parent = parent2;
+            }
+        } catch (err) {
+            _didIteratorError5 = true;
+            _iteratorError5 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion5 && _iterator5['return']) {
+                    _iterator5['return']();
+                }
+            } finally {
+                if (_didIteratorError5) {
+                    throw _iteratorError5;
+                }
+            }
+        }
+    }
+
+    return {
+        setters: [function (_4) {
+            angular = _4['default'];
+        }, function (_5) {
+            d3 = _5['default'];
+        }, function (_) {
+            _getIterator = _['default'];
+        }, function (_2) {
+            _Object$keys = _2['default'];
+        }, function (_3) {}, function (_e) {
+            _Set = _e['default'];
+        }, function (_f) {
+            _Array$from = _f['default'];
+        }, function (_b) {}, function (_c) {
+            d3legend = _c.d3legend;
+            createTreeLayout = _c.createTreeLayout;
+            mergeTemplateLayout = _c.mergeTemplateLayout;
+            calcColourBarSize = _c.calcColourBarSize;
+            drawColourBar = _c.drawColourBar;
+            createNodeTypes = _c.createNodeTypes;
+            createDynamicNodeAttr = _c.createDynamicNodeAttr;
+            testLabelLength = _c.testLabelLength;
+        }],
+        execute: function () {
+            'use strict';
+
+            layoutTemplate = {
+                title: null,
+                width: null,
+                height: 600,
+                margin: {
+                    top: 10,
+                    bottom: 10,
+                    right: 10,
+                    left: 10
+                },
+                nodeTypes: {},
+                showLeafNodes: true,
+                outerNodeLabel: {
+                    "font-size": 14
+                },
+                link: {
+                    "stroke-width": 1.5
+                },
+                heatmap: {
+                    enabled: false,
+                    colourScale: [[0, '#008ae5'], [1, 'yellow']],
+                    colourBar: {
+                        show: true,
+                        height: "90%",
+                        width: 30
+                    },
+                    circle: {
+                        r: 16
+                    },
+                    opacity: 0.4
+                },
+                legend: {
+                    show: false,
+                    position: {
+                        x: "right",
+                        y: "center"
+                    },
+                    anchor: {
+                        x: "outside",
+                        y: "inside"
+                    },
+                    orientation: "vertical"
+                }
+            };
+
+            _export('default', angular.module('plotify.radial-phylogenetic-tree', ['plotify.utils']).directive('radialPhylogeneticTree', RadialPhylogeneticTreeDirective));
+        }
+    };
+});
+$__System.register('6', ['1', '2', '10', '11', '15', 'e', 'f', 'b', 'c'], function (_export) {
+    var angular, d3, _getIterator, _Object$keys, _Set, _Array$from, d3legend, d3tooltip, mergeTemplateLayout, createNodeTypes, createDynamicNodeAttr, roundOffFix, labelCollisionDetection, scaleProperties, getNodeLabelBBox, calcColourBarSize, drawColourBar, layoutTemplate, labelPositions;
+
+    function LineageScatterPlotDirective($window, WindowResize) {
+        return {
+            restrict: 'EA',
+            scope: {
+                value: '=',
+                selectedNodes: '='
+            },
+            link: function link(scope, element, attributes) {
+
+                element.addClass("plotify plotify-lineage-scatter-plot");
+
+                var defaultTimeFormat = "%d %b %y",
+                    defaultScalarFormat = "g";
 
                 var svg = d3.select(element[0]).append("svg").style('width', '100%');
 
-                var margin = { top: 40, right: 40, bottom: 120, left: 80 };
-
-                var width = undefined,
-                    height = undefined;
-
-                var violinGroupMinWidth = 12,
-                    violinGroupMaxWidth = 100,
-                    violinGroupSpacing = 10,
-                    violinGroupWidth = undefined,
-                    chartWidth = undefined,
-                    resolution = 12;
-
-                var chart = undefined,
-                    violinPlot = undefined,
-                    tooltip = new d3tooltip(d3.select(element[0]));
-
-                var violinGroupArea = undefined,
-                    updated = true,
-                    colours = null,
-                    dotScale = d3.scale.linear().domain([violinGroupMinWidth, violinGroupMaxWidth]).range([1.2, 2]);
-
-                d3.violin = function () {
-                    var width = 1,
-                        height = 1,
-                        domain = null,
-                        value = Number,
-                        tickFormat = null,
-                        dotRadius = undefined;
-
-                    // For each small multiple…
-                    function violin(g) {
-                        g.each(function (d, i) {
-                            var _this = this;
-
-                            var name = d.name,
-                                colour = colours(d.seriesName);
-
-                            d = d.data.map(value).sort(d3.ascending);
-
-                            var g = d3.select(this),
-                                n = d.length,
-                                min = d[0],
-                                max = d[n - 1];
-
-                            dotRadius = width / 10;
-
-                            var vDomain = domain && domain.call(this, d, i) || [min, max];
-
-                            var yScale = d3.scale.linear().domain(vDomain).range([height, 0]);
-
-                            var diff = vDomain[1] - vDomain[0];
-                            var binHalfSize = (max - min) / (resolution + 2) / 2;
-                            var hist = d3.layout.histogram().bins(resolution + 2).range([vDomain[0] - 0.01 * diff, vDomain[1] + 0.01 * diff]) // .range([min - binSize - 1, max + binSize + 1])
-                            .frequency(1)(d);
-
-                            var histScale = d3.scale.linear().domain(d3.extent(hist, function (d) {
-                                return d.y;
-                            })).range([0, width / 2]);
-
-                            var area = d3.svg.area().interpolate("bundle").x0(function (d) {
-                                return width / 2 - histScale(d.y);
-                            }).x1(function (d) {
-                                return width / 2 + histScale(d.y);
-                            }).y(function (d) {
-                                return yScale(d.x + binHalfSize);
-                            });
-
-                            var dist = g.selectAll("path.area").data([hist]);
-
-                            dist.enter().append("path").attr("class", "area");
-
-                            dist.attr("d", area);
-
-                            var dotGroup = g.selectAll("g.dot-group").data(hist.slice(1, hist.length - 1));
-
-                            dotGroup.enter().append("g").attr("class", "dot-group");
-
-                            dotGroup.attr("transform", function (d) {
-                                return 'translate(' + (width - histScale(d.length)) / 2 + ',0)';
-                            });
-
-                            var dot = dotGroup.selectAll("circle.dot").data(function (d) {
-                                return d.map(function (el) {
-                                    return { y: el, x: Math.random() * histScale(d.length) };
-                                });
-                            });
-
-                            dot.enter().append("circle").attr("class", "dot");
-
-                            dot.attr("r", dotScale(width)).attr("cx", function (d) {
-                                return d.x;
-                            }).attr("cy", function (d) {
-                                return yScale(d.y);
-                            }).style("fill", colour);
-
-                            var label = g.selectAll("text.violin-name").data([name]);
-
-                            label.enter().append("text").attr("class", "violin-name");
-
-                            label.attr("dy", "5px").attr("text-anchor", "end").attr("transform", 'translate(' + width / 2 + ',' + (height + 5) + ') rotate(-90)').style("fill", colour).text(function (d) {
-                                return d;
-                            });
-
-                            label.each(function (d) {
-                                var rect = this.getBoundingClientRect();
-                                if (rect.height > margin.bottom) {
-                                    d3.select(this).text(d.slice(0, margin.bottom / rect.height * d.length - 3) + "...");
-                                }
-                            });
-
-                            var clickRect = g.selectAll("rect.click-capture").data([1]);
-
-                            clickRect.enter().append('rect').attr('class', 'click-capture').style('visibility', 'hidden');
-
-                            clickRect.attr('x', 0).attr('y', 0).attr('width', width).attr('height', height);
-
-                            clickRect.on("mouseover", function () {
-                                var groupPos = _this.getBoundingClientRect(),
-                                    xPos = (groupPos.right + groupPos.left) / 2,
-                                    yPos = groupPos.top,
-                                    text = '<div class="tooltip-colour-box" style="background-color: ' + colour + '"></div>' + ('<span class="tooltip-text">' + name + '</span>');
-                                tooltip.html(text).position([xPos, yPos]).show();
-                            }).on("mouseout", function (d) {
-                                tooltip.hide();
-                            });
-                        });
-                        d3.timer.flush();
-                    }
-
-                    violin.width = function (x) {
-                        if (!arguments.length) return width;
-                        width = x;
-                        return violin;
-                    };
-
-                    violin.height = function (x) {
-                        if (!arguments.length) return height;
-                        height = x;
-                        return violin;
-                    };
-
-                    violin.tickFormat = function (x) {
-                        if (!arguments.length) return tickFormat;
-                        tickFormat = x;
-                        return violin;
-                    };
-
-                    violin.domain = function (x) {
-                        if (!arguments.length) return domain;
-                        domain = x == null ? x : d3.functor(x);
-                        return violin;
-                    };
-
-                    violin.value = function (x) {
-                        if (!arguments.length) return value;
-                        value = x;
-                        return violin;
-                    };
-
-                    return violin;
-                };
-
-                function update(target, transitions) {
-
-                    var violinContainers = target.selectAll("g.violin-container");
-
-                    var data = scope.value.data;
-
-                    if (scope.selected.length) {
-                        data = data.filter(function (d) {
-                            return scope.selected.indexOf(d.name) !== -1;
-                        });
-                    }
-
-                    var extents = [];
-                    // calculate extents of values of every node
-                    data.forEach(function (series) {
-                        extents = extents.concat(d3.extent(series.values));
-                    });
-                    var extent = d3.extent(extents),
-                        min = extent[0],
-                        max = extent[1],
-                        diff = max - min,
-                        scaleMargin = diff / resolution;
-
-                    // calculate optimal width of a violin plot
-                    violinGroupWidth = ((width - violinGroupSpacing * (data.length - 1)) / data.length).clamp(violinGroupMinWidth, violinGroupMaxWidth);
-
-                    // calculate the total width of the whole chart
-                    chartWidth = data.length * (violinGroupWidth + violinGroupSpacing) - violinGroupSpacing;
-
-                    // define function for plotting violin plots
-
-                    var domain = [min - scaleMargin, max + scaleMargin];
-
-                    violinPlot = d3.violin().width(violinGroupWidth).height(height).domain(domain);
-
-                    // calculate offset for the left margin to align the plot to the center
-                    var leftMargin = ((width + margin.right + margin.left) / 2 - chartWidth / 2).clamp(margin.left, Infinity);
-
-                    var yScale = d3.scale.linear().domain(domain).range([height, 0]);
-
-                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
-
-                    chart.attr("transform", 'translate(0, ' + margin.top + ')');
-
-                    svg.select("g.axis").attr("transform", 'translate(' + (margin.left - 10) + ',0)').call(yAxis);
-
-                    data = data.map(function (d, i) {
-                        return {
-                            name: d.name,
-                            data: d.values,
-                            seriesName: d.seriesName,
-                            i: i
-                        };
-                    });
-
-                    // bind data
-                    violinContainers = violinContainers.data(data, function (d) {
-                        return d.name;
-                    });
-
-                    // add new containers for new data
-                    violinContainers.enter().append("g").attr("class", "violin-container");
-
-                    violinContainers.call(violinPlot);
-
-                    // remove unbound containers
-                    var violinExit = violinContainers.exit();
-
-                    violinExit.remove();
-
-                    // update translation
-                    violinContainers.each(function (d, i) {
-                        d.x = leftMargin + d.i * (violinGroupWidth + violinGroupSpacing);
-                    });
-
-                    if (width >= Math.floor(chartWidth)) {
-                        updated = true;
-                        d3.select("g.scrollable-violin-container").attr("transform", 'translate(0,0)');
-                    }
-
-                    if (transitions) violinContainers = violinContainers.transition().duration(200);
-
-                    violinContainers.attr("transform", function (d) {
-                        return 'translate(' + d.x + ', 0)';
-                    });
-                }
+                var //links,
+                mouseStart = undefined,
+                    colours = d3.scale.category10(),
+                    isDrag = false,
+                    selectionRect = null,
+                    tooltip = new d3tooltip(d3.select(element[0])),
+                    defaultNode = {
+                    r: 4,
+                    "stroke-width": 2
+                },
+                    scale = 1,
+                    translate = [0, 0],
+                    selectedNodes = null,
+                    LCD = null,
+                    //label collision detection
+                lastLCDUpdateTime = 0,
+                    LCDUpdateID = undefined,
+                    heatmapColourScale = null,
+                    heatmapCircle = null,
+                    visibleSeries = new _Set();
 
                 function render(options) {
 
@@ -5570,86 +4664,744 @@ $__System.register('8', ['1', '2', '16', 'b', 'c'], function (_export) {
 
                     var elementWidth = d3.select(element[0]).node().offsetWidth;
 
-                    height = 500 - margin.top - margin.bottom;
-                    width = elementWidth - margin.left - margin.right;
+                    var marginRatio = { axisX: 0.15, axisY: 0.1 };
 
                     // don't continue rendering if there is no data
-                    if (!scope.value) console.warn("No data to render.");
+                    if (!scope.value || !scope.value.data.length) return;
 
-                    colours = d3.scale.category10().domain(scope.value.data.map(function (d) {
-                        return d.seriesName;
-                    }));
+                    selectedNodes = new _Set();
 
-                    // set up svg and bind scroll behaviour on drag
-                    svg.data([{ x: 0, y: 0 }]).attr("width", "100%").attr("height", height + margin.top + margin.bottom).call(scroll(dragmove, dragEnd));
+                    var seriesNames = _Array$from(new _Set(scope.value.data.map(function (d) {
+                        return d.series;
+                    })));
 
-                    // define a clip path to clip the violin plots outside the scroll area
-                    var clip = svg.append("defs").append("svg:clipPath").attr("id", "clip").append("svg:rect").attr("id", "clip-rect").attr("x", margin.left - 5).attr("y", "-20").attr("width", width + 10).attr("height", height * 2);
-
-                    chart = svg.append("g");
-
-                    chart.append("g").attr("class", "axis");
-
-                    var clipBox = chart.append("g").attr("id", "scroll-clip-violin").attr("clip-path", "url(#clip)");
-
-                    violinGroupArea = clipBox.append("g").attr("class", "scrollable-violin-container");
-
-                    update(violinGroupArea, options.transitions);
-                }
-
-                function dragEnd() {
-                    d3.event.sourceEvent.stopPropagation();
-                }
-
-                function dragmove(d) {
-                    if (updated) {
-                        d.x = 0;
-                        updated = false;
+                    if (options.isNewData) {
+                        colours.domain([]);
+                        visibleSeries = new _Set(seriesNames);
                     }
-                    d.x = (d.x + d3.event.dx).clamp(width - chartWidth, 0);
 
-                    d3.select("g.scrollable-violin-container").attr("transform", 'translate(' + d.x + ',' + d.y + ')');
+                    var copy = angular.copy(scope.value);
+
+                    var _createLinks = createLinks(copy.data, visibleSeries);
+
+                    var nodesData = _createLinks.nodesData;
+                    var links = _createLinks.links;
+                    var layout = mergeTemplateLayout(copy.layout, layoutTemplate);
+                    var pathname = $window.location.pathname;
+                    var legendHeight = 0;var legendWidth = 0;var colourbarHeight = 0;var colourbarWidth = 0;
+                    var colourBarOffset = layout.heatmap.enabled && layout.heatmap.colourBar.show ? 15 : 0;
+                    var legendOut = { top: false, right: false, bottom: false, left: false };
+                    var showHeatmapTitle = layout.heatmap.enabled && layout.heatmap.title !== null;
+                    var colourBarOrigWidth = layout.heatmap.colourBar.width;var colourBarOrigHeight = layout.heatmap.colourBar.height;
+                    var colourbar = d3.select();
+                    var legend = d3.select();
+                    var xAxisLabelSVG = d3.select();
+                    var yAxisLabelSVG = d3.select();
+                    var titleSVG = d3.select();
+
+                    if (layout.legend.show) {
+                        if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
+                        if (layout.legend.anchor.y == "outside") legendOut[layout.legend.position.y] = true;
+                    }
+
+                    var margin = layout.margin,
+                        width = layout.width || elementWidth,
+                        height = layout.height;
+
+                    if (layout.title) margin.top += legendOut.top ? 26 : 25;
+                    if (layout.xAxis.title) margin.bottom += legendOut.bottom ? 15 : 18;
+                    if (layout.yAxis.title) margin.left += 21;
+
+                    var chart = svg.append("g");
+                    var defs = chart.append("svg:defs");
+
+                    if (layout.heatmap.enabled) {
+
+                        var domain = d3.extent(nodesData, function (node) {
+                            return node.z;
+                        });
+
+                        if (domain[0] == domain[1]) {
+                            if (domain[0] === undefined) {
+                                domain[0] = domain[1] = 0;
+                            }
+                            domain[0] -= 0.5;
+                            domain[1] += 0.5;
+                        }
+
+                        heatmapColourScale = d3.scale.linear().domain(domain).range(layout.heatmap.colourScale.map(function (v) {
+                            return v[1];
+                        }));
+
+                        if (layout.heatmap.colourBar.show) {
+                            layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, height);
+                            layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
+
+                            colourbar = chart.append("g").attr("class", "plotify-colourbar");
+
+                            drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+
+                            var bbox = colourbar.node().getBoundingClientRect(),
+                                pos = layout.heatmap.colourBar.position;
+                            colourbarWidth = bbox.width;
+                            colourbarHeight = bbox.height;
+                            if (pos === "right" || pos === "left") margin.right += colourbarWidth - (showHeatmapTitle ? 1 : 0) + colourBarOffset;
+                            //else if (pos === "top" || pos === "bottom")
+                            //    margin.top += colourbarHeight;
+                        }
+                    }
+
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            orientation = layout.legend.orientation;
+
+                        var splitAfter = orientation === "horizontal" ? 0 : 1;
+
+                        var drawLegend = d3legend().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
+
+                        legend = chart.append("g").attr("class", "plotify-legend").call(drawLegend);
+
+                        var bbox = legend.node().getBoundingClientRect();
+                        legendHeight = bbox.height;legendWidth = bbox.width;
+                        if (anchor.x === "outside" && pos.x !== "center") {
+                            margin[pos.x] += legendOut.right ? legendWidth - 10 : legendOut.left ? legendWidth - 11 : legendWidth;
+                        } else if (anchor.y === "outside" && pos.y !== "center") {
+                            margin[pos.y] += legendOut.bottom ? legendHeight - 8 : legendOut.top ? legendHeight - 11 : legendHeight;
+                        }
+                    }
+
+                    function legendClick(label) {
+                        var clicked = d3.select(this);
+                        if (visibleSeries.has(label)) visibleSeries['delete'](label);else visibleSeries.add(label);
+                        clicked.classed("legend-item-selected", visibleSeries.has(label));
+                        clicked.select("rect.shape").attr("fill", visibleSeries.has(label) ? colours(label) : "white");
+                        render({ isNewData: false });
+                    }
+
+                    var initialLabelPosition = labelPositions[0];
+
+                    var types = createNodeTypes(nodesData, layout.nodeTypes, defaultNode),
+                        nodeAttr = createDynamicNodeAttr(types, _Object$keys(defaultNode));
+
+                    // check if x axis data is time data
+                    //let isTimePlot = nodesData[0].x instanceof Date;
+                    var isTimePlot = false;
+
+                    // define x and y axes formats
+                    var xAxisFormat = isTimePlot ? d3.time.format(layout.xAxis.format || defaultTimeFormat) : d3.format(layout.xAxis.format || defaultScalarFormat),
+                        yAxisFormat = d3.format(layout.yAxis.format || defaultScalarFormat);
+
+                    // find extent of input data and calculate margins
+                    var xExtent = d3.extent(nodesData, function (node) {
+                        return node.x;
+                    }),
+                        yExtent = d3.extent(nodesData, function (node) {
+                        return node.y;
+                    });
+
+                    if (xExtent[0] === undefined || yExtent[0] === undefined) {
+                        xExtent[0] = xExtent[1] = 0;
+                        yExtent[0] = yExtent[1] = 0;
+                    }
+
+                    var xMargin = marginRatio.axisX * (xExtent[1] - xExtent[0]) / 2,
+                        yMargin = marginRatio.axisY * (yExtent[1] - yExtent[0]) / 2;
+
+                    // add margins to horizontal axis data
+                    if (isTimePlot) {
+                        xExtent[0] = new Date(xExtent[0].getTime() - xMargin);
+                        xExtent[1] = new Date(xExtent[1].getTime() + xMargin);
+                    } else {
+                        if (xMargin == 0) xMargin = 0.5;
+                        if (yMargin == 0) yMargin = 0.5;
+                        xExtent[0] -= xMargin;xExtent[1] += xMargin;
+                    }
+
+                    // add margins to vertical axis data
+                    yExtent[0] -= yMargin;yExtent[1] += yMargin;
+
+                    height = layout.height - margin.top - margin.bottom;
+
+                    // define x scale
+                    var xScale = (isTimePlot ? d3.time.scale() : d3.scale.linear()).domain(xExtent).range([0, width]);
+
+                    var zoom = d3.behavior.zoom().scaleExtent([1, layout.maxZoom])
+                    //.x(xScale) // TODO: can be reworked when xExtent is implemented in d3.js
+                    .on("zoom", zoomed);
+
+                    // define x axis
+                    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").innerTickSize(0).outerTickSize(0).tickFormat(roundOffFix(xAxisFormat));
+
+                    // define y scale
+                    var yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
+
+                    // define y axis
+                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(0).outerTickSize(0).tickFormat(roundOffFix(yAxisFormat));
+
+                    // read x and y axes labels
+                    var xAxisLabel = layout.xAxis.title;
+                    var yAxisLabel = layout.yAxis.title;
+
+                    var mouseCaptureGroup = chart.append("g");
+
+                    // render x axis
+                    var xAxisSVG = chart.append("g").attr("class", "axis x-axis").call(xAxis);
+
+                    // rotate tick labels if time plot
+                    if (isTimePlot) {
+                        xAxisSVG.selectAll("text").style("text-anchor", "end").attr("dx", "-.8em").attr("dy", ".15em").attr("transform", "rotate(-65)");
+                    }
+
+                    // render x axis label if exists
+                    var xAxisOffset = chart.selectAll("g.x-axis")[0][0].getBBox().height;
+                    margin.bottom += xAxisOffset - 3;
+                    height = layout.height - margin.top - margin.bottom;
+
+                    if (xAxisLabel) {
+                        xAxisLabelSVG = chart.append("text") // text label for the x axis
+                        .attr("class", "axis-title").style("text-anchor", "middle").text(xAxisLabel);
+                    }
+
+                    // render y axis
+                    var yAxisSVG = chart.append("g").attr("class", "axis y-axis").call(yAxis);
+
+                    var yAxisOffset = chart.selectAll("g.y-axis")[0][0].getBBox().width;
+                    margin.left += yAxisOffset;
+                    width = (layout.width || elementWidth) - margin.right - margin.left;
+                    //yAxisLabelSVG.attr("y", yAxisOffset - 25);
+                    xAxisLabelSVG.attr("transform", 'translate(' + width / 2 + ', ' + (height + xAxisOffset + 15) + ')');
+
+                    // define node link function
+                    var nodeLink = d3.svg.line().x(function (node) {
+                        return xScale(node.x);
+                    }).y(function (node) {
+                        return yScale(node.y);
+                    });
+
+                    colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
+                    if (layout.legend.show) {
+                        var pos = layout.legend.position,
+                            anchor = layout.legend.anchor,
+                            xOffset = anchor.x === "outside" ? -yAxisOffset - (layout.yAxis.title ? 25 : 0) : 1,
+                            yOffset = 15 + (layout.xAxis.title ? 15 : 0),
+                            posX = pos.x === "left" ? xOffset : pos.x === "right" ? width + (anchor.x === "outside" ? colourBarOffset + colourbarWidth : 0) : width / 2,
+                            posY = pos.y === "top" ? 0 : pos.y === "bottom" ? height - 1 + (anchor.y === "outside" ? yOffset : 0) : height / 2;
+
+                        legend.attr("transform", 'translate(' + posX + ',' + posY + ')');
+                    }
+
+                    // render chart title
+                    if (layout.title) {
+                        titleSVG = chart.append("text").attr("x", width / 2).attr("y", legendOut.top ? -legendHeight : -10).attr("text-anchor", "middle").style("font-size", "20px").text(layout.title);
+                    }
+
+                    svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
+
+                    yScale.range([height, 0]);
+                    xScale.range([0, width]);
+
+                    var xScale0 = xScale.copy(),
+                        yScale0 = yScale.copy();
+
+                    xAxis.innerTickSize(-height);
+                    yAxis.innerTickSize(-width);
+
+                    xAxisSVG.attr("transform", 'translate(0, ' + height + ')').call(xAxis);
+                    yAxisSVG.call(yAxis);
+
+                    // render y axis label if exists
+                    if (yAxisLabel) {
+                        yAxisLabelSVG = chart.append("text") // text label for the y axis
+                        .attr("class", "axis-title").attr("transform", "rotate(-90)").attr("y", -yAxisOffset - 10).attr("x", -(height / 2)).style("text-anchor", "middle").text(yAxisLabel);
+                    }
+
+                    if (layout.heatmap.colourBar.show) {
+                        layout.heatmap.colourBar.height = calcColourBarSize(colourBarOrigHeight, height);
+                        layout.heatmap.colourBar.width = calcColourBarSize(colourBarOrigWidth, width);
+
+                        drawColourBar(colourbar, heatmapColourScale.domain(), layout.heatmap, defs, pathname);
+                        colourbar.attr("transform", 'translate(' + (width + colourBarOffset) + ',' + (height - layout.heatmap.colourBar.height) / 2 + ')');
+                    }
+
+                    var mouseRect = mouseCaptureGroup.append("rect").attr("id", "mouse-capture").attr("x", -margin.left).attr("y", -margin.top).attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("fill", "transparent");
+
+                    // render chart area
+                    chart.attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')').call(zoom).on("dblclick.zoom", onDoubleClick);
+
+                    // define arrowhead
+
+                    defs.append("marker").attr({
+                        "id": "marker-arrowhead",
+                        "viewBox": "0 -5 10 10",
+                        "refX": 15,
+                        "refY": 0,
+                        "markerWidth": 8,
+                        "markerHeight": 8,
+                        "orient": "auto"
+                    }).append("path").attr("d", "M0,-4L10,0L0,4").attr("fill", layout.link.stroke).attr("class", "arrowHead");
+
+                    defs.append("svg:clipPath").attr("id", "lineage-scatter-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+
+                    // render links
+                    var plotArea = chart.append("g").attr("id", "scatter-plot-area").attr("clip-path", 'url(' + pathname + '#lineage-scatter-clip-rect)').append("g");
+
+                    if (layout.heatmap.enabled) {
+                        heatmapCircle = plotArea.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodesData.filter(function (n) {
+                            return !isNaN(parseFloat(n.z));
+                        })).enter().append("circle").attr("class", "heatmap-circle").style("fill", function (d) {
+                            return heatmapColourScale(d.z);
+                        }).style("opacity", layout.heatmap.opacity).attr(layout.heatmap.circle).attr("transform", function (d) {
+                            return 'translate(' + xScale(d.x) + ',' + yScale(d.y) + ')';
+                        });
+                    }
+
+                    plotArea.selectAll(".link").data(links).enter().append("svg:path").attr("stroke-dasharray", "3, 3").attr("d", function (conn) {
+                        return nodeLink(conn);
+                    }).attr(layout.link).attr("class", "link").attr("marker-end", 'url(' + pathname + '#marker-arrowhead)');
+
+                    // create node groups
+                    var node = plotArea.selectAll("g.node").data(nodesData).enter().append("g").attr("class", "node").attr("transform", function (node) {
+                        return 'translate(' + xScale(node.x) + ', ' + yScale(node.y) + ')';
+                    });
+
+                    //render node circles
+                    var circle = node.append("circle").attr(nodeAttr).style("stroke", function (d) {
+                        return colours(d.series);
+                    }).style("fill", function (d) {
+                        return !selectedNodes.has(d.name) ? '#FFF' : colours(d.series);
+                    }).each(function (d) {
+                        d.bboxCircle = this.getBoundingClientRect();
+                    }).on("click", click).on("mouseup", mouseUp).on("mouseover", function (d) {
+                        var groupPos = this.getBoundingClientRect(),
+                            xPos = (groupPos.right + groupPos.left) / 2,
+                            yPos = groupPos.top,
+                            text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.series) + '"></div>' + ('<span class="tooltip-text">' + d.name + '</span>') + ('<span class="tooltip-text">x: ' + d.x.toPrecision(3) + '</span>') + ('<span class="tooltip-text">y: ' + d.y.toPrecision(3) + '</span>');
+                        tooltip.html(text).position([xPos, yPos]).show();
+                    }).on("mouseout", function (d) {
+                        tooltip.hide();
+                    });
+
+                    // render node labels
+                    var label = node.append("text").attr("dy", ".35em").attr(layout.nodeLabel).attr(initialLabelPosition).text(function (node) {
+                        return node.name;
+                    }).style("opacity", 1).each(getNodeLabelBBox).each(function (d) {
+                        return d.labelPos = initialLabelPosition;
+                    });
+
+                    var maxNodeLabelLength = d3.max(label.data().map(function (d) {
+                        return d.bboxLabel.width;
+                    })),
+                        searchRadius = 2 * maxNodeLabelLength + 13;
+
+                    if (layout.labelCollisionDetection.enabled === "onEveryChange" || layout.labelCollisionDetection.enabled === "onInit" || layout.labelCollisionDetection.enabled === "onDelay") {
+                        LCD = new labelCollisionDetection(nodesData, labelPositions, layout.nodeLabel, xScale, yScale, width, height, searchRadius);
+                        LCD.initializeLabelPositions(label);
+                    }
+
+                    legend.each(function () {
+                        this.parentNode.appendChild(this);
+                    });
+                    titleSVG.each(function () {
+                        this.parentNode.appendChild(this);
+                    });
+
+                    if (layout.groupSelection.enabled) {
+                        mouseRect.on("mousedown", mouseDown).on("mousemove", mouseMove).on("mouseup", mouseUp).on("mouseout", mouseOut);
+
+                        selectionRect = mouseCaptureGroup.append("rect").attr(layout.groupSelection.selectionRectangle).attr("class", "selection-rect");
+                    }
+
+                    function mouseDown() {
+                        if (!d3.event.ctrlKey) return;
+                        d3.event.preventDefault();
+                        isDrag = true;
+                        mouseStart = d3.mouse(this);
+                        circle.style("pointer-events", "none");
+                    }
+
+                    function click(d) {
+                        d3.event.preventDefault();
+                        var n = d3.select(this.parentNode);
+                        if (!n.classed("selected")) {
+                            n.classed("selected", true);
+                            n.select("circle").style("fill", function (d) {
+                                return colours(d.series);
+                            });
+                        } else {
+                            n.classed("selected", false);
+                            n.select("circle").style("fill", "#FFF");
+                        }
+                        updateSelection();
+                    }
+
+                    function mouseUp(pos) {
+                        if (!isDrag || !mouseStart) return;
+
+                        var p = arguments.length == 1 ? pos : d3.mouse(this);
+                        if (!selectPoints(selectionRect) && mouseStart[0] != p[0] && mouseStart[1] != p[1]) {
+                            node.classed("selected", false).selectAll("circle").style("fill", "#FFF");
+                        }
+                        selectionRect.attr("width", 0);
+                        updateSelection();
+                        mouseStart = null;
+                        isDrag = false;
+                        circle.style("pointer-events", "all");
+                    }
+
+                    function mouseOut() {
+                        if (!isDrag) return;
+                        selectionRect.attr("width", 0);
+                        updateSelection();
+                        mouseStart = null;
+                        isDrag = false;
+                        circle.style("pointer-events", "all");
+                    }
+
+                    function mouseMove() {
+                        if (!isDrag) return;
+                        var p = d3.mouse(this);
+                        if (!d3.event.ctrlKey) {
+                            mouseUp(p);
+                            return;
+                        }
+                        var d = {
+                            x: p[0] < mouseStart[0] ? p[0] : mouseStart[0],
+                            y: p[1] < mouseStart[1] ? p[1] : mouseStart[1],
+                            height: Math.abs(p[1] - mouseStart[1]),
+                            width: Math.abs(p[0] - mouseStart[0])
+                        };
+                        selectionRect.attr(d);
+                        selectPoints(selectionRect);
+                    }
+
+                    function selectPoints(rect) {
+                        var rect_x1 = +rect.attr("x"),
+                            rect_y1 = +rect.attr("y"),
+                            rect_x2 = +rect.attr("width") + rect_x1,
+                            rect_y2 = +rect.attr("height") + rect_y1,
+                            any = false;
+
+                        node.each(function (d, i, j) {
+                            var n = d3.select(this);
+                            var t = d3.transform(n.attr("transform")),
+                                tx = t.translate[0],
+                                ty = t.translate[1];
+
+                            if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
+                                n.classed("selected", true);
+                                n.select("circle").style("fill", function (d) {
+                                    return colours(d.series);
+                                });
+                                any = true;
+                            } else if (!selectedNodes.has(d.name)) {
+                                n.classed("selected", false);
+                                n.select("circle").style("fill", "#FFF");
+                            }
+                        });
+
+                        return any;
+                    }
+
+                    function updateSelection() {
+                        var wasChange = false;
+
+                        svg.selectAll("g.node.selected").each(function (d) {
+                            if (!selectedNodes.has(d.name)) {
+                                selectedNodes.add(d.name);
+                                wasChange = true;
+                            }
+                        });
+
+                        svg.selectAll("g.node:not(.selected)").each(function (d) {
+                            if (selectedNodes.has(d.name)) {
+                                selectedNodes['delete'](d.name);
+                                wasChange = true;
+                            }
+                        });
+
+                        if (wasChange && scope.selected) {
+                            scope.selectedNodes = _Array$from(selectedNodes);
+                            scope.$apply();
+                        }
+                    }
+
+                    function zoomed() {
+                        if (d3.event.sourceEvent.ctrlKey) {
+                            zoom.translate(translate);
+                            zoom.scale(scale);
+                            return;
+                        }
+
+                        var t = zoom.translate(),
+                            s = zoom.scale(),
+                            now = performance.now();
+                        if (s == scale && t[0] == translate[0] && t[1] == translate[1]) return;
+                        scale = s;
+                        translate = t;
+                        translate[0] = translate[0].clamp((1 - scale) * width, 0);
+                        translate[1] = translate[1].clamp((1 - scale) * height, 0);
+                        zoom.translate(translate);
+                        xScale.domain(xScale0.range().map(function (x) {
+                            return (x - translate[0]) / scale;
+                        }).map(xScale0.invert));
+                        yScale.domain(yScale0.range().map(function (y) {
+                            return (y - translate[1]) / scale;
+                        }).map(yScale0.invert));
+                        applyZoom();
+                        if (layout.labelCollisionDetection.enabled === "onEveryChange") {
+                            LCD.recalculateLabelPositions(label, scale);
+                        } else if (layout.labelCollisionDetection.enabled === "onDelay") {
+                            window.clearTimeout(LCDUpdateID);
+                            LCDUpdateID = window.setTimeout(function () {
+                                LCD.recalculateLabelPositions(label, scale);
+                            }, layout.labelCollisionDetection.updateDelay);
+                            lastLCDUpdateTime = now;
+                        }
+                    }
+
+                    function applyZoom() {
+                        plotArea.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+                        mouseCaptureGroup.attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+                        svg.select(".x-axis.axis").call(xAxis);
+                        svg.select(".y-axis.axis").call(yAxis);
+                        svg.selectAll(".node circle").attr(scaleProperties(nodeAttr, scale, true)).each(function (d) {
+                            d.bboxCircle = this.getBoundingClientRect();
+                        });
+                        svg.selectAll("path.link").attr(scaleProperties(layout.link, scale));
+                        if (layout.heatmap.enabled) {
+                            heatmapCircle.attr(scaleProperties(layout.heatmap.circle, scale));
+                        }
+                        if (layout.labelCollisionDetection.enabled === "onInit" || layout.labelCollisionDetection.enabled === "onDelay" || layout.labelCollisionDetection.enabled === false) {
+                            label.each(function (d) {
+                                var self = d3.select(this);
+                                self.attr(scaleProperties(layout.nodeLabel, scale)).attr(scaleProperties(d.labelPos, scale));
+                            });
+                        }
+                        if (layout.groupSelection.enabled) {
+                            selectionRect.attr(scaleProperties(layout.groupSelection.selectionRectangle, scale));
+                        }
+                    }
+
+                    function onDoubleClick() {
+                        var now = performance.now();
+                        scale = 1;
+                        translate = [0, 0];
+                        zoom.scale(1);
+                        xScale.domain(xScale0.domain());
+                        yScale.domain(yScale0.domain());
+                        applyZoom();
+                        if (layout.labelCollisionDetection.enabled === "onEveryChange") {
+                            LCD.recalculateLabelPositions(label, scale);
+                        } else if (layout.labelCollisionDetection.enabled === "onDelay") {
+                            window.clearTimeout(LCDUpdateID);
+                            LCDUpdateID = window.setTimeout(function () {
+                                LCD.recalculateLabelPositions(label, scale);
+                            }, layout.labelCollisionDetection.enabled.updateDelay);
+                            lastLCDUpdateTime = now;
+                        }
+                    }
                 }
 
                 // Handle window resize event.
                 scope.$on('window-resize', function (event) {
-                    render({ transitions: false });
+                    render({ isNewData: false });
                 });
 
                 scope.$watch("value", function () {
-                    render({ transitions: true });
-                });
-
-                scope.$watch("selected", function (selected) {
-                    update(violinGroupArea, true, true);
+                    render({ isNewData: true });
                 });
             }
         };
     }
 
-    function scroll(dragHandler, dragStopHandler) {
-        var drag = d3.behavior.drag();
-        drag.on("drag", dragHandler).on("dragend", dragStopHandler);
-        return drag;
+    function createLinks(nodes, activeSeries) {
+        var filteredNodes = [],
+            nodesDict = {},
+            parent = undefined,
+            links = [];
+
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = _getIterator(nodes), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var node = _step.value;
+
+                nodesDict[node.name] = node;
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator['return']) {
+                    _iterator['return']();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+            for (var _iterator2 = _getIterator(nodes), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var node = _step2.value;
+
+                var currentNode = node;
+                if (!activeSeries.has(currentNode.series)) continue;
+                while (parent = currentNode.parent) {
+                    var parentNode = nodesDict[parent];
+                    if (activeSeries.has(parentNode.series)) {
+                        node.parent = parent;
+                        links.push([parentNode, node]);
+                        break;
+                    }
+                    currentNode = parentNode;
+                }
+                if (node.parent && !activeSeries.has(nodesDict[node.parent].series)) {
+                    node.parent = null;
+                }
+                filteredNodes.push(node);
+            }
+        } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+                    _iterator2['return']();
+                }
+            } finally {
+                if (_didIteratorError2) {
+                    throw _iteratorError2;
+                }
+            }
+        }
+
+        return { nodesData: filteredNodes, links: links };
     }
 
     return {
-        setters: [function (_2) {
-            angular = _2['default'];
-        }, function (_3) {
-            d3 = _3['default'];
-        }, function (_) {}, function (_b) {}, function (_c) {
+        setters: [function (_4) {
+            angular = _4['default'];
+        }, function (_5) {
+            d3 = _5['default'];
+        }, function (_2) {
+            _getIterator = _2['default'];
+        }, function (_) {
+            _Object$keys = _['default'];
+        }, function (_3) {}, function (_e) {
+            _Set = _e['default'];
+        }, function (_f) {
+            _Array$from = _f['default'];
+        }, function (_b) {}, function (_c) {
+            d3legend = _c.d3legend;
             d3tooltip = _c.d3tooltip;
+            mergeTemplateLayout = _c.mergeTemplateLayout;
+            createNodeTypes = _c.createNodeTypes;
+            createDynamicNodeAttr = _c.createDynamicNodeAttr;
+            roundOffFix = _c.roundOffFix;
+            labelCollisionDetection = _c.labelCollisionDetection;
+            scaleProperties = _c.scaleProperties;
+            getNodeLabelBBox = _c.getNodeLabelBBox;
+            calcColourBarSize = _c.calcColourBarSize;
+            drawColourBar = _c.drawColourBar;
         }],
         execute: function () {
-            Number.prototype.clamp = function (min, max) {
-                return Math.min(Math.max(this, min), max);
+            'use strict';
+
+            layoutTemplate = {
+                title: null,
+                width: null,
+                height: 600,
+                margin: {
+                    right: 10,
+                    left: 10,
+                    top: 10,
+                    bottom: 10
+                },
+                xAxis: {
+                    title: null,
+                    format: null
+                },
+                yAxis: {
+                    title: null,
+                    format: null
+                },
+                nodeTypes: {},
+                nodeLabel: {
+                    "font-size": 12
+                },
+                labelCollisionDetection: {
+                    enabled: "never",
+                    updateDelay: 500
+                },
+                link: {
+                    stroke: "#838383",
+                    "stroke-width": 1,
+                    "stroke-dasharray": 4
+                },
+                groupSelection: {
+                    enabled: false,
+                    selectionRectangle: {
+                        "stroke-width": 1,
+                        "stroke-dasharray": 4,
+                        rx: 3,
+                        ry: 3,
+                        stroke: "steelblue"
+                    }
+                },
+                maxZoom: 10,
+                heatmap: {
+                    enabled: false,
+                    title: null,
+                    colourScale: [[0, '#008ae5'], [1, 'yellow']],
+                    colourBar: {
+                        show: true,
+                        height: "90%",
+                        width: 30,
+                        position: "right"
+                    },
+                    circle: {
+                        r: 16
+                    },
+                    opacity: 0.4
+                },
+                legend: {
+                    show: false,
+                    position: {
+                        x: "right",
+                        y: "center"
+                    },
+                    anchor: {
+                        x: "outside",
+                        y: "inside"
+                    },
+                    orientation: "vertical"
+                }
             };
-            _export('default', angular.module('plotify.violin', ['plotify.utils']).directive('violinPlot', ViolinPlotDirective));
+            labelPositions = [{
+                x: 13,
+                y: 0,
+                "text-anchor": "start"
+            }, {
+                x: -13,
+                y: 0,
+                "text-anchor": "end"
+            }];
+
+            _export('default', angular.module('plotify.lineage-scatter', ['plotify.utils']).directive('lineageScatterPlot', LineageScatterPlotDirective));
         }
     };
 });
-$__System.register('9', ['1', '2', '10', '17', '18', 'e', 'a', 'b', 'c'], function (_export) {
+$__System.register('9', ['1', '2', '10', '16', '17', 'e', 'a', 'b', 'c'], function (_export) {
     var angular, d3, _getIterator, _slicedToArray, _Set, d3legend, d3tooltip;
 
     function LinePlotDirective($window, WindowResize) {
@@ -6095,6 +5847,358 @@ $__System.register('9', ['1', '2', '10', '17', '18', 'e', 'a', 'b', 'c'], functi
         }
     };
 });
+$__System.register('8', ['1', '2', '18', 'b', 'c'], function (_export) {
+    'use strict';
+
+    var angular, d3, d3tooltip;
+
+    function ViolinPlotDirective($window, WindowResize) {
+        return {
+            restrict: 'EA',
+            scope: {
+                value: '=',
+                selected: '='
+            },
+            link: function link(scope, element, attributes) {
+                element.addClass("plotify plotify-violin-plot");
+
+                var svg = d3.select(element[0]).append("svg").style('width', '100%');
+
+                var margin = { top: 40, right: 40, bottom: 120, left: 80 };
+
+                var width = undefined,
+                    height = undefined;
+
+                var violinGroupMinWidth = 12,
+                    violinGroupMaxWidth = 100,
+                    violinGroupSpacing = 10,
+                    violinGroupWidth = undefined,
+                    chartWidth = undefined,
+                    resolution = 12;
+
+                var chart = undefined,
+                    violinPlot = undefined,
+                    tooltip = new d3tooltip(d3.select(element[0]));
+
+                var violinGroupArea = undefined,
+                    updated = true,
+                    colours = null,
+                    dotScale = d3.scale.linear().domain([violinGroupMinWidth, violinGroupMaxWidth]).range([1.2, 2]);
+
+                d3.violin = function () {
+                    var width = 1,
+                        height = 1,
+                        domain = null,
+                        value = Number,
+                        tickFormat = null,
+                        dotRadius = undefined;
+
+                    // For each small multiple…
+                    function violin(g) {
+                        g.each(function (d, i) {
+                            var _this = this;
+
+                            var name = d.name,
+                                colour = colours(d.seriesName);
+
+                            d = d.data.map(value).sort(d3.ascending);
+
+                            var g = d3.select(this),
+                                n = d.length,
+                                min = d[0],
+                                max = d[n - 1];
+
+                            dotRadius = width / 10;
+
+                            var vDomain = domain && domain.call(this, d, i) || [min, max];
+
+                            var yScale = d3.scale.linear().domain(vDomain).range([height, 0]);
+
+                            var diff = vDomain[1] - vDomain[0];
+                            var binHalfSize = (max - min) / (resolution + 2) / 2;
+                            var hist = d3.layout.histogram().bins(resolution + 2).range([vDomain[0] - 0.01 * diff, vDomain[1] + 0.01 * diff]) // .range([min - binSize - 1, max + binSize + 1])
+                            .frequency(1)(d);
+
+                            var histScale = d3.scale.linear().domain(d3.extent(hist, function (d) {
+                                return d.y;
+                            })).range([0, width / 2]);
+
+                            var area = d3.svg.area().interpolate("bundle").x0(function (d) {
+                                return width / 2 - histScale(d.y);
+                            }).x1(function (d) {
+                                return width / 2 + histScale(d.y);
+                            }).y(function (d) {
+                                return yScale(d.x + binHalfSize);
+                            });
+
+                            var dist = g.selectAll("path.area").data([hist]);
+
+                            dist.enter().append("path").attr("class", "area");
+
+                            dist.attr("d", area);
+
+                            var dotGroup = g.selectAll("g.dot-group").data(hist.slice(1, hist.length - 1));
+
+                            dotGroup.enter().append("g").attr("class", "dot-group");
+
+                            dotGroup.attr("transform", function (d) {
+                                return 'translate(' + (width - histScale(d.length)) / 2 + ',0)';
+                            });
+
+                            var dot = dotGroup.selectAll("circle.dot").data(function (d) {
+                                return d.map(function (el) {
+                                    return { y: el, x: Math.random() * histScale(d.length) };
+                                });
+                            });
+
+                            dot.enter().append("circle").attr("class", "dot");
+
+                            dot.attr("r", dotScale(width)).attr("cx", function (d) {
+                                return d.x;
+                            }).attr("cy", function (d) {
+                                return yScale(d.y);
+                            }).style("fill", colour);
+
+                            var label = g.selectAll("text.violin-name").data([name]);
+
+                            label.enter().append("text").attr("class", "violin-name");
+
+                            label.attr("dy", "5px").attr("text-anchor", "end").attr("transform", 'translate(' + width / 2 + ',' + (height + 5) + ') rotate(-90)').style("fill", colour).text(function (d) {
+                                return d;
+                            });
+
+                            label.each(function (d) {
+                                var rect = this.getBoundingClientRect();
+                                if (rect.height > margin.bottom) {
+                                    d3.select(this).text(d.slice(0, margin.bottom / rect.height * d.length - 3) + "...");
+                                }
+                            });
+
+                            var clickRect = g.selectAll("rect.click-capture").data([1]);
+
+                            clickRect.enter().append('rect').attr('class', 'click-capture').style('visibility', 'hidden');
+
+                            clickRect.attr('x', 0).attr('y', 0).attr('width', width).attr('height', height);
+
+                            clickRect.on("mouseover", function () {
+                                var groupPos = _this.getBoundingClientRect(),
+                                    xPos = (groupPos.right + groupPos.left) / 2,
+                                    yPos = groupPos.top,
+                                    text = '<div class="tooltip-colour-box" style="background-color: ' + colour + '"></div>' + ('<span class="tooltip-text">' + name + '</span>');
+                                tooltip.html(text).position([xPos, yPos]).show();
+                            }).on("mouseout", function (d) {
+                                tooltip.hide();
+                            });
+                        });
+                        d3.timer.flush();
+                    }
+
+                    violin.width = function (x) {
+                        if (!arguments.length) return width;
+                        width = x;
+                        return violin;
+                    };
+
+                    violin.height = function (x) {
+                        if (!arguments.length) return height;
+                        height = x;
+                        return violin;
+                    };
+
+                    violin.tickFormat = function (x) {
+                        if (!arguments.length) return tickFormat;
+                        tickFormat = x;
+                        return violin;
+                    };
+
+                    violin.domain = function (x) {
+                        if (!arguments.length) return domain;
+                        domain = x == null ? x : d3.functor(x);
+                        return violin;
+                    };
+
+                    violin.value = function (x) {
+                        if (!arguments.length) return value;
+                        value = x;
+                        return violin;
+                    };
+
+                    return violin;
+                };
+
+                function update(target, transitions) {
+
+                    var violinContainers = target.selectAll("g.violin-container");
+
+                    var data = scope.value.data;
+
+                    if (scope.selected.length) {
+                        data = data.filter(function (d) {
+                            return scope.selected.indexOf(d.name) !== -1;
+                        });
+                    }
+
+                    var extents = [];
+                    // calculate extents of values of every node
+                    data.forEach(function (series) {
+                        extents = extents.concat(d3.extent(series.values));
+                    });
+                    var extent = d3.extent(extents),
+                        min = extent[0],
+                        max = extent[1],
+                        diff = max - min,
+                        scaleMargin = diff / resolution;
+
+                    // calculate optimal width of a violin plot
+                    violinGroupWidth = ((width - violinGroupSpacing * (data.length - 1)) / data.length).clamp(violinGroupMinWidth, violinGroupMaxWidth);
+
+                    // calculate the total width of the whole chart
+                    chartWidth = data.length * (violinGroupWidth + violinGroupSpacing) - violinGroupSpacing;
+
+                    // define function for plotting violin plots
+
+                    var domain = [min - scaleMargin, max + scaleMargin];
+
+                    violinPlot = d3.violin().width(violinGroupWidth).height(height).domain(domain);
+
+                    // calculate offset for the left margin to align the plot to the center
+                    var leftMargin = ((width + margin.right + margin.left) / 2 - chartWidth / 2).clamp(margin.left, Infinity);
+
+                    var yScale = d3.scale.linear().domain(domain).range([height, 0]);
+
+                    var yAxis = d3.svg.axis().scale(yScale).orient("left").innerTickSize(-width);
+
+                    chart.attr("transform", 'translate(0, ' + margin.top + ')');
+
+                    svg.select("g.axis").attr("transform", 'translate(' + (margin.left - 10) + ',0)').call(yAxis);
+
+                    data = data.map(function (d, i) {
+                        return {
+                            name: d.name,
+                            data: d.values,
+                            seriesName: d.seriesName,
+                            i: i
+                        };
+                    });
+
+                    // bind data
+                    violinContainers = violinContainers.data(data, function (d) {
+                        return d.name;
+                    });
+
+                    // add new containers for new data
+                    violinContainers.enter().append("g").attr("class", "violin-container");
+
+                    violinContainers.call(violinPlot);
+
+                    // remove unbound containers
+                    var violinExit = violinContainers.exit();
+
+                    violinExit.remove();
+
+                    // update translation
+                    violinContainers.each(function (d, i) {
+                        d.x = leftMargin + d.i * (violinGroupWidth + violinGroupSpacing);
+                    });
+
+                    if (width >= Math.floor(chartWidth)) {
+                        updated = true;
+                        d3.select("g.scrollable-violin-container").attr("transform", 'translate(0,0)');
+                    }
+
+                    if (transitions) violinContainers = violinContainers.transition().duration(200);
+
+                    violinContainers.attr("transform", function (d) {
+                        return 'translate(' + d.x + ', 0)';
+                    });
+                }
+
+                function render(options) {
+
+                    // clean svg before rendering plot
+                    svg.selectAll('*').remove();
+
+                    var elementWidth = d3.select(element[0]).node().offsetWidth;
+
+                    height = 500 - margin.top - margin.bottom;
+                    width = elementWidth - margin.left - margin.right;
+
+                    // don't continue rendering if there is no data
+                    if (!scope.value) console.warn("No data to render.");
+
+                    colours = d3.scale.category10().domain(scope.value.data.map(function (d) {
+                        return d.seriesName;
+                    }));
+
+                    // set up svg and bind scroll behaviour on drag
+                    svg.data([{ x: 0, y: 0 }]).attr("width", "100%").attr("height", height + margin.top + margin.bottom).call(scroll(dragmove, dragEnd));
+
+                    // define a clip path to clip the violin plots outside the scroll area
+                    var clip = svg.append("defs").append("svg:clipPath").attr("id", "clip").append("svg:rect").attr("id", "clip-rect").attr("x", margin.left - 5).attr("y", "-20").attr("width", width + 10).attr("height", height * 2);
+
+                    chart = svg.append("g");
+
+                    chart.append("g").attr("class", "axis");
+
+                    var clipBox = chart.append("g").attr("id", "scroll-clip-violin").attr("clip-path", "url(#clip)");
+
+                    violinGroupArea = clipBox.append("g").attr("class", "scrollable-violin-container");
+
+                    update(violinGroupArea, options.transitions);
+                }
+
+                function dragEnd() {
+                    d3.event.sourceEvent.stopPropagation();
+                }
+
+                function dragmove(d) {
+                    if (updated) {
+                        d.x = 0;
+                        updated = false;
+                    }
+                    d.x = (d.x + d3.event.dx).clamp(width - chartWidth, 0);
+
+                    d3.select("g.scrollable-violin-container").attr("transform", 'translate(' + d.x + ',' + d.y + ')');
+                }
+
+                // Handle window resize event.
+                scope.$on('window-resize', function (event) {
+                    render({ transitions: false });
+                });
+
+                scope.$watch("value", function () {
+                    render({ transitions: true });
+                });
+
+                scope.$watch("selected", function (selected) {
+                    update(violinGroupArea, true, true);
+                });
+            }
+        };
+    }
+
+    function scroll(dragHandler, dragStopHandler) {
+        var drag = d3.behavior.drag();
+        drag.on("drag", dragHandler).on("dragend", dragStopHandler);
+        return drag;
+    }
+
+    return {
+        setters: [function (_2) {
+            angular = _2['default'];
+        }, function (_3) {
+            d3 = _3['default'];
+        }, function (_) {}, function (_b) {}, function (_c) {
+            d3tooltip = _c.d3tooltip;
+        }],
+        execute: function () {
+            Number.prototype.clamp = function (min, max) {
+                return Math.min(Math.max(this, min), max);
+            };
+            _export('default', angular.module('plotify.violin', ['plotify.utils']).directive('violinPlot', ViolinPlotDirective));
+        }
+    };
+});
 $__System.register('b', ['1'], function (_export) {
     'use strict';
 
@@ -6351,8 +6455,8 @@ $__System.register("c", ["10", "11", "19", "1a", "e", "f"], function (_export) {
         return scaledProps;
     }
 
-    function createTreeLayout(nodesArray) {
-        var nodes = copyNodesArray(nodesArray);
+    function createTreeLayout(nodes) {
+        //let nodes = copyNodesArray(nodesArray);
         return nodes.map(function (node) {
             node.children = nodes.filter(function (n) {
                 return n.parent == node.name;
@@ -6414,17 +6518,23 @@ $__System.register("c", ["10", "11", "19", "1a", "e", "f"], function (_export) {
         d.bboxLabel.top += d.bboxLabel.height * 0.2;
         d.bboxLabel.bottom -= d.bboxLabel.height * 0.2;
 
-        d.bbox = this.parentNode.getBoundingClientRect();
-        d.bbox.top = d.bboxLabel.top;
-        d.bbox.bottom = d.bboxLabel.bottom;
+        if (this.parentNode !== null) {
+            d.bbox = this.parentNode.getBoundingClientRect();
+            d.bbox.top = d.bboxLabel.top;
+            d.bbox.bottom = d.bboxLabel.bottom;
+        }
     }
 
     function drawColourBar(selection, domain, heatmapOptions, defs, defsRoutePath) {
 
+        selection.selectAll("*").remove();
+
         var width = heatmapOptions.colourBar.width,
             height = heatmapOptions.colourBar.height,
             colourScale = heatmapOptions.colourScale,
-            opacity = heatmapOptions.opacity;
+            opacity = heatmapOptions.opacity,
+            title = heatmapOptions.title,
+            titleOffset = title ? 22 : 0;
 
         var gradient = defs.append("svg:linearGradient").attr("id", "gradient" + colourBarID).attr("x1", "0%").attr("y1", height > width ? "100%" : "0%").attr("x2", height > width ? "0%" : "100%").attr("y2", "0%").attr("spreadMethod", "pad");
 
@@ -6432,12 +6542,16 @@ $__System.register("c", ["10", "11", "19", "1a", "e", "f"], function (_export) {
 
         gradient.append("svg:stop").attr("offset", "100%").attr("stop-color", colourScale[1][1]).attr("stop-opacity", 1);
 
-        selection.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).style("fill", "url(" + defsRoutePath + "#gradient" + colourBarID++ + ")").attr("stroke-width", 2).attr("stroke", "grey").style("opacity", opacity);
+        selection.append("rect").attr("x", titleOffset).attr("y", 0).attr("width", width).attr("height", height).style("fill", "url(" + defsRoutePath + "#gradient" + colourBarID++ + ")").attr("stroke-width", 2).attr("stroke", "grey").style("opacity", opacity);
+
+        if (title) {
+            selection.append("text").attr("class", "axis-title").attr("transform", "rotate(-90)").attr("dy", 12).attr("x", -(height / 2)).style("text-anchor", "middle").text(title);
+        }
 
         // Define x axis and grid
         var colourAxis = d3.svg.axis().scale(d3.scale.linear().domain(domain).range([height, 0])).orient("right");
 
-        selection.append("g").attr("class", "axis").attr("transform", "translate(" + width + ", 0)").call(colourAxis);
+        selection.append("g").attr("class", "axis").attr("transform", "translate(" + (width + titleOffset) + ", 0)").call(colourAxis);
     }
 
     function calcColourBarSize(size, relativeSize) {
@@ -6726,7 +6840,7 @@ $__System.register('13', [], false, function() {});
 $__System.register('14', [], false, function() {});
 $__System.register('15', [], false, function() {});
 $__System.register('16', [], false, function() {});
-$__System.register('17', [], false, function() {});
+$__System.register('18', [], false, function() {});
 })
 (function(factory) {
   if (typeof define == 'function' && define.amd)
