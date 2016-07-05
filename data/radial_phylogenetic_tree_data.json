@@ -16,7 +16,7 @@
                 "name":"H1",
                 "z":1,
                 "parent":null,
-                "series":0,
+                "series":"group 1",
                 "type":"pool"
               },
               "length":1
@@ -30,7 +30,7 @@
                     "name":"H2",
                     "parent":null,
                     "z":2,
-                    "series":0,
+                    "series":"group 1",
                     "type":"pool"
                   },
                   "length":1.3
@@ -44,7 +44,7 @@
                         "name":"H3",
                         "z":null,
                         "parent":null,
-                        "series":1,
+                        "series":"group 2",
                         "type":"pool"
                       },
                       "length":1
@@ -58,7 +58,7 @@
                             "name":"H4",
                             "parent":null,
                             "z":4,
-                            "series":0,
+                            "series":"group 1",
                             "type":"pool"
                           },
                           "length":1.2
@@ -68,7 +68,7 @@
                             "name":"H9",
                             "parent":null,
                             "z":3.2,
-                            "series":1,
+                            "series":"group 2",
                             "type":"pool"
                           },
                           "length":1.6
@@ -96,7 +96,7 @@
                     {
                       "taxon":{
                         "name":"H5",
-                        "series":1,
+                        "series":"group 2",
                         "z":0,
                         "type":"pool"
                       },
@@ -107,7 +107,7 @@
                         "name":"H6",
                         "z":null,
                         "parent":null,
-                        "series":0,
+                        "series":"group 1",
                         "type":"pool"
                       },
                       "length":1.7
@@ -119,7 +119,7 @@
                     "name":"H8",
                     "z":null,
                     "parent":null,
-                    "series":0,
+                    "series":"group 1",
                     "type":"pool"
                   },
                   "length":0.41
@@ -131,7 +131,7 @@
                 "name":"H7",
                 "z":null,
                 "parent":null,
-                "series":0,
+                "series":"group 1",
                 "type":"pool"
               },
               "length":0.25

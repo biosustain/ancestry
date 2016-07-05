@@ -2,8 +2,6 @@
   "layout": {
     "height": 500,
     "axis": {
-      "show": true,
-      "title": "x values",
       "gridOnly": true
     },
     "nodeTypes": {
