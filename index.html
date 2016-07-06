@@ -19,9 +19,9 @@
         System.import('./main-compiled.js');
     </script>
     <style type="text/css">
-        h3 {
-            text-align: center;
-        }
+        /*h3 {*/
+        /*text-align: center;*/
+        /*}*/
 
         h4 {
             margin-bottom: 0 !important;
@@ -90,10 +90,8 @@
 
     <h2>
         <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true"
-                                                                            class="octicon octicon-link"></span></a>Usage
+                                                                            class="octicon octicon-link"></span></a>Plots
     </h2>
-
-    <hr>
     There are currently 4 types of plots offered by Plotify:
     <ul>
         <li><a href="#lineage-plot">Lineage</a></li>
@@ -114,6 +112,10 @@
     be
     described in sections below.
     <h3 id="lineage-plot">Lineage</h3>
+
+    <p>
+        Lineage plot uses a horizontal tree layout. It can keep multiple trees (meaning that trees have distinct roots).
+    </p>
     <h4>Directive</h4>
     <hr>
     <div class="layout-definition code-inline">
@@ -123,11 +125,11 @@
     <hr>
     <div class="layout-definition code-inline">
         <ul>
-            <li><code class="hljs hljs-attr">value</code> - input for plot configuration JSON</li>
-            <li><code class="hljs hljs-attr">selectedNodes</code> - array with names of nodes selected in the plot</li>
+            <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
+            <li><code class="hljs hljs-attr">selectedNodes</code> <span class="prop-type">(array)</span> <span class="prop-desc">Array with names of nodes selected in the plot.</span></li>
         </ul>
     </div>
-    <h4>Data format</h4>
+    <h4 id="lineage-data-format">Data format</h4>
     <hr>
     The data for lineage plot should be arranged as an array of node objects. Each object should have
     following properties:
@@ -150,8 +152,277 @@
             </li>
         </ul>
     </div>
-    <h4>Layout</h4>
+    <h4>Plot-specific layout</h4>
     <hr/>
+    <p>
+        Lineage plot is equipped with an axis which can be configured as described below.
+    </p>
+
+    <div class="layout-definition code-inline">
+        <code class="hljs hljs-attr">axis</code> <span class="prop-type">(object)</span>
+        <ul>
+            <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
+                    class="hljs hljs-string">""</code>)</span><span
+                    class="prop-desc">The title of the (horizontal) axis.</span>
+            </li>
+            <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
+                    class="hljs hljs-literal">true</code> | <code
+                    class="hljs hljs-literal">false</code> || default: <code
+                    class="hljs hljs-literal">true</code>)</span><span
+                    class="prop-desc">Determines whether the axis is drawn.</span></li>
+            <li><code class="hljs hljs-attr">gridOnly</code> <span class="prop-type">(<code
+                    class="hljs hljs-literal">true</code> | <code
+                    class="hljs hljs-literal">false</code> || default: <code
+                    class="hljs hljs-literal">false</code>)</span><span
+                    class="prop-desc">Determines whether only the grid is displayed (axis and ticks are hidden). Note: Only works when <code
+                    class="hljs hljs-attr">axis.show</code> is set to <code
+                    class="hljs hljs-literal">true</code>.</span>
+            </li>
+        </ul>
+    </div>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-1">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-1', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-1','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <lineage-plot value="lineageExampleData"></lineage-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/lineage_data.json'" hljs-language="json" class="hljs-main"></div>
+        </div>
+    </div>
+
+
+    <h3 id="lineage-scatter-plot">Lineage-scatter</h3>
+
+    <p>
+        Lineage-scatter plot is basically a scatter plot that also shows relations between nodes as directed links.
+    </p>
+    <h4>Directive</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <span hljs hljs-language="html" class="code-directive"><lineage-scatter-plot></lineage-scatter-plot></span>
+    </div>
+    <h4>Attributes</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
+            <li><code class="hljs hljs-attr">selectedNodes</code> <span class="prop-type">(array)</span> <span class="prop-desc">Array with names of nodes selected in the plot.</span></li>
+        </ul>
+    </div>
+    <h4>Data format</h4>
+    <hr>
+    The data for lineage-scatter plot should be arranged as an array of node objects. Each object should have
+    following properties:
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">name</code> <span class="prop-type">(string)</span> <span
+                    class="prop-desc">Name of the node.</span></li>
+            <li><code class="hljs hljs-attr">parent</code> <span class="prop-type">(string | <code
+                    class="hljs hljs-literal">null</code>)</span><span class="prop-desc">Name of the parent node.</span>
+            </li>
+            <li><code class="hljs hljs-attr">x</code> <span class="prop-type">(number)</span><span class="prop-desc">Value x</span>
+            </li>
+            <li><code class="hljs hljs-attr">y</code> <span class="prop-type">(number)</span><span class="prop-desc">Value y</span>
+            </li>
+            <li><code class="hljs hljs-attr">z</code> <span class="prop-type">(optional: number)</span> <span
+                    class="prop-desc">Value for the heatmap
+                    layer.</span>
+            </li>
+            <li><code class="hljs hljs-attr">type</code> <span class="prop-type">(optional: string)</span><span
+                    class="prop-desc">Type of the node.</span>
+            </li>
+            <li><code class="hljs hljs-attr">series</code> <span class="prop-type">(optional: string)</span> <span
+                    class="prop-desc">Name of the series the node belongs to.</span>
+            </li>
+        </ul>
+    </div>
+    <h4>Plot-specific layout</h4>
+    <hr/>
+    <p>
+        Lineage plot is equipped with an axis which can be configured as described below.
+    </p>
+
+    <div class="layout-definition code-inline">
+        <ul>
+            <li>
+                <code class="hljs hljs-attr">xAxis</code> <span class="prop-type">(object)</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
+                            class="hljs hljs-string">""</code>)</span><span
+                            class="prop-desc">Title of the horizontal axis.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">format</code> <span class="prop-type">(string | <code
+                            class="hljs hljs-literal">null</code> || default: <code
+                            class="hljs hljs-literal">null</code>)</span><span
+                            class="prop-desc">Determines the format of tick values of the horizontal axis. String should match <a
+                            href="https://github.com/d3/d3-format">d3's format specification</a>. Value <code
+                            class="hljs hljs-literal">null</code> results in general d3 format.</span></li>
+                </ul>
+            </li>
+            <li>
+                <code class="hljs hljs-attr">yAxis</code> <span class="prop-type">(object)</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
+                            class="hljs hljs-string">""</code>)</span><span
+                            class="prop-desc">Title of the vertical axis.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">format</code> <span class="prop-type">(string | <code
+                            class="hljs hljs-literal">null</code> || default: <code
+                            class="hljs hljs-literal">null</code>)</span><span
+                            class="prop-desc">Determines the format of tick values of the vertical axis. String should match <a
+                            href="https://github.com/d3/d3-format">d3's format specification</a>. Value <code
+                            class="hljs hljs-literal">null</code> results in general d3 format.</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-2">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-2', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-2','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <lineage-scatter-plot value="lineageScatterExampleData"></lineage-scatter-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/lineage_scatter_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
+
+
+    <h3 id="radial-lineage-plot">Radial-lineage</h3>
+    <p>
+        Radial-lineage plot is very similar to the lineage plot. Its main difference is that it uses a radial layout. It
+        can also hold more nodes avoiding overlap, but on the other side does not allow for zooming and panning. Another
+        advantage is that it can show all the nodes on the path between a node and its root aligned when a node is
+        clicked. Currently, radial plot does not allow for node selection.
+    </p>
+    <h4>Directive</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <span hljs hljs-language="html" class="code-directive"><radial-lineage-plot></radial-lineage-plot></span>
+    </div>
+    <h4>Attributes</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
+        </ul>
+    </div>
+    <h4>Data format</h4>
+    <hr>
+    The data format for radial-lineage plot is exactly the same as for the <a href="#lineage-data-format">lineage plot</a>.
+    <h4>Plot-specific layout</h4>
+    <hr/>
+    <p>
+        In radial-lineage plot, size of the leaf nodes' labels can be controlled.
+    </p>
+
+    <div class="layout-definition code-inline">
+        <code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
+            class="code-inline" hljs hljs-language="json">{"font-size": 14}</span>)</span><span
+            class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
+    </div>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-3">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-3','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <radial-lineage-plot value="radialLineageExampleData"></radial-lineage-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/radial_lineage_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
+
+    <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
+    <p>
+       This plot allows to show one or more rooted phylogenetic trees in a radial layout.
+    </p>
+    <h4>Directive</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <span hljs hljs-language="html" class="code-directive"><radial-phylogenetic-tree></radial-phylogenetic-tree></span>
+    </div>
+    <h4>Attributes</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
+            <li><code class="hljs hljs-attr">branchlength</code> <span class="prop-type">(boolean)</span> <span class="prop-desc">Determines whether real branch lengths are shown.</span></li>
+        </ul>
+    </div>
+    <h4>Data format</h4>
+    <hr>
+    This plot requires slightly more complex data format. It takes an array of tree node objects. A tree node should consist of:
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">length</code> <span class="prop-type">(number)</span> <span
+                    class="prop-desc">Length of the branch with respect to the parent tree node.</span></li>
+            <li><code class="hljs hljs-attr">taxon</code> <span class="prop-type">(<code
+                    class="hljs hljs-literal">null</code> | object)</span><span class="prop-desc">If <code class="hljs hljs-literal">null</code>, then the node is non-leaf and <code class="hljs hljs-attr">children</code> property must be defined. Otherwise, the node is a leaf and the object should have the same format as a <a href="#lineage-data-format">lineage plot's node</a> except <code class="hljs hljs-attr">parent</code> property which is not needed here.</span>
+            </li>
+            <li><code class="hljs hljs-attr">children</code> <span class="prop-type">(<code class="hljs hljs-literal">null</code> | two element array)</span> <span
+                    class="prop-desc">If <code class="hljs hljs-attr">taxon</code> is defined, then <code class="hljs hljs-attr">children</code> must be either not defined or set to <code class="hljs hljs-literal">null</code>. If <code class="hljs hljs-attr">taxon</code> is <code class="hljs hljs-literal">null</code>, <code class="hljs hljs-attr">children</code> should be an array containing two other tree nodes.
+            </span>
+            </li>
+        </ul>
+    </div>
+    The required data format can be generated using <a href="https://www.npmjs.com/package/neighbor-joining">Neighbor Joining</a> NPM package based on a distance matrix.
+    <h4>Plot-specific layout</h4>
+    <hr/>
+    <p>
+        In radial-lineage plot, size of the leaf nodes' labels can be controlled.
+    </p>
+
+    <div class="layout-definition code-inline">
+        <ul>
+            <li><code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
+                class="code-inline" hljs hljs-language="json">{"font-size": 14}</span>)</span><span
+                class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
+            </li>
+            <li><code class="hljs hljs-attr">showLeafNodes</code> <span class="prop-type">(<code
+                    class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
+                    class="hljs hljs-literal">false</code>)</span>
+                <span class="prop-desc"> Determines whether leaf nodes are shown.</span>
+            </li>
+        </ul>
+    </div>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-4">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <div id="phylo-tab">
+                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData"
+                                          branchlength="showLengths"></radial-phylogenetic-tree>
+                <label id="show-length">
+                    <input type="checkbox" ng-model="showLengths"> Show branch length
+                </label>
+            </div>
+        </div>
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
+
+    <h2>General layout</h2>
     <div class="layout-definition code-inline">
         <ul>
             <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
@@ -183,25 +454,6 @@
                     <li><code class="hljs hljs-attr">bottom</code> <span class="prop-type">(number || default: <code
                             class="hljs hljs-number">10</code>)</span><span
                             class="prop-desc">Size of the bottom margin.</span>
-                    </li>
-                </ul>
-            </li>
-            <li><code class="hljs hljs-attr">axis</code>
-                <ul>
-                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
-                            class="hljs hljs-string">""</code>)</span><span
-                            class="prop-desc">The title of the (horizontal) axis.</span>
-                    </li>
-                    <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
-                            class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code
-                            class="hljs hljs-literal">true</code>)</span><span
-                            class="prop-desc">Determines whether the axis is drawn.</span></li>
-                    <li><code class="hljs hljs-attr">gridOnly</code> <span class="prop-type">(<code
-                            class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code
-                            class="hljs hljs-literal">false</code>)</span><span
-                            class="prop-desc">Determines whether only the grid is displayed (axis and ticks are hidden). Note: Only works when <code
-                            class="hljs hljs-attr">axis.show</code> is set to <code
-                            class="hljs hljs-literal">true</code>.</span>
                     </li>
                 </ul>
             </li>
@@ -273,7 +525,8 @@
                             class="hljs hljs-literal">false</code>)</span>
                         <span class="prop-desc"> Determines whether heatmap is enabled.</span>
                     </li>
-                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string | <code class="hljs hljs-literal">null</code> || default: <code
+                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string | <code
+                            class="hljs hljs-literal">null</code> || default: <code
                             class="hljs hljs-literal">null</code>)</span>
                         <span class="prop-desc">Title of the heatmap displayed with the colour bar.</span>
                     </li>
@@ -289,32 +542,32 @@
                             <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
                                     class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
                                     class="hljs hljs-literal">true</code>)</span>
-                                <span class="prop-desc"> Determines whether heatmap's colourbar is shown.</span>
+                                <span class="prop-desc"> Determines whether heatmap's colour bar is shown.</span>
                             </li>
                             <li><code class="hljs hljs-attr">height</code> <span class="prop-type">(number (of pixels) | string with percentage || default: <code
                                     class="hljs hljs-string">"90%"</code>)</span>
-                        <span class="prop-desc"> Determines the height of the colourbar. If a number is given, the colourbar will be that many pixels high,
+                        <span class="prop-desc"> Determines the height of the colour bar. If a number is given, the colour bar will be that many pixels high,
                             if a string with percentage is given, its height will be relative to the total plot height.</span>
                             </li>
                             <li><code class="hljs hljs-attr">width</code> <span class="prop-type">(number (of pixels) | string with percentage || default: <code
                                     class="hljs hljs-number">30</code>)</span>
-                        <span class="prop-desc"> Determines the height of the colourbar. If a number is given, the colourbar will be that many pixels wide,
+                        <span class="prop-desc"> Determines the height of the colour bar. If a number is given, the colour bar will be that many pixels wide,
                             if a string with percentage is given, its width will be relative to the total plot width.</span>
                             </li>
                             <li><code class="hljs hljs-attr">position</code> <span class="prop-type">(<code
                                     class="hljs hljs-string">"right"</code> || default: <code class="hljs hljs-string">"right"</code>)</span>
-                                <span class="prop-desc"> Determines the position of the colourbar in reference to the chart. Currently, the only supported position is <code
+                                <span class="prop-desc"> Determines the position of the colour bar in reference to the chart. Currently, the only supported position is <code
                                         class="hljs hljs-string">"right"</code>.</span>
                             </li>
                         </ul>
                     </li>
                     <li><code class="hljs hljs-attr">circle</code> <span class="prop-type">(object || default: <span
-                            class="code-inline" hljs hljs-language="json">{ r: 16 }</span>)</span>
+                            class="code-inline" hljs hljs-language="json">{"r": 16}</span>)</span>
                         <span class="prop-desc"> Determines the attributes of SVG circle which is used as heatmap circle layer behind the nodes.</span>
                     </li>
                     <li><code class="hljs hljs-attr">opacity</code> <span class="prop-type">(number || default: <code
                             class="hljs hljs-number">0.4</code>)</span>
-                        <span class="prop-desc"> Determines the opacity of heatmap circles and the colourbar.</span>
+                        <span class="prop-desc"> Determines the opacity of heatmap circles and the colour bar.</span>
                     </li>
                 </ul>
             </li>
@@ -368,125 +621,7 @@
             </li>
         </ul>
     </div>
-    <h4>Example</h4>
-    <hr>
-    <div id="tab-group-1">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-1', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-1','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <lineage-plot value="lineageExampleData"></lineage-plot>
-        </div>
 
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_data.json'" hljs-language="json" class="hljs-main"></div>
-        </div>
-    </div>
-
-    <h3 id="lineage-scatter-plot">Lineage-scatter</h3>
-    Directive: <span class="prop-desc"><code>&lt;lineage-scatter-plot&gt;&lt;/lineage-scatter-plot&gt;</code></span>
-    Attributes:
-    <ul>
-        <li><code>value</code> - input for plot configuration JSON</li>
-        <li><code>selectedNodes</code> - array with names of nodes selected in the plot</li>
-    </ul>
-    Data format: the data for lineage plot should be arranged as an array of node objects. Each object should have
-    following properties:
-    <div class="layout-definition code-inline">
-        <ul>
-            <li><code>name</code> <span class="prop-type">(string)</span> - name of the node</li>
-            <li><code>parent</code> <span class="prop-type">(string | null)</span> - name of the parent node</li>
-            <li><code>x</code> <span class="prop-type">(number)</span> - value x</li>
-            <li><code>y</code> <span class="prop-type">(number)</span> - value y</li>
-            <li><code>z</code> <span class="prop-type">(optional: number)</span> - value for heatmap layer</li>
-            <li><code>type</code> <span class="prop-type">(optional: string)</span> - type of the node</li>
-            <li><code>series</code> <span class="prop-type">(optional: string)</span> - name of the series the node
-                belongs to
-            </li>
-        </ul>
-    </div>
-    <h4>Example</h4>
-
-    <div id="tab-group-2">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-2', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-2','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <lineage-scatter-plot value="lineageScatterExampleData"></lineage-scatter-plot>
-        </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_scatter_data.json'" hljs-language="json"></div>
-        </div>
-    </div>
-    <h3 id="radial-lineage-plot">Radial lineage</h3>
-    Directive: <code>&lt;radial-lineage-plot&gt;&lt;/radial-lineage-plot&gt;</code>
-    <h4>Example</h4>
-
-    <div id="tab-group-3">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-3','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <radial-lineage-plot value="radialLineageExampleData"></radial-lineage-plot>
-        </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_lineage_data.json'" hljs-language="json"></div>
-        </div>
-    </div>
-    <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
-    Directive: <code>&lt;radial-phylogenetic-tree&gt;&lt;/radial-phylogenetic-tree&gt;</code>
-
-    <div hljs hljs-language="html">
-        <radial-phylogenetic-tree></radial-phylogenetic-tree>
-    </div>
-    <h4>Example</h4>
-
-    <div id="tab-group-4">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <div id="phylo-tab">
-                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData"
-                                          branchlength="showLengths"></radial-phylogenetic-tree>
-                <label id="show-length">
-                    <input type="checkbox" ng-model="showLengths"> Show branch length
-                </label>
-            </div>
-        </div>
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.json'" hljs-language="json"></div>
-        </div>
-    </div>
-    </div>
-    <h2>Shared features</h2>
-
-
-    <div>
-        <h3 id="shared-series">Series</h3>
-
-        <div class="layout-definition code-inline">
-            <p>
-                Series support and legend are available for all plots. They allows add distinction between different
-                series
-                of nodes. To
-                have nodes grouped in different series, <code class="hljs hljs-attr">series</code> property of node
-                objects should be assigned with
-                the
-                name of the series the node belongs to.
-            </p>
-
-            <p>
-                Legend is optional and can be positioned through layout.
-            </p>
-        </div>
-    </div>
     <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/biosustain/plotify">Plotify</a> is maintained by <a
                 href="https://github.com/biosustain">biosustain</a>.</span>

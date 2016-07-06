@@ -12,7 +12,8 @@
       }
     },
     "heatmap": {
-      "enabled": true
+      "enabled": true,
+      "colourScale": [[0, "orange"], [1, "green"]]
     }
   },
   "data": [

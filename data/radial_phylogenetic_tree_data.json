@@ -15,7 +15,6 @@
               "taxon":{
                 "name":"H1",
                 "z":1,
-                "parent":null,
                 "series":"group 1",
                 "type":"pool"
               },
@@ -28,7 +27,6 @@
                 {
                   "taxon":{
                     "name":"H2",
-                    "parent":null,
                     "z":2,
                     "series":"group 1",
                     "type":"pool"
@@ -43,7 +41,6 @@
                       "taxon":{
                         "name":"H3",
                         "z":null,
-                        "parent":null,
                         "series":"group 2",
                         "type":"pool"
                       },
@@ -56,7 +53,6 @@
                         {
                           "taxon":{
                             "name":"H4",
-                            "parent":null,
                             "z":4,
                             "series":"group 1",
                             "type":"pool"
@@ -66,7 +62,6 @@
                         {
                           "taxon":{
                             "name":"H9",
-                            "parent":null,
                             "z":3.2,
                             "series":"group 2",
                             "type":"pool"
@@ -106,7 +101,6 @@
                       "taxon":{
                         "name":"H6",
                         "z":null,
-                        "parent":null,
                         "series":"group 1",
                         "type":"pool"
                       },
@@ -118,7 +112,6 @@
                   "taxon":{
                     "name":"H8",
                     "z":null,
-                    "parent":null,
                     "series":"group 1",
                     "type":"pool"
                   },
@@ -130,7 +123,6 @@
               "taxon":{
                 "name":"H7",
                 "z":null,
-                "parent":null,
                 "series":"group 1",
                 "type":"pool"
               },
