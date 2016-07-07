@@ -1,6 +1,6 @@
 {
   "name": "ancestry",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Ancestry: a package for ancestrees",
   "main": "dist/ancestry.js",
   "scripts": {
