@@ -1,0 +1,22 @@
+.plotify-lineage-scatter-plot .arrowhead {
+    stroke: none;
+    pointer-events: none;
+}
+
+.plotify-lineage-scatter-plot .link {
+    pointer-events: none;
+    fill:none;
+}
+
+.plotify-lineage-scatter-plot .node circle{
+    pointer-events: all;
+}
+
+.plotify-lineage-scatter-plot .selection-rect {
+    pointer-events: none;
+    fill: transparent;
+}
+
+.plotify-lineage-scatter-plot text {
+    pointer-events: none;
+}

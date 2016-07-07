@@ -1,0 +1,24 @@
+.plotify-radial-lineage-plot .node circle{
+    pointer-events: all;
+    /*stroke: rgb(40,53,147);*/
+}
+
+.plotify-radial-lineage-plot path.link{
+    stroke-width: 1px;
+}
+
+.plotify-radial-lineage-plot text {
+    pointer-events: none;
+}
+
+.plotify-radial-lineage-plot .node rect {
+    pointer-events: none;
+}
+
+.plotify-radial-lineage-plot path.link-active {
+    stroke-width: 2px;
+    stroke: black;
+}
+
+
+

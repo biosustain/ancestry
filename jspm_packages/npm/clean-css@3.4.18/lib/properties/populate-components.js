@@ -1,0 +1,28 @@
+/* */ 
+var compactable = require('./compactable');
+var InvalidPropertyError = require('./invalid-property-error');
+function populateComponents(properties, validator, warnings) {
+  for (var i = properties.length - 1; i >= 0; i--) {
+    var property = properties[i];
+    var descriptor = compactable[property.name];
+    if (descriptor && descriptor.shorthand) {
+      property.shorthand = true;
+      property.dirty = true;
+      try {
+        property.components = descriptor.breakUp(property, compactable, validator);
+      } catch (e) {
+        if (e instanceof InvalidPropertyError) {
+          property.components = [];
+          warnings.push(e.message);
+        } else {
+          throw e;
+        }
+      }
+      if (property.components.length > 0)
+        property.multiplex = property.components[0].multiplex;
+      else
+        property.unused = true;
+    }
+  }
+}
+module.exports = populateComponents;

@@ -1,0 +1,55 @@
+{
+  "name": "plotify",
+  "version": "1.2.4",
+  "description": "",
+  "main": "dist/plotify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "jspm bundle-sfx lib/index - angular - d3 dist/plotify.js --format amd",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biosustain/plotify.git"
+  },
+  "keywords": [
+    "plot",
+    "chart",
+    "lineage",
+    "scatterplot",
+    "violinplot",
+    "lineplot",
+    "boxplot"
+  ],
+  "author": "Maciej Korzepa <maciejkorzepa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biosustain/plotify/issues"
+  },
+  "dependencies": {
+    "angular": "^1.4.5",
+    "d3": "^3.5.6"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-cli": "^6.10.1",
+    "jspm": "^0.16.39"
+  },
+  "jspm": {
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.7",
+      "angular-highlightjs": "npm:angular-highlightjs@^0.6.1",
+      "biosustain/plotify": "github:biosustain/plotify@^1.2.4",
+      "clean-css": "npm:clean-css@^3.4.3",
+      "css": "github:systemjs/plugin-css@^0.1.16",
+      "d3": "github:d3/d3@^3.5.6",
+      "highlight": "npm:highlight@^0.2.4"
+    },
+    "devDependencies": {
+      "angular-material": "github:angular/bower-material@^0.11.0",
+      "babel": "npm:babel-core@^5.8.22",
+      "babel-runtime": "npm:babel-runtime@^5.8.20",
+      "core-js": "npm:core-js@^1.1.0"
+    }
+  }
+}
