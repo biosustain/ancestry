@@ -1,1 +1,1 @@
-# plotify
+[Plotify's website](http://biosustain.github.io/plotify/)
