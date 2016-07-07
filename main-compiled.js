@@ -4,14 +4,14 @@ var _angular = require('angular');
 
 var _angular2 = _interopRequireDefault(_angular);
 
-require('biosustain/plotify');
+require('biosustain/ancestry');
 
 require('angular-highlightjs');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-//import 'biosustain/plotify/dist/plotify.css!';
+//import 'biosustain/ancestry/dist/ancestry.css!';
 
 
 var AppController = function AppController($scope, $http) {
@@ -36,7 +36,7 @@ var AppController = function AppController($scope, $http) {
     });
 };
 
-var App = _angular2.default.module('Visualizer', ["plotify", "hljs"]).controller('AppController', AppController);
+var App = _angular2.default.module('Visualizer', ["ancestry", "hljs"]).controller('AppController', AppController);
 
 _angular2.default.element(document).ready(function () {
     return _angular2.default.bootstrap(document, [App.name], {

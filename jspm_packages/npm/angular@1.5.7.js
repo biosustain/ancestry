@@ -1,1 +1,0 @@
-module.exports = require("npm:angular@1.5.7/angular");

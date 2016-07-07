@@ -1,4 +1,0 @@
-Error: read EISDIR
-
-MultipleErrors: /home/maciej/.jspm/packages/npm/highlight@0.2.4/examples/example.js:5:4: Unexpected token ;
-/home/maciej/.jspm/packages/npm/highlight@0.2.4/examples/example.js:6:1: Unexpected token End of File

@@ -1,6 +1,6 @@
 import angular from 'angular';
-import 'biosustain/plotify';
-//import 'biosustain/plotify/dist/plotify.css!';
+import 'biosustain/ancestry';
+//import 'biosustain/ancestry/dist/ancestry.css!';
 import 'angular-highlightjs';
 
 class AppController {
@@ -25,7 +25,7 @@ class AppController {
     }
 }
 
-const App = angular.module('Visualizer', ["plotify", "hljs"])
+const App = angular.module('Visualizer', ["ancestry", "hljs"])
     .controller('AppController', AppController);
 
 angular.element(document).ready(function () {

@@ -1,1 +1,0 @@
-module.exports = require("npm:angular-highlightjs@0.6.1/build/angular-highlightjs.js");

@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/plotify/",
+  baseURL: "/ancestry/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -18,7 +18,7 @@ System.config({
     "angular-material": "github:angular/bower-material@0.11.4",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
-    "biosustain/plotify": "github:biosustain/plotify@1.2.4",
+    "biosustain/ancestry": "github:biosustain/ancestry@1.2.4",
     "clean-css": "npm:clean-css@3.4.18",
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.23",
@@ -36,7 +36,7 @@ System.config({
       "angular-aria": "github:angular/bower-angular-aria@1.5.7",
       "css": "github:systemjs/plugin-css@0.1.23"
     },
-    "github:biosustain/plotify@1.2.4": {
+    "github:biosustain/ancestry@1.2.4": {
       "angular": "github:angular/bower-angular@1.5.7",
       "clean-css": "npm:clean-css@3.4.18",
       "css": "github:systemjs/plugin-css@0.1.23",
