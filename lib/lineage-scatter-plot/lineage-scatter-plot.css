@@ -1,22 +1,22 @@
-.plotify-lineage-scatter-plot .arrowhead {
+.ancestry-lineage-scatter-plot .arrowhead {
     stroke: none;
     pointer-events: none;
 }
 
-.plotify-lineage-scatter-plot .link {
+.ancestry-lineage-scatter-plot .link {
     pointer-events: none;
     fill:none;
 }
 
-.plotify-lineage-scatter-plot .node circle{
+.ancestry-lineage-scatter-plot .node circle{
     pointer-events: all;
 }
 
-.plotify-lineage-scatter-plot .selection-rect {
+.ancestry-lineage-scatter-plot .selection-rect {
     pointer-events: none;
     fill: transparent;
 }
 
-.plotify-lineage-scatter-plot text {
+.ancestry-lineage-scatter-plot text {
     pointer-events: none;
 }

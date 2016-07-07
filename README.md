@@ -1,1 +1,1 @@
-[Plotify's website](http://biosustain.github.io/plotify/)
+[Ancestry's website](http://biosustain.github.io/ancestry/)

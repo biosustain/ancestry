@@ -449,7 +449,7 @@ class AppController {
     }
 }
 
-const App = angular.module('Visualizer', ["plotify", "ngMaterial"])
+const App = angular.module('Visualizer', ["ancestry", "ngMaterial"])
     .controller('AppController', AppController);
 
 angular.element(document).ready(function () {

@@ -1,51 +1,51 @@
-.plotify .axis path,
-.plotify .axis line {
+.ancestry .axis path,
+.ancestry .axis line {
     fill: none;
     stroke: grey;
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
 
-.plotify .tick text{
+.ancestry .tick text{
     font-size: 12px;
 }
 
-.plotify .tick line{
+.ancestry .tick line{
     pointer-events: none;
     opacity: 0.2;
 }
 
-.plotify .node circle {
+.ancestry .node circle {
     fill: #fff;
 }
 
-/*.plotify .node text { font: 12px sans-serif; }*/
+/*.ancestry .node text { font: 12px sans-serif; }*/
 
-.plotify .link {
+.ancestry .link {
     pointer-events: none;
     fill:none;
 }
 
 
-.plotify .plotify-legend text {
+.ancestry .ancestry-legend text {
     font-size: 13px;
 }
 
-.plotify .plotify-legend g.legend-item.legend-item-unfocused rect.legend-item-mouse-capture {
+.ancestry .ancestry-legend g.legend-item.legend-item-unfocused rect.legend-item-mouse-capture {
     opacity: 0.5;
 }
 
-.plotify .plotify-legend g.legend-item rect.shape {
+.ancestry .ancestry-legend g.legend-item rect.shape {
     stroke-width: 1.5px;
 }
 
-.plotify .voronoi path {
+.ancestry .voronoi path {
     fill: none;
     stroke: none;
     pointer-events: all;
 }
 
-.plotify-tooltip {
+.ancestry-tooltip {
     position: fixed;
     line-height: 1;
     font-weight: bold;
@@ -59,7 +59,7 @@
 }
 
 /* Creates a small triangle extender for the tooltip */
-.plotify-tooltip:after {
+.ancestry-tooltip:after {
     box-sizing: border-box;
     display: inline;
     font-size: 10px;
@@ -74,25 +74,25 @@
     left: 0;
 }
 
-.plotify-tooltip div.tooltip-colour-box {
+.ancestry-tooltip div.tooltip-colour-box {
     width: 100%;
     height: 4px;
     margin: 2px auto 3px auto;
     border-radius: 2px;
 }
 
-.plotify-tooltip span {
+.ancestry-tooltip span {
     display: block;
 }
 
-.plotify-colourbar .axis line, .plotify-colourbar .axis path {
+.ancestry-colourbar .axis line, .ancestry-colourbar .axis path {
     opacity: 0;
 }
 
-.plotify circle.heatmap-circle{
+.ancestry circle.heatmap-circle{
     pointer-events: none;
 }
 
-.plotify text.axis-title{
+.ancestry text.axis-title{
     font-size: 15px;
 }
