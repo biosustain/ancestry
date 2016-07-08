@@ -1,6 +1,6 @@
 # Ancestry
 
-Ancestry is an AngularJS module consisting of a number of directives allowing to generate interactive lineage plots. Currently, it offers following plots:
+Ancestry is an AngularJS module consisting of a number of directives allowing to generate interactive lineage plots based on [d3.js](https://d3js.org/). Currently, it offers following plots:
 * Lineage
 * Lineage-scatter
 * Radial lineage
