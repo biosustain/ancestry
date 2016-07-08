@@ -25,8 +25,8 @@
 
     <h2 class="project-tagline"></h2>
     <a href="https://github.com/biosustain/ancestry" class="btn">View on GitHub</a>
-    <a href="https://github.com/biosustain/ancestry/zipball/master" class="btn">Download .zip</a>
-    <a href="https://github.com/biosustain/ancestry/tarball/master" class="btn">Download .tar.gz</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v1.2.5.zip" class="btn">Download .zip</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v1.2.5.tar.gz" class="btn">Download .tar.gz</a>
 </section>
 
 <section class="main-content">
@@ -37,6 +37,10 @@
 
     <p>Ancestry is an AngularJS module consisting of a number of directives allowing to generate interactive lineage plots
         based on <a href="https://help.github.com/pages">d3.js</a>.</p>
+    <p>
+        To install this package with NPM use:
+        <code class="command">npm install ancestry</code>
+    </p>
 
     <h2>
         <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true"
@@ -66,6 +70,21 @@
     <p>
         Lineage plot uses a horizontal tree layout. It can keep multiple trees (meaning that trees have distinct roots).
     </p>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-1">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-1', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-1','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <lineage-plot value="lineageExampleData"></lineage-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/lineage_data.json'" hljs-language="json" class="hljs-main"></div>
+        </div>
+    </div>
     <h4>Directive</h4>
     <hr>
     <div class="layout-definition code-inline">
@@ -130,21 +149,6 @@
             </li>
         </ul>
     </div>
-    <h4>Example</h4>
-    <hr>
-    <div id="tab-group-1">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-1', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-1','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <lineage-plot value="lineageExampleData"></lineage-plot>
-        </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_data.json'" hljs-language="json" class="hljs-main"></div>
-        </div>
-    </div>
 
 
     <h3 id="lineage-scatter-plot">Lineage-scatter</h3>
@@ -152,6 +156,21 @@
     <p>
         Lineage-scatter plot is basically a scatter plot that also shows relations between nodes as directed links.
     </p>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-2">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-2', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-2','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <lineage-scatter-plot value="lineageScatterExampleData"></lineage-scatter-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/lineage_scatter_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
     <h4>Directive</h4>
     <hr>
     <div class="layout-definition code-inline">
@@ -232,21 +251,6 @@
             </li>
         </ul>
     </div>
-    <h4>Example</h4>
-    <hr>
-    <div id="tab-group-2">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-2', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-2','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <lineage-scatter-plot value="lineageScatterExampleData"></lineage-scatter-plot>
-        </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_scatter_data.json'" hljs-language="json"></div>
-        </div>
-    </div>
 
 
     <h3 id="radial-lineage-plot">Radial-lineage</h3>
@@ -256,6 +260,21 @@
         advantage is that it can show all the nodes on the path between a node and its root aligned when a node is
         clicked. Currently, radial plot does not allow for node selection.
     </p>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-3">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-3','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <radial-lineage-plot value="radialLineageExampleData"></radial-lineage-plot>
+        </div>
+
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/radial_lineage_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
     <h4>Directive</h4>
     <hr>
     <div class="layout-definition code-inline">
@@ -282,26 +301,31 @@
             class="code-inline" hljs hljs-language="json">{"font-size": 14}</span>)</span><span
             class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
     </div>
-    <h4>Example</h4>
-    <hr>
-    <div id="tab-group-3">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-3','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <radial-lineage-plot value="radialLineageExampleData"></radial-lineage-plot>
-        </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_lineage_data.json'" hljs-language="json"></div>
-        </div>
-    </div>
 
     <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
     <p>
        This plot allows to show one or more rooted phylogenetic trees in a radial layout.
     </p>
+    <h4>Example</h4>
+    <hr>
+    <div id="tab-group-4">
+        <ul class="tab">
+            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
+            <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
+        </ul>
+        <div class="tabcontent tab-plot">
+            <div id="phylo-tab">
+                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData"
+                                          branchlength="showLengths"></radial-phylogenetic-tree>
+                <label id="show-length">
+                    <input type="checkbox" ng-model="showLengths"> Show branch length
+                </label>
+            </div>
+        </div>
+        <div class="tabcontent tab-json">
+            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.json'" hljs-language="json"></div>
+        </div>
+    </div>
     <h4>Directive</h4>
     <hr>
     <div class="layout-definition code-inline">
@@ -350,26 +374,6 @@
                 <span class="prop-desc"> Determines whether leaf nodes are shown.</span>
             </li>
         </ul>
-    </div>
-    <h4>Example</h4>
-    <hr>
-    <div id="tab-group-4">
-        <ul class="tab">
-            <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
-        </ul>
-        <div class="tabcontent tab-plot">
-            <div id="phylo-tab">
-                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData"
-                                          branchlength="showLengths"></radial-phylogenetic-tree>
-                <label id="show-length">
-                    <input type="checkbox" ng-model="showLengths"> Show branch length
-                </label>
-            </div>
-        </div>
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.json'" hljs-language="json"></div>
-        </div>
     </div>
 
     <h2>General layout</h2>

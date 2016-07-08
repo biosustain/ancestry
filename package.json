@@ -4,9 +4,7 @@
   "description": "Ancestry: a package for ancestrees",
   "main": "dist/ancestry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "jspm bundle-sfx lib/index - angular - d3 dist/ancestry.js --format amd",
-    "prepublish": "npm run compile"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -36,16 +34,15 @@
   },
   "jspm": {
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.4.5",
-      "clean-css": "npm:clean-css@^3.4.3",
-      "css": "github:systemjs/plugin-css@^0.1.16",
-      "d3": "github:d3/d3@^3.5.6"
+      "angular": "github:angular/bower-angular@^1.5.7",
+      "angular-highlightjs": "npm:angular-highlightjs@^0.6.1",
+      "angular/bower-angular": "github:angular/bower-angular@1.5.7",
+      "biosustain/ancestry": "github:biosustain/ancestry@1.2.5"
     },
     "devDependencies": {
-      "angular-material": "github:angular/bower-material@^0.11.0",
-      "babel": "npm:babel-core@^5.8.22",
-      "babel-runtime": "npm:babel-runtime@^5.8.20",
-      "core-js": "npm:core-js@^1.1.0"
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
   }
 }

@@ -4,7 +4,8 @@ System.config({
   transpiler: "babel",
   babelOptions: {
     "optional": [
-      "runtime"
+      "runtime",
+      "optimisation.modules.system"
     ]
   },
   paths: {
@@ -15,28 +16,11 @@ System.config({
   map: {
     "angular": "github:angular/bower-angular@1.5.7",
     "angular-highlightjs": "npm:angular-highlightjs@0.6.1",
-    "angular-material": "github:angular/bower-material@0.11.4",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
-    "biosustain/ancestry": "github:biosustain/ancestry@1.2.4",
-    "clean-css": "npm:clean-css@3.4.18",
+    "biosustain/ancestry": "github:biosustain/ancestry@1.2.5",
     "core-js": "npm:core-js@1.2.6",
-    "css": "github:systemjs/plugin-css@0.1.23",
-    "d3": "github:d3/d3@3.5.17",
-    "highlight": "npm:highlight@0.2.4",
-    "github:angular/bower-angular-animate@1.5.7": {
-      "angular": "github:angular/bower-angular@1.5.7"
-    },
-    "github:angular/bower-angular-aria@1.5.7": {
-      "angular": "github:angular/bower-angular@1.5.7"
-    },
-    "github:angular/bower-material@0.11.4": {
-      "angular": "github:angular/bower-angular@1.5.7",
-      "angular-animate": "github:angular/bower-angular-animate@1.5.7",
-      "angular-aria": "github:angular/bower-angular-aria@1.5.7",
-      "css": "github:systemjs/plugin-css@0.1.23"
-    },
-    "github:biosustain/ancestry@1.2.4": {
+    "github:biosustain/ancestry@1.2.5": {
       "angular": "github:angular/bower-angular@1.5.7",
       "clean-css": "npm:clean-css@3.4.18",
       "css": "github:systemjs/plugin-css@0.1.23",
@@ -90,7 +74,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:angular-highlightjs@0.6.1": {
-      "angular": "npm:angular@1.5.7",
+      "angular": "github:angular/bower-angular@1.5.7",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "highlight.js": "npm:highlight.js@9.5.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -148,11 +132,6 @@ System.config({
     },
     "npm:highlight.js@9.5.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:highlight@0.2.4": {
-      "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:https-browserify@0.0.0": {
