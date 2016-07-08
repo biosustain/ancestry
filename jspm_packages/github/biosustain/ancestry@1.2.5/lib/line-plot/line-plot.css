@@ -1,0 +1,27 @@
+.ancestry-line-plot g.series path {
+    fill: none;
+    stroke-width: 1px;
+    shape-rendering: auto;
+}
+
+.ancestry-line-plot g.series circle.series-dot {
+    stroke-width: 2px;
+}
+
+.ancestry-line-plot g.series.series-unfocused-dots circle,
+.ancestry-line-plot g.series.series-unfocused-path path{
+    opacity: 0.2 !important;
+}
+
+.ancestry-line-plot g.series.series-focused path{
+    stroke-width: 2px;
+}
+
+.ancestry-line-plot g.series.series-focused circle.series-dot {
+    stroke-width: 1px;
+}
+
+.ancestry-line-plot circle#hover-focus-circle {
+    stroke-width: 1px;
+    stroke: white;
+}

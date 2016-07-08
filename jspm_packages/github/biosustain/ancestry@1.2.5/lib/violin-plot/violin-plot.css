@@ -1,0 +1,16 @@
+.ancestry-violin-plot .violin-container {
+    font: 10px sans-serif;
+    pointer-events: all;
+}
+
+.ancestry-violin-plot .violin-container .violin-name {
+    font: 12px sans-serif;
+}
+
+.ancestry-violin-plot .area {
+    fill: lightgrey;
+}
+
+.ancestry-violin-plot circle.dot {
+    shape-rendering: auto;
+}
