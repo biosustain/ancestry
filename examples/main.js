@@ -263,7 +263,7 @@ let data = {
             enabled: true
         },
         heatmap: {
-            enabled: true,
+            enabled: false,
             title: "z values",
             colourBar: {height: "90%"}
         },
@@ -274,7 +274,7 @@ let data = {
                 "y": "center"
             },
             anchor: {
-                "x": "inside",
+                "x": "outside",
                 "y": "inside"
             },
             orientation: "vertical"
@@ -308,7 +308,7 @@ let data2 = {
             enabled: true
         },
         heatmap: {
-            enabled: true,
+            enabled: false,
             title: "z values",
             colourBar: {
                 show: true
@@ -317,7 +317,7 @@ let data2 = {
         legend: {
             show: true,
             position: {
-                "x": "left",
+                "x": "right",
                 "y": "center"
             },
             anchor: {
