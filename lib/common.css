@@ -2,7 +2,6 @@
 .ancestry .axis line {
     fill: none;
     stroke: grey;
-    stroke-width: 1;
     shape-rendering: crispEdges;
 }
 
@@ -95,4 +94,19 @@
 
 .ancestry text.axis-title{
     font-size: 15px;
+}
+
+.ancestry div.plot-control-panel {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.ancestry i.plot-control {
+    margin-right: 3px;
+    color: #666666;
+ }
+
+.ancestry i.plot-control.active {
+    color: black;
 }

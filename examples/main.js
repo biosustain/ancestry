@@ -2,7 +2,7 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(25, 2);
+let nodesArr = createRandomLineageScatterPlotData2(36, 3);
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -200,6 +200,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
         nodesNum[i] = Math.round(nodesNum[i] / sum * totalNodes);
     }
 
+    let rn = Math.pow(10, Math.round(Math.random() * 12 - 8));
     for (let s = 0; s < n; s++) {
 
         for (let i = 0, gen = 1; i < nodesNum[s]; i+=totalChildren, gen++) {
@@ -212,13 +213,12 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
             let p = 0,
                 cumSum = children[0],
                 _parents = [];
-
             for (let j = 0; j < totalChildren; j++) {
                 let parent = parents ? parents[p] : null,
                     node = {
                         name: "node_" + gen + labels[gen_labels[gen - 1]++],
                         x: gen-1,
-                        y: s * 10 + gen + j,
+                        y: (s * 10 + gen + j) * rn,
                         z: Math.random() > 0.7 ? undefined : Math.round(Math.random() * 100) / 10,
                         parent: parent,
                         series: 10 + Math.floor(Math.random() * 4),
@@ -245,6 +245,12 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
 let data = {
     data: nodesArr,
     layout: {
+        xAxis: {
+            format: ".3s"
+        },
+        yAxis: {
+            format: ".3s"
+        },
         nodeTypes: {
             "type1": {
                 r: 4,
@@ -300,15 +306,15 @@ let data2 = {
             gridOnly: true,
             valueProperty: "default"
         },
-        //labelCollisionDetection: {
-        //    enabled: "onDelay",
-        //    updateDelay: 500
-        //},
+        labelCollisionDetection: {
+            enabled: "onDelay",
+            updateDelay: 500
+        },
         groupSelection: {
             enabled: true
         },
         heatmap: {
-            enabled: false,
+            enabled: true,
             title: "z values",
             colourBar: {
                 show: true

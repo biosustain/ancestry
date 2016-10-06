@@ -12,8 +12,8 @@
 }
 .ancestry-radial-phylogenetic-tree .link-extension {
     fill: none;
-    stroke: #000;
-    stroke-opacity: .25;
+    /*stroke: #000;*/
+    /*stroke-opacity: .25;*/
 }
 
 .ancestry-radial-phylogenetic-tree .link-extension-active {

@@ -39,7 +39,8 @@
       "angular": "github:angular/bower-angular@^1.4.5",
       "clean-css": "npm:clean-css@^3.4.3",
       "css": "github:systemjs/plugin-css@^0.1.16",
-      "d3": "github:d3/d3@^3.5.6"
+      "d3": "npm:d3@^4.2.3",
+      "font-awesome": "npm:font-awesome@^4.6.3"
     },
     "devDependencies": {
       "angular-material": "github:angular/bower-material@^0.11.0",
