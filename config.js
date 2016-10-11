@@ -7,6 +7,11 @@ System.config({
       "runtime"
     ]
   },
+
+  meta: {
+    '*.css': { loader: 'css' }
+  },
+
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
@@ -14,26 +19,26 @@ System.config({
   separateCSS: true,
 
   map: {
-    "angular": "github:angular/bower-angular@1.4.5",
-    "angular-material": "github:angular/bower-material@0.11.0",
-    "babel": "npm:babel-core@5.8.24",
-    "babel-runtime": "npm:babel-runtime@5.8.24",
-    "clean-css": "npm:clean-css@3.4.3",
-    "core-js": "npm:core-js@1.1.4",
-    "css": "github:systemjs/plugin-css@0.1.27",
-    "d3": "npm:d3@4.2.3",
+    "angular": "github:angular/bower-angular@1.5.8",
+    "angular-material": "github:angular/bower-material@0.11.4",
+    "babel": "npm:babel-core@5.8.38",
+    "babel-runtime": "npm:babel-runtime@5.8.38",
+    "clean-css": "npm:clean-css@3.4.20",
+    "core-js": "npm:core-js@1.2.7",
+    "css": "github:systemjs/plugin-css@0.1.31",
+    "d3": "npm:d3@4.2.6",
     "font-awesome": "npm:font-awesome@4.6.3",
-    "github:angular/bower-angular-animate@1.4.5": {
-      "angular": "github:angular/bower-angular@1.4.5"
+    "github:angular/bower-angular-animate@1.5.8": {
+      "angular": "github:angular/bower-angular@1.5.8"
     },
-    "github:angular/bower-angular-aria@1.4.5": {
-      "angular": "github:angular/bower-angular@1.4.5"
+    "github:angular/bower-angular-aria@1.5.8": {
+      "angular": "github:angular/bower-angular@1.5.8"
     },
-    "github:angular/bower-material@0.11.0": {
-      "angular": "github:angular/bower-angular@1.4.5",
-      "angular-animate": "github:angular/bower-angular-animate@1.4.5",
-      "angular-aria": "github:angular/bower-angular-aria@1.4.5",
-      "css": "github:systemjs/plugin-css@0.1.27"
+    "github:angular/bower-material@0.11.4": {
+      "angular": "github:angular/bower-angular@1.5.8",
+      "angular-animate": "github:angular/bower-angular-animate@1.5.8",
+      "angular-aria": "github:angular/bower-angular-aria@1.5.8",
+      "css": "github:systemjs/plugin-css@0.1.31"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -91,18 +96,18 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.8.24": {
+    "npm:babel-runtime@5.8.38": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:buffer@3.6.0": {
       "base64-js": "npm:base64-js@0.0.8",
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "ieee754": "npm:ieee754@1.1.6",
+      "ieee754": "npm:ieee754@1.1.8",
       "isarray": "npm:isarray@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:clean-css@3.4.3": {
+    "npm:clean-css@3.4.20": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "commander": "npm:commander@2.8.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -123,15 +128,16 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:core-js@1.1.4": {
+    "npm:core-js@1.2.7": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
-    "npm:d3-brush@1.0.2": {
+    "npm:d3-brush@1.0.3": {
       "d3-dispatch": "npm:d3-dispatch@1.0.1",
       "d3-drag": "npm:d3-drag@1.0.1",
       "d3-interpolate": "npm:d3-interpolate@1.1.1",
@@ -158,7 +164,7 @@ System.config({
       "d3-timer": "npm:d3-timer@1.0.3",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:d3-geo@1.2.4": {
+    "npm:d3-geo@1.2.5": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "d3-array": "npm:d3-array@1.0.1"
     },
@@ -177,14 +183,14 @@ System.config({
       "d3-color": "npm:d3-color@1.0.1",
       "d3-format": "npm:d3-format@1.0.2",
       "d3-interpolate": "npm:d3-interpolate@1.1.1",
-      "d3-time": "npm:d3-time@1.0.3",
+      "d3-time": "npm:d3-time@1.0.4",
       "d3-time-format": "npm:d3-time-format@2.0.2"
     },
     "npm:d3-shape@1.0.3": {
       "d3-path": "npm:d3-path@1.0.2"
     },
     "npm:d3-time-format@2.0.2": {
-      "d3-time": "npm:d3-time@1.0.3"
+      "d3-time": "npm:d3-time@1.0.4"
     },
     "npm:d3-transition@1.0.2": {
       "d3-color": "npm:d3-color@1.0.1",
@@ -201,11 +207,11 @@ System.config({
       "d3-selection": "npm:d3-selection@1.0.2",
       "d3-transition": "npm:d3-transition@1.0.2"
     },
-    "npm:d3@4.2.3": {
+    "npm:d3@4.2.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "d3-array": "npm:d3-array@1.0.1",
       "d3-axis": "npm:d3-axis@1.0.3",
-      "d3-brush": "npm:d3-brush@1.0.2",
+      "d3-brush": "npm:d3-brush@1.0.3",
       "d3-chord": "npm:d3-chord@1.0.2",
       "d3-collection": "npm:d3-collection@1.0.1",
       "d3-color": "npm:d3-color@1.0.1",
@@ -215,7 +221,7 @@ System.config({
       "d3-ease": "npm:d3-ease@1.0.1",
       "d3-force": "npm:d3-force@1.0.2",
       "d3-format": "npm:d3-format@1.0.2",
-      "d3-geo": "npm:d3-geo@1.2.4",
+      "d3-geo": "npm:d3-geo@1.2.5",
       "d3-hierarchy": "npm:d3-hierarchy@1.0.2",
       "d3-interpolate": "npm:d3-interpolate@1.1.1",
       "d3-path": "npm:d3-path@1.0.2",
@@ -227,16 +233,18 @@ System.config({
       "d3-scale": "npm:d3-scale@1.0.3",
       "d3-selection": "npm:d3-selection@1.0.2",
       "d3-shape": "npm:d3-shape@1.0.3",
-      "d3-time": "npm:d3-time@1.0.3",
+      "d3-time": "npm:d3-time@1.0.4",
       "d3-time-format": "npm:d3-time-format@2.0.2",
       "d3-timer": "npm:d3-timer@1.0.3",
       "d3-transition": "npm:d3-transition@1.0.2",
       "d3-voronoi": "npm:d3-voronoi@1.0.2",
       "d3-zoom": "npm:d3-zoom@1.0.3",
-      "process": "github:jspm/nodelibs-process@0.1.2"
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:font-awesome@4.6.3": {
-      "css": "github:systemjs/plugin-css@0.1.27"
+      "css": "github:systemjs/plugin-css@0.1.31"
     },
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"

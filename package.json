@@ -1,7 +1,7 @@
 {
   "name": "ancestry",
-  "version": "1.2.5",
-  "description": "Ancestry: a package for ancestrees",
+  "version": "1.2.6",
+  "description": "Ancestry: a package for visualization of lineage data",
   "main": "dist/ancestry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "angular": "^1.4.5",
-    "d3": "^3.5.6"
+    "d3": "^4.2.3"
   },
   "devDependencies": {
     "babel": "^5.8.23"
