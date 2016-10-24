@@ -1,3 +1,9 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = SVG2Bitmap;
 /*
 The MIT License (MIT)
 
@@ -21,11 +27,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-export default function SVG2Bitmap(svg, receiver, params) {
+function SVG2Bitmap(svg, receiver, params) {
 
     "use strict";
 
     // check-in
+
     if (!params) {
         params = {};
     }
@@ -41,7 +48,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
     // in case user passed a framed svg
     var frame;
     // for both <iframe> and <embed>, we can try to wait for the load event
-    var loadHandler = function() {
+    var loadHandler = function loadHandler() {
         // remove our handler
         this.removeEventListener('load', loadHandler);
         // recall the function
@@ -49,7 +56,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
     };
 
     if (svg.nodeName === "OBJECT" || svg.nodeName === "IFRAME") {
-        if (!svg.contentDocument || (svg.contentDocument.readyState === 'complete' && !svg.contentDocument.documentElement)) {
+        if (!svg.contentDocument || svg.contentDocument.readyState === 'complete' && !svg.contentDocument.documentElement) {
             console.error('Unable to access the svg node : make sure it comes from the same domain or that the container has finished loading');
             return;
         }
@@ -61,13 +68,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
         // keep it somewhere so we can replace it further
         frame = svg;
         svg = svg.contentDocument.documentElement;
-
     } else if (svg.nodeName === 'EMBED' && svg.getSVGDocument) {
         frame = svg;
         svg = svg.getSVGDocument();
         if (!svg) {
             frame.addEventListener('load', loadHandler);
-            frame.onerror = function() {
+            frame.onerror = function () {
                 console.error('Unable to access the svg node : make sure it comes from the same domain or that the container has finished loading');
             };
             frame.src = frame.src;
@@ -81,18 +87,17 @@ export default function SVG2Bitmap(svg, receiver, params) {
         var target = svg.querySelector('svg');
         if (!target) {
             var qS = '[src*=".svg"]';
-            var obj = svg.querySelector('iframe'+qS+', embed'+qS) || svg.querySelector('object[data*=".svg"]');
-            if(obj){
+            var obj = svg.querySelector('iframe' + qS + ', embed' + qS) || svg.querySelector('object[data*=".svg"]');
+            if (obj) {
                 SVG2Bitmap(obj, receiver, params);
                 return;
             }
             console.error('unable to access the svg node, make sure it has been appended to the document');
             return;
-        }else{
+        } else {
             svg = target;
         }
     }
-
 
     var xlinkNS = "http://www.w3.org/1999/xlink",
         svgNS = 'http://www.w3.org/2000/svg';
@@ -101,7 +106,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
     var clone = svg.cloneNode(true);
 
     var defs;
-    var getDef = function() {
+    var getDef = function getDef() {
         // Do we have a `<defs>` element already ?
         defs = clone.querySelector('defs') || document.createElementNS(svgNS, 'defs');
         if (!defs.parentNode) {
@@ -110,12 +115,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
     };
 
     // an object to do some various tests
-    var tester = (function() {
+    var tester = function () {
         // check if the canvas is tainted
         var tCanvas = document.createElement('canvas');
         var tCtx = tCanvas.getContext('2d');
         tCanvas.width = tCanvas.height = 1;
-        var isTainted = function(canvas) {
+        var isTainted = function isTainted(canvas) {
             var tainted = false;
             tCtx.drawImage(canvas, 0, 0);
             try {
@@ -132,7 +137,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
         doc.head.appendChild(base);
         var anchor = document.createElement('a');
         doc.body.appendChild(anchor);
-        var URL = function(url, baseIRI) {
+        var URL = function URL(url, baseIRI) {
             base.href = baseIRI;
             anchor.href = url;
             return anchor;
@@ -141,13 +146,13 @@ export default function SVG2Bitmap(svg, receiver, params) {
             isTainted: isTainted,
             URL: URL
         };
-    })();
+    }();
 
     // a simple flag used for some edge cases with dirty nameSpace declarations
     var cleanedNS = false;
     // The final function that will export our svgNode to our receiver
 
-    var exportDoc = function() {
+    var exportDoc = function exportDoc() {
         // check if our svgNode has width and height properties set to absolute values
         // otherwise, canvas won't be able to draw it
         var bbox = frame ? frame.getBoundingClientRect() : svg.getBoundingClientRect();
@@ -163,15 +168,15 @@ export default function SVG2Bitmap(svg, receiver, params) {
         // serialize our node
         var svgData;
         // detect IE, that's dirty...
-        if(typeof ActiveXObject !== 'undefined'){
+        if (typeof ActiveXObject !== 'undefined') {
             // IE's XMLSerializer mess around with non-default namespaces,
             // no way to catch it ; we make the removal default then...
-            var cleanNS = function(el) {
+            var cleanNS = function cleanNS(el) {
                 var attr = Array.prototype.slice.call(el.attributes);
 
                 for (var i = 0; i < attr.length; i++) {
                     var name = attr[i].name;
-                    if (name.indexOf(':') > -1 && name.indexOf('xlink') < 0){
+                    if (name.indexOf(':') > -1 && name.indexOf('xlink') < 0) {
                         el.removeAttribute(name);
                     }
                 }
@@ -187,17 +192,17 @@ export default function SVG2Bitmap(svg, receiver, params) {
         // Thus, it can create bad things with absolutely positioned elements.
         clone.removeAttribute('style');
 
-        svgData = (new XMLSerializer()).serializeToString(clone);
+        svgData = new XMLSerializer().serializeToString(clone);
 
         var svgURL = 'data:image/svg+xml; charset=utf8, ' + encodeURIComponent(svgData);
 
         var svgImg = new Image();
 
-        var load_handler = function() {
+        var load_handler = function load_handler() {
 
             // if we set a canvas as receiver, then use it
             // otherwise create a new one
-            var canvas = (receiver && receiver.nodeName === 'CANVAS') ? receiver : document.createElement('canvas');
+            var canvas = receiver && receiver.nodeName === 'CANVAS' ? receiver : document.createElement('canvas');
 
             // keep a reference of the original node into our canvas
             canvas.originalSVG = frame || svg;
@@ -216,17 +221,17 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
             var s = params.scale;
-            var innerRect = frame ? svg.getBoundingClientRect() : {top: 0,left: 0};
+            var innerRect = frame ? svg.getBoundingClientRect() : { top: 0, left: 0 };
 
             // strange bug in IE11 where it seems the image isn't loaded the first time...
-            try{
+            try {
                 ctx.drawImage(this, innerRect.left, innerRect.top, this.width * s || canvas.width, this.height * s || canvas.height);
-            }catch(e){
+            } catch (e) {
                 setTimeout(load_handler.bind(this), 200);
             }
             // a default function to replace the svg element with the bitmap version
             if (!receiver) {
-                receiver = function(c) {
+                receiver = function receiver(c) {
                     var original = frame || svg;
                     original.parentNode.replaceChild(c, original);
                 };
@@ -245,8 +250,8 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     }
                     // if we did set a function
                     else if (typeof receiver === 'function') {
-                        receiver(canvas, null);
-                    }
+                            receiver(canvas, null);
+                        }
                 }
                 return;
             }
@@ -264,12 +269,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 }
                 // if we did set a function
                 else if (typeof receiver === 'function') {
-                    receiver(canvas, canvas.toDataURL(params.type, params.quality));
-                }
+                        receiver(canvas, canvas.toDataURL(params.type, params.quality));
+                    }
             }
         };
 
-        var error_handler = function(e) {
+        var error_handler = function error_handler(e) {
             console.error("Couldn't export svg, please check that the svgElement passed is a valid svg document.");
             return;
         };
@@ -278,10 +283,9 @@ export default function SVG2Bitmap(svg, receiver, params) {
         svgImg.onerror = error_handler;
 
         svgImg.src = svgURL;
-
     };
     // get all the rules applied to our svg elements 
-    var parseStyles = function() {
+    var parseStyles = function parseStyles() {
         var cssIRIs = [],
             styleSheets = [];
         var i;
@@ -300,7 +304,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
 
         // iterate through all document's stylesheets
         for (i = 0; i < styleSheets.length; i++) {
-            var currentStyle = styleSheets[i]
+            var currentStyle = styleSheets[i];
 
             var rules;
             try {
@@ -317,10 +321,10 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 // get the selector of this cssRules
                 var selector = rules[j].selectorText;
                 // probably an external stylesheet we can't access
-                if(!selector){
+                if (!selector) {
                     continue;
                 }
-                selector = selector.replace(/:/g,'\\:');
+                selector = selector.replace(/:/g, '\\:');
                 // is it our svg node or one of its children ?
                 var matchesTest;
                 try {
@@ -328,7 +332,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 } catch (e) {
                     continue;
                 }
-                if ((svg.matches && svg.matches(selector)) || matchesTest) {
+                if (svg.matches && svg.matches(selector) || matchesTest) {
 
                     var cssText = rules[j].cssText;
 
@@ -339,7 +343,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
                         var href = currentStyle.href || location.href;
                         cssIRIs.push([ext, href]);
                         var a = tester.URL(ext, href);
-                        var iri = (href===location.href && ext.indexOf('.svg')<0)? a.hash : a.href.substring(a.href.lastIndexOf('/') + 1);
+                        var iri = href === location.href && ext.indexOf('.svg') < 0 ? a.hash : a.href.substring(a.href.lastIndexOf('/') + 1);
                         var newId = '#' + iri.replace(/\//g, '_').replace(/\./g, '_').replace('#', '_');
                         cssText = cssText.replace(ext, newId);
                     }
@@ -361,7 +365,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
         parseXlinks(cssIRIs);
     };
 
-    var getSVGStyles = function(node) {
+    var getSVGStyles = function getSVGStyles(node) {
 
         // create a testing element
         var dest = node.cloneNode(true);
@@ -395,7 +399,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
         return mods;
     };
 
-    var parseImages = function() {
+    var parseImages = function parseImages() {
 
         var images = clone.querySelectorAll('image'),
             total = images.length,
@@ -428,7 +432,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
         }
 
         // that's quite a bit of lines, but it saves a lot of computations if we do treat large images
-        var preserveAspectRatio = function(source, destination, userString) {
+        var preserveAspectRatio = function preserveAspectRatio(source, destination, userString) {
 
             var srcWidth = source.width,
                 srcHeight = source.height,
@@ -436,38 +440,31 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 destinationH = destination.height;
 
             // we should keep the whole source
-            var aRMeet = function(args) {
+            var aRMeet = function aRMeet(args) {
 
-                var srcRatio = (srcHeight / srcWidth),
-                    destRatio = (destinationH / destinationW),
-
+                var srcRatio = srcHeight / srcWidth,
+                    destRatio = destinationH / destinationW,
                     resultWidth = destRatio > srcRatio ? destinationW : destinationH / srcRatio,
                     resultHeight = destRatio > srcRatio ? destinationW * srcRatio : destinationH;
 
-                var getPos = function(arg, res, dest) {
+                var getPos = function getPos(arg, res, dest) {
 
                     var max = Math.max(res, dest),
                         min = Math.min(res, dest);
 
                     switch (arg) {
-                        case 'Min': return 0;
-                        case 'Mid': return (max - min) / 2;
-                        case 'Max': return max - min;
-                        default:    return 'invalid';
+                        case 'Min':
+                            return 0;
+                        case 'Mid':
+                            return (max - min) / 2;
+                        case 'Max':
+                            return max - min;
+                        default:
+                            return 'invalid';
                     }
                 };
 
-                var obj = [
-                    returnedImg,
-                    0,
-                    0,
-                    srcWidth,
-                    srcHeight,
-                    getPos(args[0], resultWidth, destinationW),
-                    getPos(args[1], resultHeight, destinationH),
-                    resultWidth,
-                    resultHeight
-                ];
+                var obj = [returnedImg, 0, 0, srcWidth, srcHeight, getPos(args[0], resultWidth, destinationW), getPos(args[1], resultHeight, destinationH), resultWidth, resultHeight];
 
                 if (obj[5] === 'invalid' || obj[6] === 'invalid') {
                     return default_obj;
@@ -477,16 +474,16 @@ export default function SVG2Bitmap(svg, receiver, params) {
             };
 
             // we should slice the larger part
-            var aRSlice = function(args) {
+            var aRSlice = function aRSlice(args) {
 
                 var resultWidth, resultHeight;
 
-                var a = function() {
+                var a = function a() {
                     resultWidth = destinationW;
                     resultHeight = srcHeight * destinationW / srcWidth;
                 };
 
-                var b = function() {
+                var b = function b() {
                     resultWidth = srcWidth * destinationH / srcHeight;
                     resultHeight = destinationH;
                 };
@@ -509,29 +506,23 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     }
                 }
 
-                var getPos = function(arg, res, dest, src) {
+                var getPos = function getPos(arg, res, dest, src) {
                     switch (arg) {
-                        case 'Min': return 0;
-                        case 'Mid': return (res - dest) / 2 * src / res;
-                        case 'Max': return (res - dest) * src / res;
-                        default:    return 'invalid';
+                        case 'Min':
+                            return 0;
+                        case 'Mid':
+                            return (res - dest) / 2 * src / res;
+                        case 'Max':
+                            return (res - dest) * src / res;
+                        default:
+                            return 'invalid';
                     }
                 };
 
                 var x = getPos(args[0], resultWidth, destinationW, srcWidth);
                 var y = getPos(args[1], resultHeight, destinationH, srcHeight);
 
-                var obj = [
-                    returnedImg,
-                    x,
-                    y,
-                    srcWidth - x,
-                    srcHeight - y,
-                    0,
-                    0,
-                    resultWidth - (x * (resultWidth / srcWidth)),
-                    resultHeight - (y * (resultHeight / srcHeight)),
-                ];
+                var obj = [returnedImg, x, y, srcWidth - x, srcHeight - y, 0, 0, resultWidth - x * (resultWidth / srcWidth), resultHeight - y * (resultHeight / srcHeight)];
 
                 if (obj[1] === 'invalid' || obj[2] === 'invalid') {
                     return default_obj;
@@ -554,11 +545,13 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     minMidMax = args[0].replace('x', '').split('Y');
 
                 switch (args[args.length - 1]) {
-                    case "meet":  return aRMeet(minMidMax);
-                    case "slice": return aRSlice(minMidMax);
-                    default:      return default_obj;
+                    case "meet":
+                        return aRMeet(minMidMax);
+                    case "slice":
+                        return aRSlice(minMidMax);
+                    default:
+                        return default_obj;
                 }
-
             }
         };
 
@@ -566,9 +559,9 @@ export default function SVG2Bitmap(svg, receiver, params) {
         var ctx = canvas.getContext('2d');
 
         // some UAs don't fire a load event on <image> element
-        var loader = function(url) {
+        var loader = function loader(url) {
             var img = new Image();
-            img.onload = function() {
+            img.onload = function () {
                 // that was the last one
                 if (++encoded === total) {
                     exportDoc();
@@ -577,13 +570,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
             img.src = url;
         };
 
-
         // convert an external bitmap image to a dataURL
-        var toDataURL = function(image, original) {
+        var toDataURL = function toDataURL(image, original) {
 
             var img = new Image();
 
-            var error_handler = function() {
+            var error_handler = function error_handler() {
 
                 console.warn('failed to load an image at : ', img.src);
                 if (!params.keepImageHolder) {
@@ -592,14 +584,13 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 if (--total === encoded) {
                     exportDoc();
                 }
-
             };
 
             if (!params.noCORS) {
                 img.crossOrigin = 'Anonymous';
             }
 
-            img.onload = function() {
+            img.onload = function () {
                 var attr, rect;
                 if (original) {
                     attr = image.getAttribute('preserveAspectRatio');
@@ -613,13 +604,11 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     // draw only what is needed (About 3000ms saved on 5M images !)
                     var ar = preserveAspectRatio(this, canvas, attr);
                     ctx.drawImage.apply(ctx, ar);
-
                 } else {
 
                     canvas.width = this.width;
                     canvas.height = this.height;
                     ctx.drawImage(this, 0, 0);
-
                 }
 
                 if (tester.isTainted(canvas)) {
@@ -630,11 +619,10 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 var dataURL = canvas.toDataURL();
                 image.setAttributeNS(xlinkNS, 'href', dataURL);
                 loader(dataURL);
-
             };
 
             // No CORS set in the response		
-            img.onerror = function() {
+            img.onerror = function () {
                 // save the src
                 var oldSrc = this.src;
                 // there is an other problem
@@ -651,9 +639,9 @@ export default function SVG2Bitmap(svg, receiver, params) {
         };
 
         // get an external svg doc to data String
-        var parseFromUrl = function(url, element) {
+        var parseFromUrl = function parseFromUrl(url, element) {
             var xhr = new XMLHttpRequest();
-            xhr.onload = function() {
+            xhr.onload = function () {
 
                 if (this.status === 200) {
 
@@ -661,15 +649,13 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     var dataUrl = 'data:image/svg+xml; charset=utf8, ' + encodeURIComponent('<svg' + response.split('<svg')[1]);
                     element.setAttributeNS(xlinkNS, 'href', dataUrl);
                     loader(dataUrl);
-
                 }
                 // request failed with xhr, try as an <img>
                 else {
-                    toDataURL(element);
-                }
-
+                        toDataURL(element);
+                    }
             };
-            xhr.onerror = function() {
+            xhr.onerror = function () {
                 toDataURL(element);
             };
             // IE will throw an error if we try to get a file from an other domain
@@ -698,13 +684,13 @@ export default function SVG2Bitmap(svg, receiver, params) {
             }
             // else increment our counter
             else if (++encoded === total) {
-                exportDoc();
-                return;
-            }
+                    exportDoc();
+                    return;
+                }
         }
     };
 
-    var parseXlinks = function(css) {
+    var parseXlinks = function parseXlinks(css) {
 
         var i;
         var elemToParse = 0;
@@ -717,12 +703,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
             innerElements: [],
             parsedElements: [],
             doc: svg.ownerDocument,
-            base : location.href.replace(location.hash, '').replace(/#/g, '')
+            base: location.href.replace(location.hash, '').replace(/#/g, '')
         };
         // an array for our external documents		
         var documents = [current_doc];
 
-        var nsSelector_support = (function() {
+        var nsSelector_support = function () {
             // create a test element
             var test = document.createElementNS(svgNS, 'use');
             // set its href attribute to something that should be found
@@ -734,27 +720,27 @@ export default function SVG2Bitmap(svg, receiver, params) {
             // the test is done, remove the element
             clone.removeChild(test);
             return supported;
-        })();
+        }();
 
-        var queryXlinks = function(el) {
+        var queryXlinks = function queryXlinks(el) {
             return nsSelector_support ? el.querySelectorAll('[*|href*="#"]') :
-                // if the selector is not supported
-                (function() {
-                    var arr = [];
-                    var children = el.querySelectorAll('*');
-                    for (i = 0; i < children.length; i++) {
-                        // search the xlink:href attribute
-                        var xl_attr = children[i].getAttributeNS(xlinkNS, 'href');
-                        // we only want the ones that refer to elements
-                        if (xl_attr && xl_attr.indexOf('#') > -1) {
-                            arr.push(children[i]);
-                        }
+            // if the selector is not supported
+            function () {
+                var arr = [];
+                var children = el.querySelectorAll('*');
+                for (i = 0; i < children.length; i++) {
+                    // search the xlink:href attribute
+                    var xl_attr = children[i].getAttributeNS(xlinkNS, 'href');
+                    // we only want the ones that refer to elements
+                    if (xl_attr && xl_attr.indexOf('#') > -1) {
+                        arr.push(children[i]);
                     }
-                    return arr;
-                })();
+                }
+                return arr;
+            }();
         };
 
-        var getURLs = function(el) {
+        var getURLs = function getURLs(el) {
             // the list of all attributes that can have a <funciri> (url()) as value
             var url_attrs = ["style", "clip-path", "src", "cursor", "fill", "filter", "marker", "marker-start", "marker-mid", "marker-end", "mask", "stroke"];
             // build our selector string
@@ -764,11 +750,11 @@ export default function SVG2Bitmap(svg, receiver, params) {
             return list;
         };
 
-        var getXternalAttributes = function(el, doc) {
+        var getXternalAttributes = function getXternalAttributes(el, doc) {
 
             var externals = [];
 
-            var ext_attr = function(ele, type) {
+            var ext_attr = function ext_attr(ele, type) {
                 var that = {};
                 that.element = ele;
                 that.type = type;
@@ -779,18 +765,17 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 if (type === 'xl') {
 
                     att = ele.attributes['xlink:href'];
-                    if(!att){
+                    if (!att) {
                         var href = ele.attributes.href;
 
-                        if(href && href.namespaceURI && href.namespaceURI.indexOf('xlink')>-1){
+                        if (href && href.namespaceURI && href.namespaceURI.indexOf('xlink') > -1) {
                             att = href;
-                        }else{
+                        } else {
                             return false;
                         }
                     }
                     that.attributes.push(att);
                     that.requestedElements.push(att.value);
-
                 } else {
 
                     att = ele.attributes;
@@ -804,7 +789,6 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     }
                 }
                 return that;
-
             };
 
             var xl = queryXlinks(el);
@@ -817,7 +801,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
 
             for (i = 0; i < xl.length; i++) {
                 att = ext_attr(xl[i], 'xl');
-                if(!att){
+                if (!att) {
                     continue;
                 }
                 externals.push(att);
@@ -826,7 +810,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
 
             for (i = 0; i < url.length; i++) {
                 att = ext_attr(url[i], 'url');
-                if(!att){
+                if (!att) {
                     continue;
                 }
                 externals.push(att);
@@ -838,25 +822,19 @@ export default function SVG2Bitmap(svg, receiver, params) {
             for (i = 0; i < self_attrs.length; i++) {
                 var self_attr = self_attrs[i];
                 if (self_attr.name === 'xlink:href') {
-                    externals.push(
-                        new ext_attr(el, 'xl')
-                    );
+                    externals.push(new ext_attr(el, 'xl'));
                 } else {
                     var matched = self_attr.value.match(/url\((.*)\)/);
                     if (matched && matched.length > 1) {
-                        externals.push(
-                            new ext_attr(el, 'url')
-                        );
+                        externals.push(new ext_attr(el, 'url'));
                     }
                 }
             }
 
-
-
             return externals;
         };
 
-        var changeImagesHref = function(elem, base) {
+        var changeImagesHref = function changeImagesHref(elem, base) {
             var images = elem.querySelectorAll('image');
             for (var i = 0; i < images.length; i++) {
                 var href = images[i].getAttributeNS(xlinkNS, 'href');
@@ -867,7 +845,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
             }
         };
 
-        var getInnerElements = function() {
+        var getInnerElements = function getInnerElements() {
             var i;
             for (i = 0; i < documents.length; i++) {
                 var doc = documents[i];
@@ -904,12 +882,12 @@ export default function SVG2Bitmap(svg, receiver, params) {
         };
 
         // fetch the external documents
-        var fetchExternalDoc = function(ext_doc) {
+        var fetchExternalDoc = function fetchExternalDoc(ext_doc) {
             var url = ext_doc.href;
             // create a new request
             var xhr = new XMLHttpRequest();
 
-            xhr.onload = function() {
+            xhr.onload = function () {
                 // everything went fine
                 if (this.status === 200) {
                     var response = this.responseText || this.response;
@@ -927,20 +905,19 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 } else {
                     ext_doc.doc = null;
                     elemToParse -= ext_doc.innerElements.length;
-                    console.warn('could not load this external document :', url, '\n' +
-                        'Those elements are lost : ', ext_doc.innerElements.join(' , '));
+                    console.warn('could not load this external document :', url, '\n' + 'Those elements are lost : ', ext_doc.innerElements.join(' , '));
                 }
                 // In case we were the last one
-                if (!--docsToFetch) {
+                if (! --docsToFetch) {
                     getInnerElements();
                 }
             };
-            xhr.onerror = function(e) {
+            xhr.onerror = function (e) {
                 ext_doc.doc = null;
                 elemToParse -= ext_doc.innerElements.length;
                 console.warn('could not load this external document', url);
                 console.warn('Those elements are lost : ', ext_doc.innerElements.join(' , '));
-                if (!--docsToFetch) {
+                if (! --docsToFetch) {
                     getInnerElements();
                 }
             };
@@ -948,7 +925,7 @@ export default function SVG2Bitmap(svg, receiver, params) {
             xhr.send();
         };
 
-        var append_doc = function(iri, doc) {
+        var append_doc = function append_doc(iri, doc) {
             var a = tester.URL(iri, doc.base);
             var original_filename = a.href.substring(a.href.lastIndexOf('/') + 1).replace(a.hash, '');
             var filename = original_filename.replace(/\./g, '_');
@@ -981,8 +958,8 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     }
                     // someone else already asked for this element
                     else {
-                        return newId;
-                    }
+                            return newId;
+                        }
                 }
             }
 
@@ -993,17 +970,16 @@ export default function SVG2Bitmap(svg, receiver, params) {
                 href: href,
                 filename: filename,
                 innerElements: [hash],
-                parsedElements: [],
+                parsedElements: []
             };
 
             // add it to our array
             documents.push(that);
             fetchExternalDoc(that);
             return newId;
-
         };
 
-        var parse_attributes = function(external_attributes) {
+        var parse_attributes = function parse_attributes(external_attributes) {
 
             if (external_attributes.length && !defs) {
                 getDef();
@@ -1021,11 +997,9 @@ export default function SVG2Bitmap(svg, receiver, params) {
                     var attr = ext.attributes[j];
                     var newValue = attr.value.replace(requested, newId);
                     // fixes a strange UpperCase bug in Edge
-                    var name = (attr.name.toUpperCase() === attr.name) ? attr.name.toLowerCase() : attr.name;
+                    var name = attr.name.toUpperCase() === attr.name ? attr.name.toLowerCase() : attr.name;
                     ext.element.setAttribute(name, newValue);
-
                 }
-
             }
         };
 

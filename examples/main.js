@@ -1,6 +1,6 @@
 import angular from 'angular';
 import "angular-material";
-import "../lib/index.js";
+import "../dist/index.js";
 
 let nodesArr = createRandomLineageScatterPlotData2(36, 3);
 
@@ -133,7 +133,7 @@ function createRandomLineageScatterPlotData(n) {
                 node = {
                 name: "node_" + gen + labels[gen_labels[gen - 1]++],
                 x: gen-1,
-                y: gen + j,
+                y: gen,
                 parent: parent,
                 series: 10 + Math.floor(Math.random() * 4)//i == 0 ? j : nodes.filter((d) => d.name == parent)[0].series
             };
