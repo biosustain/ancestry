@@ -107,6 +107,16 @@
     color: #666666;
  }
 
-.ancestry i.plot-control.active {
-    color: black;
+.ancestry div.svg-icon.active {
+    opacity: 0.9;
+}
+
+.ancestry div.svg-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.ancestry div.svg-icon {
+    opacity: 0.6;
 }
