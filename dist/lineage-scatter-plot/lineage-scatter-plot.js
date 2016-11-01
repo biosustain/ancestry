@@ -29,7 +29,8 @@ function LineageScatterPlotDirective($window, WindowResize) {
         restrict: 'EA',
         scope: {
             value: '=',
-            selectedNodes: '='
+            selectedNodes: '=',
+            nodeClickCallback: '='
         },
         link: function link(scope, element, attributes) {
 
@@ -414,6 +415,8 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     tooltip.hide();
                 });
 
+                toggleNodeClickCallback(true);
+
                 _sharedFeatures.multiAttr.call(circle, nodeAttr);
 
                 // render node labels
@@ -549,6 +552,16 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     }
                 }
 
+                function toggleNodeClickCallback(active) {
+                    if (scope.nodeClickCallback === undefined) return;
+
+                    function nodeClickCallback(d) {
+                        scope.nodeClickCallback(d.data, d3.event);
+                    }
+
+                    circle.on('click', active ? nodeClickCallback : null);
+                }
+
                 var zoom = d3.zoom().scaleExtent([1, layout.maxZoom]).extent([[0, 0], [width, height]]).translateExtent([[0, 0], [width, height]]).on("zoom", onZoom);
 
                 function onZoom() {
@@ -638,6 +651,9 @@ function LineageScatterPlotDirective($window, WindowResize) {
                 function toggleSelect(toggle) {
                     mouseRect.on("mousedown", toggle ? mouseDown : null);
                     circle.on("click", toggle ? click : null);
+                    if (!toggle) {
+                        toggleNodeClickCallback(true);
+                    }
                 }
 
                 function toggleLabels(toggle) {

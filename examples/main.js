@@ -454,6 +454,11 @@ class AppController {
         $scope.showBranchLengths = true;
         $scope.phyloData = phylo;
 
+        $scope.nodeClickCallback = function(d, evt) {
+            console.log(d, evt);
+
+        }
+
     }
 }
 

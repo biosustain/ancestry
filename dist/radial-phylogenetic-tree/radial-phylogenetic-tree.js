@@ -27,7 +27,8 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
         restrict: 'EA',
         scope: {
             value: '=',
-            branchlength: '='
+            branchlength: '=',
+            nodeClickCallback: '='
         },
         link: function link(scope, element, attributes) {
 
@@ -92,6 +93,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                     rotate = 0,
                     heatmapColourScale = null,
                     heatmapCircle = null,
+                    nodeCircle = null,
                     trees = null,
                     legendHeight = 0,
                     legendWidth = 0,
@@ -346,9 +348,11 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                         return !d.data.taxon;
                     }).style("opacity", 0);
 
-                    var nodeCircle = node.append("circle").attr("fill", "white").style("stroke", function (d) {
+                    nodeCircle = node.append("circle").attr("fill", "white").style("stroke", function (d) {
                         return d.data.taxon && d.data.name !== virtualRootName ? colours(d.data.taxon.series) : "none";
                     });
+
+                    toggleNodeClickCallback(true);
 
                     _sharedFeatures.multiAttr.call(nodeCircle, nodeAttr);
                 }
@@ -382,6 +386,16 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                             d3.select(d.linkNode).classed("link-active", active).each(moveToFront);
                         } while (d = d.parent);
                     };
+                }
+
+                function toggleNodeClickCallback(active) {
+                    if (scope.nodeClickCallback === undefined || nodeCircle == null) return;
+
+                    function nodeClickCallback(d) {
+                        scope.nodeClickCallback(d.data, d3.event);
+                    }
+
+                    nodeCircle.on('click', active ? nodeClickCallback : null);
                 }
 
                 var controls = {

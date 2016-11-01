@@ -26,7 +26,8 @@ function RadialLineagePlotDirective($window, WindowResize) {
     return {
         restrict: 'EA',
         scope: {
-            value: '='
+            value: '=',
+            nodeClickCallback: '='
         },
         link: function link(scope, element, attributes) {
 
@@ -332,6 +333,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
                 });
 
                 _sharedFeatures.multiAttr.call(circle, nodeAttr);
+                toggleNodeClickCallback(true);
 
                 var maxLabelHeight = 2 * Math.PI * (multipleTreeOffset + totalTreeLength + labelOffset) / descendants.filter(function (d) {
                     return !d.children || !d.children.length;
@@ -432,6 +434,16 @@ function RadialLineagePlotDirective($window, WindowResize) {
                     }
 
                     rotateOld = rotate;
+                }
+
+                function toggleNodeClickCallback(active) {
+                    if (scope.nodeClickCallback === undefined) return;
+
+                    function nodeClickCallback(d) {
+                        scope.nodeClickCallback(d.data, d3.event);
+                    }
+
+                    node.on('click', active ? nodeClickCallback : null);
                 }
 
                 function mouse(element) {
@@ -540,6 +552,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
                         });
                     } else {
                         node.on("click", null);
+                        toggleNodeClickCallback(true);
                         chart.on("mousedown", null).on("mouseup", null).on("mousemove", null);
                     }
                 }

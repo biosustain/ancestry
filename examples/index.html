@@ -15,9 +15,9 @@
     </style>
 </head>
 <body ng-controller="AppController" layout="column" ng-cloak flex>
-<lineage-plot value="treeData2" selected-nodes="selectedNodes"></lineage-plot>
-<lineage-scatter-plot value="treeData" flex></lineage-scatter-plot>
-<radial-lineage-plot value="radialPlotData"></radial-lineage-plot>
-<radial-phylogenetic-tree value="phyloData" branchlength="showBranchLengths"></radial-phylogenetic-tree>
+<lineage-plot value="treeData2" selected-nodes="selectedNodes" node-click-callback="nodeClickCallback"></lineage-plot>
+<lineage-scatter-plot value="treeData" node-click-callback="nodeClickCallback" flex></lineage-scatter-plot>
+<radial-lineage-plot value="radialPlotData" node-click-callback="nodeClickCallback"></radial-lineage-plot>
+<radial-phylogenetic-tree value="phyloData" branchlength="showBranchLengths" node-click-callback="nodeClickCallback"></radial-phylogenetic-tree>
 </body>
 </html>
