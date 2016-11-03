@@ -110,7 +110,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                 var width = layout.width || elementWidth,
                     height = layout.height;
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
                 if (layout.legend.show) {
                     if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
@@ -165,7 +165,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.backgroundColour || layout.backgroundColour).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -374,6 +374,8 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                 }).on("mouseover", mouseovered(true)).on("mouseout", mouseovered(false));
 
                 _sharedFeatures.multiAttr.call(label, layout.outerNodeLabel);
+
+                svg.selectAll("text").attr("fill", layout.textColour);
 
                 legend.each(moveToFront);
                 titleSVG.each(moveToFront);
@@ -652,7 +654,8 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
-    background: "none",
+    backgroundColour: "none",
+    textColour: "black",
     margin: {
         top: 10,
         bottom: 10,
@@ -692,7 +695,7 @@ var layoutTemplate = {
             y: "inside"
         },
         orientation: "vertical",
-        background: null
+        backgroundColour: null
     }
 };
 

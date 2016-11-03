@@ -124,7 +124,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     width = layout.width || elementWidth,
                     height = layout.height;
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
                 if (layout.title) margin.top += legendOut.top ? 26 : 25;
                 if (layout.xAxis.title) margin.bottom += legendOut.bottom ? 15 : 18;
@@ -176,7 +176,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.backgroundColour || layout.backgroundColour).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -339,10 +339,10 @@ function LineageScatterPlotDirective($window, WindowResize) {
                 }
 
                 // apply styles and attributes for png download purposes
-                svg.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges").attr("stroke", "gray");
+                svg.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges");
                 svg.selectAll(".tick text").attr("font-size", 12);
-                svg.selectAll("path.domain").attr("stroke", "gray");
                 svg.selectAll("path.domain").style("shape-rendering", "crispEdges");
+                svg.selectAll(".axis path, .axis line").attr("stroke", layout.axisColour);
 
                 var mouseRect = mouseCaptureGroup.append("rect").attr("id", "mouse-capture").attr("x", -margin.left).attr("y", -margin.top).attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).style("fill", "transparent");
 
@@ -428,6 +428,8 @@ function LineageScatterPlotDirective($window, WindowResize) {
 
                 _sharedFeatures.multiAttr.call(label, layout.nodeLabel);
                 _sharedFeatures.multiAttr.call(label, initialLabelPosition);
+
+                svg.selectAll("text").attr("fill", layout.textColour);
 
                 var maxNodeLabelLength = d3.max(label.data().map(function (d) {
                     return d.bboxLabel.width;
@@ -579,10 +581,10 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     xAxisSVG.call(xAxis.scale(zoomTransform.rescaleX(xScale)));
                     yAxisSVG.call(yAxis.scale(zoomTransform.rescaleY(yScale)));
 
-                    svg.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges").attr("stroke", "gray");
-                    svg.selectAll(".tick text").attr("font-size", 12);
-                    svg.selectAll("path.domain").attr("stroke", "gray");
+                    svg.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges");
+                    svg.selectAll(".tick text").attr("font-size", 12).attr("fill", layout.textColour);
                     svg.selectAll("path.domain").style("shape-rendering", "crispEdges");
+                    svg.selectAll(".axis line").attr("stroke", layout.axisColour);
 
                     _sharedFeatures.multiAttr.call(circle, (0, _sharedFeatures.scaleProperties)(nodeAttr, scale, true));
 
@@ -687,7 +689,8 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
-    background: "none",
+    backgroundColour: "none",
+    textColour: "black",
     margin: {
         right: 10,
         left: 10,
@@ -702,6 +705,7 @@ var layoutTemplate = {
         title: null,
         format: null
     },
+    axisColour: "gray",
     nodeTypes: {},
     nodeLabel: {
         "font-size": 12,
@@ -754,7 +758,7 @@ var layoutTemplate = {
             y: "inside"
         },
         orientation: "vertical",
-        background: null
+        backgroundColour: null
     }
 };
 

@@ -1,9 +1,9 @@
-.ancestry .axis path,
-.ancestry .axis line {
-    fill: none;
-    stroke: grey;
-    shape-rendering: crispEdges;
-}
+/*.ancestry .axis path,*/
+/*.ancestry .axis line {*/
+    /*fill: none;*/
+    /*stroke: grey;*/
+    /*shape-rendering: crispEdges;*/
+/*}*/
 
 .ancestry .tick text{
     font-size: 12px;

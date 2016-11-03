@@ -150,7 +150,7 @@ function LineagePlotDirective($window, WindowResize) {
                 // render chart area
                 svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
                 var chart = svg.append("g");
 
@@ -197,7 +197,7 @@ function LineagePlotDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.backgroundColour || layout.backgroundColour).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -281,8 +281,8 @@ function LineagePlotDirective($window, WindowResize) {
                 xAxis.tickSizeInner(-height);
                 axisSVG.attr("transform", 'translate(0, ' + height + ')').call(xAxis);
                 axisSVG.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges");
-                axisSVG.selectAll("path.domain").attr("stroke", "grey");
                 axisSVG.selectAll("path.domain").style("shape-rendering", "crispEdges");
+                svg.selectAll(".axis path, .axis line").attr("stroke", layout.axis.colour);
 
                 chart.attr("transform", 'translate(' + margin.left + ', ' + margin.top + ')');
 
@@ -396,6 +396,8 @@ function LineagePlotDirective($window, WindowResize) {
 
                 _sharedFeatures.multiAttr.call(label, layout.nodeLabel);
                 _sharedFeatures.multiAttr.call(label, initialLabelPosition);
+
+                svg.selectAll("text").attr("fill", layout.textColour);
 
                 var maxNodeLabelLength = d3.max(label.data().map(function (d) {
                     return d.bboxLabel.width;
@@ -557,6 +559,7 @@ function LineagePlotDirective($window, WindowResize) {
                     }) / scale));
                     axisSVG.call(xAxis.scale(zoomTransform.rescaleX(xScale)));
                     axisSVG.selectAll(".tick line").style("shape-rendering", "crispEdges").attr("opacity", 0.2);
+                    svg.selectAll(".tick text").attr("font-size", 12).attr("fill", layout.textColour);
                     if (layout.axis.gridOnly) {
                         chart.selectAll("g.x-axis g.tick text").style("opacity", 1e-6);
                     }
@@ -668,7 +671,8 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
-    background: "none",
+    backgroundColour: "none",
+    textColour: "black",
     margin: {
         right: 10,
         left: 10,
@@ -677,6 +681,7 @@ var layoutTemplate = {
     },
     axis: {
         title: "",
+        colour: "gray",
         show: true,
         gridOnly: false,
         valueProperty: "default"
@@ -733,7 +738,7 @@ var layoutTemplate = {
             y: "inside"
         },
         orientation: "vertical",
-        background: null
+        backgroundColour: null
     }
 };
 
