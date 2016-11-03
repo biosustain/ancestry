@@ -310,9 +310,9 @@ let data2 = {
             enabled: "onDelay",
             updateDelay: 500
         },
-        groupSelection: {
-            enabled: true
-        },
+        //groupSelection: {
+        //    enabled: true
+        //},
         heatmap: {
             enabled: true,
             title: "z values",

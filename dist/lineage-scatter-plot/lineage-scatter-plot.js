@@ -649,7 +649,9 @@ function LineageScatterPlotDirective($window, WindowResize) {
                 }
 
                 function toggleSelect(toggle) {
-                    mouseRect.on("mousedown", toggle ? mouseDown : null);
+                    if (layout.groupSelection.enabled) {
+                        mouseRect.on("mousedown", toggle ? mouseDown : null);
+                    }
                     circle.on("click", toggle ? click : null);
                     if (!toggle) {
                         toggleNodeClickCallback(true);
