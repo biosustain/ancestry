@@ -13,11 +13,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function WindowResize($window, $rootScope) {
     var window = _angular2.default.element($window);
     var width = window[0].innerWidth;
+    var height = window[0].innerHeight;
 
     _angular2.default.element($window).on('resize', function (event) {
+        console.log(window[0]);
         var newWidth = window[0].innerWidth;
-        if (width != newWidth) {
-            $rootScope.$broadcast('window-resize', width = newWidth);
+        var newHeight = window[0].innerHeight;
+        if (width != newWidth || height != newHeight) {
+            $rootScope.$broadcast('window-resize', width = newWidth, height = newHeight);
         }
     });
 }

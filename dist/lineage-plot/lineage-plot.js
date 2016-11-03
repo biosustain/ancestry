@@ -36,7 +36,7 @@ function LineagePlotDirective($window, WindowResize) {
 
             element.addClass("ancestry ancestry-lineage-plot");
 
-            var svg = d3.select(element[0]).style("position", "relative").append("svg").style('width', '100%');
+            var svg = d3.select(element[0]).style("position", "relative").append("svg").style('width', '100%').style('height', '100%');
 
             var maxAllowedDepth = 180,
                 mouseStart = null,
@@ -136,7 +136,8 @@ function LineagePlotDirective($window, WindowResize) {
                 var isTimePlot = false; //trees[0].generation instanceof Date;
 
 
-                var elementWidth = d3.select(element[0]).node().offsetWidth;
+                var elementWidth = element[0].offsetWidth,
+                    elementHeight = element[0].offsetHeight;
 
                 var margin = layout.margin;
 
@@ -145,7 +146,7 @@ function LineagePlotDirective($window, WindowResize) {
                 if (showAxisTitle) margin.bottom += legendOut.bottom ? 16 : 18;
 
                 var width = layout.width || elementWidth,
-                    height = layout.height;
+                    height = layout.height || elementHeight;
 
                 // render chart area
                 svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
@@ -277,7 +278,7 @@ function LineagePlotDirective($window, WindowResize) {
                     })));
                 }
 
-                height = layout.height - margin.top - margin.bottom;
+                height = (layout.height || elementHeight) - margin.top - margin.bottom;
                 xAxis.tickSizeInner(-height);
                 axisSVG.attr("transform", 'translate(0, ' + height + ')').call(xAxis);
                 axisSVG.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges");

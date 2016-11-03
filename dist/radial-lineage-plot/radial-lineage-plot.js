@@ -33,7 +33,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
 
             element.addClass("ancestry ancestry-radial-lineage-plot");
 
-            var svg = d3.select(element[0]).style("position", "relative").append("svg").style("width", "100%");
+            var svg = d3.select(element[0]).style("position", "relative").append("svg").style("width", "100%").style('height', '100%');
 
             var colours = d3.scaleOrdinal(d3.schemeCategory10),
                 hovering = false,
@@ -75,7 +75,8 @@ function RadialLineagePlotDirective($window, WindowResize) {
                     return a.name.length > b.name.length ? a : b;
                 }).name : "";
 
-                var elementWidth = element[0].offsetWidth;
+                var elementWidth = element[0].offsetWidth,
+                    elementHeight = element[0].offsetHeight;
 
                 var isMultipleTree = treeData.length > 1,
                     multipleTreeOffset = isMultipleTree ? 30 : 0,
@@ -103,7 +104,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
                     titleSVG = d3.select();
 
                 var width = layout.width || elementWidth,
-                    height = layout.height;
+                    height = layout.height || elementHeight;
 
                 svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
@@ -180,7 +181,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
                 }
 
                 width = (layout.width || elementWidth) - margin.right - margin.left;
-                height = layout.height - margin.top - margin.bottom;
+                height = (layout.height || elementHeight) - margin.top - margin.bottom;
 
                 var r = Math.min(height, width) / 2,
                     totalTreeLength = r - maxLabelLength - labelOffset - multipleTreeOffset;

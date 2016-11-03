@@ -34,7 +34,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
 
             element.addClass("ancestry ancestry-radial-phylogenetic-tree");
 
-            var svg = d3.select(element[0]).style("position", "relative").append("svg").style("width", "100%");
+            var svg = d3.select(element[0]).style("position", "relative").append("svg").style("width", "100%").style('height', '100%');
 
             var hovering = false,
                 virtualRoot = null,
@@ -75,7 +75,8 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                     layout = (0, _sharedFeatures.mergeTemplateLayout)(copy.layout, layoutTemplate),
                     pathname = $window.location.pathname;
 
-                var elementWidth = element[0].offsetWidth;
+                var elementWidth = element[0].offsetWidth,
+                    elementHeight = element[0].offsetHeight;
 
                 treeData = treeData.map(function (t) {
                     return collapseSeries(t, visibleSeries);
@@ -108,7 +109,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                     titleSVG = d3.select();
 
                 var width = layout.width || elementWidth,
-                    height = layout.height;
+                    height = layout.height || elementHeight;
 
                 svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
@@ -187,7 +188,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                 }
 
                 width = (layout.width || elementWidth) - margin.right - margin.left;
-                height = layout.height - margin.top - margin.bottom;
+                height = (layout.height || elementHeight) - margin.top - margin.bottom;
 
                 var r = Math.min(height, width) / 2;
 

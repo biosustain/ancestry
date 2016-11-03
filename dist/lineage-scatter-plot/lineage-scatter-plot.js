@@ -39,7 +39,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
             var defaultTimeFormat = "%d %b %y",
                 defaultScalarFormat = "g";
 
-            var svg = d3.select(element[0]).style("position", "relative").append("svg").style('width', '100%');
+            var svg = d3.select(element[0]).style("position", "relative").append("svg").style('width', '100%').style('height', '100%');
 
             var //links,
             mouseStart = void 0,
@@ -67,7 +67,8 @@ function LineageScatterPlotDirective($window, WindowResize) {
                 // clean svg before rendering plot
                 svg.selectAll('*').remove();
 
-                var elementWidth = d3.select(element[0]).node().offsetWidth;
+                var elementWidth = element[0].offsetWidth,
+                    elementHeight = element[0].offsetHeight;
 
                 var marginRatio = { axisX: 0.15, axisY: 0.1 };
 
@@ -122,7 +123,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
 
                 var margin = layout.margin,
                     width = layout.width || elementWidth,
-                    height = layout.height;
+                    height = layout.height || elementHeight;
 
                 svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.backgroundColour);
 
@@ -231,7 +232,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
                 // and horizontal
                 xExtent[0] -= xMargin;xExtent[1] += xMargin;
 
-                height = layout.height - margin.top - margin.bottom;
+                height = (layout.height || elementHeight) - margin.top - margin.bottom;
 
                 // define x scale
                 var xScale = d3.scaleLinear() //(isTimePlot ? d3.time.scale() : d3.scaleLinear())
