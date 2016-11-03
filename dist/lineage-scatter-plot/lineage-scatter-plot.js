@@ -124,7 +124,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     width = layout.width || elementWidth,
                     height = layout.height;
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", "white");
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
 
                 if (layout.title) margin.top += legendOut.top ? 26 : 25;
                 if (layout.xAxis.title) margin.bottom += legendOut.bottom ? 15 : 18;
@@ -176,7 +176,7 @@ function LineageScatterPlotDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -687,6 +687,7 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
+    background: "none",
     margin: {
         right: 10,
         left: 10,
@@ -752,7 +753,8 @@ var layoutTemplate = {
             x: "outside",
             y: "inside"
         },
-        orientation: "vertical"
+        orientation: "vertical",
+        background: null
     }
 };
 

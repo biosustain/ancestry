@@ -327,7 +327,7 @@ let data2 = {
                 "y": "center"
             },
             anchor: {
-                "x": "outside",
+                "x": "inside",
                 "y": "inside"
             },
             orientation: "vertical"
@@ -378,7 +378,8 @@ let data5 = {
                 "x": "inside",
                 "y": "outside"
             },
-            orientation: "horizontal"
+            orientation: "horizontal",
+            background: "lightblue"
         }
     }
 };

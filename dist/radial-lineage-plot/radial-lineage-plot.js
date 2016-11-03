@@ -105,7 +105,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
                 var width = layout.width || elementWidth,
                     height = layout.height;
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", "white");
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
 
                 if (layout.legend.show) {
                     if (layout.legend.anchor.x == "outside") legendOut[layout.legend.position.x] = true;
@@ -158,7 +158,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).onClick(legendClick).maxSize({ width: width, height: height }).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -685,6 +685,7 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
+    background: "none",
     margin: {
         top: 10,
         bottom: 10,
@@ -727,7 +728,8 @@ var layoutTemplate = {
             x: "outside",
             y: "inside"
         },
-        orientation: "vertical"
+        orientation: "vertical",
+        background: null
     }
 };
 

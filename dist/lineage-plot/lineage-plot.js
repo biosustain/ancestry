@@ -150,7 +150,7 @@ function LineagePlotDirective($window, WindowResize) {
                 // render chart area
                 svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
 
-                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", "white");
+                svg.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height).attr("fill", layout.background);
 
                 var chart = svg.append("g");
 
@@ -197,7 +197,7 @@ function LineagePlotDirective($window, WindowResize) {
 
                     var splitAfter = orientation === "horizontal" ? 0 : 1;
 
-                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
+                    var drawLegend = (0, _sharedFeatures.d3legend)().splitAfter(splitAfter).position(_pos).anchor(anchor).seriesNames(seriesNames).colourScale(colours).backgroundColour(layout.legend.background || layout.background).maxSize({ width: width, height: height }).onClick(legendClick).selectedItems(visibleSeries);
 
                     legend = chart.append("g").attr("class", "ancestry-legend").call(drawLegend);
 
@@ -668,6 +668,7 @@ var layoutTemplate = {
     title: null,
     width: null,
     height: 600,
+    background: "none",
     margin: {
         right: 10,
         left: 10,
@@ -731,7 +732,8 @@ var layoutTemplate = {
             x: "outside",
             y: "inside"
         },
-        orientation: "vertical"
+        orientation: "vertical",
+        background: null
     }
 };
 

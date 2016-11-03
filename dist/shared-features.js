@@ -60,7 +60,8 @@ function d3legend() {
         horizontalItemSpacing = 20,
         padding = 10,
         shapeSize = 10,
-        maxSize = { width: -1, height: -1 };
+        maxSize = { width: -1, height: -1 },
+        background = "white";
 
     function legend(g) {
         splitAfter = splitAfter.clamp(0, seriesNames.length);
@@ -93,8 +94,8 @@ function d3legend() {
         if (position.y === "top" && anchor.y === "inside" || position.y === "bottom" && anchor.y === "outside") legendVerticalOffset = 0;else if (position.y === "top" && anchor.y === "outside" || position.y === "bottom" && anchor.y === "inside") legendVerticalOffset = -h;else if (position.y === "center" && (position.x === "right" || position.x === "left")) legendVerticalOffset = -h / 2;
 
         if (position.x === "left" && anchor.x === "inside" || position.x === "right" && anchor.x === "outside") legendHorizontalOffset = 0;else if (position.x === "left" && anchor.x === "outside" || position.x === "right" && anchor.x === "inside") legendHorizontalOffset = -w;else if (position.x === "center" && (position.y === "top" || position.y === "bottom")) legendHorizontalOffset = -w / 2;
-
-        g.append("rect").attr("x", legendHorizontalOffset).attr("y", legendVerticalOffset).attr("width", w).attr("height", h).attr("fill", "white").style("opacity", 0.75);
+        console.log(background);
+        g.append("rect").attr("x", legendHorizontalOffset).attr("y", legendVerticalOffset).attr("width", w).attr("height", h).attr("fill", background).style("opacity", 0.75);
 
         var item = g.selectAll("g.legend-item").data(seriesNames);
 
@@ -155,6 +156,12 @@ function d3legend() {
     legend.colourScale = function (x) {
         if (!arguments.length) return colourScale;
         colourScale = x;
+        return legend;
+    };
+
+    legend.backgroundColour = function (x) {
+        if (!arguments.length) return background;
+        background = x;
         return legend;
     };
 
