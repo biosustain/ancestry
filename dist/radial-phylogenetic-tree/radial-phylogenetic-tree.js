@@ -28,7 +28,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
         scope: {
             value: '=',
             branchlength: '=',
-            nodeClick: '='
+            nodeClick: '&'
         },
         link: function link(scope, element, attributes) {
 
@@ -392,7 +392,7 @@ function RadialPhylogeneticTreeDirective($window, WindowResize) {
                     if (scope.nodeClick === undefined || nodeCircle == null) return;
 
                     function nodeClickCallback(d) {
-                        scope.nodeClick(d.data, d3.event);
+                        scope.nodeClick({ $event: d3.event, $node: d.data });
                     }
 
                     nodeCircle.on('click', active ? nodeClickCallback : null);

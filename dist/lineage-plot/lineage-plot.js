@@ -30,7 +30,7 @@ function LineagePlotDirective($window, WindowResize) {
         scope: {
             value: '=',
             selectedNodes: '=',
-            nodeClick: '='
+            nodeClick: '&'
         },
         link: function link(scope, element, attributes) {
 
@@ -532,7 +532,7 @@ function LineagePlotDirective($window, WindowResize) {
                     if (scope.nodeClick === undefined) return;
 
                     function nodeClickCallback(d) {
-                        scope.nodeClick(d.data, d3.event);
+                        scope.nodeClick({ $event: d3.event, $node: d.data });
                     }
 
                     circle.on('click', active ? nodeClickCallback : null);
