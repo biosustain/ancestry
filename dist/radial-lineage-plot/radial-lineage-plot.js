@@ -27,7 +27,7 @@ function RadialLineagePlotDirective($window, WindowResize) {
         restrict: 'EA',
         scope: {
             value: '=',
-            nodeClickCallback: '='
+            nodeClick: '='
         },
         link: function link(scope, element, attributes) {
 
@@ -437,10 +437,10 @@ function RadialLineagePlotDirective($window, WindowResize) {
                 }
 
                 function toggleNodeClickCallback(active) {
-                    if (scope.nodeClickCallback === undefined) return;
+                    if (scope.nodeClick === undefined) return;
 
                     function nodeClickCallback(d) {
-                        scope.nodeClickCallback(d.data, d3.event);
+                        scope.nodeClick(d.data, d3.event);
                     }
 
                     node.on('click', active ? nodeClickCallback : null);
