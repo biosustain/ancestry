@@ -366,10 +366,12 @@ function LineageScatterPlotDirective($window, WindowResize) {
 
                 marker.append("path").attr("d", "M0,-4L10,0L0,4").attr("fill", layout.link.stroke).attr("class", "arrowHead");
 
-                defs.append("svg:clipPath").attr("id", "lineage-scatter-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+                var clipRectId = 'lineage-scatter-clip-rect' + d3.selectAll("clipPath").size();
+
+                defs.append("svg:clipPath").attr("id", clipRectId).append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
 
                 // render links
-                var plotArea = chart.append("g").attr("id", "scatter-plot-area").attr("clip-path", 'url(' + pathname + '#lineage-scatter-clip-rect)').append("g");
+                var plotArea = chart.append("g").attr("id", "scatter-plot-area").attr("clip-path", 'url(' + pathname + '#' + clipRectId + ')').append("g");
 
                 if (layout.heatmap.enabled) {
                     heatmapCircle = plotArea.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(nodesData.filter(function (n) {

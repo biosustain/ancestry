@@ -301,7 +301,9 @@ function LineagePlotDirective($window, WindowResize) {
                     node.x = xScale(node.data.generation);
                 });
 
-                var clip = defs.append("svg:clipPath").attr("id", "lineage-clip-rect").append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
+                var clipRectId = 'lineage-scatter-clip-rect' + d3.selectAll("clipPath").size();
+
+                var clip = defs.append("svg:clipPath").attr("id", clipRectId).append("svg:rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", height);
 
                 svg.attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom);
 
@@ -344,7 +346,7 @@ function LineagePlotDirective($window, WindowResize) {
 
                 var mouseRect = mouseCaptureGroup.append("rect").attr("id", "mouse-capture").attr("width", width).attr("height", height).style("fill", "transparent");
 
-                var treesContainer = chart.append("g").attr("clip-path", 'url(' + pathname + '#lineage-clip-rect)').append("g").attr("id", "trees-containter");
+                var treesContainer = chart.append("g").attr("clip-path", 'url(' + pathname + '#' + clipRectId + ')').append("g").attr("id", "trees-containter");
 
                 if (layout.heatmap.enabled) {
                     heatmapCircle = treesContainer.append("g").attr("class", "heatmap-layer").selectAll("circle.heatmap-circle").data(descendants.filter(function (n) {
