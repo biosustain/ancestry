@@ -370,15 +370,21 @@ function LineagePlotDirective($window, WindowResize) {
                     return !selectedNodes.has(d.data.name) ? '#FFF' : colours(d.data.series);
                 }).style("stroke", function (d) {
                     return colours(d.data.series);
-                }).on("mouseover", function (d, i) {
-                    var groupPos = this.getBoundingClientRect(),
-                        xPos = (groupPos.right + groupPos.left) / 2,
-                        yPos = groupPos.top,
-                        text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' + ('<span class="tooltip-text">' + d.data.name + '</span>');
-                    tooltip.html(text).position([xPos, yPos]).show();
-                }).on("mouseout", function (d) {
-                    tooltip.hide();
                 });
+
+                if (layout.tooltip.show) {
+                    circle.on("mouseover", function (d, i) {
+                        var _d3tooltip$getRelativ = _sharedFeatures.d3tooltip.getRelativePosition(this, element[0]);
+
+                        var xPos = _d3tooltip$getRelativ.x;
+                        var yPos = _d3tooltip$getRelativ.y;
+                        var seriesBar = layout.tooltip.showSeriesBar ? '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' : "";
+                        var text = seriesBar + ('<span class="tooltip-text">' + d.data.name + '</span>');
+                        tooltip.html(text).position([xPos, yPos]).show();
+                    }).on("mouseout", function (d) {
+                        tooltip.hide();
+                    });
+                }
 
                 toggleNodeClickCallback(true);
 
@@ -740,6 +746,10 @@ var layoutTemplate = {
         },
         orientation: "vertical",
         backgroundColour: null
+    },
+    tooltip: {
+        show: true,
+        showSeriesBar: false
     }
 };
 

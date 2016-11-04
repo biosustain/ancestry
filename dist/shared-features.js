@@ -335,6 +335,14 @@ var d3tooltip = exports.d3tooltip = function () {
             this.tip.html(content);
             return this;
         }
+    }], [{
+        key: 'getRelativePosition',
+        value: function getRelativePosition(el, parent) {
+            var elPos = el.getBoundingClientRect(),
+                parentPos = parent.getBoundingClientRect();
+
+            return { x: (elPos.right + elPos.left) / 2 - parentPos.left, y: elPos.top - parentPos.top };
+        }
     }]);
 
     return d3tooltip;

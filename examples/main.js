@@ -331,6 +331,9 @@ let data2 = {
                 "y": "inside"
             },
             orientation: "vertical"
+        },
+        tooltip: {
+            showSeriesBar: true
         }
     }
 };
