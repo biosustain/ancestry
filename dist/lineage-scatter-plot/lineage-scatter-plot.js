@@ -39,7 +39,9 @@ function LineageScatterPlotDirective($window, WindowResize) {
             var defaultTimeFormat = "%d %b %y",
                 defaultScalarFormat = "g";
 
-            var svg = d3.select(element[0]).style("position", "relative").append("svg").style('width', '100%').style('height', '100%');
+            var svg = d3.select(element[0]).style("position", "relative").append("svg");
+            //.style('width', '100%')
+            //.style('height', '100%');
 
             var //links,
             mouseStart = void 0,
