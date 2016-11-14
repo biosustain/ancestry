@@ -1,8 +1,8 @@
 /* */ 
-var stringifyBody = require('../stringifier/one-time').body;
-var stringifySelectors = require('../stringifier/one-time').selectors;
-var cleanUpSelectors = require('./clean-up').selectors;
-var isSpecial = require('./is-special');
+var stringifyBody = require("../stringifier/one-time").body;
+var stringifySelectors = require("../stringifier/one-time").selectors;
+var cleanUpSelectors = require("./clean-up").selectors;
+var isSpecial = require("./is-special");
 function unsafeSelector(value) {
   return /\.|\*| :/.test(value);
 }

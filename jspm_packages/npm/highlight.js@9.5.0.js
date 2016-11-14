@@ -1,1 +1,1 @@
-module.exports = require("npm:highlight.js@9.5.0/lib/index.js");
+module.exports = require("npm:highlight.js@9.5.0/lib/index");

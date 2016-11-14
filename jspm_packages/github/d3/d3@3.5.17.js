@@ -1,1 +1,0 @@
-module.exports = require("github:d3/d3@3.5.17/d3");

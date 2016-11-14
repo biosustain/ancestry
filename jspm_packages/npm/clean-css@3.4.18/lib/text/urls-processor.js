@@ -1,8 +1,8 @@
 /* */ 
 (function(process) {
-  var EscapeStore = require('./escape-store');
-  var reduceUrls = require('../urls/reduce');
-  var lineBreak = require('os').EOL;
+  var EscapeStore = require("./escape-store");
+  var reduceUrls = require("../urls/reduce");
+  var lineBreak = require("os").EOL;
   function UrlsProcessor(context, saveWaypoints, keepUrlQuotes) {
     this.urls = new EscapeStore('URL');
     this.context = context;
@@ -48,4 +48,4 @@
     return tempData.length > 0 ? tempData.join('') + data.substring(cursor, data.length) : data;
   };
   module.exports = UrlsProcessor;
-})(require('process'));
+})(require("process"));

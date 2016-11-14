@@ -1,8 +1,8 @@
 /* */ 
-var webpack = require('webpack'),
-    path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    HtmlPlugin = require('html-webpack-plugin');
+var webpack = require("webpack"),
+    path = require("path"),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    HtmlPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {app: ['./src/app']},
   output: {

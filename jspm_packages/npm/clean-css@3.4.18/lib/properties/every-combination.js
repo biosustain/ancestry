@@ -1,5 +1,5 @@
 /* */ 
-var shallowClone = require('./clone').shallow;
+var shallowClone = require("./clone").shallow;
 var MULTIPLEX_SEPARATOR = ',';
 function everyCombination(fn, left, right, validator) {
   var samePositon = !left.shorthand && !right.shorthand && !left.multiplex && !right.multiplex;

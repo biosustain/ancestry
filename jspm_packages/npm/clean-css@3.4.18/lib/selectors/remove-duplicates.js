@@ -1,6 +1,6 @@
 /* */ 
-var stringifyBody = require('../stringifier/one-time').body;
-var stringifySelectors = require('../stringifier/one-time').selectors;
+var stringifyBody = require("../stringifier/one-time").body;
+var stringifySelectors = require("../stringifier/one-time").selectors;
 function removeDuplicates(tokens) {
   var matched = {};
   var moreThanOnce = [];

@@ -1,5 +1,5 @@
 /* */ 
-var wrapSingle = require('./wrap-for-optimizing').single;
+var wrapSingle = require("./wrap-for-optimizing").single;
 function deep(property) {
   var cloned = shallow(property);
   for (var i = property.components.length - 1; i >= 0; i--) {

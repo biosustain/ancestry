@@ -1,12 +1,12 @@
 /* */ 
 (function(Buffer, process) {
-  var SourceMapConsumer = require('source-map').SourceMapConsumer;
-  var fs = require('fs');
-  var path = require('path');
-  var http = require('http');
-  var https = require('https');
-  var url = require('url');
-  var override = require('./object').override;
+  var SourceMapConsumer = require("source-map").SourceMapConsumer;
+  var fs = require("fs");
+  var path = require("path");
+  var http = require("http");
+  var https = require("https");
+  var url = require("url");
+  var override = require("./object").override;
   var MAP_MARKER = /\/\*# sourceMappingURL=(\S+) \*\//;
   var REMOTE_RESOURCE = /^(https?:)?\/\//;
   var DATA_URI = /^data:(\S*?)?(;charset=[^;]+)?(;[^,]+?)?,(.+)/;
@@ -222,4 +222,4 @@
     return _resolveSources(this, toResolve, whenDone);
   };
   module.exports = InputSourceMapStore;
-})(require('buffer').Buffer, require('process'));
+})(require("buffer").Buffer, require("process"));

@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./toArray');
+module.exports = require("./toArray");

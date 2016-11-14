@@ -1,5 +1,5 @@
 /* */ 
-var split = require('../utils/split');
+var split = require("../utils/split");
 var widthKeywords = ['thin', 'thick', 'medium', 'inherit', 'initial'];
 var allUnits = ['px', '%', 'em', 'in', 'cm', 'mm', 'ex', 'pt', 'pc', 'ch', 'rem', 'vh', 'vm', 'vmin', 'vmax', 'vw'];
 var cssUnitRegexStr = '(\\-?\\.?\\d+\\.?\\d*(' + allUnits.join('|') + '|)|auto|inherit)';

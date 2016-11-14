@@ -37,7 +37,7 @@
       "angular": "github:angular/bower-angular@^1.5.7",
       "angular-highlightjs": "npm:angular-highlightjs@^0.6.1",
       "angular/bower-angular": "github:angular/bower-angular@1.5.7",
-      "biosustain/ancestry": "github:biosustain/ancestry@1.2.5"
+      "biosustain/ancestry": "github:biosustain/ancestry@1.2.9"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

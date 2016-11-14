@@ -174,7 +174,7 @@
   if (!process.binding)
     process.binding = function(name) {
       if (name === 'evals')
-        return require('vm');
+        return require("vm");
       else
         throw new Error('No such module');
     };
@@ -366,11 +366,11 @@
     };
   });
   require.define("/entry.js", function(require, module, exports, __dirname, __filename) {
-    var vm = require('vm');
+    var vm = require("vm");
     $(function() {
       var res = vm.runInNewContext('a + 5', {a: 100});
       $('#res').text(res);
     });
   });
-  require('/entry');
-})(require('process'));
+  require("/entry");
+})(require("process"));

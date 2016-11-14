@@ -1,6 +1,6 @@
 /* */ 
-var $export = require('./$.export'),
-    sign = require('./$.math-sign'),
+var $export = require("./$.export"),
+    sign = require("./$.math-sign"),
     pow = Math.pow,
     EPSILON = pow(2, -52),
     EPSILON32 = pow(2, -23),

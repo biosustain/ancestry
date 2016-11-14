@@ -1,6 +1,6 @@
 /* */ 
-var canReorder = require('./reorderable').canReorder;
-var extractProperties = require('./extractor');
+var canReorder = require("./reorderable").canReorder;
+var extractProperties = require("./extractor");
 function mergeMediaQueries(tokens) {
   var candidates = {};
   var reduced = [];

@@ -1,13 +1,13 @@
 /* */ 
-var optimizeProperties = require('../properties/optimizer');
-var removeDuplicates = require('./remove-duplicates');
-var mergeAdjacent = require('./merge-adjacent');
-var reduceNonAdjacent = require('./reduce-non-adjacent');
-var mergeNonAdjacentBySelector = require('./merge-non-adjacent-by-selector');
-var mergeNonAdjacentByBody = require('./merge-non-adjacent-by-body');
-var restructure = require('./restructure');
-var removeDuplicateMediaQueries = require('./remove-duplicate-media-queries');
-var mergeMediaQueries = require('./merge-media-queries');
+var optimizeProperties = require("../properties/optimizer");
+var removeDuplicates = require("./remove-duplicates");
+var mergeAdjacent = require("./merge-adjacent");
+var reduceNonAdjacent = require("./reduce-non-adjacent");
+var mergeNonAdjacentBySelector = require("./merge-non-adjacent-by-selector");
+var mergeNonAdjacentByBody = require("./merge-non-adjacent-by-body");
+var restructure = require("./restructure");
+var removeDuplicateMediaQueries = require("./remove-duplicate-media-queries");
+var mergeMediaQueries = require("./merge-media-queries");
 function removeEmpty(tokens) {
   for (var i = 0,
       l = tokens.length; i < l; i++) {

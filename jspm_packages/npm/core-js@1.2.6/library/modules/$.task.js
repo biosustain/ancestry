@@ -1,10 +1,10 @@
 /* */ 
 (function(process) {
-  var ctx = require('./$.ctx'),
-      invoke = require('./$.invoke'),
-      html = require('./$.html'),
-      cel = require('./$.dom-create'),
-      global = require('./$.global'),
+  var ctx = require("./$.ctx"),
+      invoke = require("./$.invoke"),
+      html = require("./$.html"),
+      cel = require("./$.dom-create"),
+      global = require("./$.global"),
       process = global.process,
       setTask = global.setImmediate,
       clearTask = global.clearImmediate,
@@ -41,7 +41,7 @@
     clearTask = function clearImmediate(id) {
       delete queue[id];
     };
-    if (require('./$.cof')(process) == 'process') {
+    if (require("./$.cof")(process) == 'process') {
       defer = function(id) {
         process.nextTick(ctx(run, id, 1));
       };
@@ -72,4 +72,4 @@
     set: setTask,
     clear: clearTask
   };
-})(require('process'));
+})(require("process"));

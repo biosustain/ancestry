@@ -1,7 +1,7 @@
 /* */ 
-var common = require('./common');
-var assert = require('assert');
-var events = require('../events');
+var common = require("./common");
+var assert = require("assert");
+var events = require("../../events@1.0.2");
 var after_checks = [];
 after(function() {
   for (var i = 0; i < after_checks.length; ++i) {

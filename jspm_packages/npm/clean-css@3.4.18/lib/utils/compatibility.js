@@ -1,5 +1,5 @@
 /* */ 
-var util = require('util');
+var util = require("util");
 var DEFAULTS = {
   '*': {
     colors: {opacity: true},

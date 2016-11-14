@@ -1,5 +1,5 @@
 /* */ 
-var split = require('../utils/split');
+var split = require("../utils/split");
 function extractSelectors(string, context) {
   var list = [];
   var metadata;

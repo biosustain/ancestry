@@ -1,35 +1,5 @@
-MultipleErrors: /home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:7:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:7:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:16: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:21: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:16: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:21: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:13: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:18: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:26: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:1: Unexpected reserved word export
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:8: Unexpected reserved word default
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:16: Semi-colon expected
+/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:7:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:7:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:16: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:9:21: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:16: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:10:21: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:13: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:11:18: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:14:26: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:1: Unexpected reserved word export,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:8: Unexpected reserved word default,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/app.js:16:16: Semi-colon expected
 
-MultipleErrors: /home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/home/home-controller.js:7:1: Unexpected reserved word export
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/home/home-controller.js:7:8: Semi-colon expected
+/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/home/home-controller.js:7:1: Unexpected reserved word export,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/home/home-controller.js:7:8: Semi-colon expected
 
-MultipleErrors: /home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:3:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:3:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:4:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:4:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:6:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:6:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:7:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:7:8: Semi-colon expected
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:8:1: Unexpected reserved word import
-/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:8:8: Semi-colon expected
+/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:3:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:3:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:4:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:4:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:6:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:6:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:7:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:7:8: Semi-colon expected,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:8:1: Unexpected reserved word import,/home/maciej/.jspm/packages/npm/angular-highlightjs@0.6.1/with-webpack/src/vendor.js:8:8: Semi-colon expected

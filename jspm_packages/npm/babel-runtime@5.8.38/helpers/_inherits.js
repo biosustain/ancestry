@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./inherits');
+module.exports = require("./inherits");

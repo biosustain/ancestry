@@ -1,13 +1,13 @@
 /* */ 
-var canOverride = require('./can-override');
-var compactable = require('./compactable');
-var deepClone = require('./clone').deep;
-var shallowClone = require('./clone').shallow;
-var hasInherit = require('./has-inherit');
-var restoreFromOptimizing = require('./restore-from-optimizing');
-var everyCombination = require('./every-combination');
-var sameVendorPrefixesIn = require('./vendor-prefixes').same;
-var stringifyProperty = require('../stringifier/one-time').property;
+var canOverride = require("./can-override");
+var compactable = require("./compactable");
+var deepClone = require("./clone").deep;
+var shallowClone = require("./clone").shallow;
+var hasInherit = require("./has-inherit");
+var restoreFromOptimizing = require("./restore-from-optimizing");
+var everyCombination = require("./every-combination");
+var sameVendorPrefixesIn = require("./vendor-prefixes").same;
+var stringifyProperty = require("../stringifier/one-time").property;
 var MULTIPLEX_SEPARATOR = ',';
 function nameMatchFilter(to) {
   return function(property) {

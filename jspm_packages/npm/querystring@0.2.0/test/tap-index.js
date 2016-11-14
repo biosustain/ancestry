@@ -1,3 +1,3 @@
 /* */ 
 "use strict";
-require('retape')(require('./index'));
+require("retape")(require("./index"));

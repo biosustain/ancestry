@@ -1,7 +1,7 @@
 /* */ 
 'use strict';
-var $export = require('./$.export');
-$export($export.S + $export.F * require('./$.fails')(function() {
+var $export = require("./$.export");
+$export($export.S + $export.F * require("./$.fails")(function() {
   function F() {}
   return !(Array.of.call(F) instanceof F);
 }), 'Array', {of: function of() {

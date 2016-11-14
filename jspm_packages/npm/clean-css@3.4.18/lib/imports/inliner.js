@@ -1,13 +1,13 @@
 /* */ 
 (function(process) {
-  var fs = require('fs');
-  var path = require('path');
-  var http = require('http');
-  var https = require('https');
-  var url = require('url');
-  var rewriteUrls = require('../urls/rewrite');
-  var split = require('../utils/split');
-  var override = require('../utils/object').override;
+  var fs = require("fs");
+  var path = require("path");
+  var http = require("http");
+  var https = require("https");
+  var url = require("url");
+  var rewriteUrls = require("../urls/rewrite");
+  var split = require("../utils/split");
+  var override = require("../utils/object").override;
   var MAP_MARKER = /\/\*# sourceMappingURL=(\S+) \*\//;
   var REMOTE_RESOURCE = /^(https?:)?\/\//;
   var NO_PROTOCOL_RESOURCE = /^\/\//;
@@ -280,4 +280,4 @@
     context.done.push(restoredImport);
   }
   module.exports = ImportInliner;
-})(require('process'));
+})(require("process"));

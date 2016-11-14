@@ -1,5 +1,5 @@
 /* */ 
-var http = require('http');
+var http = require("http");
 var https = module.exports;
 for (var key in http) {
   if (http.hasOwnProperty(key))

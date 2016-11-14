@@ -1,7 +1,7 @@
 /* */ 
-var $ = require('./$'),
-    global = require('./$.global'),
-    $export = require('./$.export'),
+var $ = require("./$"),
+    global = require("./$.global"),
+    $export = require("./$.export"),
     log = {},
     enabled = true;
 $.each.call(('assert,clear,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,' + 'info,isIndependentlyComposed,log,markTimeline,profile,profileEnd,table,' + 'time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(','), function(key) {
@@ -12,7 +12,7 @@ $.each.call(('assert,clear,count,debug,dir,dirxml,error,exception,group,groupCol
     }
   };
 });
-$export($export.G + $export.F, {log: require('./$.object-assign')(log.log, log, {
+$export($export.G + $export.F, {log: require("./$.object-assign")(log.log, log, {
     enable: function() {
       enabled = true;
     },

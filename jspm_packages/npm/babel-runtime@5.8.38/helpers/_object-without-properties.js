@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./objectWithoutProperties');
+module.exports = require("./objectWithoutProperties");

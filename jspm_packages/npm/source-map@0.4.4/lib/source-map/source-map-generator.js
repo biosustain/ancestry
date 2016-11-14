@@ -1,13 +1,13 @@
 /* */ 
 "format cjs";
 if (typeof define !== 'function') {
-  var define = require('amdefine')(module, require);
+  var define = require("amdefine")(module, require);
 }
 define(function(require, exports, module) {
-  var base64VLQ = require('./base64-vlq');
-  var util = require('./util');
-  var ArraySet = require('./array-set').ArraySet;
-  var MappingList = require('./mapping-list').MappingList;
+  var base64VLQ = require("./base64-vlq");
+  var util = require("./util");
+  var ArraySet = require("./array-set").ArraySet;
+  var MappingList = require("./mapping-list").MappingList;
   function SourceMapGenerator(aArgs) {
     if (!aArgs) {
       aArgs = {};

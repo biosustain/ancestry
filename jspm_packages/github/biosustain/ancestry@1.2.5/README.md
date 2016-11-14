@@ -1,1 +1,0 @@
-[Ancestry's website](http://biosustain.github.io/ancestry/)

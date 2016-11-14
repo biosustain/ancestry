@@ -1,10 +1,10 @@
 /* */ 
 'use strict';
-var $ = require('./$'),
-    descriptor = require('./$.property-desc'),
-    setToStringTag = require('./$.set-to-string-tag'),
+var $ = require("./$"),
+    descriptor = require("./$.property-desc"),
+    setToStringTag = require("./$.set-to-string-tag"),
     IteratorPrototype = {};
-require('./$.hide')(IteratorPrototype, require('./$.wks')('iterator'), function() {
+require("./$.hide")(IteratorPrototype, require("./$.wks")('iterator'), function() {
   return this;
 });
 module.exports = function(Constructor, NAME, next) {

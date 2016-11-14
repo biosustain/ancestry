@@ -1,5 +1,5 @@
 /* */ 
-var split = require('../utils/split');
+var split = require("../utils/split");
 var COMMA = ',';
 var FORWARD_SLASH = '/';
 var AT_RULE = 'at-rule';

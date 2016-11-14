@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./asyncToGenerator');
+module.exports = require("./asyncToGenerator");

@@ -1,6 +1,6 @@
 /* */ 
-var compactable = require('./compactable');
-var InvalidPropertyError = require('./invalid-property-error');
+var compactable = require("./compactable");
+var InvalidPropertyError = require("./invalid-property-error");
 function populateComponents(properties, validator, warnings) {
   for (var i = properties.length - 1; i >= 0; i--) {
     var property = properties[i];

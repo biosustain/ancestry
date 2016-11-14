@@ -18630,4 +18630,4 @@
       return "hljs";
     });
   }]);
-})(require('buffer').Buffer, require('process'));
+})(require("buffer").Buffer, require("process"));

@@ -1,8 +1,8 @@
 /* */ 
-var $ = require('./$'),
-    toObject = require('./$.to-object'),
-    IObject = require('./$.iobject');
-module.exports = require('./$.fails')(function() {
+var $ = require("./$"),
+    toObject = require("./$.to-object"),
+    IObject = require("./$.iobject");
+module.exports = require("./$.fails")(function() {
   var a = Object.assign,
       A = {},
       B = {},

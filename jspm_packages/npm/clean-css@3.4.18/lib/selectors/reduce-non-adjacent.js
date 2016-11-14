@@ -1,10 +1,10 @@
 /* */ 
 (function(process) {
-  var optimizeProperties = require('../properties/optimizer');
-  var stringifyBody = require('../stringifier/one-time').body;
-  var stringifySelectors = require('../stringifier/one-time').selectors;
-  var isSpecial = require('./is-special');
-  var cloneArray = require('../utils/clone-array');
+  var optimizeProperties = require("../properties/optimizer");
+  var stringifyBody = require("../stringifier/one-time").body;
+  var stringifySelectors = require("../stringifier/one-time").selectors;
+  var isSpecial = require("./is-special");
+  var cloneArray = require("../utils/clone-array");
   function reduceNonAdjacent(tokens, options, context) {
     var candidates = {};
     var repeated = [];
@@ -132,4 +132,4 @@
     }
   }
   module.exports = reduceNonAdjacent;
-})(require('process'));
+})(require("process"));

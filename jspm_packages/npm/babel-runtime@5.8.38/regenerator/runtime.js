@@ -1,10 +1,10 @@
 /* */ 
 (function(process) {
   "use strict";
-  var _Symbol = require('../core-js/symbol')["default"];
-  var _Object$create = require('../core-js/object/create')["default"];
-  var _Object$setPrototypeOf = require('../core-js/object/set-prototype-of')["default"];
-  var _Promise = require('../core-js/promise')["default"];
+  var _Symbol = require("../core-js/symbol")["default"];
+  var _Object$create = require("../core-js/object/create")["default"];
+  var _Object$setPrototypeOf = require("../core-js/object/set-prototype-of")["default"];
+  var _Promise = require("../core-js/promise")["default"];
   !(function(global) {
     "use strict";
     var hasOwn = Object.prototype.hasOwnProperty;
@@ -432,4 +432,4 @@
       }
     };
   })(typeof global === "object" ? global : typeof window === "object" ? window : typeof self === "object" ? self : undefined);
-})(require('process'));
+})(require("process"));

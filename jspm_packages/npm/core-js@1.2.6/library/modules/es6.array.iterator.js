@@ -1,10 +1,10 @@
 /* */ 
 'use strict';
-var addToUnscopables = require('./$.add-to-unscopables'),
-    step = require('./$.iter-step'),
-    Iterators = require('./$.iterators'),
-    toIObject = require('./$.to-iobject');
-module.exports = require('./$.iter-define')(Array, 'Array', function(iterated, kind) {
+var addToUnscopables = require("./$.add-to-unscopables"),
+    step = require("./$.iter-step"),
+    Iterators = require("./$.iterators"),
+    toIObject = require("./$.to-iobject");
+module.exports = require("./$.iter-define")(Array, 'Array', function(iterated, kind) {
   this._t = toIObject(iterated);
   this._i = 0;
   this._k = kind;

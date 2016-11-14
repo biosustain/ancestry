@@ -1,5 +1,5 @@
 /* */ 
-var $export = require('./$.export'),
+var $export = require("./$.export"),
     abs = Math.abs;
 $export($export.S, 'Math', {hypot: function hypot(value1, value2) {
     var sum = 0,

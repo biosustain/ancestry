@@ -1,12 +1,12 @@
 /* */ 
-var EscapeStore = require('./escape-store');
+var EscapeStore = require("./escape-store");
 var EXPRESSION_NAME = 'expression';
 var EXPRESSION_START = '(';
 var EXPRESSION_END = ')';
 var EXPRESSION_PREFIX = EXPRESSION_NAME + EXPRESSION_START;
 var BODY_START = '{';
 var BODY_END = '}';
-var lineBreak = require('os').EOL;
+var lineBreak = require("os").EOL;
 function findEnd(data, start) {
   var end = start + EXPRESSION_NAME.length;
   var level = 0;

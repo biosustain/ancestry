@@ -1,9 +1,9 @@
 /* */ 
-var $ = require('./$'),
-    $export = require('./$.export'),
-    ownKeys = require('./$.own-keys'),
-    toIObject = require('./$.to-iobject'),
-    createDesc = require('./$.property-desc');
+var $ = require("./$"),
+    $export = require("./$.export"),
+    ownKeys = require("./$.own-keys"),
+    toIObject = require("./$.to-iobject"),
+    createDesc = require("./$.property-desc");
 $export($export.S, 'Object', {getOwnPropertyDescriptors: function getOwnPropertyDescriptors(object) {
     var O = toIObject(object),
         setDesc = $.setDesc,

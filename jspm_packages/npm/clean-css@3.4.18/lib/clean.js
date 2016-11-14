@@ -1,25 +1,25 @@
 /* */ 
 (function(process) {
-  var ImportInliner = require('./imports/inliner');
-  var rebaseUrls = require('./urls/rebase');
-  var tokenize = require('./tokenizer/tokenize');
-  var simpleOptimize = require('./selectors/simple');
-  var advancedOptimize = require('./selectors/advanced');
-  var simpleStringify = require('./stringifier/simple');
-  var sourceMapStringify = require('./stringifier/source-maps');
-  var CommentsProcessor = require('./text/comments-processor');
-  var ExpressionsProcessor = require('./text/expressions-processor');
-  var FreeTextProcessor = require('./text/free-text-processor');
-  var UrlsProcessor = require('./text/urls-processor');
-  var Compatibility = require('./utils/compatibility');
-  var InputSourceMapTracker = require('./utils/input-source-map-tracker');
-  var SourceTracker = require('./utils/source-tracker');
-  var SourceReader = require('./utils/source-reader');
-  var Validator = require('./properties/validator');
-  var fs = require('fs');
-  var path = require('path');
-  var url = require('url');
-  var override = require('./utils/object').override;
+  var ImportInliner = require("./imports/inliner");
+  var rebaseUrls = require("./urls/rebase");
+  var tokenize = require("./tokenizer/tokenize");
+  var simpleOptimize = require("./selectors/simple");
+  var advancedOptimize = require("./selectors/advanced");
+  var simpleStringify = require("./stringifier/simple");
+  var sourceMapStringify = require("./stringifier/source-maps");
+  var CommentsProcessor = require("./text/comments-processor");
+  var ExpressionsProcessor = require("./text/expressions-processor");
+  var FreeTextProcessor = require("./text/free-text-processor");
+  var UrlsProcessor = require("./text/urls-processor");
+  var Compatibility = require("./utils/compatibility");
+  var InputSourceMapTracker = require("./utils/input-source-map-tracker");
+  var SourceTracker = require("./utils/source-tracker");
+  var SourceReader = require("./utils/source-reader");
+  var Validator = require("./properties/validator");
+  var fs = require("fs");
+  var path = require("path");
+  var url = require("url");
+  var override = require("./utils/object").override;
   var DEFAULT_TIMEOUT = 5000;
   var CleanCSS = module.exports = function CleanCSS(options) {
     options = options || {};
@@ -172,4 +172,4 @@
       advancedOptimize(tokens, options, context, true);
     return stringify(tokens, options, restoreEscapes, context.inputSourceMapTracker);
   }
-})(require('process'));
+})(require("process"));

@@ -136,4 +136,4 @@
       }
     };
   });
-})(require('process'));
+})(require("process"));

@@ -1,10 +1,10 @@
 /* */ 
-var compactable = require('./compactable');
-var deepClone = require('./clone').deep;
-var hasInherit = require('./has-inherit');
-var populateComponents = require('./populate-components');
-var wrapSingle = require('./wrap-for-optimizing').single;
-var everyCombination = require('./every-combination');
+var compactable = require("./compactable");
+var deepClone = require("./clone").deep;
+var hasInherit = require("./has-inherit");
+var populateComponents = require("./populate-components");
+var wrapSingle = require("./wrap-for-optimizing").single;
+var everyCombination = require("./every-combination");
 function mixedImportance(components) {
   var important;
   for (var name in components) {

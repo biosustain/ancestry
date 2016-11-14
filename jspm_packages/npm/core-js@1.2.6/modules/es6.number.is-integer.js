@@ -1,3 +1,3 @@
 /* */ 
-var $export = require('./$.export');
-$export($export.S, 'Number', {isInteger: require('./$.is-integer')});
+var $export = require("./$.export");
+$export($export.S, 'Number', {isInteger: require("./$.is-integer")});

@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./defineProperty');
+module.exports = require("./defineProperty");

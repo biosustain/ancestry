@@ -1,6 +1,6 @@
 /* */ 
-var $export = require('./$.export'),
-    log1p = require('./$.math-log1p'),
+var $export = require("./$.export"),
+    log1p = require("./$.math-log1p"),
     sqrt = Math.sqrt,
     $acosh = Math.acosh;
 $export($export.S + $export.F * !($acosh && Math.floor($acosh(Number.MAX_VALUE)) == 710), 'Math', {acosh: function acosh(x) {

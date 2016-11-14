@@ -1,6 +1,6 @@
 /* */ 
-var stringifySelectors = require('../stringifier/one-time').selectors;
-var stringifyValue = require('../stringifier/one-time').value;
+var stringifySelectors = require("../stringifier/one-time").selectors;
+var stringifyValue = require("../stringifier/one-time").value;
 var AT_RULE = 'at-rule';
 function extract(token) {
   var properties = [];

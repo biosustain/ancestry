@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./interopRequireDefault');
+module.exports = require("./interopRequireDefault");

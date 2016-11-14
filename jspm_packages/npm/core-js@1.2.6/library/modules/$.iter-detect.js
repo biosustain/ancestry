@@ -1,5 +1,5 @@
 /* */ 
-var ITERATOR = require('./$.wks')('iterator'),
+var ITERATOR = require("./$.wks")('iterator'),
     SAFE_CLOSING = false;
 try {
   var riter = [7][ITERATOR]();

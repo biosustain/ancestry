@@ -1,8 +1,8 @@
 /* */ 
-var $ = require('./$'),
-    $export = require('./$.export'),
-    anObject = require('./$.an-object');
-$export($export.S + $export.F * require('./$.fails')(function() {
+var $ = require("./$"),
+    $export = require("./$.export"),
+    anObject = require("./$.an-object");
+$export($export.S + $export.F * require("./$.fails")(function() {
   Reflect.defineProperty($.setDesc({}, 1, {value: 1}), 1, {value: 2});
 }), 'Reflect', {defineProperty: function defineProperty(target, propertyKey, attributes) {
     anObject(target);

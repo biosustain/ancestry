@@ -1,9 +1,9 @@
 /* */ 
-var global = require('./$.global'),
-    core = require('./$.core'),
-    hide = require('./$.hide'),
-    redefine = require('./$.redefine'),
-    ctx = require('./$.ctx'),
+var global = require("./$.global"),
+    core = require("./$.core"),
+    hide = require("./$.hide"),
+    redefine = require("./$.redefine"),
+    ctx = require("./$.ctx"),
     PROTOTYPE = 'prototype';
 var $export = function(type, name, source) {
   var IS_FORCED = type & $export.F,

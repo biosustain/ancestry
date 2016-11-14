@@ -22,4 +22,4 @@
       }, hljs.NUMBER_MODE, hljs.C_NUMBER_MODE]
     };
   };
-})(require('process'));
+})(require("process"));

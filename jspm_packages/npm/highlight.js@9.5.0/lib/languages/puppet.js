@@ -69,4 +69,4 @@
       }]
     };
   };
-})(require('process'));
+})(require("process"));

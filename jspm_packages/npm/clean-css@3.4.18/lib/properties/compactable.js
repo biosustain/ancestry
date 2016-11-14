@@ -1,8 +1,8 @@
 /* */ 
 (function(process) {
-  var breakUp = require('./break-up');
-  var canOverride = require('./can-override');
-  var restore = require('./restore');
+  var breakUp = require("./break-up");
+  var canOverride = require("./can-override");
+  var restore = require("./restore");
   var compactable = {
     'color': {
       canOverride: canOverride.color,
@@ -184,4 +184,4 @@
     }
   }
   module.exports = compactable;
-})(require('process'));
+})(require("process"));

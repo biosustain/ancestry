@@ -1,12 +1,12 @@
 /* */ 
 (function(process) {
-  var extractProperties = require('./extractor');
-  var canReorderSingle = require('./reorderable').canReorderSingle;
-  var stringifyBody = require('../stringifier/one-time').body;
-  var stringifySelectors = require('../stringifier/one-time').selectors;
-  var cleanUpSelectorDuplicates = require('./clean-up').selectorDuplicates;
-  var isSpecial = require('./is-special');
-  var cloneArray = require('../utils/clone-array');
+  var extractProperties = require("./extractor");
+  var canReorderSingle = require("./reorderable").canReorderSingle;
+  var stringifyBody = require("../stringifier/one-time").body;
+  var stringifySelectors = require("../stringifier/one-time").selectors;
+  var cleanUpSelectorDuplicates = require("./clean-up").selectorDuplicates;
+  var isSpecial = require("./is-special");
+  var cloneArray = require("../utils/clone-array");
   function naturalSorter(a, b) {
     return a > b;
   }
@@ -300,4 +300,4 @@
     }
   }
   module.exports = restructure;
-})(require('process'));
+})(require("process"));

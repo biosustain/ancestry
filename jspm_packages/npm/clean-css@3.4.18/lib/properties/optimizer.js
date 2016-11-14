@@ -1,12 +1,12 @@
 /* */ 
-var compactable = require('./compactable');
-var wrapForOptimizing = require('./wrap-for-optimizing').all;
-var populateComponents = require('./populate-components');
-var compactOverrides = require('./override-compactor');
-var compactShorthands = require('./shorthand-compactor');
-var removeUnused = require('./remove-unused');
-var restoreFromOptimizing = require('./restore-from-optimizing');
-var stringifyProperty = require('../stringifier/one-time').property;
+var compactable = require("./compactable");
+var wrapForOptimizing = require("./wrap-for-optimizing").all;
+var populateComponents = require("./populate-components");
+var compactOverrides = require("./override-compactor");
+var compactShorthands = require("./shorthand-compactor");
+var removeUnused = require("./remove-unused");
+var restoreFromOptimizing = require("./restore-from-optimizing");
+var stringifyProperty = require("../stringifier/one-time").property;
 var shorthands = {
   'animation-delay': ['animation'],
   'animation-direction': ['animation'],

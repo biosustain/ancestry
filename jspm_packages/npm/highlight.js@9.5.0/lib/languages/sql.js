@@ -34,4 +34,4 @@
       }, hljs.C_BLOCK_COMMENT_MODE, COMMENT_MODE]
     };
   };
-})(require('process'));
+})(require("process"));

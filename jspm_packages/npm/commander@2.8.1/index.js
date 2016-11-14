@@ -1,12 +1,12 @@
 /* */ 
 (function(process) {
-  var EventEmitter = require('events').EventEmitter;
-  var spawn = require('child_process').spawn;
-  var readlink = require('graceful-readlink').readlinkSync;
-  var path = require('path');
+  var EventEmitter = require("events").EventEmitter;
+  var spawn = require("child_process").spawn;
+  var readlink = require("graceful-readlink").readlinkSync;
+  var path = require("path");
   var dirname = path.dirname;
   var basename = path.basename;
-  var fs = require('fs');
+  var fs = require("fs");
   exports = module.exports = new Command();
   exports.Command = Command;
   exports.Option = Option;
@@ -506,4 +506,4 @@
       return false;
     }
   }
-})(require('process'));
+})(require("process"));

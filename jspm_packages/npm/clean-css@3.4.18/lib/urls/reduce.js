@@ -1,6 +1,6 @@
 /* */ 
 (function(process) {
-  var split = require('../utils/split');
+  var split = require("../utils/split");
   var URL_PREFIX = 'url(';
   var UPPERCASE_URL_PREFIX = 'URL(';
   var URL_SUFFIX = ')';
@@ -118,4 +118,4 @@
     return data;
   }
   module.exports = reduceAll;
-})(require('process'));
+})(require("process"));

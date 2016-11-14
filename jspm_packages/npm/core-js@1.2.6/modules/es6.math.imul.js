@@ -1,7 +1,7 @@
 /* */ 
-var $export = require('./$.export'),
+var $export = require("./$.export"),
     $imul = Math.imul;
-$export($export.S + $export.F * require('./$.fails')(function() {
+$export($export.S + $export.F * require("./$.fails")(function() {
   return $imul(0xffffffff, 5) != -5 || $imul.length != 2;
 }), 'Math', {imul: function imul(x, y) {
     var UINT16 = 0xffff,

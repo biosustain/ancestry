@@ -1,13 +1,13 @@
 /* */ 
 'use strict';
-if (require('./$.descriptors')) {
-  var $export = require('./$.export'),
-      $typed = require('./$.typed'),
-      buffer = require('./$.buffer'),
-      toIndex = require('./$.to-index'),
-      toLength = require('./$.to-length'),
-      isObject = require('./$.is-object'),
-      TYPED_ARRAY = require('./$.wks')('typed_array'),
+if (require("./$.descriptors")) {
+  var $export = require("./$.export"),
+      $typed = require("./$.typed"),
+      buffer = require("./$.buffer"),
+      toIndex = require("./$.to-index"),
+      toLength = require("./$.to-length"),
+      isObject = require("./$.is-object"),
+      TYPED_ARRAY = require("./$.wks")('typed_array'),
       $ArrayBuffer = buffer.ArrayBuffer,
       $DataView = buffer.DataView,
       $slice = $ArrayBuffer && $ArrayBuffer.prototype.slice,
@@ -17,7 +17,7 @@ if (require('./$.descriptors')) {
   $export($export.S + $export.F * !$typed.CONSTR, ARRAY_BUFFER, {isView: function isView(it) {
       return isObject(it) && VIEW in it;
     }});
-  $export($export.P + $export.F * require('./$.fails')(function() {
+  $export($export.P + $export.F * require("./$.fails")(function() {
     return !new $ArrayBuffer(2).slice(1, undefined).byteLength;
   }), ARRAY_BUFFER, {slice: function slice(start, end) {
       if ($slice !== undefined && end === undefined)

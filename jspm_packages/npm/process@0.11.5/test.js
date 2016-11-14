@@ -1,6 +1,6 @@
 /* */ 
-var assert = require('assert');
-var ourProcess = require('./browser');
+var assert = require("assert");
+var ourProcess = require("./browser");
 describe('test against process', function() {
   test(process);
 });
@@ -99,8 +99,8 @@ function test(ourProcess) {
   });
 }
 function vmtest() {
-  var vm = require('vm');
-  var fs = require('fs');
+  var vm = require("vm");
+  var fs = require("fs");
   var process = fs.readFileSync('./browser.js', {encoding: 'utf8'});
   describe('should work in vm in strict mode with no globals', function() {
     it('should parse', function(done) {

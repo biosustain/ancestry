@@ -1,13 +1,13 @@
 /* */ 
 'use strict';
-var $ = require('./$'),
-    global = require('./$.global'),
-    $typed = require('./$.typed'),
-    redefineAll = require('./$.redefine-all'),
-    strictNew = require('./$.strict-new'),
-    toInteger = require('./$.to-integer'),
-    toLength = require('./$.to-length'),
-    arrayFill = require('./$.array-fill'),
+var $ = require("./$"),
+    global = require("./$.global"),
+    $typed = require("./$.typed"),
+    redefineAll = require("./$.redefine-all"),
+    strictNew = require("./$.strict-new"),
+    toInteger = require("./$.to-integer"),
+    toLength = require("./$.to-length"),
+    arrayFill = require("./$.array-fill"),
     $ArrayBuffer = global.ArrayBuffer,
     $DataView = global.DataView,
     Math = global.Math,
@@ -288,7 +288,7 @@ if (!$typed.ABV) {
     }
   });
 }
-require('./$.hide')($DataView.prototype, $typed.VIEW, true);
+require("./$.hide")($DataView.prototype, $typed.VIEW, true);
 module.exports = {
   ArrayBuffer: $ArrayBuffer,
   DataView: $DataView

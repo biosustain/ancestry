@@ -1,10 +1,10 @@
 /* */ 
 'use strict';
-var hide = require('./$.hide'),
-    redefine = require('./$.redefine'),
-    fails = require('./$.fails'),
-    defined = require('./$.defined'),
-    wks = require('./$.wks');
+var hide = require("./$.hide"),
+    redefine = require("./$.redefine"),
+    fails = require("./$.fails"),
+    defined = require("./$.defined"),
+    wks = require("./$.wks");
 module.exports = function(KEY, length, exec) {
   var SYMBOL = wks(KEY),
       original = ''[KEY];

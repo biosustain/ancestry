@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./instanceof');
+module.exports = require("./instanceof");

@@ -1,5 +1,5 @@
 /* */ 
-var isObject = require('./$.is-object');
+var isObject = require("./$.is-object");
 module.exports = function(it, S) {
   if (!isObject(it))
     return it;

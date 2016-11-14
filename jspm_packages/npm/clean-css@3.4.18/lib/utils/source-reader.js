@@ -1,7 +1,7 @@
 /* */ 
 (function(Buffer) {
-  var path = require('path');
-  var rewriteUrls = require('../urls/rewrite');
+  var path = require("path");
+  var rewriteUrls = require("../urls/rewrite");
   var REMOTE_RESOURCE = /^(https?:)?\/\//;
   function SourceReader(context, data) {
     this.outerContext = context;
@@ -71,4 +71,4 @@
     return data.join('');
   }
   module.exports = SourceReader;
-})(require('buffer').Buffer);
+})(require("buffer").Buffer);

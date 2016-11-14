@@ -1,6 +1,6 @@
 /* */ 
-var assert = require('assert');
-var events = require('../events');
+var assert = require("assert");
+var events = require("../../events@1.0.2");
 function listener() {}
 function listener2() {}
 var e1 = new events.EventEmitter();

@@ -1,15 +1,15 @@
 /* */ 
 'use strict';
-var $ = require('./$'),
-    redefine = require('./$.redefine'),
-    weak = require('./$.collection-weak'),
-    isObject = require('./$.is-object'),
-    has = require('./$.has'),
+var $ = require("./$"),
+    redefine = require("./$.redefine"),
+    weak = require("./$.collection-weak"),
+    isObject = require("./$.is-object"),
+    has = require("./$.has"),
     frozenStore = weak.frozenStore,
     WEAK = weak.WEAK,
     isExtensible = Object.isExtensible || isObject,
     tmp = {};
-var $WeakMap = require('./$.collection')('WeakMap', function(get) {
+var $WeakMap = require("./$.collection")('WeakMap', function(get) {
   return function WeakMap() {
     return get(this, arguments.length > 0 ? arguments[0] : undefined);
   };

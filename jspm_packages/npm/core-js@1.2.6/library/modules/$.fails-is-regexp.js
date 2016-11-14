@@ -1,5 +1,5 @@
 /* */ 
-var MATCH = require('./$.wks')('match');
+var MATCH = require("./$.wks")('match');
 module.exports = function(KEY) {
   var re = /./;
   try {

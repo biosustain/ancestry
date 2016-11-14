@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./classCallCheck');
+module.exports = require("./classCallCheck");

@@ -1,16 +1,16 @@
 /* */ 
 'use strict';
-var $ = require('./$'),
-    global = require('./$.global'),
-    $export = require('./$.export'),
-    fails = require('./$.fails'),
-    hide = require('./$.hide'),
-    redefineAll = require('./$.redefine-all'),
-    forOf = require('./$.for-of'),
-    strictNew = require('./$.strict-new'),
-    isObject = require('./$.is-object'),
-    setToStringTag = require('./$.set-to-string-tag'),
-    DESCRIPTORS = require('./$.descriptors');
+var $ = require("./$"),
+    global = require("./$.global"),
+    $export = require("./$.export"),
+    fails = require("./$.fails"),
+    hide = require("./$.hide"),
+    redefineAll = require("./$.redefine-all"),
+    forOf = require("./$.for-of"),
+    strictNew = require("./$.strict-new"),
+    isObject = require("./$.is-object"),
+    setToStringTag = require("./$.set-to-string-tag"),
+    DESCRIPTORS = require("./$.descriptors");
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
   var Base = global[NAME],
       C = Base,

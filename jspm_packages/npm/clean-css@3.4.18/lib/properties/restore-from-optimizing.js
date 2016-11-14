@@ -1,5 +1,5 @@
 /* */ 
-var compactable = require('./compactable');
+var compactable = require("./compactable");
 var BACKSLASH_HACK = '\\9';
 var IMPORTANT_TOKEN = '!important';
 var STAR_HACK = '*';

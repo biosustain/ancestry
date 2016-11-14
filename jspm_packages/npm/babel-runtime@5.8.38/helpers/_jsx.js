@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./jsx');
+module.exports = require("./jsx");

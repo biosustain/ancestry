@@ -1,7 +1,7 @@
 /* */ 
 'use strict';
-var $export = require('./$.export');
-var $re = require('./$.replacer')(/&(?:amp|lt|gt|quot|apos);/g, {
+var $export = require("./$.export");
+var $re = require("./$.replacer")(/&(?:amp|lt|gt|quot|apos);/g, {
   '&amp;': '&',
   '&lt;': '<',
   '&gt;': '>',

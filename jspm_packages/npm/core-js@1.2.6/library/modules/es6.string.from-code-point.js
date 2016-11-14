@@ -1,6 +1,6 @@
 /* */ 
-var $export = require('./$.export'),
-    toIndex = require('./$.to-index'),
+var $export = require("./$.export"),
+    toIndex = require("./$.to-index"),
     fromCharCode = String.fromCharCode,
     $fromCodePoint = String.fromCodePoint;
 $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1), 'String', {fromCodePoint: function fromCodePoint(x) {

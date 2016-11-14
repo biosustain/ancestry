@@ -628,4 +628,4 @@
     };
     return hljs;
   }));
-})(require('process'));
+})(require("process"));

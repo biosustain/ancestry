@@ -1,6 +1,6 @@
 /* */ 
-var assert = require('assert');
-var events = require('../events');
+var assert = require("assert");
+var events = require("../../events@1.0.2");
 var callbacks_called = [];
 var e = new events.EventEmitter();
 function callback1() {

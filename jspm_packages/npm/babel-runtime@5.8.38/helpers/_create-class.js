@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./createClass');
+module.exports = require("./createClass");

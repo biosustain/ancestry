@@ -1,9 +1,9 @@
 /* */ 
 "use strict";
 exports.__esModule = true;
-var _for = require('../core-js/symbol/for');
+var _for = require("../core-js/symbol/for");
 var _for2 = _interopRequireDefault(_for);
-var _symbol = require('../core-js/symbol');
+var _symbol = require("../core-js/symbol");
 var _symbol2 = _interopRequireDefault(_symbol);
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {default: obj};

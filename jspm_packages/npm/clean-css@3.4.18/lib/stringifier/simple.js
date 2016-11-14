@@ -1,5 +1,5 @@
 /* */ 
-var all = require('./helpers').all;
+var all = require("./helpers").all;
 function store(token, context) {
   context.output.push(typeof token == 'string' ? token : token[0]);
 }

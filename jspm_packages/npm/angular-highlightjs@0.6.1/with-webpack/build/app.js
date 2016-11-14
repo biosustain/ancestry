@@ -29849,4 +29849,4 @@
     function HomeCtrl($scope) {}
     exports.HomeCtrl = HomeCtrl;
   }]);
-})(require('buffer').Buffer, require('process'));
+})(require("buffer").Buffer, require("process"));

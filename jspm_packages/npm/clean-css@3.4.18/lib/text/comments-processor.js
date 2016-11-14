@@ -1,10 +1,10 @@
 /* */ 
-var EscapeStore = require('./escape-store');
-var QuoteScanner = require('../utils/quote-scanner');
+var EscapeStore = require("./escape-store");
+var QuoteScanner = require("../utils/quote-scanner");
 var SPECIAL_COMMENT_PREFIX = '/*!';
 var COMMENT_PREFIX = '/*';
 var COMMENT_SUFFIX = '*/';
-var lineBreak = require('os').EOL;
+var lineBreak = require("os").EOL;
 function CommentsProcessor(context, keepSpecialComments, keepBreaks, saveWaypoints) {
   this.comments = new EscapeStore('COMMENT');
   this.specialComments = new EscapeStore('COMMENT_SPECIAL');

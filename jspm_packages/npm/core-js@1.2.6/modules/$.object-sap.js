@@ -1,7 +1,7 @@
 /* */ 
-var $export = require('./$.export'),
-    core = require('./$.core'),
-    fails = require('./$.fails');
+var $export = require("./$.export"),
+    core = require("./$.core"),
+    fails = require("./$.fails");
 module.exports = function(KEY, exec) {
   var fn = (core.Object || {})[KEY] || Object[KEY],
       exp = {};

@@ -1,9 +1,9 @@
 /* */ 
-var optimizeProperties = require('../properties/optimizer');
-var stringifyBody = require('../stringifier/one-time').body;
-var stringifySelectors = require('../stringifier/one-time').selectors;
-var cleanUpSelectors = require('./clean-up').selectors;
-var isSpecial = require('./is-special');
+var optimizeProperties = require("../properties/optimizer");
+var stringifyBody = require("../stringifier/one-time").body;
+var stringifySelectors = require("../stringifier/one-time").selectors;
+var cleanUpSelectors = require("./clean-up").selectors;
+var isSpecial = require("./is-special");
 function mergeAdjacent(tokens, options, context) {
   var lastToken = [null, [], []];
   var adjacentSpace = options.compatibility.selectors.adjacentSpace;

@@ -1,8 +1,8 @@
 /* */ 
 (function(process) {
-  var path = require('path');
-  var url = require('url');
-  var reduceUrls = require('./reduce');
+  var path = require("path");
+  var url = require("url");
+  var reduceUrls = require("./reduce");
   var isWindows = process.platform == 'win32';
   function isAbsolute(uri) {
     return uri[0] == '/';
@@ -78,4 +78,4 @@
     });
   }
   module.exports = rewriteUrls;
-})(require('process'));
+})(require("process"));

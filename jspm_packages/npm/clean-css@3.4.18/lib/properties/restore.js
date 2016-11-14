@@ -1,5 +1,5 @@
 /* */ 
-var shallowClone = require('./clone').shallow;
+var shallowClone = require("./clone").shallow;
 var MULTIPLEX_SEPARATOR = ',';
 var SIZE_POSITION_SEPARATOR = '/';
 function isInheritOnly(values) {

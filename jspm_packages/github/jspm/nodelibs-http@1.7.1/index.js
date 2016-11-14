@@ -3,9 +3,9 @@ if (System._nodeRequire) {
   module.exports = System._nodeRequire('http');
 } else {
   var http = module.exports;
-  var EventEmitter = require('events').EventEmitter;
-  var Request = require('./lib/request');
-  var url = require('url');
+  var EventEmitter = require("events").EventEmitter;
+  var Request = require("./lib/request");
+  var url = require("url");
   http.request = function(params, cb) {
     if (typeof params === 'string') {
       params = url.parse(params);

@@ -44,4 +44,4 @@
       illegal: ';$|^\\[|^=|&|{'
     };
   };
-})(require('process'));
+})(require("process"));

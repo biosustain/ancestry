@@ -1,27 +1,27 @@
 /* */ 
 'use strict';
-var $ = require('./$'),
-    $export = require('./$.export'),
-    DESCRIPTORS = require('./$.descriptors'),
-    createDesc = require('./$.property-desc'),
-    html = require('./$.html'),
-    cel = require('./$.dom-create'),
-    has = require('./$.has'),
-    cof = require('./$.cof'),
-    invoke = require('./$.invoke'),
-    fails = require('./$.fails'),
-    anObject = require('./$.an-object'),
-    aFunction = require('./$.a-function'),
-    isObject = require('./$.is-object'),
-    toObject = require('./$.to-object'),
-    toIObject = require('./$.to-iobject'),
-    toInteger = require('./$.to-integer'),
-    toIndex = require('./$.to-index'),
-    toLength = require('./$.to-length'),
-    IObject = require('./$.iobject'),
-    IE_PROTO = require('./$.uid')('__proto__'),
-    createArrayMethod = require('./$.array-methods'),
-    arrayIndexOf = require('./$.array-includes')(false),
+var $ = require("./$"),
+    $export = require("./$.export"),
+    DESCRIPTORS = require("./$.descriptors"),
+    createDesc = require("./$.property-desc"),
+    html = require("./$.html"),
+    cel = require("./$.dom-create"),
+    has = require("./$.has"),
+    cof = require("./$.cof"),
+    invoke = require("./$.invoke"),
+    fails = require("./$.fails"),
+    anObject = require("./$.an-object"),
+    aFunction = require("./$.a-function"),
+    isObject = require("./$.is-object"),
+    toObject = require("./$.to-object"),
+    toIObject = require("./$.to-iobject"),
+    toInteger = require("./$.to-integer"),
+    toIndex = require("./$.to-index"),
+    toLength = require("./$.to-length"),
+    IObject = require("./$.iobject"),
+    IE_PROTO = require("./$.uid")('__proto__'),
+    createArrayMethod = require("./$.array-methods"),
+    arrayIndexOf = require("./$.array-includes")(false),
     ObjectProto = Object.prototype,
     ArrayProto = Array.prototype,
     arraySlice = ArrayProto.slice,
@@ -174,7 +174,7 @@ $export($export.P + $export.F * fails(function() {
 $export($export.P + $export.F * (IObject != Object), 'Array', {join: function join(separator) {
     return arrayJoin.call(IObject(this), separator === undefined ? ',' : separator);
   }});
-$export($export.S, 'Array', {isArray: require('./$.is-array')});
+$export($export.S, 'Array', {isArray: require("./$.is-array")});
 var createArrayReduce = function(isRight) {
   return function(callbackfn, memo) {
     aFunction(callbackfn);

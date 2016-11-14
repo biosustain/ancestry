@@ -1,7 +1,7 @@
 /* */ 
-var isObject = require('./$.is-object'),
-    isArray = require('./$.is-array'),
-    SPECIES = require('./$.wks')('species');
+var isObject = require("./$.is-object"),
+    isArray = require("./$.is-array"),
+    SPECIES = require("./$.wks")('species');
 module.exports = function(original, length) {
   var C;
   if (isArray(original)) {

@@ -1,5 +1,5 @@
 /* */ 
-var lineBreak = require('os').EOL;
+var lineBreak = require("os").EOL;
 var AT_RULE = 'at-rule';
 var PROPERTY_SEPARATOR = ';';
 function hasMoreProperties(tokens, index) {

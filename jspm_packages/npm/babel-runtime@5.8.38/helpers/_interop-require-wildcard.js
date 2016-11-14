@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./interopRequireWildcard');
+module.exports = require("./interopRequireWildcard");

@@ -76,4 +76,4 @@
     INTERPOLATION.contains = DEFAULT.contains;
     return DEFAULT;
   };
-})(require('buffer').Buffer);
+})(require("buffer").Buffer);

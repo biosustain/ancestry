@@ -1,7 +1,7 @@
 /* */ 
-var global = require('./$.global'),
-    hide = require('./$.hide'),
-    uid = require('./$.uid'),
+var global = require("./$.global"),
+    hide = require("./$.hide"),
+    uid = require("./$.uid"),
     TYPED = uid('typed_array'),
     VIEW = uid('view'),
     ABV = !!(global.ArrayBuffer && global.DataView),

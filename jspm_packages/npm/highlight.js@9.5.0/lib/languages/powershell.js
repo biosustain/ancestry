@@ -64,4 +64,4 @@
       contains: [BACKTICK_ESCAPE, hljs.NUMBER_MODE, QUOTE_STRING, APOS_STRING, LITERAL, VAR, PS_COMMENT]
     };
   };
-})(require('process'));
+})(require("process"));

@@ -1,7 +1,7 @@
 /* */ 
-var $export = require('./$.export'),
-    toIObject = require('./$.to-iobject'),
-    toLength = require('./$.to-length');
+var $export = require("./$.export"),
+    toIObject = require("./$.to-iobject"),
+    toLength = require("./$.to-length");
 $export($export.S, 'String', {raw: function raw(callSite) {
     var tpl = toIObject(callSite.raw),
         len = toLength(tpl.length),

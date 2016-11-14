@@ -1,9 +1,9 @@
 /* */ 
-var extractProperties = require('./extract-properties');
-var extractSelectors = require('./extract-selectors');
-var track = require('../source-maps/track');
-var split = require('../utils/split');
-var path = require('path');
+var extractProperties = require("./extract-properties");
+var extractSelectors = require("./extract-selectors");
+var track = require("../source-maps/track");
+var split = require("../utils/split");
+var path = require("path");
 var flatBlock = /(@(font\-face|page|\-ms\-viewport|\-o\-viewport|viewport|counter\-style)|\\@.+?)/;
 function tokenize(data, outerContext) {
   var chunks = split(normalize(data), '}', true, '{', '}');

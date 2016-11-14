@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./typeof');
+module.exports = require("./typeof");

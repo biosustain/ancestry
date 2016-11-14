@@ -1,7 +1,7 @@
 /* */ 
 (function(Buffer) {
-  var assert = require('tap');
-  var t = require('./lib/util');
+  var assert = require("tap");
+  var t = require("./lib/util");
   assert.equal(t.isArray([]), true);
   assert.equal(t.isArray({}), false);
   assert.equal(t.isBoolean(null), false);
@@ -52,4 +52,4 @@
   assert.equal(t.isBuffer(null), false);
   assert.equal(t.isBuffer({}), false);
   assert.equal(t.isBuffer(new Buffer(0)), true);
-})(require('buffer').Buffer);
+})(require("buffer").Buffer);

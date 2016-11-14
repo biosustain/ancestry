@@ -1,7 +1,7 @@
 /* */ 
-var assert = require('assert');
-var util = require('util');
-var url = require('./url');
+var assert = require("assert");
+var util = require("util");
+var url = require("./url");
 test('god', function() {
   var parseTests = {
     '//some_path': {

@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./newArrowCheck');
+module.exports = require("./newArrowCheck");

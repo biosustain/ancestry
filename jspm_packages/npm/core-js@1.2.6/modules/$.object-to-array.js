@@ -1,6 +1,6 @@
 /* */ 
-var $ = require('./$'),
-    toIObject = require('./$.to-iobject'),
+var $ = require("./$"),
+    toIObject = require("./$.to-iobject"),
     isEnum = $.isEnum;
 module.exports = function(isEntries) {
   return function(it) {

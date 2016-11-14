@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('os');
+module.exports = require("os");

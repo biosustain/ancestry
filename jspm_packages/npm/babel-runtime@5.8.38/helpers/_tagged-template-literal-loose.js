@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./taggedTemplateLiteralLoose');
+module.exports = require("./taggedTemplateLiteralLoose");

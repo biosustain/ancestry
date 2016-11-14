@@ -1,7 +1,7 @@
 /* */ 
 (function(process) {
-  var SourceMapGenerator = require('source-map').SourceMapGenerator;
-  var all = require('./helpers').all;
+  var SourceMapGenerator = require("source-map").SourceMapGenerator;
+  var all = require("./helpers").all;
   var isWindows = process.platform == 'win32';
   var unknownSource = '$stdin';
   function store(element, context) {
@@ -76,4 +76,4 @@
     };
   }
   module.exports = stringify;
-})(require('process'));
+})(require("process"));

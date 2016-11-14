@@ -1,9 +1,9 @@
 /* */ 
-var ctx = require('./$.ctx'),
-    IObject = require('./$.iobject'),
-    toObject = require('./$.to-object'),
-    toLength = require('./$.to-length'),
-    asc = require('./$.array-species-create');
+var ctx = require("./$.ctx"),
+    IObject = require("./$.iobject"),
+    toObject = require("./$.to-object"),
+    toLength = require("./$.to-length"),
+    asc = require("./$.array-species-create");
 module.exports = function(TYPE) {
   var IS_MAP = TYPE == 1,
       IS_FILTER = TYPE == 2,

@@ -1,7 +1,7 @@
 /* */ 
-var wrapSingle = require('./wrap-for-optimizing').single;
-var InvalidPropertyError = require('./invalid-property-error');
-var split = require('../utils/split');
+var wrapSingle = require("./wrap-for-optimizing").single;
+var InvalidPropertyError = require("./invalid-property-error");
+var split = require("../utils/split");
 var MULTIPLEX_SEPARATOR = ',';
 function _colorFilter(validator) {
   return function(value) {

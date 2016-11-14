@@ -1,2 +1,2 @@
 /* */ 
-module.exports = require('./objectDestructuringEmpty');
+module.exports = require("./objectDestructuringEmpty");

@@ -1,6 +1,6 @@
 /* */ 
-var $export = require('./$.export'),
-    anObject = require('./$.an-object'),
+var $export = require("./$.export"),
+    anObject = require("./$.an-object"),
     $preventExtensions = Object.preventExtensions;
 $export($export.S, 'Reflect', {preventExtensions: function preventExtensions(target) {
     anObject(target);

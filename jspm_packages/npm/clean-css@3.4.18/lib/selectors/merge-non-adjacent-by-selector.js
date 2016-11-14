@@ -1,8 +1,8 @@
 /* */ 
-var optimizeProperties = require('../properties/optimizer');
-var stringifySelectors = require('../stringifier/one-time').selectors;
-var extractProperties = require('./extractor');
-var canReorder = require('./reorderable').canReorder;
+var optimizeProperties = require("../properties/optimizer");
+var stringifySelectors = require("../stringifier/one-time").selectors;
+var extractProperties = require("./extractor");
+var canReorder = require("./reorderable").canReorder;
 function mergeNonAdjacentBySelector(tokens, options, context) {
   var allSelectors = {};
   var repeatedSelectors = [];

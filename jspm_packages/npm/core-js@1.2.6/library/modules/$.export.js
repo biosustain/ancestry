@@ -1,7 +1,7 @@
 /* */ 
-var global = require('./$.global'),
-    core = require('./$.core'),
-    ctx = require('./$.ctx'),
+var global = require("./$.global"),
+    core = require("./$.core"),
+    ctx = require("./$.ctx"),
     PROTOTYPE = 'prototype';
 var $export = function(type, name, source) {
   var IS_FORCED = type & $export.F,

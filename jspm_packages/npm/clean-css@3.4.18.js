@@ -1,1 +1,1 @@
-module.exports = require("npm:clean-css@3.4.18/index.js");
+module.exports = require("npm:clean-css@3.4.18/index");

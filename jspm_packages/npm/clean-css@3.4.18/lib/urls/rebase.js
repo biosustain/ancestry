@@ -1,6 +1,6 @@
 /* */ 
-var path = require('path');
-var rewriteUrls = require('./rewrite');
+var path = require("path");
+var rewriteUrls = require("./rewrite");
 function rebaseUrls(data, context) {
   var rebaseOpts = {
     absolute: context.options.explicitRoot,

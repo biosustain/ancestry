@@ -1,6 +1,6 @@
 /* */ 
-var assert = require('assert');
-var events = require('../events');
+var assert = require("assert");
+var events = require("../../events@1.0.2");
 var e = new events.EventEmitter(),
     num_args_emited = [];
 e.on('numArgs', function() {
