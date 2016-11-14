@@ -37,8 +37,6 @@ function LineagePlotDirective($window, WindowResize) {
             element.addClass("ancestry ancestry-lineage-plot");
 
             var svg = d3.select(element[0]).style("position", "relative").append("svg");
-            //.style('width', '100%')
-            //.style('height', '100%');
 
             var maxAllowedDepth = 180,
                 mouseStart = null,

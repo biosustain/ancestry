@@ -34,8 +34,6 @@ function RadialLineagePlotDirective($window, WindowResize) {
             element.addClass("ancestry ancestry-radial-lineage-plot");
 
             var svg = d3.select(element[0]).style("position", "relative").append("svg");
-            //.style("width", "100%")
-            //.style('height', '100%');
 
             var colours = d3.scaleOrdinal(d3.schemeCategory10),
                 hovering = false,
