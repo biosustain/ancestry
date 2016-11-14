@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/tabs.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="https://rawgit.com/biosustain/ancestry/master/dist/ancestry.css">
     <link rel="stylesheet" href="stylesheets/code_highlight/github-gist.css">
     <script src="./scripts/tabs.js"></script>
     <script src="jspm_packages/system.js"></script>
@@ -96,6 +95,7 @@
         <ul>
             <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
             <li><code class="hljs hljs-attr">selectedNodes</code> <span class="prop-type">(array)</span> <span class="prop-desc">Array with names of nodes selected in the plot.</span></li>
+            <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
         </ul>
     </div>
     <h4 id="lineage-data-format">Data format</h4>
@@ -182,6 +182,7 @@
         <ul>
             <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
             <li><code class="hljs hljs-attr">selectedNodes</code> <span class="prop-type">(array)</span> <span class="prop-desc">Array with names of nodes selected in the plot.</span></li>
+            <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
         </ul>
     </div>
     <h4>Data format</h4>
@@ -285,6 +286,7 @@
     <div class="layout-definition code-inline">
         <ul>
             <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
+            <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
         </ul>
     </div>
     <h4>Data format</h4>
@@ -298,8 +300,9 @@
 
     <div class="layout-definition code-inline">
         <code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
-            class="code-inline" hljs hljs-language="json">{"font-size": 14}</span>)</span><span
+            class="code-inline" hljs hljs-language="json">{"font-size": 14, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
             class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
+        <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
     </div>
 
     <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
@@ -337,6 +340,7 @@
         <ul>
             <li><code class="hljs hljs-attr">value</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot configuration JSON.</span></li>
             <li><code class="hljs hljs-attr">branchlength</code> <span class="prop-type">(boolean)</span> <span class="prop-desc">Determines whether real branch lengths are shown.</span></li>
+            <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
         </ul>
     </div>
     <h4>Data format</h4>
@@ -365,7 +369,7 @@
     <div class="layout-definition code-inline">
         <ul>
             <li><code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
-                class="code-inline" hljs hljs-language="json">{"font-size": 14}</span>)</span><span
+                class="code-inline" hljs hljs-language="json">{"font-size": 14, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
                 class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
             </li>
             <li><code class="hljs hljs-attr">showLeafNodes</code> <span class="prop-type">(<code
@@ -387,9 +391,10 @@
                     class="prop-desc">Width of the plot container. If <code
                     class="hljs hljs-literal">null</code>, width is set to width of DOM element the directive is in.</span>
             </li>
-            <li><code class="hljs hljs-attr">height</code> <span class="prop-type">(number || default: <code
+            <li><code class="hljs hljs-attr">height</code> <span class="prop-type">(number | null || default: <code
                     class="hljs hljs-number">600</code>)</span><span
-                    class="prop-desc">Height of the plot container.</span>
+                    class="prop-desc">Height of the plot container. If <code
+                    class="hljs hljs-literal">null</code>, height is set to height of DOM element the directive is in.</span>
             </li>
             <li><code class="hljs hljs-attr">margin</code> <span class="prop-desc">Extra space excluding special features such as title, legend, etc.</span>
                 <ul>
@@ -411,13 +416,22 @@
                     </li>
                 </ul>
             </li>
+            <li><code class="hljs hljs-attr">backgroundColour</code> <span class="prop-type">(string || default: <code
+                    class="hljs hljs-string">"none"</code>)</span><span
+                    class="prop-desc">Background colour of the plot. If <code
+                    class="hljs hljs-string">"none"</code>, background is transparent.</span>
+            </li>
+            <li><code class="hljs hljs-attr">textColour</code> <span class="prop-type">(string || default: <code
+                    class="hljs hljs-string">"black"</code>)</span><span
+                    class="prop-desc">Colour of all text elements in the plot. </span>
+            </li>
             <li><code class="hljs hljs-attr">nodeTypes</code> <span class="prop-type">(object || default: <span
                     class="code-inline" hljs hljs-language="json">{}</span>)</span>
                     <span class="prop-desc">Dictionary with node types. Node types should be string keys, values should be objects with attributes of SVG circle such as <code
                             class="hljs hljs-attr">"stroke-width"</code>, <code class="hljs hljs-attr">"r"</code> etc. Changing colours should be avoided as it is also controlled by series and could interfere.</span>
             </li>
             <li><code class="hljs hljs-attr">nodeLabel</code> <span class="prop-type">(object || default: <span
-                    class="code-inline" hljs hljs-language="json">{"font-size": 12}</span>)</span><span
+                    class="code-inline" hljs hljs-language="json">{"font-size": 12, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
                     class="prop-desc">Object with SVG text attributes defining appearance of node labels</span></li>
             <li><code class="hljs hljs-attr">link</code> <span
                     class="prop-type">(object || default:
@@ -570,6 +584,25 @@
                             class="prop-type">(<code class="hljs hljs-string">"horizontal"</code> | <code
                             class="hljs hljs-string">"vertical"</code> || default: <code class="hljs hljs-string">"vertical"</code>)</span>
                         <span class="prop-desc"> Determines the direction in which the legend is laid out.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">backgroundColour</code> <span
+                            class="prop-type">(<code class="hljs hljs-literal">null</code> | string || default: <code class="hljs hljs-literal">null</code>)</span>
+                        <span class="prop-desc"> If <code class="hljs hljs-literal">null</code>, legend inherits plot's background colour. If string, specific colour is used.</span>
+                    </li>
+                </ul>
+            </li>
+            <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(object)</span>
+                    <span class="prop-desc">Only available for lineage and lineage-scatter plots. Tooltip provides basic information about a node on hover.</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
+                            class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
+                            class="hljs hljs-literal">true</code>)</span>
+                        <span class="prop-desc"> Determines whether tooltip is displayed.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">showSeriesBar</code> <span class="prop-type">(<code
+                            class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
+                            class="hljs hljs-literal">false</code>)</span>
+                        <span class="prop-desc"> Determines whether a small colour bar corresponding to series colour will be added to tooltips.</span>
                     </li>
                 </ul>
             </li>
