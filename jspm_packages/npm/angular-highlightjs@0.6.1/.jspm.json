@@ -1,0 +1,73 @@
+{
+  "name": "angular-highlightjs",
+  "version": "0.6.1",
+  "description": "AngularJS directive for syntax highlighting with highlight.js",
+  "main": "./build/angular-highlightjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pc035860/angular-highlightjs.git"
+  },
+  "keywords": [
+    "angularjs",
+    "highlight.js",
+    "angular-highlightjs"
+  ],
+  "author": {
+    "name": "Chih-Hsuan Fan",
+    "email": "pc035860@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.0",
+    "grunt-ng-annotate": "^1.0.1"
+  },
+  "gitHead": "c4d5226d642b254969c85058d6b77706e10e7fb2",
+  "bugs": {
+    "url": "https://github.com/pc035860/angular-highlightjs/issues"
+  },
+  "homepage": "https://github.com/pc035860/angular-highlightjs#readme",
+  "_id": "angular-highlightjs@0.6.1",
+  "_shasum": "ae5937fd831fc3bd892691a671e93c89cf38abc0",
+  "_from": ".",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.2",
+  "_npmUser": {
+    "name": "pc035860",
+    "email": "pc035860@gmail.com"
+  },
+  "dist": {
+    "shasum": "ae5937fd831fc3bd892691a671e93c89cf38abc0",
+    "tarball": "https://registry.npmjs.org/angular-highlightjs/-/angular-highlightjs-0.6.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "pc035860",
+      "email": "pc035860@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-highlightjs-0.6.1.tgz_1459567859562_0.4446610165759921"
+  },
+  "format": "cjs",
+  "ignore": [
+    "node_modules"
+  ],
+  "registry": "npm",
+  "dependencies": {
+    "angular": "angular@^1.0.1",
+    "highlight.js": "highlight.js@*",
+    "process": "github:jspm/nodelibs-process@^0.1.0",
+    "path": "github:jspm/nodelibs-path@^0.1.0",
+    "buffer": "github:jspm/nodelibs-buffer@^0.1.0"
+  }
+}
