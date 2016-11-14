@@ -1,3 +1,7 @@
+.ancestry {
+    display: block;
+}
+
 .ancestry .tick text{
     font-size: 12px;
 }
