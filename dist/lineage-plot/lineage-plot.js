@@ -382,7 +382,7 @@ function LineagePlotDirective($window, WindowResize) {
                         var yPos = _d3tooltip$getRelativ.y;
                         var seriesBar = layout.tooltip.showSeriesBar ? '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' : "";
                         var text = d.data.tooltip ? d.data.tooltip.map(function (line) {
-                            return '<span class="tooltip-text">' + line + '</span>';
+                            return '<span align="' + layout.tooltip.align + '" class="tooltip-text">' + line + '</span>';
                         }).join("") : '<span class="tooltip-text">' + d.data.name + '</span>';
                         tooltip.html(seriesBar + text).position([xPos, yPos]).show();
                     }).on("mouseout", function (d) {
@@ -753,7 +753,8 @@ var layoutTemplate = {
     },
     tooltip: {
         show: true,
-        showSeriesBar: false
+        showSeriesBar: false,
+        align: "left"
     }
 };
 

@@ -16,7 +16,6 @@ function WindowResize($window, $rootScope) {
     var height = window[0].innerHeight;
 
     _angular2.default.element($window).on('resize', function (event) {
-        console.log(window[0]);
         var newWidth = window[0].innerWidth;
         var newHeight = window[0].innerHeight;
         if (width != newWidth || height != newHeight) {

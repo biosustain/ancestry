@@ -287,6 +287,9 @@ let data = {
                 "y": "inside"
             },
             orientation: "vertical"
+        },
+        tooltip: {
+            align: "center"
         }
     }
 };

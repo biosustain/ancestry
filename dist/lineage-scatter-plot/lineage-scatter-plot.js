@@ -408,26 +408,17 @@ function LineageScatterPlotDirective($window, WindowResize) {
                     return !selectedNodes.has(d.data.name) ? '#FFF' : colours(d.data.series);
                 }).each(function (d) {
                     d.bboxCircle = this.getBoundingClientRect();
-                }).on("mouseover", function (d) {
-                    var _d3tooltip$getRelativ = _sharedFeatures.d3tooltip.getRelativePosition(this, element[0]);
-
-                    var xPos = _d3tooltip$getRelativ.x;
-                    var yPos = _d3tooltip$getRelativ.y;
-                    var text = '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' + ('<span class="tooltip-text">' + d.data.name + '</span>') + ('<span class="tooltip-text">x: ' + d.data.x.toPrecision(3) + '</span>') + ('<span class="tooltip-text">y: ' + d.data.y.toPrecision(3) + '</span>');
-                    tooltip.html(text).position([xPos, yPos]).show();
-                }).on("mouseout", function (d) {
-                    tooltip.hide();
                 });
 
                 if (layout.tooltip.show) {
                     circle.on("mouseover", function (d, i) {
-                        var _d3tooltip$getRelativ2 = _sharedFeatures.d3tooltip.getRelativePosition(this, element[0]);
+                        var _d3tooltip$getRelativ = _sharedFeatures.d3tooltip.getRelativePosition(this, element[0]);
 
-                        var xPos = _d3tooltip$getRelativ2.x;
-                        var yPos = _d3tooltip$getRelativ2.y;
+                        var xPos = _d3tooltip$getRelativ.x;
+                        var yPos = _d3tooltip$getRelativ.y;
                         var seriesBar = layout.tooltip.showSeriesBar ? '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' : "";
                         var text = d.data.tooltip ? d.data.tooltip.map(function (line) {
-                            return '<span class="tooltip-text">' + line + '</span>';
+                            return '<span align="' + layout.tooltip.align + '" class="tooltip-text">' + line + '</span>';
                         }).join("") : '<span class="tooltip-text">' + d.data.name + '</span>';
                         tooltip.html(seriesBar + text).position([xPos, yPos]).show();
                     }).on("mouseout", function (d) {
@@ -782,7 +773,8 @@ var layoutTemplate = {
     },
     tooltip: {
         show: true,
-        showSeriesBar: false
+        showSeriesBar: false,
+        align: "left"
     }
 };
 
