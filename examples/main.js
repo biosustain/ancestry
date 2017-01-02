@@ -215,14 +215,17 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                 _parents = [];
             for (let j = 0; j < totalChildren; j++) {
                 let parent = parents ? parents[p] : null,
+                    name = "node_" + gen + labels[gen_labels[gen - 1]++],
                     node = {
-                        name: "node_" + gen + labels[gen_labels[gen - 1]++],
+                        name,
                         x: gen-1,
                         y: (s * 10 + gen + j) * rn,
                         z: Math.random() > 0.7 ? undefined : Math.round(Math.random() * 100) / 10,
                         parent: parent,
                         series: 10 + Math.floor(Math.random() * 4),
-                        type: Math.random() > 0.5 ? "type1" : "type2"
+                        type: Math.random() > 0.5 ? "type1" : "type2",
+                        tooltip: [name, "Link in: " + Math.random().toString(36).substr(2, 15),
+                            "Link out: " + Math.random().toString(36).substr(2, 15)]
                     };
                 _parents.push(node.name);
                 nodes.push(node);

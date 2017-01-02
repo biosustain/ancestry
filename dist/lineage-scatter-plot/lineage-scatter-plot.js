@@ -426,8 +426,10 @@ function LineageScatterPlotDirective($window, WindowResize) {
                         var xPos = _d3tooltip$getRelativ2.x;
                         var yPos = _d3tooltip$getRelativ2.y;
                         var seriesBar = layout.tooltip.showSeriesBar ? '<div class="tooltip-colour-box" style="background-color: ' + colours(d.data.series) + '"></div>' : "";
-                        var text = seriesBar + ('<span class="tooltip-text">' + d.data.name + '</span>') + ('<span class="tooltip-text">x: ' + d.data.x.toPrecision(3) + '</span>') + ('<span class="tooltip-text">y: ' + d.data.y.toPrecision(3) + '</span>');
-                        tooltip.html(text).position([xPos, yPos]).show();
+                        var text = d.data.tooltip ? d.data.tooltip.map(function (line) {
+                            return '<span class="tooltip-text">' + line + '</span>';
+                        }).join("") : '<span class="tooltip-text">' + d.data.name + '</span>';
+                        tooltip.html(seriesBar + text).position([xPos, yPos]).show();
                     }).on("mouseout", function (d) {
                         tooltip.hide();
                     });
