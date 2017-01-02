@@ -43,14 +43,16 @@
       "z": 9.7,
       "parent": null,
       "series": "group 2",
-      "type": "type2"
+      "type": "type2",
+      "tooltip": ["node_1A", "z: 9.7"]
     },
     {
       "name": "node_2A",
       "z": 0.5,
       "parent": "node_1A",
       "series": "group 2",
-      "type": "type2"
+      "type": "type2",
+      "tooltip": ["node_2A", "z: 0.5"]
     },
     {
       "name": "node_3A",
@@ -63,7 +65,8 @@
       "name": "node_3B",
       "parent": "node_2A",
       "series": "group 3",
-      "type": "type1"
+      "type": "type1",
+      "tooltip": ["node_3B", "parent: node_2A"]
     },
     {
       "name": "node_3C",
@@ -77,7 +80,8 @@
       "z": 7.8,
       "parent": "node_3A",
       "series": "group 4",
-      "type": "type2"
+      "type": "type2",
+      "tooltip": ["node_4A", "z: 7.8"]
     },
     {
       "name": "node_4B",

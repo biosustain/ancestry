@@ -119,6 +119,9 @@
             <li><code class="hljs hljs-attr">series</code> <span class="prop-type">(optional: string)</span> <span
                     class="prop-desc">Name of the series the node belongs to.</span>
             </li>
+            <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(optional: array of strings)</span> <span
+                    class="prop-desc">Array with strings corresponding to lines in a tooltip. If not used, <code class="hljs hljs-attr">name</code> property is used for tooltip.</span>
+            </li>
         </ul>
     </div>
     <h4>Plot-specific layout</h4>
@@ -209,6 +212,9 @@
             </li>
             <li><code class="hljs hljs-attr">series</code> <span class="prop-type">(optional: string)</span> <span
                     class="prop-desc">Name of the series the node belongs to.</span>
+            </li>
+            <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(optional: array of strings)</span> <span
+                    class="prop-desc">Array with strings corresponding to lines in a tooltip. If not used, <code class="hljs hljs-attr">name</code> property is used for tooltip.</span>
             </li>
         </ul>
     </div>
@@ -592,7 +598,7 @@
                 </ul>
             </li>
             <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(object)</span>
-                    <span class="prop-desc">Only available for lineage and lineage-scatter plots. Tooltip provides basic information about a node on hover.</span>
+                    <span class="prop-desc">Only available for lineage and lineage-scatter plots. Tooltip provides basic information about a node on hover. Tooltip contents are customizable through nodes' <code class="hljs hljs-attr">tooltip</code> property.</span>
                 <ul>
                     <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
                             class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
@@ -603,6 +609,11 @@
                             class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
                             class="hljs hljs-literal">false</code>)</span>
                         <span class="prop-desc"> Determines whether a small colour bar corresponding to series colour will be added to tooltips.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">align</code> <span class="prop-type">(<code
+                            class="hljs hljs-string">"left"</code> | <code class="hljs hljs-string">"center"</code> | <code class="hljs hljs-string">"right"</code> || default: <code
+                            class="hljs hljs-string">"left"</code>)</span>
+                        <span class="prop-desc"> Determines how the text in tooltip is aligned.</span>
                     </li>
                 </ul>
             </li>

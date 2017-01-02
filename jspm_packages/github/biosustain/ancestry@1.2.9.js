@@ -1,1 +1,0 @@
-module.exports = require("github:biosustain/ancestry@1.2.9/dist/index");
