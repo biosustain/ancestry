@@ -1,15 +1,12 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    entry: './lib/index.js',
+    entry: './main.js',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
-    },
-    externals: {
-        "angular": "angular",
-        "d3": "d3"
     },
     module: {
         loaders: [
@@ -23,7 +20,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
                 loader: 'url-loader',
-                include: path.join(__dirname, './icons'),
+                include: path.join(__dirname, '../icons'),
                 options: {
                     limit: 10000
                 }
@@ -31,11 +28,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('bundle.css')
-    ],
-    devServer: {
-        contentBase: path.join(__dirname, "."),
-        compress: false,
-        port: 9000
-    }
+        new HtmlWebpackPlugin({
+            inject: 'head',
+            template: './index.html',
+            filename: 'index.html'
+        }),
+        new ExtractTextPlugin('[name].[chunkhash].css')
+    ]
 };

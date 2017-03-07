@@ -1,6 +1,6 @@
 import angular from 'angular';
 import "angular-material";
-import "../dist/index.js";
+import "../lib/index.js";
 
 let nodesArr = createRandomLineageScatterPlotData2(36, 3);
 
