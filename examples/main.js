@@ -470,7 +470,7 @@ class AppController {
 
     }
 }
-
+AppController.$$ngIsClass = true; // temporary Firefox fix
 const App = angular.module('Visualizer', ["ancestry", "ngMaterial"])
     .controller('AppController', AppController);
 
