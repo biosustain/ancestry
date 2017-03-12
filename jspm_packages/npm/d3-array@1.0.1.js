@@ -1,1 +1,0 @@
-module.exports = require("npm:d3-array@1.0.1/build/d3-array");

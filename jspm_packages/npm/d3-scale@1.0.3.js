@@ -1,1 +1,0 @@
-module.exports = require("npm:d3-scale@1.0.3/build/d3-scale");

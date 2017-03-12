@@ -1,1 +1,0 @@
-module.exports = require("npm:d3-time-format@2.0.2/build/d3-time-format");

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'biosustain/ancestry';
+import './lib/index.js';
 //import 'biosustain/ancestry/dist/ancestry.css!';
 import 'angular-highlightjs';
 

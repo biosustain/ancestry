@@ -1,1 +1,0 @@
-module.exports = require("npm:d3-voronoi@1.1.0/build/d3-voronoi");
