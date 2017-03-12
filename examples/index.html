@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-controller="AppController" layout="column" flex>
+<lineage-plot value="treeData2" selected-nodes="selectedNodes($nodes)" node-click="nodeClick($event, $node)"></lineage-plot>
+<lineage-scatter-plot value="treeData" selected-nodes="selectedNodes($nodes)" node-click="nodeClick($event, $node)" flex></lineage-scatter-plot>
+<radial-lineage-plot value="radialPlotData" node-click="nodeClick($event, $node)"></radial-lineage-plot>
+<radial-phylogenetic-tree value="phyloData" branchlength="showBranchLengths" node-click="nodeClick($event, $node)"></radial-phylogenetic-tree>
+</body>
+</html>

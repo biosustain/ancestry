@@ -1,4 +1,8 @@
 .idea
 *.log
 node_modules
+<<<<<<< HEAD
 #jspm_packages
+=======
+examples/dist/*
+>>>>>>> master
