@@ -316,9 +316,9 @@ let data2 = {
             enabled: "onDelay",
             updateDelay: 500
         },
-        //groupSelection: {
-        //    enabled: true
-        //},
+        groupSelection: {
+            enabled: true
+        },
         heatmap: {
             enabled: true,
             title: "z values",
@@ -448,8 +448,6 @@ phylo.layout.legend = {
 
 class AppController {
     constructor($scope, $http) {
-        $scope.buttonText = 'It works!';
-
         $scope.selectedNodes = [];
 
         $http.get('sample.json').then((response) => {
@@ -466,7 +464,16 @@ class AppController {
 
         $scope.nodeClick = function($event, $node) {
             console.log($event, $node);
-        }
+        };
+
+        $scope.selectedNodes = function($nodes) {
+            console.log($nodes);
+        };
+
+        setTimeout(function() {
+            $scope.showBranchLengths = false;
+            $scope.$apply();
+        }, 7000);
 
     }
 }
