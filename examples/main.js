@@ -2,7 +2,7 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(36, 3);
+let nodesArr = createRandomLineageScatterPlotData2(200, 14);
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -216,15 +216,17 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
             for (let j = 0; j < totalChildren; j++) {
                 let parent = parents ? parents[p] : null,
                     name = "node_" + gen + labels[gen_labels[gen - 1]++],
+                    inLinkLabel = Math.random().toString(36).substr(2, 8),
                     node = {
                         name,
                         x: gen-1,
                         y: (s * 10 + gen + j) * rn,
                         z: Math.random() > 0.7 ? undefined : Math.round(Math.random() * 100) / 10,
                         parent: parent,
+                        inLinkLabel,
                         series: 10 + Math.floor(Math.random() * 4),
                         type: Math.random() > 0.5 ? "type1" : "type2",
-                        tooltip: [name, "Link in: " + Math.random().toString(36).substr(2, 15),
+                        tooltip: [name, "Link in: " + inLinkLabel,
                             "Link out: " + Math.random().toString(36).substr(2, 15)]
                     };
                 _parents.push(node.name);
@@ -266,7 +268,11 @@ let data = {
         },
         labelCollisionDetection: {
             enabled: "onDelay",
-            updateDelay: 500
+            updateDelay: 500,
+            order: {
+                nodeLabel: 1,
+                linkLabel: 2
+            }
         },
         groupSelection: {
             enabled: true
@@ -450,9 +456,9 @@ class AppController {
     constructor($scope, $http) {
         $scope.selectedNodes = [];
 
-        $http.get('sample.json').then((response) => {
-            $scope.treeData = data;
-            $scope.treeData2 = data2;
+        $http.get('sample.json').then(() => {
+            $scope.lineagePlotData = data2;
+            $scope.lineageScatterPlotData = data;
         });
 
         $scope.radialPlotData = data5;
