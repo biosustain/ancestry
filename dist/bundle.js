@@ -554,9 +554,9 @@ class LabelCollisionDetection {
         this.height = height;
         this.nodes = nodes;
         this.nodesData = nodes.data();
-        this.labelPositions = labelPositions;
+        this.nodeLabelPositions = labelPositions;
         this.labelLayout = labelLayout;
-        this.searchRadius = searchRadius;
+        this.nodeSearchRadius = searchRadius;
         this.quadtree = __WEBPACK_IMPORTED_MODULE_0_d3__["quadtree"]()
             .extent([[-1, -1], [this.width + 1, this.height + 1]]);
     }
@@ -570,7 +570,7 @@ class LabelCollisionDetection {
 
     quadtreeSearchWithTransform(point, {x: tx, y: ty, k: k} = {x: 0, y: 0, k: 1}) {
         let foundNodes = [],
-            rx = this.searchRadius.x, ry = this.searchRadius.y, r = Math.sqrt(rx * rx + ry * ry),
+            rx = this.nodeSearchRadius.x, ry = this.nodeSearchRadius.y, r = Math.sqrt(rx * rx + ry * ry),
             px = point.x * k + tx, py = point.y * k + ty,
             x0 = px - rx, y0 = py - ry, x3 = px + rx, y3 = py + ry;
 
@@ -611,7 +611,7 @@ class LabelCollisionDetection {
         this.createQuadTree(filteredLabels.data(), transform);
 
         let self = this,
-            N = self.labelPositions.length;
+            N = self.nodeLabelPositions.length;
         // prevent label overlapping
         filteredLabels.each(function (d) {
             let i = 0,
@@ -622,7 +622,7 @@ class LabelCollisionDetection {
 
             do {
                 // set next position from the position's list
-                d.labelPos = self.labelPositions[i++];
+                d.labelPos = self.nodeLabelPositions[i++];
                 // apply the new position to DOM element
                 multiAttr.call(sel, scaleProperties(d.labelPos, transform.k));
                 // recalculate label and node's new bounding boxes
