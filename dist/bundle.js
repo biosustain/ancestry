@@ -917,7 +917,6 @@ class LineagePlotController {
         let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
             treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* filterSeries */])(copy.data, this.visibleSeries),
             longestNodeName = treeData.length ? treeData.reduce((a, b) => a.name.length > b.name.length ? a : b).name : "",
-            longestLinkLabel = treeData.length ? treeData.reduce((a, b) => a.inLinkLabel.length > b.inLinkLabel.length ? a : b).inLinkLabel : "",
             verticalExtraSpace = 40,
             layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
             pathname = this.window.location.pathname,
@@ -1319,7 +1318,7 @@ class LineagePlotController {
             .attr("class", "link-label-layer")
             .selectAll("text")
             .data(descendants
-                .filter(d => d.parent.data.name != "virtualRoot")
+                .filter(d => d.parent.data.name != "virtualRoot" && d.data.inLinkLabel != null)
                 .map(d => {
                 return {nodeTo: d};
             }))
@@ -2266,7 +2265,7 @@ class LineageScatterPlotController {
             .attr("class", "link-label-layer")
             .selectAll("text")
             .data(descendants
-                .filter(d => d.parent.data.name != "virtualRoot")
+                .filter(d => d.parent.data.name != "virtualRoot" && d.data.inLinkLabel != null)
                 .map(d => {
                 return {nodeTo: d};
             }))

@@ -216,7 +216,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
             for (let j = 0; j < totalChildren; j++) {
                 let parent = parents ? parents[p] : null,
                     name = "node_" + gen + labels[gen_labels[gen - 1]++],
-                    inLinkLabel = Math.random().toString(36).substr(2, 8),
+                    inLinkLabel = Math.random() > 0.5 ? undefined : Math.random().toString(36).substr(2, 8),
                     node = {
                         name,
                         x: gen-1,
