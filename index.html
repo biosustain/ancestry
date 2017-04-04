@@ -110,6 +110,9 @@
                     class="prop-desc">Value for the heatmap
                     layer.</span>
             </li>
+            <li><code class="hljs hljs-attr">inLinkLabel</code> <span class="prop-type">(string | <code
+                    class="hljs hljs-literal">null</code>)</span><span class="prop-desc">Name of the ingoing link.</span>
+            </li>
             <li><code class="hljs hljs-attr">type</code> <span class="prop-type">(optional: string)</span><span
                     class="prop-desc">Type of the node.</span>
             </li>
@@ -203,6 +206,9 @@
             <li><code class="hljs hljs-attr">z</code> <span class="prop-type">(optional: number)</span> <span
                     class="prop-desc">Value for the heatmap
                     layer.</span>
+            </li>
+            <li><code class="hljs hljs-attr">inLinkLabel</code> <span class="prop-type">(string | <code
+                    class="hljs hljs-literal">null</code>)</span><span class="prop-desc">Name of the ingoing link.</span>
             </li>
             <li><code class="hljs hljs-attr">type</code> <span class="prop-type">(optional: string)</span><span
                     class="prop-desc">Type of the node.</span>
@@ -469,6 +475,11 @@
                             class="hljs hljs-attr">enabled</code> is set to <code
                             class="hljs hljs-string">"onDelay"</code>.</span>
                     </li>
+                    <li>
+                        <code class="hljs hljs-attr">order</code> <span class="prop-type">(object || default: <span
+                            class="code-inline" hljs hljs-language="json">{"nodeLabel": 1, "linkLabel": 1}</span>)</span><span
+                            class="prop-desc">Object specifying priority in performing collision detection. All elements with priority 1 are resolved at the same time and before elements with priority 2.</span>
+                    </li>
                 </ul>
             </li>
             <li><code class="hljs hljs-attr">groupSelection</code> <span class="prop-type">(object)</span>
@@ -596,23 +607,12 @@
             </li>
             <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(object)</span>
                     <span class="prop-desc">Only available for lineage and lineage-scatter plots. Tooltip provides basic information about a node on hover. Tooltip contents are customizable through nodes' <code class="hljs hljs-attr">tooltip</code> property.</span>
-                <ul>
-                    <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
-                            class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
-                            class="hljs hljs-literal">true</code>)</span>
-                        <span class="prop-desc"> Determines whether tooltip is displayed.</span>
-                    </li>
-                    <li><code class="hljs hljs-attr">showSeriesBar</code> <span class="prop-type">(<code
-                            class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
-                            class="hljs hljs-literal">false</code>)</span>
-                        <span class="prop-desc"> Determines whether a small colour bar corresponding to series colour will be added to tooltips.</span>
-                    </li>
-                    <li><code class="hljs hljs-attr">align</code> <span class="prop-type">(<code
-                            class="hljs hljs-string">"left"</code> | <code class="hljs hljs-string">"center"</code> | <code class="hljs hljs-string">"right"</code> || default: <code
-                            class="hljs hljs-string">"left"</code>)</span>
-                        <span class="prop-desc"> Determines how the text in tooltip is aligned.</span>
-                    </li>
-                </ul>
+            </li>
+            <li><code class="hljs hljs-attr">nodeLabelPositions</code> <span class="prop-type">(array)</span>
+                <span class="prop-desc">Only available for lineage and lineage-scatter plots. The array specifies SVG text element positions relative to the corresponding node which are tried out in the given order in label collision detection.
+                    The array's elements should be objects with <code class="hljs hljs-attr">x</code>, <code class="hljs hljs-attr">y</code>,
+                    <code class="hljs hljs-attr">text-anchor</code> properties.<br/> Default: <code class="hljs hljs-json">[{x: 10, y: 0, "text-anchor": "left"}, {x: -10, y: 0, "text-anchor": "right"}]</code>
+                </span>
             </li>
         </ul>
     </div>

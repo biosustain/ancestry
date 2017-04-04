@@ -50,6 +50,7 @@
       "name": "node_2A",
       "z": 0.5,
       "parent": "node_1A",
+      "inLinkLabel": "abcdefg",
       "series": "group 2",
       "type": "type2",
       "tooltip": ["node_2A", "z: 0.5"]
@@ -64,6 +65,7 @@
     {
       "name": "node_3B",
       "parent": "node_2A",
+      "inLinkLabel": "abcdefghi",
       "series": "group 3",
       "type": "type1",
       "tooltip": ["node_3B", "parent: node_2A"]
@@ -79,6 +81,7 @@
       "name": "node_4A",
       "z": 7.8,
       "parent": "node_3A",
+      "inLinkLabel": "defgabc",
       "series": "group 4",
       "type": "type2",
       "tooltip": ["node_4A", "z: 7.8"]
@@ -94,6 +97,7 @@
       "name": "node_4C",
       "z": 4.9,
       "parent": "node_3B",
+      "inLinkLabel": "defgabchij",
       "series": "group 3",
       "type": "type2"
     },
@@ -115,6 +119,7 @@
       "name": "node_2B",
       "z": 3.6,
       "parent": "node_1B",
+      "inLinkLabel": "defxyz",
       "series": "group 1",
       "type": "type1"
     },
@@ -136,6 +141,7 @@
       "name": "node_3E",
       "z": 8.9,
       "parent": "node_2B",
+      "inLinkLabel": "abcxyz",
       "series": "group 3",
       "type": "type2"
     },
@@ -143,6 +149,7 @@
       "name": "node_3F",
       "z": 1,
       "parent": "node_2B",
+      "inLinkLabel": "abcxyzdef",
       "series": "group 3",
       "type": "type2"
     },
@@ -156,6 +163,7 @@
     {
       "name": "node_3H",
       "parent": "node_2C",
+      "inLinkLabel": "abcdefxyz",
       "series": "group 1",
       "type": "type2"
     },
@@ -170,6 +178,7 @@
       "name": "node_4F",
       "z": 0.7,
       "parent": "node_3E",
+      "inLinkLabel": "defabcxyz",
       "series": "group 2",
       "type": "type1"
     },
