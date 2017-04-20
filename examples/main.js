@@ -2,7 +2,7 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(200, 14);
+let nodesArr = createRandomLineageScatterPlotData2(400, 14);
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -296,7 +296,9 @@ let data = {
         },
         tooltip: {
             align: "center"
-        }
+        },
+        controlsEnabledOnStart: ['label', 'zoom']
+
     }
 };
 
@@ -346,7 +348,8 @@ let data2 = {
         },
         tooltip: {
             showSeriesBar: true
-        }
+        },
+        controlsEnabledOnStart: ['select']
     }
 };
 
