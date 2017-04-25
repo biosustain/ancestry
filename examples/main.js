@@ -222,6 +222,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         x: gen-1,
                         y: (s * 10 + gen + j) * rn,
                         z: Math.random() > 0.7 ? undefined : Math.round(Math.random() * 100) / 10,
+                        selected: Math.random() < 0.5 ? false : (Math.random() < 0.5 ? true : undefined),
                         parent: parent,
                         inLinkLabel,
                         series: 10 + Math.floor(Math.random() * 4),
