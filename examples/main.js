@@ -321,6 +321,12 @@ let data2 = {
             gridOnly: true,
             valueProperty: "default"
         },
+        seriesColours: {
+            10: "red",
+            11: "purple",
+            12: "#777",
+            13: "orange"
+        },
         labelCollisionDetection: {
             enabled: "onDelay",
             updateDelay: 500
