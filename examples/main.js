@@ -2,7 +2,7 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(1000, 14);
+let nodesArr = createRandomLineageScatterPlotData2(200, 14);
 
 function createTreeLayout(nodesArray) {
     let trees = [],

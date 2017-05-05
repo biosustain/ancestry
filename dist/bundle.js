@@ -690,7 +690,7 @@ class LabelCollisionDetection {
                     sel.each(getBBox);
                     collision = that.isColliding(d, neighbours);
                 }
-                if(collision) { // reset bounding boxes if no non-colliding postions were found
+                if (collision) { // reset bounding boxes if no non-colliding positions were found
                     resetBBox(d);
                 }
                 // hide label if it collides
@@ -1372,7 +1372,7 @@ class LineagePlotController {
 
         let linkLabel = treesContainer.append("g")
             .attr("class", "link-label-layer")
-            .selectAll("text")
+            .selectAll("text.link-label")
             .data(descendants
                 .filter(d => d.parent.data.name != "virtualRoot" && d.data.inLinkLabel != null)
                 .map(d => {
