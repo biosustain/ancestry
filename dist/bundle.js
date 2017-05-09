@@ -89,14 +89,14 @@ module.exports = d3;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icons_sprite_css__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icons_sprite_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__icons_sprite_css__);
 /* harmony export (immutable) */ __webpack_exports__["i"] = d3legend;
-/* harmony export (immutable) */ __webpack_exports__["s"] = createPlotControls;
+/* harmony export (immutable) */ __webpack_exports__["r"] = createPlotControls;
 /* harmony export (immutable) */ __webpack_exports__["c"] = mergeTemplateLayout;
 /* harmony export (immutable) */ __webpack_exports__["j"] = createNodeTypes;
 /* harmony export (immutable) */ __webpack_exports__["k"] = createDynamicNodeAttr;
-/* harmony export (immutable) */ __webpack_exports__["r"] = scaleProperties;
+/* harmony export (immutable) */ __webpack_exports__["q"] = scaleProperties;
 /* harmony export (immutable) */ __webpack_exports__["f"] = createTreeLayout;
 /* unused harmony export copyNodesArray */
-/* harmony export (immutable) */ __webpack_exports__["t"] = spreadGenerations;
+/* harmony export (immutable) */ __webpack_exports__["s"] = spreadGenerations;
 /* unused harmony export roundOffFix */
 /* unused harmony export getNodeLabelBBox */
 /* harmony export (immutable) */ __webpack_exports__["n"] = getBBox;
@@ -108,13 +108,30 @@ module.exports = d3;
 /* harmony export (immutable) */ __webpack_exports__["e"] = testLabelLength;
 /* harmony export (immutable) */ __webpack_exports__["l"] = getExtraSpaceForLabel;
 /* harmony export (immutable) */ __webpack_exports__["m"] = multiAttr;
-/* harmony export (immutable) */ __webpack_exports__["p"] = getTranslation;
+/* unused harmony export getTranslation */
 /* harmony export (immutable) */ __webpack_exports__["a"] = attachActionOnResize;
 /* harmony export (immutable) */ __webpack_exports__["d"] = filterSeries;
-/* harmony export (immutable) */ __webpack_exports__["q"] = toggleSelectionDisplay;
+/* harmony export (immutable) */ __webpack_exports__["p"] = toggleSelectionDisplay;
 
 
 
+
+__WEBPACK_IMPORTED_MODULE_0_d3__["selection"].prototype.sortNoInsert = function(compare) {
+    function compareNode(a, b) {
+        return a && b ? compare(a.__data__, b.__data__) : !a - !b;
+    }
+
+    for (var groups = this._groups, m = groups.length, sortgroups = new Array(m), j = 0; j < m; ++j) {
+        for (var group = groups[j], n = group.length, sortgroup = sortgroups[j] = new Array(n), node, i = 0; i < n; ++i) {
+            if (node = group[i]) {
+                sortgroup[i] = node;
+            }
+        }
+        sortgroup.sort(compareNode);
+    }
+
+    return __WEBPACK_IMPORTED_MODULE_0_d3__["selectAll"](sortgroups[0]);
+};
 
 function d3legend() {
     let splitAfter = 0,
@@ -656,7 +673,7 @@ class LabelCollisionDetection {
 
         function recalculateCollisions(selection) {
             selection
-                .sort((a, b) => (b.x - a.x) + 0.01 * (b.y - a.y))
+                .sortNoInsert((a, b) => (b.x - a.x) + 0.01 * (b.y - a.y))
                 .each(function(d) {
                 let i = 0,
                     collision = false,
@@ -690,7 +707,7 @@ class LabelCollisionDetection {
                     sel.each(getBBox);
                     collision = that.isColliding(d, neighbours);
                 }
-                if (collision) { // reset bounding boxes if no non-colliding positions were found
+                if(collision) { // reset bounding boxes if no non-colliding positions were found
                     resetBBox(d);
                 }
                 // hide label if it collides
@@ -701,10 +718,10 @@ class LabelCollisionDetection {
     }
 
     checkCollision(rect1, rect2) {
-        return (rect1.left < rect2.right &&
-            rect1.right > rect2.left &&
-            rect1.bottom > rect2.top &&
-            rect1.top < rect2.bottom);
+        return (rect1.left <= rect2.right &&
+            rect1.right >= rect2.left &&
+            rect1.bottom >= rect2.top &&
+            rect1.top <= rect2.bottom);
     }
 
     isColliding(object1, objects) {
@@ -989,7 +1006,7 @@ class LineagePlotController {
         });
 
         if (layout.axis.valueProperty === "default") {
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["t" /* spreadGenerations */])(root);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["s" /* spreadGenerations */])(root);
         }
 
         let types = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["j" /* createNodeTypes */])(treeData, layout.nodeTypes, this.defaultNode),
@@ -1309,19 +1326,16 @@ class LineagePlotController {
             .attr("d", diagonal);
 
         __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(link, layout.link);
-        // Declare the nodes
-        let node = treesContainer.append("g")
-            .attr("class", "node-circle-layer")
-            .selectAll("g.node")
-            .data(descendants)
-            .enter().append("g")
-            .attr("class", "node")
-            .classed("selected", (d) => this.selectedNodesSet.has(d.data.name))
-            .attr("transform", d => `translate(${d.x},${d.y})`);
 
-        // Add node circles
-        let circle = node.append("circle")
+        let circle = treesContainer.append("g")
+            .attr("class", "node-circle-layer")
+            .selectAll("circle.node-circle")
+            .data(descendants)
+            .enter().append("circle")
             .attr("class", "node-circle")
+            .classed("selected", d => this.selectedNodesSet.has(d.data.name))
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
             .style("fill", d => !this.selectedNodesSet.has(d.data.name) ? '#FFF' : this.colours(d.data.series))
             .style("stroke", d => this.colours(d.data.series));
 
@@ -1427,14 +1441,14 @@ class LineagePlotController {
 
         function click() {
             __WEBPACK_IMPORTED_MODULE_2_d3__["event"].preventDefault();
-            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.parentNode);
+            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
             if (!n.classed("selected")) {
                 n.classed("selected", true);
-                n.select("circle.node-circle").style("fill", d => that.colours(d.data.series));
+                n.style("fill", d => that.colours(d.data.series));
             }
             else {
                 n.classed("selected", false);
-                n.select("circle.node-circle").style("fill", "#FFF");
+                n.style("fill", "#FFF");
             }
             updateSelection();
         }
@@ -1475,18 +1489,19 @@ class LineagePlotController {
                 rect_y2 = +rect.attr("height") + rect_y1,
                 any = false;
 
-            node.each(function (d, i) {
+            circle.each(function (d, i) {
                 let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
-                let [tx, ty] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* getTranslation */])(n.attr("transform"));
+                let tx = n.attr("cx"),
+                    ty = n.attr("cy");
 
                 if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
                     n.classed("selected", true);
-                    n.select("circle.node-circle").style("fill", d => that.colours(d.data.series));
+                    n.style("fill", d => that.colours(d.data.series));
                     any = true;
                 }
                 else if (!that.selectedNodesSet.has(d.data.name)) {
                     n.classed("selected", false);
-                    n.select("circle.node-circle").style("fill", "#FFF");
+                    n.style("fill", "#FFF");
                 }
             });
 
@@ -1496,14 +1511,14 @@ class LineagePlotController {
         function updateSelection() {
             let wasChange = false;
 
-            that.svg.selectAll("g.node.selected").each(d => {
+            that.svg.selectAll("circle.node-circle.selected").each(d => {
                 if (!that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.add(d.data.name);
                     wasChange = true;
                 }
             });
 
-            that.svg.selectAll("g.node:not(.selected)").each(d => {
+            that.svg.selectAll("circle.node-circle:not(.selected)").each(d => {
                 if (that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.delete(d.data.name);
                     wasChange = true;
@@ -1560,10 +1575,10 @@ class LineagePlotController {
                 [linkLabelInViewport, linkLabelNotInViewport] = linkLabel.partition(isVisible),
                 [linkInViewport, linkNotInViewport] = link.partition(linkVisible),
                 [circleInViewport, circleNotInViewport] = circle.partition(isVisible);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
 
             let scale = zoomTransform.k;
             treesContainer.attr("transform", zoomTransform);
@@ -1576,23 +1591,23 @@ class LineagePlotController {
                 chart.selectAll("g.x-axis g.tick text").style("opacity", 1e-6);
             }
 
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(nodeAttr, scale, true));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
 
             if (layout.heatmap.enabled) {
                 let [heatmapCircleInViewport, heatmapCircleNotInViewport] = that.heatmapCircle.partition(isVisible);
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.heatmap.circle, scale));
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
             }
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.link, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
             nodeLabelInViewport.each(d => {
-                    d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(d.currentLabelPos, scale);
+                    d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(d.currentLabelPos, scale);
                     d.x = d.node.x + d.scaledLabelPos.x;
                     d.y = d.node.y + d.scaledLabelPos.y;
                 })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("text-anchor", d => d.scaledLabelPos['text-anchor']);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.nodeLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
 
             linkLabelInViewport.each(d => {
                     d.x = (d.nodeTo.x + d.nodeTo.parent.x) / 2;
@@ -1600,10 +1615,10 @@ class LineagePlotController {
                 })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.linkLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
 
             if (layout.groupSelection.enabled) {
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
             }
         }
 
@@ -1636,7 +1651,7 @@ class LineagePlotController {
             this.activeControls = new Set(layout.controlsEnabledOnStart);
         }
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["s" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleZoom(toggle) {
             if (toggle) {
@@ -2297,20 +2312,19 @@ class LineageScatterPlotController {
 
         let nodeSvgData = treeData.map(d => {return {data: d};});
         // create node groups
-        let node = plotArea.append("g")
+        let circle = plotArea.append("g")
             .attr("class", "node-circle-layer")
-            .selectAll("g.node")
+            .selectAll("circle.node-circle")
             .data(descendants)
             .enter()
-            .append("g")
-            .attr("class", "node")
+            .append("circle")
+            .attr("class", "node-circle")
             .classed("selected", d => this.selectedNodesSet.has(d.data.name))
-            .attr("transform", node => `translate(${node.x}, ${node.y})`);
-
-        //render node circles
-        let circle = node.append("circle")
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
             .style("stroke", d => this.colours(d.data.series))
             .style("fill", d => !this.selectedNodesSet.has(d.data.name) ? '#FFF' : this.colours(d.data.series));
+
 
         if (layout.tooltip.show) {
             circle.on("mouseover", function (d, i) {
@@ -2430,14 +2444,14 @@ class LineageScatterPlotController {
 
         function click(d) {
             __WEBPACK_IMPORTED_MODULE_2_d3__["event"].preventDefault();
-            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.parentNode);
+            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
             if (!n.classed("selected")) {
                 n.classed("selected", true);
-                n.select("circle").style("fill", d => that.colours(d.data.series));
+                n.style("fill", d => that.colours(d.data.series));
             }
             else {
                 n.classed("selected", false);
-                n.select("circle").style("fill", "#FFF");
+                n.style("fill", "#FFF");
             }
             updateSelection();
         }
@@ -2461,18 +2475,19 @@ class LineageScatterPlotController {
                 rect_y2 = +rect.attr("height") + rect_y1,
                 any = false;
 
-            node.each(function(d, i, j) {
+            circle.each(function(d, i, j) {
                 let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
-                let [tx, ty] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* getTranslation */])(n.attr("transform"));
+                let tx = n.attr("cx"),
+                    ty = n.attr("cy");
 
                 if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
                     n.classed("selected", true);
-                    n.select("circle").style("fill", d => that.colours(d.data.series));
+                    n.style("fill", d => that.colours(d.data.series));
                     any = true;
                 }
                 else if(!that.selectedNodesSet.has(d.data.name)) {
                     n.classed("selected", false);
-                    n.select("circle").style("fill", "#FFF");
+                    n.style("fill", "#FFF");
                 }
             });
 
@@ -2482,14 +2497,14 @@ class LineageScatterPlotController {
         function updateSelection() {
             let wasChange = false;
 
-            that.svg.selectAll("g.node.selected").each(d => {
+            that.svg.selectAll("circle.node-circle.selected").each(d => {
                 if(!that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.add(d.data.name);
                     wasChange = true;
                 }
             });
 
-            that.svg.selectAll("g.node:not(.selected)").each(d => {
+            that.svg.selectAll("circle.node-circle:not(.selected)").each(d => {
                 if(that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.delete(d.data.name);
                     wasChange = true;
@@ -2544,10 +2559,10 @@ class LineageScatterPlotController {
                 [linkLabelInViewport, linkLabelNotInViewport] = linkLabel.partition(isVisible),
                 [linkInViewport, linkNotInViewport] = link.partition(linkVisible),
                 [circleInViewport, circleNotInViewport] = circle.partition(isVisible);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
 
             let scale = zoomTransform.k;
             plotArea.attr("transform", zoomTransform);
@@ -2560,23 +2575,23 @@ class LineageScatterPlotController {
             that.svg.selectAll("path.domain").style("shape-rendering", "crispEdges");
             that.svg.selectAll(".axis line").attr("stroke", layout.axisColour);
 
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(nodeAttr, scale, true));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
 
             if (layout.heatmap.enabled) {
                 let [heatmapCircleInViewport, heatmapCircleNotInViewport] = that.heatmapCircle.partition(isVisible);
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.heatmap.circle, scale));
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
             }
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.link, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
             nodeLabelInViewport.each(d => {
-                d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(d.currentLabelPos, scale);
+                d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(d.currentLabelPos, scale);
                 d.x = d.node.x + d.scaledLabelPos.x;
                 d.y = d.node.y + d.scaledLabelPos.y;
             })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("text-anchor", d => d.scaledLabelPos['text-anchor']);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.nodeLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
 
             linkLabelInViewport.each(d => {
                 d.x = (d.nodeTo.x + d.nodeTo.parent.x) / 2;
@@ -2584,10 +2599,10 @@ class LineageScatterPlotController {
             })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.linkLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
 
             if (layout.groupSelection.enabled) {
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
             }
         }
 
@@ -2625,7 +2640,7 @@ class LineageScatterPlotController {
             this.activeControls = new Set(layout.controlsEnabledOnStart);
         }
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["s" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleZoom(toggle) {
             if (toggle) {
@@ -3394,7 +3409,7 @@ class RadialLineagePlotController {
             this.activeControls = new Set(layout.controlsEnabledOnStart);
         }
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["s" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleMove(toggle) {
             if (toggle) {
@@ -3995,7 +4010,7 @@ class RadialPhylogeneticTreeController {
             this.activeControls = new Set(layout.controlsEnabledOnStart);
         }
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["s" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleMove(toggle) {
             if (toggle) {

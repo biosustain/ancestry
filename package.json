@@ -1,6 +1,6 @@
 {
   "name": "ancestry",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Ancestry: a package for visualization of lineage data",
   "main": "dist/bundle.js",
   "scripts": {
