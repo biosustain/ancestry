@@ -21,8 +21,8 @@
 
     <h2 class="project-tagline"></h2>
     <a href="https://github.com/biosustain/ancestry" class="btn">View on GitHub</a>
-    <a href="https://github.com/biosustain/ancestry/archive/v1.3.3.zip" class="btn">Download .zip</a>
-    <a href="https://github.com/biosustain/ancestry/archive/v1.3.3.tar.gz" class="btn">Download .tar.gz</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v1.4.0.zip" class="btn">Download .zip</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v1.4.0.tar.gz" class="btn">Download .tar.gz</a>
 </section>
 
 <section class="main-content">
@@ -119,6 +119,9 @@
             <li><code class="hljs hljs-attr">series</code> <span class="prop-type">(optional: string)</span> <span
                     class="prop-desc">Name of the series the node belongs to.</span>
             </li>
+            <li><code class="hljs hljs-attr">selected</code> <span class="prop-type">(optional: boolean)</span> <span
+                    class="prop-desc">Specifies whether a node should be selected on render.</span>
+            </li>
             <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(optional: array of strings)</span> <span
                     class="prop-desc">Array with strings corresponding to lines in a tooltip. If not used, <code class="hljs hljs-attr">name</code> property is used for tooltip.</span>
             </li>
@@ -131,24 +134,33 @@
     </p>
 
     <div class="layout-definition code-inline">
-        <code class="hljs hljs-attr">axis</code> <span class="prop-type">(object)</span>
         <ul>
-            <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
-                    class="hljs hljs-string">""</code>)</span><span
-                    class="prop-desc">The title of the (horizontal) axis.</span>
+            <li>
+                <code class="hljs hljs-attr">axis</code> <span class="prop-type">(object)</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">title</code> <span class="prop-type">(string || default: <code
+                            class="hljs hljs-string">""</code>)</span><span
+                            class="prop-desc">The title of the (horizontal) axis.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
+                            class="hljs hljs-literal">true</code> | <code
+                            class="hljs hljs-literal">false</code> || default: <code
+                            class="hljs hljs-literal">true</code>)</span><span
+                            class="prop-desc">Determines whether the axis is drawn.</span></li>
+                    <li><code class="hljs hljs-attr">gridOnly</code> <span class="prop-type">(<code
+                            class="hljs hljs-literal">true</code> | <code
+                            class="hljs hljs-literal">false</code> || default: <code
+                            class="hljs hljs-literal">false</code>)</span><span
+                            class="prop-desc">Determines whether only the grid is displayed (axis and ticks are hidden). Note: Only works when <code
+                            class="hljs hljs-attr">axis.show</code> is set to <code
+                            class="hljs hljs-literal">true</code>.</span>
+                    </li>
+                </ul>
             </li>
-            <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
-                    class="hljs hljs-literal">true</code> | <code
-                    class="hljs hljs-literal">false</code> || default: <code
-                    class="hljs hljs-literal">true</code>)</span><span
-                    class="prop-desc">Determines whether the axis is drawn.</span></li>
-            <li><code class="hljs hljs-attr">gridOnly</code> <span class="prop-type">(<code
-                    class="hljs hljs-literal">true</code> | <code
-                    class="hljs hljs-literal">false</code> || default: <code
-                    class="hljs hljs-literal">false</code>)</span><span
-                    class="prop-desc">Determines whether only the grid is displayed (axis and ticks are hidden). Note: Only works when <code
-                    class="hljs hljs-attr">axis.show</code> is set to <code
-                    class="hljs hljs-literal">true</code>.</span>
+            <li>
+                <code class="hljs hljs-attr">minGenerationWidth</code> <span class="prop-type">(number || default: <code
+                    class="hljs hljs-number">50</code>)</span><span
+                    class="prop-desc">Specifies the minimum width of a generation (distance between a parent and its children nodes) in pixels.</span>
             </li>
         </ul>
     </div>
@@ -215,6 +227,9 @@
             </li>
             <li><code class="hljs hljs-attr">series</code> <span class="prop-type">(optional: string)</span> <span
                     class="prop-desc">Name of the series the node belongs to.</span>
+            </li>
+            <li><code class="hljs hljs-attr">selected</code> <span class="prop-type">(optional: boolean)</span> <span
+                    class="prop-desc">Specifies whether a node should be selected on render.</span>
             </li>
             <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(optional: array of strings)</span> <span
                     class="prop-desc">Array with strings corresponding to lines in a tooltip. If not used, <code class="hljs hljs-attr">name</code> property is used for tooltip.</span>
@@ -308,10 +323,14 @@
     </p>
 
     <div class="layout-definition code-inline">
-        <code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
-            class="code-inline" hljs hljs-language="json">{"font-size": 14, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
-            class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
-        <li><code class="hljs hljs-attr">nodeClick</code> <span class="prop-type">(array)</span> <span class="prop-desc">Callback with injected arguments ($event - click event Object, $node - clicked node's data)</span></li>
+        <ul>
+            <li>
+                <code class="hljs hljs-attr">outerNodeLabel</code> <span class="prop-type">(object || default: <span
+                    class="code-inline" hljs hljs-language="json">{"font-size": 14, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
+                    class="prop-desc">Object with SVG text attributes defining appearance of leaf nodes' labels.</span>
+            </li>
+        </ul>
+
     </div>
 
     <h3 id="radial-phylogenetic-tree">Radial phylogenetic tree</h3>
@@ -438,6 +457,10 @@
                     class="code-inline" hljs hljs-language="json">{}</span>)</span>
                     <span class="prop-desc">Dictionary with node types. Node types should be string keys, values should be objects with attributes of SVG circle such as <code
                             class="hljs hljs-attr">"stroke-width"</code>, <code class="hljs hljs-attr">"r"</code> etc. Changing colours should be avoided as it is also controlled by series and could interfere.</span>
+            </li>
+            <li><code class="hljs hljs-attr">seriesColours</code> <span class="prop-type">(object || default: <code
+                    class="code-inline" hljs hljs-literal>null</code>)</span>
+                    <span class="prop-desc">Object with series ids as keys and colours as values. If this property is used, it is requried to specify series id for each node data object.</span>
             </li>
             <li><code class="hljs hljs-attr">nodeLabel</code> <span class="prop-type">(object || default: <span
                     class="code-inline" hljs hljs-language="json">{"font-size": 12, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
@@ -613,6 +636,9 @@
                     The array's elements should be objects with <code class="hljs hljs-attr">x</code>, <code class="hljs hljs-attr">y</code>,
                     <code class="hljs hljs-attr">text-anchor</code> properties.<br/> Default: <code class="hljs hljs-json">[{x: 10, y: 0, "text-anchor": "left"}, {x: -10, y: 0, "text-anchor": "right"}]</code>
                 </span>
+            </li>
+            <li><code class="hljs hljs-attr">controlsEnabledOnStart</code> <span class="prop-type">(array)</span>
+                <span class="prop-desc">Specifies which plot controls are active on first render. Possible values for lineage / lineage-scatter plots are: <code class="hljs hljs-string">"label"</code>, <code class="hljs hljs-string">"zoom"</code> (zooming and panning), <code class="hljs hljs-string">"select"</code>. (Note: <code class="hljs hljs-string">"select"</code> should not be combined with <code class="hljs hljs-string">"zoom"</code>). The only possible value for radial and phylogenetic tree plots is <code class="hljs hljs-string">"zoom"</code>.</span>
             </li>
         </ul>
     </div>

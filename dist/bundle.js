@@ -16657,7 +16657,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icons_sprite_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__icons_sprite_css__);
 /* harmony export (immutable) */ __webpack_exports__["i"] = d3legend;
 /* harmony export (immutable) */ __webpack_exports__["r"] = createPlotControls;
-/* harmony export (immutable) */ __webpack_exports__["d"] = mergeTemplateLayout;
+/* harmony export (immutable) */ __webpack_exports__["c"] = mergeTemplateLayout;
 /* harmony export (immutable) */ __webpack_exports__["j"] = createNodeTypes;
 /* harmony export (immutable) */ __webpack_exports__["k"] = createDynamicNodeAttr;
 /* harmony export (immutable) */ __webpack_exports__["q"] = scaleProperties;
@@ -16675,12 +16675,30 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* harmony export (immutable) */ __webpack_exports__["e"] = testLabelLength;
 /* harmony export (immutable) */ __webpack_exports__["l"] = getExtraSpaceForLabel;
 /* harmony export (immutable) */ __webpack_exports__["m"] = multiAttr;
-/* harmony export (immutable) */ __webpack_exports__["p"] = getTranslation;
+/* unused harmony export getTranslation */
 /* harmony export (immutable) */ __webpack_exports__["a"] = attachActionOnResize;
-/* harmony export (immutable) */ __webpack_exports__["c"] = filterSeries;
+/* harmony export (immutable) */ __webpack_exports__["d"] = filterSeries;
+/* harmony export (immutable) */ __webpack_exports__["p"] = toggleSelectionDisplay;
 
 
 
+
+__WEBPACK_IMPORTED_MODULE_0_d3__["selection"].prototype.sortNoInsert = function(compare) {
+    function compareNode(a, b) {
+        return a && b ? compare(a.__data__, b.__data__) : !a - !b;
+    }
+
+    for (var groups = this._groups, m = groups.length, sortgroups = new Array(m), j = 0; j < m; ++j) {
+        for (var group = groups[j], n = group.length, sortgroup = sortgroups[j] = new Array(n), node, i = 0; i < n; ++i) {
+            if (node = group[i]) {
+                sortgroup[i] = node;
+            }
+        }
+        sortgroup.sort(compareNode);
+    }
+
+    return __WEBPACK_IMPORTED_MODULE_0_d3__["selectAll"](sortgroups[0]);
+};
 
 function d3legend() {
     let splitAfter = 0,
@@ -16867,7 +16885,7 @@ function d3legend() {
     return legend;
 }
 
-function createPlotControls(root, controls, activeControls = []) {
+function createPlotControls(root, controls, activeControls = new Set()) {
     const ICONS = {
         'download': 'svg-ic_photo_camera_black_24px',
         'select': 'svg-ic_radio_button_checked_black_24px',
@@ -16904,7 +16922,7 @@ function createPlotControls(root, controls, activeControls = []) {
     });
 
     plotRoot.select("div.action-zoom")
-        .classed("active", activeControls.includes("zoom"))
+        .classed("active", activeControls.has("zoom"))
         .on('click', function() {
             let self = __WEBPACK_IMPORTED_MODULE_0_d3__["select"](this);
             let active = self.classed("active");
@@ -16915,10 +16933,11 @@ function createPlotControls(root, controls, activeControls = []) {
                 selectMode.classed("active", false);
                 (controls['select'])(false);
             }
+            setActiveControl();
         });
 
     plotRoot.select("div.action-select")
-        .classed("active", activeControls.includes("select"))
+        .classed("active", activeControls.has("select"))
         .on('click', function() {
             let self = __WEBPACK_IMPORTED_MODULE_0_d3__["select"](this);
             let active = self.classed("active");
@@ -16929,15 +16948,17 @@ function createPlotControls(root, controls, activeControls = []) {
                 zoomMode.classed("active", false);
                 (controls['zoom'])(false);
             }
+            setActiveControl();
         });
 
     plotRoot.select("div.action-label")
-        .classed("active", activeControls.includes("label"))
+        .classed("active", activeControls.has("label"))
         .on('click', function() {
             let self = __WEBPACK_IMPORTED_MODULE_0_d3__["select"](this);
             let active = self.classed("active");
             (controls['label'])(!active);
             self.classed("active", !active);
+            setActiveControl();
         });
 
     plotRoot.select("div.action-download")
@@ -16961,6 +16982,10 @@ function createPlotControls(root, controls, activeControls = []) {
             });
         });
 
+    for (let ctrl of ctrls) {
+        controls[ctrl](activeControls.has(ctrl));
+    }
+
     function triggerDownload (imgURI) {
         var evt = new MouseEvent('click', {
             view: window,
@@ -16974,6 +16999,12 @@ function createPlotControls(root, controls, activeControls = []) {
         a.setAttribute('target', '_blank');
 
         a.dispatchEvent(evt);
+    }
+    function setActiveControl() {
+        activeControls.clear();
+        for (let activeCtrl of plotRoot.selectAll('.active').data()) {
+            activeControls.add(activeCtrl);
+        }
     }
 }
 
@@ -17187,12 +17218,12 @@ class LabelCollisionDetection {
         this.quadtree = __WEBPACK_IMPORTED_MODULE_0_d3__["quadtree"]().extent([[-1, -1], [this.width + 1, this.height + 1]])
             .x(d => d.x * transform.k + transform.x)
             .y(d => d.y * transform.k + transform.y);
-        let filterVisible = d => {
+        let isVisible = d => {
             let dx = d.x * transform.k + transform.x, dy = d.y * transform.k + transform.y;
             return dx >= -10 && dx <= this.width + 10 && dy >= -10 && dy <= this.height + 10;
         };
         for (let fixedSelection of this.levelFixed) {
-            let filteredSelection = fixedSelection.filter(filterVisible);
+            let filteredSelection = fixedSelection.filter(isVisible);
             filteredSelection.each(getBBox);
             this.quadtree.addAll(filteredSelection.data());
         }
@@ -17201,7 +17232,7 @@ class LabelCollisionDetection {
                 continue;
             }
             let mergedSelection = level.length > 1 ? __WEBPACK_IMPORTED_MODULE_0_d3__["selectAll"]([].concat.apply([], level.map(d => d.nodes()))) : level[0];
-            let filteredSelection = mergedSelection.filter(filterVisible);
+            let filteredSelection = mergedSelection.filter(isVisible);
             filteredSelection.each(resetBBox);
             this.quadtree.addAll(filteredSelection.data());
             recalculateCollisions(filteredSelection);
@@ -17209,7 +17240,7 @@ class LabelCollisionDetection {
 
         function recalculateCollisions(selection) {
             selection
-                .sort((a, b) => (b.x - a.x) + 0.01 * (b.y - a.y))
+                .sortNoInsert((a, b) => (b.x - a.x) + 0.01 * (b.y - a.y))
                 .each(function(d) {
                 let i = 0,
                     collision = false,
@@ -17243,20 +17274,21 @@ class LabelCollisionDetection {
                     sel.each(getBBox);
                     collision = that.isColliding(d, neighbours);
                 }
-                if(collision) { // reset bounding boxes if no non-colliding postions were found
+                if(collision) { // reset bounding boxes if no non-colliding positions were found
                     resetBBox(d);
                 }
                 // hide label if it collides
+                d.isColliding = collision;
                 sel.style("opacity", collision ? 1e-6 : 1);
             })
         }
     }
 
     checkCollision(rect1, rect2) {
-        return (rect1.left < rect2.right &&
-            rect1.right > rect2.left &&
-            rect1.bottom > rect2.top &&
-            rect1.top < rect2.bottom);
+        return (rect1.left <= rect2.right &&
+            rect1.right >= rect2.left &&
+            rect1.bottom >= rect2.top &&
+            rect1.top <= rect2.bottom);
     }
 
     isColliding(object1, objects) {
@@ -17369,14 +17401,21 @@ function getTranslation(transform) {
 function attachActionOnResize(window, action) {
     window = angular.element(window);
     let width = window[0].innerWidth;
+    let lastUpdate = performance.now();
+    let scheduleId = null;
     //let height = window[0].innerHeight;
 
     window.on('resize', (event) => {
-        let newWidth = window[0].innerWidth;
+        let newWidth = window[0].innerWidth,
+            now = performance.now();
         //let newHeight = window[0].innerHeight;
         if (width != newWidth /*|| height != newHeight*/) {
             width = newWidth;
-            action();
+            if (now - lastUpdate < 500) {
+                clearTimeout(scheduleId);
+            }
+            lastUpdate = now;
+            scheduleId = setTimeout(action, 500);
         }
     });
 }
@@ -17407,6 +17446,11 @@ function filterSeries(nodes, activeSeries) {
         filteredNodes.push(node);
     }
     return filteredNodes;
+}
+
+function toggleSelectionDisplay(selectionInViewport, selectionNotInViewport) {
+    selectionInViewport.style("display", "inline");
+    selectionNotInViewport.style("display", "none");
 }
 
 /***/ }),
@@ -19039,7 +19083,7 @@ function SVG2Bitmap(svg, receiver, params) {
 
 
 class LineagePlotController {
-    constructor($element, $window) {
+    constructor($element, $window, $scope) {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["a" /* attachActionOnResize */])($window, () => this.render({}));
         $element.addClass("ancestry ancestry-lineage-plot");
 
@@ -19056,15 +19100,17 @@ class LineagePlotController {
             r: 4,
             "stroke-width": 2
         };
-        this.selectedNodesSet = null;
+        this.selectedNodesSet = new Set();
+        this.activeControls = null;
         this.LCD = null; // label collision detection
         this.lastLCDUpdateTime = 0;
         this.LCDUpdateID = null;
         this.heatmapColourScale = null;
         this.heatmapCircle = null;
         this.visibleSeries = new Set();
-        this.window = $window;
-        this.element = $element;
+        this._$window = $window;
+        this._$element = $element;
+        this._$scope = $scope;
     }
 
     $onChanges(changes) {
@@ -19081,23 +19127,27 @@ class LineagePlotController {
 
         let defs = this.svg.append("defs");
 
-        this.selectedNodesSet = new Set();
-
         if (!this.value || !this.value.data.length) return;
 
-        let seriesNames = Array.from(new Set(this.value.data.map(d => d.series)));
+        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
+            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
+            seriesNames = Array.from(new Set(copy.data.map(d => d.series)));
 
         if (options.isNewData) {
-            this.colours.domain([]);
+            if (layout.seriesColours == null) {
+                this.colours.domain([]);
+            }
             this.visibleSeries = new Set(seriesNames);
+            this.selectedNodesSet.clear();
+            for (let node of this.value.data.filter(d => d.selected === true)) {
+                this.selectedNodesSet.add(node.name);
+            }
         }
 
-        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
-            treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* filterSeries */])(copy.data, this.visibleSeries),
+        let treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* filterSeries */])(copy.data, this.visibleSeries),
             longestNodeName = treeData.length ? treeData.reduce((a, b) => a.name.length > b.name.length ? a : b).name : "",
             verticalExtraSpace = 40,
-            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
-            pathname = this.window.location.pathname,
+            pathname = this._$window.location.pathname,
             maxLabelLength = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["e" /* testLabelLength */])(this.svg, longestNodeName, layout.nodeLabel),
             maxLabelOffset = __WEBPACK_IMPORTED_MODULE_2_d3__["max"](layout.nodeLabelPositions, (pos) => Math.abs(pos.x)),
             legendHeight = 0, legendWidth = 0, colourbarHeight = 0, colourbarWidth = 0,
@@ -19143,8 +19193,8 @@ class LineagePlotController {
         // FIXME: time plotting not implemented / checked yet
         let isTimePlot = false;//trees[0].generation instanceof Date;
 
-        let elementWidth = this.element[0].offsetWidth,
-            elementHeight = this.element[0].offsetHeight;
+        let elementWidth = this._$element[0].offsetWidth,
+            elementHeight = this._$element[0].offsetHeight;
 
 
         let margin = layout.margin;
@@ -19168,6 +19218,10 @@ class LineagePlotController {
             .attr("fill", layout.backgroundColour);
 
         let chart = this.svg.append("g");
+
+        if (layout.seriesColours != null) {
+            this.colours = (series) => layout.seriesColours[series];
+        }
 
         if (layout.heatmap.enabled) {
 
@@ -19269,18 +19323,23 @@ class LineagePlotController {
         generationExtent[1] += 1;
         generationExtent[0] -= 1;
         let depth = width / (generationExtent[1] - generationExtent[0]);
-        let spaceRight = 1;
+
+        let spaceRight = 1,
+            treeWidth = width;
         //trim depth if exceeds maximum allowed depth
         if (depth > this.maxAllowedDepth) {
             depth = this.maxAllowedDepth;
             spaceRight = (width / depth) - originalExtent[1];
             generationExtent[1] = width / depth;
+        } else if (depth < layout.minGenerationWidth) {
+            depth = layout.minGenerationWidth;
+            treeWidth = (generationExtent[1] - generationExtent[0]) * depth;
         }
 
         // define x scale
         let xScale = __WEBPACK_IMPORTED_MODULE_2_d3__["scaleLinear"]()
             .domain(generationExtent)
-            .range([0, width]);
+            .range([0, treeWidth]);
 
 
         let labelExtraSpace = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["l" /* getExtraSpaceForLabel */])(xScale, maxLabelLength + maxLabelOffset + 5),
@@ -19295,6 +19354,24 @@ class LineagePlotController {
 
         xScale.domain(newDomain);
 
+        let clipRectId = `lineage-clip-rect${__WEBPACK_IMPORTED_MODULE_2_d3__["selectAll"]("clipPath").size()}`,
+            treesClipRect = defs.append("svg:clipPath")
+                .attr("id", clipRectId)
+                .append("svg:rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", width)
+                .attr("height", height);
+
+        let axisClipRectId = `lineage-clip-rect${__WEBPACK_IMPORTED_MODULE_2_d3__["selectAll"]("clipPath").size()}`,
+            axisClipRect = defs.append("svg:clipPath")
+                .attr("id", axisClipRectId)
+                .append("svg:rect")
+                .attr("x", 0)
+                .attr("y", -100)
+                .attr("width", width)
+                .attr("height", height + 100);
+
         // Define x axis and grid
         let xAxis = __WEBPACK_IMPORTED_MODULE_2_d3__["axisBottom"]()
             .scale(xScale)
@@ -19304,6 +19381,8 @@ class LineagePlotController {
         //render x axis
         if (layout.axis.show) {
             axisSVG = chart.append("g")
+                .attr("clip-path", `url(${pathname}#${axisClipRectId})`)
+                .append("g")
                 .attr("class", "axis x-axis")
                 .call(xAxis);
 
@@ -19316,6 +19395,10 @@ class LineagePlotController {
         }
 
         height = (layout.height || elementHeight) - margin.top - margin.bottom;
+
+        treesClipRect.attr("height", height);
+        treesClipRect.attr("height", height + 100);
+
         xAxis.tickSizeInner(-height);
         axisSVG.attr("transform", `translate(0, ${height})`).call(xAxis);
         axisSVG.selectAll(".tick line").attr("opacity", 0.2).style("shape-rendering", "crispEdges");
@@ -19324,7 +19407,7 @@ class LineagePlotController {
 
         chart.attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-        let treeLayout = __WEBPACK_IMPORTED_MODULE_2_d3__["tree"]().size([height - verticalExtraSpace, width]),
+        let treeLayout = __WEBPACK_IMPORTED_MODULE_2_d3__["tree"]().size([height - verticalExtraSpace, treeWidth]),
             nodes = treeLayout(__WEBPACK_IMPORTED_MODULE_2_d3__["hierarchy"](root, d => d.children));
 
         let descendants = nodes.descendants().filter(n => n.parent !== null);
@@ -19333,16 +19416,6 @@ class LineagePlotController {
             node.y = node.x + verticalExtraSpace / 2;
             node.x = xScale(node.data.generation);
         });
-
-        let clipRectId = `lineage-scatter-clip-rect${__WEBPACK_IMPORTED_MODULE_2_d3__["selectAll"]("clipPath").size()}`;
-
-        let clip = defs.append("svg:clipPath")
-            .attr("id", clipRectId)
-            .append("svg:rect")
-            .attr("x", 0)
-            .attr("y", 0)
-            .attr("width", width)
-            .attr("height", height);
 
         this.svg.attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
@@ -19394,7 +19467,7 @@ class LineagePlotController {
 
         let mouseRect = mouseCaptureGroup.append("rect")
             .attr("id", "mouse-capture")
-            .attr("width", width)
+            .attr("width", treeWidth)
             .attr("height", height)
             .style("fill", "transparent");
 
@@ -19431,25 +19504,22 @@ class LineagePlotController {
             .attr("d", diagonal);
 
         __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(link, layout.link);
-        // Declare the nodes
-        let node = treesContainer.append("g")
-            .attr("class", "node-circle-layer")
-            .selectAll("g.node")
-            .data(descendants)
-            .enter().append("g")
-            .attr("class", "node")
-            .classed("selected", (d) => this.selectedNodesSet.has(d.data.name))
-            .attr("transform", d => `translate(${d.x},${d.y})`);
 
-        // Add node circles
-        let circle = node.append("circle")
+        let circle = treesContainer.append("g")
+            .attr("class", "node-circle-layer")
+            .selectAll("circle.node-circle")
+            .data(descendants)
+            .enter().append("circle")
             .attr("class", "node-circle")
+            .classed("selected", d => this.selectedNodesSet.has(d.data.name))
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
             .style("fill", d => !this.selectedNodesSet.has(d.data.name) ? '#FFF' : this.colours(d.data.series))
             .style("stroke", d => this.colours(d.data.series));
 
         if (layout.tooltip.show) {
             circle.on("mouseover", function (d, i) {
-                let {x: xPos, y: yPos} = __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["b" /* d3tooltip */].getRelativePosition(this, that.element[0]),
+                let {x: xPos, y: yPos} = __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["b" /* d3tooltip */].getRelativePosition(this, that._$element[0]),
                     seriesBar = layout.tooltip.showSeriesBar ?
                         `<div class="tooltip-colour-box" style=\"background-color: ${that.colours(d.data.series)}\"></div>` : "",
                     text = d.data.tooltip ? d.data.tooltip.map((line) => `<span align="${layout.tooltip.align}" class="tooltip-text">${line}</span>`).join("") :
@@ -19494,7 +19564,7 @@ class LineagePlotController {
 
         let linkLabel = treesContainer.append("g")
             .attr("class", "link-label-layer")
-            .selectAll("text")
+            .selectAll("text.link-label")
             .data(descendants
                 .filter(d => d.parent.data.name != "virtualRoot" && d.data.inLinkLabel != null)
                 .map(d => {
@@ -19549,14 +19619,14 @@ class LineagePlotController {
 
         function click() {
             __WEBPACK_IMPORTED_MODULE_2_d3__["event"].preventDefault();
-            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.parentNode);
+            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
             if (!n.classed("selected")) {
                 n.classed("selected", true);
-                n.select("circle.node-circle").style("fill", d => that.colours(d.data.series));
+                n.style("fill", d => that.colours(d.data.series));
             }
             else {
                 n.classed("selected", false);
-                n.select("circle.node-circle").style("fill", "#FFF");
+                n.style("fill", "#FFF");
             }
             updateSelection();
         }
@@ -19597,18 +19667,19 @@ class LineagePlotController {
                 rect_y2 = +rect.attr("height") + rect_y1,
                 any = false;
 
-            node.each(function (d, i) {
+            circle.each(function (d, i) {
                 let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
-                let [tx, ty] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* getTranslation */])(n.attr("transform"));
+                let tx = n.attr("cx"),
+                    ty = n.attr("cy");
 
                 if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
                     n.classed("selected", true);
-                    n.select("circle.node-circle").style("fill", d => that.colours(d.data.series));
+                    n.style("fill", d => that.colours(d.data.series));
                     any = true;
                 }
                 else if (!that.selectedNodesSet.has(d.data.name)) {
                     n.classed("selected", false);
-                    n.select("circle.node-circle").style("fill", "#FFF");
+                    n.style("fill", "#FFF");
                 }
             });
 
@@ -19618,14 +19689,14 @@ class LineagePlotController {
         function updateSelection() {
             let wasChange = false;
 
-            that.svg.selectAll("g.node.selected").each(d => {
+            that.svg.selectAll("circle.node-circle.selected").each(d => {
                 if (!that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.add(d.data.name);
                     wasChange = true;
                 }
             });
 
-            that.svg.selectAll("g.node:not(.selected)").each(d => {
+            that.svg.selectAll("circle.node-circle:not(.selected)").each(d => {
                 if (that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.delete(d.data.name);
                     wasChange = true;
@@ -19633,7 +19704,9 @@ class LineagePlotController {
             });
 
             if (wasChange && that.selectedNodes) {
-                that.selectedNodes({ $nodes: Array.from(that.selectedNodesSet)});
+                that._$scope.$apply(() => {
+                    that.selectedNodes({ $nodes: Array.from(that.selectedNodesSet)});
+                });
             }
         }
 
@@ -19641,7 +19714,9 @@ class LineagePlotController {
             if (that.nodeClick === undefined) return;
 
             function nodeClickCallback(d) {
-                that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                that._$scope.$apply(() => {
+                    that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                });
             }
 
             circle.on('click', active ? nodeClickCallback : null);
@@ -19650,18 +19725,39 @@ class LineagePlotController {
         let zoom = __WEBPACK_IMPORTED_MODULE_2_d3__["zoom"]()
             .scaleExtent([1, layout.maxZoom])
             .extent([[0, 0],[width, height]])
-            .translateExtent([[0, 0],[width, height]])
+            .translateExtent([[0, 0],[treeWidth, height]])
             .on("zoom", onZoom);
 
         function onZoom() {
             applyZoom(__WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
+            lastTransform = __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform;
             if (lcdEnabled) {
                 applyLCD(__WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
             }
-            lastTransform = __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform;
+        }
+
+
+        function linkVisible(d) {
+            let dx = d.x * lastTransform.k + lastTransform.x, dy = d.y * lastTransform.k + lastTransform.y,
+                dxParent = d.parent.x * lastTransform.k + lastTransform.x;
+            return dx >= 0 && dxParent <= width && dy >= 0 && dy <= height;
+        }
+
+        function isVisible(d) {
+            let dx = d.x * lastTransform.k + lastTransform.x, dy = d.y * lastTransform.k + lastTransform.y;
+            return dx >= 0 && dx <= width && dy >= 0 && dy <= height;
         }
 
         function applyZoom(zoomTransform) {
+            let [nodeLabelInViewport, nodeLabelNotInViewport] = nodeLabel.partition(isVisible),
+                [linkLabelInViewport, linkLabelNotInViewport] = linkLabel.partition(isVisible),
+                [linkInViewport, linkNotInViewport] = link.partition(linkVisible),
+                [circleInViewport, circleNotInViewport] = circle.partition(isVisible);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
+
             let scale = zoomTransform.k;
             treesContainer.attr("transform", zoomTransform);
             mouseCaptureGroup.attr("transform", zoomTransform);
@@ -19673,15 +19769,15 @@ class LineagePlotController {
                 chart.selectAll("g.x-axis g.tick text").style("opacity", 1e-6);
             }
 
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circle, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
-
-            circle.attr("stroke", d => that.colours(d.data.series));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
 
             if (layout.heatmap.enabled) {
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.heatmapCircle, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
+                let [heatmapCircleInViewport, heatmapCircleNotInViewport] = that.heatmapCircle.partition(isVisible);
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
             }
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.svg.selectAll("path.link"), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
-            nodeLabel.each(d => {
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
+            nodeLabelInViewport.each(d => {
                     d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(d.currentLabelPos, scale);
                     d.x = d.node.x + d.scaledLabelPos.x;
                     d.y = d.node.y + d.scaledLabelPos.y;
@@ -19689,15 +19785,15 @@ class LineagePlotController {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("text-anchor", d => d.scaledLabelPos['text-anchor']);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabel, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
 
-            linkLabel.each(d => {
+            linkLabelInViewport.each(d => {
                     d.x = (d.nodeTo.x + d.nodeTo.parent.x) / 2;
                     d.y = (d.nodeTo.y + d.nodeTo.parent.y) / 2;
                 })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabel, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
 
             if (layout.groupSelection.enabled) {
                 __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
@@ -19705,13 +19801,9 @@ class LineagePlotController {
         }
 
         function onDoubleClick() {
-            let I = __WEBPACK_IMPORTED_MODULE_2_d3__["zoomIdentity"];
-            chart.call(zoom.transform, I);
-            applyZoom(I);
-            if (lcdEnabled) {
-                applyLCD(I);
-            }
-            lastTransform = I;
+            zoom.scaleTo(chart, 1);
+            lastTransform = __WEBPACK_IMPORTED_MODULE_2_d3__["zoomTransform"](chart.node());
+            applyZoom(lastTransform);
         }
 
         function applyLCD(transform) {
@@ -19733,10 +19825,11 @@ class LineagePlotController {
             'select': toggleSelect,
             'label': toggleLabels
         };
-        let activeControls = [];
-        if (layout.showLabel) activeControls.push("label");
+        if (this.activeControls == null) {
+            this.activeControls = new Set(layout.controlsEnabledOnStart);
+        }
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this.element[0], controls, activeControls);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleZoom(toggle) {
             if (toggle) {
@@ -19765,17 +19858,25 @@ class LineagePlotController {
         }
 
         function toggleLabels(toggle) {
-            nodeLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
-            linkLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
             if (layout.labelCollisionDetection.enabled != "never" && layout.labelCollisionDetection.enabled != "onInit") {
-                lcdEnabled = !lcdEnabled;
+                lcdEnabled = toggle;
                 if (lcdEnabled) {
                     that.LCD.recalculateLabels(lastTransform);
                 }
             }
+            nodeLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
+            linkLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
         }
     }
 }
+
+__WEBPACK_IMPORTED_MODULE_2_d3__["selection"].prototype.partition = function(filterCallback) {
+    let matched = [], unmatched = [];
+    this.each(function(d) {
+        (filterCallback(d) ? matched : unmatched).push(this);
+    });
+    return [__WEBPACK_IMPORTED_MODULE_2_d3__["selectAll"](matched), __WEBPACK_IMPORTED_MODULE_2_d3__["selectAll"](unmatched)];
+};
 
 Number.prototype.clamp = function (min, max) {
     return Math.min(Math.max(this, min), max);
@@ -19800,8 +19901,8 @@ let layoutTemplate = {
         gridOnly: false,
         valueProperty: "default"
     },
-    showLabel: true,
     nodeTypes: {},
+    seriesColours: null,
     nodeLabel: {
         "font-size": 12,
         "font-family": "Roboto,Helvetica Neue,sans-serif"
@@ -19823,6 +19924,7 @@ let layoutTemplate = {
         stroke: "#ccc",
         "stroke-width": 1
     },
+    minGenerationWidth: 50,
     groupSelection: {
         enabled: false,
         selectionRectangle: {
@@ -19881,7 +19983,8 @@ let layoutTemplate = {
             y: 0,
             "text-anchor": "end"
         }
-    ]
+    ],
+    controlsEnabledOnStart: ['label']
 };
 
 
@@ -19919,7 +20022,7 @@ LineagePlotController.$$ngIsClass = true; // temporary Firefox fix
 
 
 class LineageScatterPlotController {
-    constructor($element, $window) {
+    constructor($element, $window, $scope) {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["a" /* attachActionOnResize */])($window, () => this.render({}));
         $element.addClass("ancestry ancestry-lineage-scatter-plot");
 
@@ -19935,17 +20038,19 @@ class LineageScatterPlotController {
             r: 4,
             "stroke-width": 2
         };
-        this.selectedNodesSet = null;
+        this.selectedNodesSet = new Set();
+        this.activeControls = null;
         this.LCD = null; // label collision detection
         this.lastLCDUpdateTime = 0;
         this.LCDUpdateID = null;
         this.heatmapColourScale = null;
         this.heatmapCircle = null;
         this.visibleSeries = new Set();
-        this.window = $window;
-        this.element = $element;
+        this._$window = $window;
+        this._$element = $element;
         this.defaultTimeFormat = "%d %b %y";
         this.defaultScalarFormat = "g";
+        this._$scope = $scope;
         //this.isDrag = false;
         //this.scale = 1;
         //this.translate = [0, 0];
@@ -19963,28 +20068,32 @@ class LineageScatterPlotController {
         // clean svg before rendering plot
         this.svg.selectAll('*').remove();
 
-        let elementWidth = this.element[0].offsetWidth,
-            elementHeight = this.element[0].offsetHeight;
+        let elementWidth = this._$element[0].offsetWidth,
+            elementHeight = this._$element[0].offsetHeight;
 
         let marginRatio = {axisX: 0.15, axisY: 0.1};
 
         // don't continue rendering if there is no data
         if (!this.value || !this.value.data.length) return;
 
-        this.selectedNodesSet = new Set();
-
-        let seriesNames = Array.from(new Set(this.value.data.map(d => d.series)));
+        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
+            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
+            seriesNames = Array.from(new Set(this.value.data.map(d => d.series)));
 
         if (options.isNewData) {
-            this.colours.domain([]);
+            if (layout.seriesColours == null) {
+                this.colours.domain([]);
+            }
             this.visibleSeries = new Set(seriesNames);
+            this.selectedNodesSet.clear();
+            for (let node of this.value.data.filter(d => d.selected === true)) {
+                this.selectedNodesSet.add(node.name);
+            }
         }
 
-        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
-            treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* filterSeries */])(copy.data, this.visibleSeries),
+        let treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* filterSeries */])(copy.data, this.visibleSeries),
             longestNodeName = treeData.length ? treeData.reduce((a, b) => a.name.length > b.name.length ? a : b).name : "",
-            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
-            pathname = this.window.location.pathname,
+            pathname = this._$window.location.pathname,
             maxLabelLength = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["e" /* testLabelLength */])(this.svg, longestNodeName, layout.nodeLabel),
             maxLabelOffset = __WEBPACK_IMPORTED_MODULE_2_d3__["max"](labelPositions, (pos) => Math.abs(pos.x)),
             legendHeight = 0, legendWidth = 0, colourbarHeight = 0, colourbarWidth = 0,
@@ -20034,6 +20143,10 @@ class LineageScatterPlotController {
 
         let chart = this.svg.append("g");
         let defs = chart.append("svg:defs");
+
+        if (layout.seriesColours != null) {
+            this.colours = (series) => layout.seriesColours[series];
+        }
 
         if (layout.heatmap.enabled) {
 
@@ -20377,26 +20490,23 @@ class LineageScatterPlotController {
 
         let nodeSvgData = treeData.map(d => {return {data: d};});
         // create node groups
-        let node = plotArea.append("g")
+        let circle = plotArea.append("g")
             .attr("class", "node-circle-layer")
-            .selectAll("g.node")
+            .selectAll("circle.node-circle")
             .data(descendants)
             .enter()
-            .append("g")
-            .attr("class", "node")
-            .attr("transform", node => `translate(${node.x}, ${node.y})`);
-
-        //render node circles
-        let circle = node.append("circle")
+            .append("circle")
+            .attr("class", "node-circle")
+            .classed("selected", d => this.selectedNodesSet.has(d.data.name))
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
             .style("stroke", d => this.colours(d.data.series))
-            .style("fill", d => !this.selectedNodesSet.has(d.data.name) ? '#FFF' : this.colours(d.data.series))
-            .each(function(d) {
-                d.bboxCircle = this.getBoundingClientRect();
-            });
+            .style("fill", d => !this.selectedNodesSet.has(d.data.name) ? '#FFF' : this.colours(d.data.series));
+
 
         if (layout.tooltip.show) {
             circle.on("mouseover", function (d, i) {
-                let {x: xPos, y: yPos} = __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["b" /* d3tooltip */].getRelativePosition(this, that.element[0]),
+                let {x: xPos, y: yPos} = __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["b" /* d3tooltip */].getRelativePosition(this, that._$element[0]),
                     seriesBar = layout.tooltip.showSeriesBar ?
                         `<div class="tooltip-colour-box" style=\"background-color: ${that.colours(d.data.series)}\"></div>` : "",
                     text = d.data.tooltip ? d.data.tooltip.map((line) => `<span align="${layout.tooltip.align}" class="tooltip-text">${line}</span>`).join("") :
@@ -20512,14 +20622,14 @@ class LineageScatterPlotController {
 
         function click(d) {
             __WEBPACK_IMPORTED_MODULE_2_d3__["event"].preventDefault();
-            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.parentNode);
+            let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
             if (!n.classed("selected")) {
                 n.classed("selected", true);
-                n.select("circle").style("fill", d => that.colours(d.data.series));
+                n.style("fill", d => that.colours(d.data.series));
             }
             else {
                 n.classed("selected", false);
-                n.select("circle").style("fill", "#FFF");
+                n.style("fill", "#FFF");
             }
             updateSelection();
         }
@@ -20543,18 +20653,19 @@ class LineageScatterPlotController {
                 rect_y2 = +rect.attr("height") + rect_y1,
                 any = false;
 
-            node.each(function(d, i, j) {
+            circle.each(function(d, i, j) {
                 let n = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this);
-                let [tx, ty] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* getTranslation */])(n.attr("transform"));
+                let tx = n.attr("cx"),
+                    ty = n.attr("cy");
 
                 if (tx >= rect_x1 && tx <= rect_x2 && ty >= rect_y1 && ty <= rect_y2) {
                     n.classed("selected", true);
-                    n.select("circle").style("fill", d => that.colours(d.data.series));
+                    n.style("fill", d => that.colours(d.data.series));
                     any = true;
                 }
                 else if(!that.selectedNodesSet.has(d.data.name)) {
                     n.classed("selected", false);
-                    n.select("circle").style("fill", "#FFF");
+                    n.style("fill", "#FFF");
                 }
             });
 
@@ -20564,14 +20675,14 @@ class LineageScatterPlotController {
         function updateSelection() {
             let wasChange = false;
 
-            that.svg.selectAll("g.node.selected").each(d => {
+            that.svg.selectAll("circle.node-circle.selected").each(d => {
                 if(!that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.add(d.data.name);
                     wasChange = true;
                 }
             });
 
-            that.svg.selectAll("g.node:not(.selected)").each(d => {
+            that.svg.selectAll("circle.node-circle:not(.selected)").each(d => {
                 if(that.selectedNodesSet.has(d.data.name)) {
                     that.selectedNodesSet.delete(d.data.name);
                     wasChange = true;
@@ -20579,7 +20690,9 @@ class LineageScatterPlotController {
             });
 
             if (wasChange && that.selectedNodes) {
-                that.selectedNodes({ $nodes: Array.from(that.selectedNodesSet)});
+                that._$scope.$apply(() => {
+                    that.selectedNodes({ $nodes: Array.from(that.selectedNodesSet)});
+                });
             }
         }
 
@@ -20587,9 +20700,10 @@ class LineageScatterPlotController {
             if (that.nodeClick === undefined) return;
 
             function nodeClickCallback(d) {
-                that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                that._$scope.$apply(() => {
+                    that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                });
             }
-
             circle.on('click', active ? nodeClickCallback : null);
         }
 
@@ -20601,13 +20715,33 @@ class LineageScatterPlotController {
 
         function onZoom() {
             applyZoom(__WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
+            lastTransform = __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform;
             if (lcdEnabled) {
                 applyLCD(__WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
             }
-            lastTransform = __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform;
+        }
+
+        function linkVisible(d) {
+            let dx = d.x * lastTransform.k + lastTransform.x, dy = d.y * lastTransform.k + lastTransform.y,
+                dxParent = d.parent.x * lastTransform.k + lastTransform.x;
+            return dx >= 0 && dxParent <= width && dy >= 0 && dy <= height;
+        }
+
+        function isVisible(d) {
+            let dx = d.x * lastTransform.k + lastTransform.x, dy = d.y * lastTransform.k + lastTransform.y;
+            return dx >= 0 && dx <= width && dy >= 0 && dy <= height;
         }
 
         function applyZoom(zoomTransform) {
+            let [nodeLabelInViewport, nodeLabelNotInViewport] = nodeLabel.partition(isVisible),
+                [linkLabelInViewport, linkLabelNotInViewport] = linkLabel.partition(isVisible),
+                [linkInViewport, linkNotInViewport] = link.partition(linkVisible),
+                [circleInViewport, circleNotInViewport] = circle.partition(isVisible);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(nodeLabelInViewport, nodeLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkLabelInViewport, linkLabelNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(linkInViewport, linkNotInViewport);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(circleInViewport, circleNotInViewport);
+
             let scale = zoomTransform.k;
             plotArea.attr("transform", zoomTransform);
             mouseCaptureGroup.attr("transform", zoomTransform);
@@ -20619,18 +20753,15 @@ class LineageScatterPlotController {
             that.svg.selectAll("path.domain").style("shape-rendering", "crispEdges");
             that.svg.selectAll(".axis line").attr("stroke", layout.axisColour);
 
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circle, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
-
-            circle.attr("stroke", d => that.colours(d.data.series))
-                .each(function (d) {
-                    d.bboxCircle = this.getBoundingClientRect();
-                });
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(circleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(nodeAttr, scale, true));
 
             if (layout.heatmap.enabled) {
-                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.heatmapCircle, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
+                let [heatmapCircleInViewport, heatmapCircleNotInViewport] = that.heatmapCircle.partition(isVisible);
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["p" /* toggleSelectionDisplay */])(heatmapCircleInViewport, heatmapCircleNotInViewport);
+                __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(heatmapCircleInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.heatmap.circle, scale));
             }
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.svg.selectAll("path.link"), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
-            nodeLabel.each(d => {
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.link, scale));
+            nodeLabelInViewport.each(d => {
                 d.scaledLabelPos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(d.currentLabelPos, scale);
                 d.x = d.node.x + d.scaledLabelPos.x;
                 d.y = d.node.y + d.scaledLabelPos.y;
@@ -20638,15 +20769,15 @@ class LineageScatterPlotController {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("text-anchor", d => d.scaledLabelPos['text-anchor']);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabel, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(nodeLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.nodeLabel, scale));
 
-            linkLabel.each(d => {
+            linkLabelInViewport.each(d => {
                 d.x = (d.nodeTo.x + d.nodeTo.parent.x) / 2;
                 d.y = (d.nodeTo.y + d.nodeTo.parent.y) / 2;
             })
                 .attr("x", d => d.x)
                 .attr("y", d => d.y);
-            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabel, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
+            __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(linkLabelInViewport, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.linkLabel, scale));
 
             if (layout.groupSelection.enabled) {
                 __WEBPACK_IMPORTED_MODULE_3__shared_features_js__["m" /* multiAttr */].call(that.selectionRect, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["q" /* scaleProperties */])(layout.groupSelection.selectionRectangle, scale));
@@ -20668,8 +20799,8 @@ class LineageScatterPlotController {
                 that.LCD.recalculateLabels(transform);
             }
             else if (layout.labelCollisionDetection.enabled === "onDelay") {
-                that.window.clearTimeout(that.LCDUpdateID);
-                that.LCDUpdateID = that.window.setTimeout(() => {
+                that._$window.clearTimeout(that.LCDUpdateID);
+                that.LCDUpdateID = that._$window.setTimeout(() => {
                     that.LCD.recalculateLabels(transform);
                 }, layout.labelCollisionDetection.updateDelay);
                 that.lastLCDUpdateTime = performance.now();
@@ -20682,10 +20813,12 @@ class LineageScatterPlotController {
             'select': toggleSelect,
             'label': toggleLabels
         };
-        let activeControls = [];
-        if (layout.showLabel) activeControls.push("label");
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this.element[0], controls, activeControls);
+        if (this.activeControls == null) {
+            this.activeControls = new Set(layout.controlsEnabledOnStart);
+        }
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleZoom(toggle) {
             if (toggle) {
@@ -20714,14 +20847,14 @@ class LineageScatterPlotController {
         }
 
         function toggleLabels(toggle) {
-            nodeLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
-            linkLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
             if (layout.labelCollisionDetection.enabled != "never" && layout.labelCollisionDetection.enabled != "onInit") {
-                lcdEnabled = !lcdEnabled;
+                lcdEnabled = toggle;
                 if (lcdEnabled) {
                     that.LCD.recalculateLabels(lastTransform);
                 }
             }
+            nodeLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
+            linkLabel.style("opacity", d => toggle && !d.isColliding ? 1 : 1e-6);
         }
 
     }
@@ -20749,6 +20882,7 @@ let layoutTemplate = {
     },
     axisColour: "gray",
     nodeTypes: {},
+    seriesColours: null,
     nodeLabel: {
         "font-size": 12,
         "font-family": "Roboto,Helvetica Neue,sans-serif"
@@ -20757,7 +20891,6 @@ let layoutTemplate = {
         "font-size": 12,
         "font-family": "Roboto,Helvetica Neue,sans-serif"
     },
-    showLabel: true,
     labelCollisionDetection: {
         enabled: "never",
         updateDelay: 500,
@@ -20829,7 +20962,8 @@ let layoutTemplate = {
             y: 0,
             "text-anchor": "end"
         }
-    ]
+    ],
+    controlsEnabledOnStart: ['label']
 };
 
 let labelPositions = [
@@ -20909,7 +21043,7 @@ LineageScatterPlotController.$$ngIsClass = true; // temporary Firefox fix
 
 
 class RadialLineagePlotController {
-    constructor($element, $window) {
+    constructor($element, $window, $scope) {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["a" /* attachActionOnResize */])($window, () => this.render({}));
         $element.addClass("ancestry ancestry-radial-lineage-plot");
 
@@ -20922,13 +21056,15 @@ class RadialLineagePlotController {
             r: 4,
             "stroke-width": 2
         };
+        this.activeControls = null;
         this.labelOffset = 20;
         this.hovering = false;
         this.visibleSeries = new Set();
         this.virtualRoot = null;
         this.virtualRootName = "virtual_root";
-        this.element = $element;
-        this.window = $window;
+        this._$element = $element;
+        this._$window = $window;
+        this._$scope = $scope;
     }
 
     $onChanges(changes) {
@@ -20947,22 +21083,24 @@ class RadialLineagePlotController {
         // do not continue rendering if there is no data
         if (!this.value || !this.value.data.length) return;
 
-        let seriesNames = Array.from(new Set(this.value.data.map(d => d.series)));
+        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
+            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
+            seriesNames = Array.from(new Set(this.value.data.map(d => d.series)));
 
         if (options.isNewData) {
-            this.colours.domain([]);
+            if (layout.seriesColours == null) {
+                this.colours.domain([]);
+            }
             this.visibleSeries = new Set(seriesNames);
         }
 
-        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
-            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
-            pathname = this.window.location.pathname;
+        let pathname = this._$window.location.pathname;
 
         let treeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["f" /* createTreeLayout */])(filterSeries(copy.data, this.visibleSeries)),
             longestNodeName = copy.data.length ? copy.data.reduce((a, b) => a.name.length > b.name.length ? a : b).name : "";
 
-        let elementWidth = this.element[0].offsetWidth,
-            elementHeight = this.element[0].offsetHeight;
+        let elementWidth = this._$element[0].offsetWidth,
+            elementHeight = this._$element[0].offsetHeight;
 
         let isMultipleTree = treeData.length > 1,
             multipleTreeOffset = isMultipleTree ? 30 : 0,
@@ -21005,6 +21143,10 @@ class RadialLineagePlotController {
 
         let chart = this.svg.append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        if (layout.seriesColours != null) {
+            this.colours = (series) => layout.seriesColours[series];
+        }
 
         if (layout.heatmap.enabled) {
 
@@ -21377,7 +21519,9 @@ class RadialLineagePlotController {
             if (that.nodeClick === undefined) return;
 
             function nodeClickCallback(d) {
-                that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                that._$scope.$apply(() => {
+                    that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                });
             }
 
             node.on('click', active ? nodeClickCallback : null);
@@ -21439,7 +21583,11 @@ class RadialLineagePlotController {
             'zoom': toggleMove
         };
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this.element[0], controls);
+        if (this.activeControls == null) {
+            this.activeControls = new Set(layout.controlsEnabledOnStart);
+        }
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleMove(toggle) {
             if (toggle) {
@@ -21543,6 +21691,7 @@ let layoutTemplate = {
         left: 10
     },
     nodeTypes: {},
+    seriesColours: null,
     nodeLabel: {
         "font-size": 12,
         "font-family": "Roboto,Helvetica Neue,sans-serif"
@@ -21583,7 +21732,8 @@ let layoutTemplate = {
         },
         orientation: "vertical",
         backgroundColour: null
-    }
+    },
+    controlsEnabledOnStart: []
 };
 
 
@@ -21620,7 +21770,7 @@ RadialLineagePlotController.$$ngIsClass = true; // temporary Firefox fix
 
 
 class RadialPhylogeneticTreeController {
-    constructor($element, $window) {
+    constructor($element, $window, $scope) {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["a" /* attachActionOnResize */])($window, () => this.render({}));
         $element.addClass("ancestry ancestry-radial-phylogenetic-tree");
 
@@ -21643,8 +21793,9 @@ class RadialPhylogeneticTreeController {
         this.linkExtension = null;
         this.totalTreeLength = null;
         this.multipleTreeOffset = 0;
-        this.element = $element;
-        this.window = $window;
+        this._$element = $element;
+        this._$window = $window;
+        this._$scope = $scope;
     }
 
     $onChanges(changes) {
@@ -21672,20 +21823,22 @@ class RadialPhylogeneticTreeController {
         // do not continue rendering if there is no data
         if (!this.value || !this.value.data.length) return;
 
-        let seriesNames = Array.from(new Set(extractProp(this.value.data, "series")));
+        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
+            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["c" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
+            seriesNames = Array.from(new Set(extractProp(this.value.data, "series")));
 
         if (options.isNewData) {
-            this.colours.domain([]);
+            if (layout.seriesColours == null) {
+                this.colours.domain([]);
+            }
             this.visibleSeries = new Set(seriesNames);
         }
 
-        let copy = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.copy(this.value),
-            treeData = copy.data,
-            layout = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* mergeTemplateLayout */])(copy.layout, layoutTemplate),
-            pathname = this.window.location.pathname;
+        let treeData = copy.data,
+            pathname = this._$window.location.pathname;
 
-        let elementWidth = this.element[0].offsetWidth,
-            elementHeight = this.element[0].offsetHeight;
+        let elementWidth = this._$element[0].offsetWidth,
+            elementHeight = this._$element[0].offsetHeight;
 
         treeData = treeData.map(t => collapseSeries(t, this.visibleSeries)).filter(t => t !== null);
 
@@ -21729,6 +21882,10 @@ class RadialPhylogeneticTreeController {
         let chart = this.svg.append("g");
 
         this.multipleTreeOffset = isMultipleTree ? 30 : 0;
+
+        if (layout.seriesColours != null) {
+            this.colours = (series) => layout.seriesColours[series];
+        }
 
         if (layout.heatmap.enabled) {
 
@@ -22014,19 +22171,24 @@ class RadialPhylogeneticTreeController {
             if (that.nodeClick === undefined || nodeCircle == null) return;
 
             function nodeClickCallback(d) {
-                that.nodeClick({$event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                that._$scope.$apply(() => {
+                    that.nodeClick({ $event: __WEBPACK_IMPORTED_MODULE_2_d3__["event"], $node: d.data});
+                });
             }
 
             nodeCircle.on('click', active ? nodeClickCallback : null);
         }
 
         let controls = {
-            'download': function () {
-            },
+            'download': function () {},
             'zoom': toggleMove
         };
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this.element[0], controls);
+        if (this.activeControls == null) {
+            this.activeControls = new Set(layout.controlsEnabledOnStart);
+        }
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["r" /* createPlotControls */])(this._$element[0], controls, this.activeControls);
 
         function toggleMove(toggle) {
             if (toggle) {
@@ -22198,6 +22360,7 @@ let layoutTemplate = {
         left: 10
     },
     nodeTypes: {},
+    seriesColours: null,
     showLeafNodes: true,
     outerNodeLabel: {
         "font-size": 14,
@@ -22234,7 +22397,8 @@ let layoutTemplate = {
         },
         orientation: "vertical",
         backgroundColour: null
-    }
+    },
+    controlsEnabledOnStart: []
 };
 
 

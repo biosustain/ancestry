@@ -15,7 +15,8 @@
     },
     "groupSelection": {
       "enabled": true
-    }
+    },
+    "controlsEnabledOnStart": ["zoom", "label"]
   },
   "data": [
     {
