@@ -222,6 +222,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                         x: gen-1,
                         y: (s * 10 + gen + j) * rn,
                         z: Math.random() > 0.7 ? undefined : Math.round(Math.random() * 100) / 10,
+                        selected: Math.random() < 0.5 ? false : (Math.random() < 0.5 ? true : undefined),
                         parent: parent,
                         inLinkLabel,
                         series: 10 + Math.floor(Math.random() * 4),
@@ -296,7 +297,9 @@ let data = {
         },
         tooltip: {
             align: "center"
-        }
+        },
+        controlsEnabledOnStart: ['label', 'zoom']
+
     }
 };
 
@@ -317,6 +320,12 @@ let data2 = {
             show: true,
             gridOnly: true,
             valueProperty: "default"
+        },
+        seriesColours: {
+            10: "red",
+            11: "purple",
+            12: "#777",
+            13: "orange"
         },
         labelCollisionDetection: {
             enabled: "onDelay",
@@ -346,7 +355,8 @@ let data2 = {
         },
         tooltip: {
             showSeriesBar: true
-        }
+        },
+        controlsEnabledOnStart: ['select']
     }
 };
 
