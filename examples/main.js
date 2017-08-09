@@ -2,7 +2,8 @@ import angular from 'angular';
 import "angular-material";
 import "../lib/index.js";
 
-let nodesArr = createRandomLineageScatterPlotData2(200, 14);
+let nodesArr = createRandomLineageScatterPlotData2(500, 10);
+
 
 function createTreeLayout(nodesArray) {
     let trees = [],
@@ -131,7 +132,7 @@ function createRandomLineageScatterPlotData(n) {
         for (let j = 0; j < totalChildren; j++) {
             let parent = parents ? parents[p] : null,
                 node = {
-                name: "node_" + gen + labels[gen_labels[gen - 1]++],
+                name: "Node_" + gen + labels[gen_labels[gen - 1]++],
                 x: gen-1,
                 y: gen,
                 parent: parent,
@@ -215,7 +216,7 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
                 _parents = [];
             for (let j = 0; j < totalChildren; j++) {
                 let parent = parents ? parents[p] : null,
-                    name = "node_" + gen + labels[gen_labels[gen - 1]++],
+                    name = "Node_" + gen + labels[gen_labels[gen - 1]++],
                     inLinkLabel = Math.random() > 0.5 ? undefined : Math.random().toString(36).substr(2, 8),
                     node = {
                         name,
@@ -306,6 +307,13 @@ let data = {
 let data2 = {
     data: nodesArr,
     layout: {
+        backgroundColor: 'white',
+        margin: {
+            top: 10,
+            bottom: 20,
+            left: 15,
+            right: 130
+        },
         nodeTypes: {
             "type1": {
                 r: 4,
@@ -321,7 +329,7 @@ let data2 = {
             gridOnly: true,
             valueProperty: "default"
         },
-        seriesColours: {
+        seriesColors: {
             10: "red",
             11: "purple",
             12: "#777",
@@ -337,26 +345,32 @@ let data2 = {
         heatmap: {
             enabled: true,
             title: "z values",
-            colourBar: {
+            colorBar: {
                 show: true
             }
         },
         legend: {
             show: true,
-            position: {
-                "x": "right",
-                "y": "center"
-            },
-            anchor: {
-                "x": "inside",
-                "y": "inside"
-            },
+            x: 1.0,
             orientation: "vertical"
         },
         tooltip: {
-            showSeriesBar: true
+            showSeriesBar: false
         },
-        controlsEnabledOnStart: ['select']
+        brush: {
+            //lockY: true,
+            //height: 15,
+            //drawTrees: false
+            axis: {
+                show: true
+            },
+            brushRectangleOnFullView: false
+        },
+        //minGenerationWidth: 100,
+        //minTimeWidth: {
+        //    rangeInPixels: 100
+        //},
+        controlsEnabledOnStart: ['select', 'brush']
     }
 };
 
@@ -466,9 +480,36 @@ class AppController {
     constructor($scope, $http) {
         $scope.selectedNodes = [];
 
-        $http.get('sample.json').then(() => {
+        $scope.customNode = function($selection, $event) {
+            if ($event == 'draw') {
+                return $selection.append('rect')
+                    .attr('width', 8)
+                    .attr('height', 8)
+                    .attr('stroke', 'orange')
+                    .style('fill', d => d.selected ? 'orange' : 'white')
+                    .attr('x', d => d.x - 4)
+                    .attr('y', d => d.y - 4);
+            }
+
+            if ($event == 'select') {
+                $selection.style('fill', d => d.selected ? 'orange' : 'white');
+            }
+
+            if ($event == 'update') {
+                $selection.attr('x', d => d.x - 4)
+                    .attr('y', d => d.y - 4);
+            }
+        };
+        //$scope.customNode = undefined;
+
+        $http.get('sample_data.json').then((dat) => {
+            let temp = {data:dat.data,layout:data2.layout};
+            //temp.layout.axis.valueProperty = 'date';
+            //temp.layout.title = 'test_title';
+            //temp.layout.axis.title = 'test_title_axis';
+            //$scope.lineagePlotData = temp;
+
             $scope.lineagePlotData = data2;
-            $scope.lineageScatterPlotData = data;
         });
 
         $scope.radialPlotData = data5;
@@ -482,9 +523,10 @@ class AppController {
             console.log($event, $node);
         };
 
-        $scope.selectedNodes = function($nodes) {
+        $scope.nodesSelection = function($nodes) {
             console.log($nodes);
         };
+
 
         setTimeout(function() {
             $scope.showBranchLengths = false;
@@ -493,6 +535,7 @@ class AppController {
 
     }
 }
+
 AppController.$$ngIsClass = true; // temporary Firefox fix
 const App = angular.module('Visualizer', ["ancestry", "ngMaterial"])
     .controller('AppController', AppController);
