@@ -252,11 +252,24 @@ function createRandomLineageScatterPlotData2(totalNodes, n) {
 let data = {
     data: nodesArr,
     layout: {
-        xAxis: {
-            format: ".3s"
+        plotPadding: {
+            x:null,
+            y: null
         },
-        yAxis: {
-            format: ".3s"
+        margin: {
+            left: 70,
+            bottom: 30,
+            right: 140
+        },
+        axis: {
+            x: {
+                format: ".3s",
+                title: 'x axis title'
+            },
+            y: {
+                format: ".3s",
+                title: 'y axis title'
+            }
         },
         nodeTypes: {
             "type1": {
@@ -285,16 +298,7 @@ let data = {
             colourBar: {height: "90%"}
         },
         legend: {
-            show: true,
-            position: {
-                "x": "right",
-                "y": "center"
-            },
-            anchor: {
-                "x": "outside",
-                "y": "inside"
-            },
-            orientation: "vertical"
+            show: true
         },
         tooltip: {
             align: "center"
@@ -325,9 +329,11 @@ let data2 = {
             }
         },
         axis: {
-            show: true,
-            gridOnly: true,
-            valueProperty: "default"
+            x: {
+                showAxisLine: false,
+                showGrid: true,
+                showTickText: false
+            }
         },
         seriesColors: {
             10: "red",
@@ -361,9 +367,6 @@ let data2 = {
             //lockY: true,
             //height: 15,
             //drawTrees: false
-            axis: {
-                show: true
-            },
             brushRectangleOnFullView: false
         },
         //minGenerationWidth: 100,
@@ -390,8 +393,7 @@ let data5 = {
             }
         },
         axis: {
-            gridOnly: true,
-            valueProperty: "default"
+            gridOnly: true
         },
         labelCollisionDetection: {
             enabled: "onDelay",
@@ -458,7 +460,7 @@ for (let s = 0; s < data4.series.length; s++) {
     }
 }
 
-let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"series":1,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"series":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"series":1,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","series":1,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"series":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"series":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"series":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"axis":{"title":"","show":true,"gridOnly":false,"valueProperty":"default"},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"title":null,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true},"circle":{"r":16},"opacity":0.4}}}');
+let phylo = JSON.parse('{"data":[{"taxon":null,"length":null,"children":[{"taxon":null,"length":1.375,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0,"children":[{"taxon":{"name":"H3","z":null,"parent":null,"series":1,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":1,"children":[{"taxon":{"name":"H4","parent":null,"z":4,"series":0,"type":"pool"},"length":0,"children":[]},{"taxon":{"name":"H55","parent":null,"z":3.2,"series":1,"type":"pool"},"length":0,"children":[]}]}]}]}]},{"taxon":null,"length":1.375,"children":[{"taxon":null,"length":2.75,"children":[{"taxon":null,"length":0.5833333333333334,"children":[{"taxon":{"name":"H5","series":1,"z":0,"type":"pool"},"length":0.2857142857142857,"children":[]},{"taxon":{"name":"H6","z":null,"parent":null,"series":0,"type":"pool"},"length":1.7142857142857144,"children":[]}]},{"taxon":{"name":"H8","z":null,"parent":null,"series":0,"type":"pool"},"length":0.41666666666666663,"children":[]}]},{"taxon":{"name":"H7","z":null,"parent":null,"series":0,"type":"pool"},"length":0.25,"children":[]}]}]}],"layout":{"nodeTypes":{"strain":{"r":4,"strokeWidth":3},"pool":{"r":6,"strokeWidth":1}},"groupSelection":{"enabled":true,"selectionRectangle":{"stroke-width":1,"stroke-dasharray":4,"rx":3,"ry":3,"stroke":"steelblue"}},"labelCollisionDetection":{"enabled":"onDelay","updateDelay":500},"showLeafNodes":true,"axis":{"title":"","show":true,"gridOnly":false},"nodeLabel":{"font-size":12},"heatmap":{"enabled":true,"title":null,"colourScale":[[0,"#008ae5"],[1,"yellow"]],"colourBar":{"show":true},"circle":{"r":16},"opacity":0.4}}}');
 phylo.data.push(JSON.parse(JSON.stringify(phylo.data[0])));
 var dat = {"taxon":null,"length":null,"children":[{"taxon":{"name":"H1","z":1,"parent":null,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":null,"length":0.4,"children":[{"taxon":{"name":"H2","parent":null,"z":2,"series":0,"type":"pool"},"length":1,"children":[]},{"taxon":{"name":"H4","parent":null,"z":2,"series":1,"type":"pool"},"length":0.3,"children":[]}]}]};
 phylo.data.push(dat);
@@ -500,18 +502,15 @@ class AppController {
                     .attr('y', d => d.y - 4);
             }
         };
-        //$scope.customNode = undefined;
 
         $http.get('sample_data.json').then((dat) => {
             let temp = {data:dat.data,layout:data2.layout};
-            //temp.layout.axis.valueProperty = 'date';
-            //temp.layout.title = 'test_title';
-            //temp.layout.axis.title = 'test_title_axis';
-            //$scope.lineagePlotData = temp;
+            $scope.lineagePlotData = temp;
 
-            $scope.lineagePlotData = data2;
+            //$scope.lineagePlotData = data2;
         });
 
+        $scope.lineageScatterPlotData = data;
         $scope.radialPlotData = data5;
         $scope.boxPlotData = data3;
         $scope.violinPlotData = data3;

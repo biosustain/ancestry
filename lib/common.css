@@ -10,6 +10,14 @@
     fill:none;
 }
 
+.ancestry .selection-rect {
+    pointer-events: none;
+    fill            : transparent;
+}
+
+.ancestry text {
+    pointer-events: none;
+}
 
 .ancestry .ancestry-legend text {
     font-size: 13px;

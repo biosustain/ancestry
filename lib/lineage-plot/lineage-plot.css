@@ -3,22 +3,10 @@
 }
 
 
-.ancestry-lineage-scatter-plot .link {
+.ancestry-lineage-plot .link {
     pointer-events: none;
     fill:none;
 }
 
-.ancestry-lineage-plot .selection-rect {
-    pointer-events: none;
-    fill            : transparent;
-}
-
-.ancestry-lineage-plot text {
-    pointer-events: none;
-}
-
-.ancestry-lineage-plot .node rect {
-    pointer-events: none;
-}
 
 

@@ -10,9 +10,10 @@
     </style>
 </head>
 <body ng-controller="AppController" layout="column" flex>
-<lineage-plot value="lineagePlotData" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)"></lineage-plot><!--custom-node="customNode($selection, $event)"-->
+<lineage-plot value="lineagePlotData" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)"></lineage-plot>
+<!--custom-node="customNode($selection, $event)"-->
 
-<!--<lineage-scatter-plot value="lineageScatterPlotData" selected-nodes="selectedNodes($nodes)" node-click="nodeClick($event, $node)" flex></lineage-scatter-plot>-->
+<lineage-scatter-plot value="lineageScatterPlotData" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)" flex></lineage-scatter-plot>
 <!--<radial-lineage-plot value="radialPlotData" node-click="nodeClick($event, $node)"></radial-lineage-plot>-->
 <!--<radial-phylogenetic-tree value="phyloData" branchlength="showBranchLengths" node-click="nodeClick($event, $node)"></radial-phylogenetic-tree>-->
 </body>
