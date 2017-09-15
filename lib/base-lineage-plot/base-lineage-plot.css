@@ -1,0 +1,9 @@
+.ancestry-lineage-plot .node circle{
+    pointer-events: all;
+}
+
+
+.ancestry-lineage-plot .link {
+    pointer-events: none;
+    fill:none;
+}
