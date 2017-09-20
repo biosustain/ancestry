@@ -3,7 +3,7 @@ import 'angular-material';
 import '../lib/index.js';
 import {phyloData, phyloLayout} from './phylo_example.js'
 
-let nodesArray = createRandomLineageScatterPlotData(150, 10);
+let nodesArray = createRandomLineageScatterPlotData(250, 5);
 
 function createRandomLineageScatterPlotData(totalNodes, n) {
     let nodes = [],
@@ -236,23 +236,29 @@ let lineageTimeConfig = {
 };
 
 let radialLineageConfig = {
-    height: 800,
+    height: 500,
+    margin: {right: 160},
     labelCollisionDetection: {
         enabled: 'onDelay'
     },
     groupSelection: {
         enabled: true
     },
-    //heatmap: {
-    //    title: 'z values',
-    //    colorBar: {
-    //        show: true,
-    //        height: '90%'
-    //    }
-    //},
-    //legend: {
-    //    show: true
-    //}
+    heatmap: {
+        title: 'z values',
+        colorBar: {
+            show: true,
+            height: '90%'
+        }
+    },
+    legend: {
+        show: true
+    },
+    controls: {
+        download: {
+            format: 'svg'
+        }
+    }
 };
 
 class AppController {
