@@ -1,6 +1,6 @@
 {
   "name": "ancestry",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Ancestry: a package for visualization of lineage data",
   "main": "dist/bundle.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "chart",
     "biojs",
     "lineage",
+    "tree",
     "scatterplot",
     "phylogeny",
     "d3"
@@ -29,7 +30,18 @@
   },
   "dependencies": {
     "angular": "^1.4.5",
-    "d3": "^4.2.3"
+    "d3-array": "^1.2.1",
+    "d3-axis": "^1.0.8",
+    "d3-brush": "^1.0.4",
+    "d3-format": "^1.2.0",
+    "d3-hierarchy": "^1.1.5",
+    "d3-quadtree": "^1.0.3",
+    "d3-scale": "^1.0.6",
+    "d3-selection": "^1.1.0",
+    "d3-selection-multi": "^1.0.1",
+    "d3-xyzoom": "0.0.2",
+    "d3-zoom": "^1.5.0",
+    "save-svg-as-png": "^1.2.0"
   },
   "devDependencies": {
     "angular-highlightjs": "^0.7.1",

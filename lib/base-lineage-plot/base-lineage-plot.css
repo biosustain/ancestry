@@ -1,0 +1,13 @@
+.ancestry-base-lineage-plot .node circle{
+    pointer-events: all;
+}
+
+
+.ancestry-base-lineage-plot .link {
+    pointer-events: none;
+    fill:none;
+}
+
+.ancestry-base-lineage-plot text {
+    pointer-events: none;
+}
