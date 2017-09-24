@@ -3,9 +3,9 @@ import 'angular-material';
 import '../lib/index.js';
 import {phyloData, phyloLayout} from './phylo_example.js'
 
-let nodesArray = createRandomLineageScatterPlotData(250, 7);
+let nodesArray = createRandomLineageData(250, 7);
 
-function createRandomLineageScatterPlotData(totalNodes, n) {
+function createRandomLineageData(totalNodes, n) {
     let nodes = [],
         children,
         labels = 'ABCDEFGHIJKLMNOPQRSTVWXYZ'.split(''),
@@ -302,7 +302,7 @@ class AppController {
         //});
         //console.log(nodesArray)
 
-        $scope.lineagePlotTimeData = createRandomLineageScatterPlotData(100, 1).map(d => {
+        $scope.lineagePlotTimeData = createRandomLineageData(100, 1).map(d => {
             d.date = 1369180800 + (d.x + Math.random()) * 2592000;
             return d;
         });
