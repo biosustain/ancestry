@@ -3,7 +3,7 @@ import 'angular-material';
 import '../lib/index.js';
 import {phyloData, phyloLayout} from './phylo_example.js'
 
-let nodesArray = createRandomLineageScatterPlotData(250, 5);
+let nodesArray = createRandomLineageScatterPlotData(250, 7);
 
 function createRandomLineageScatterPlotData(totalNodes, n) {
     let nodes = [],
@@ -237,7 +237,9 @@ let lineageTimeConfig = {
 
 let radialLineageConfig = {
     height: 500,
-    margin: {right: 160},
+    margin: {
+        right: 160
+    },
     labelCollisionDetection: {
         enabled: 'onDelay'
     },
@@ -262,7 +264,7 @@ let radialLineageConfig = {
 };
 
 class AppController {
-    constructor($scope, $http) {
+    constructor($scope/*, $http */) {
         $scope.selectedNodes = [];
 
         $scope.customNode = function($selection, $event) {
@@ -298,6 +300,7 @@ class AppController {
         //    $scope.lineagePlotTimeData = data.data;
         //    $scope.lineagePlotTimeLayout = lineageTimeConfig;
         //});
+        //console.log(nodesArray)
 
         $scope.lineagePlotTimeData = createRandomLineageScatterPlotData(100, 1).map(d => {
             d.date = 1369180800 + (d.x + Math.random()) * 2592000;
@@ -316,12 +319,6 @@ class AppController {
         $scope.showBranchLengths = true;
         $scope.phyloData = phyloData;
         $scope.phyloLayout = phyloLayout;
-
-
-        setTimeout(function() {
-            $scope.showBranchLengths = false;
-            $scope.$apply();
-        }, 7000);
 
     }
 }
