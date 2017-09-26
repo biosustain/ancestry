@@ -2967,8 +2967,6 @@ const RadialPhylogeneticTreeComponent = {
     .component('radialPhylogeneticTree', RadialPhylogeneticTreeComponent);
 
 
-
-
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
