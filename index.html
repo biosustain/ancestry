@@ -71,14 +71,17 @@
     <div id="tab-group-1">
         <ul class="tab">
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-1', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-1','json')">JSON</span></li>
+            <li><span class="tablinks data-tab" onclick="openTab('tab-group-1','data')">Data</span></li>
+            <li><span class="tablinks layout-tab" onclick="openTab('tab-group-1','layout')">Layout</span></li>
         </ul>
         <div class="tabcontent tab-plot">
-            <lineage-plot value="lineageExampleData"></lineage-plot>
+            <lineage-plot plot-data="lineageData" plot-layout="lineageLayout"></lineage-plot>
         </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_data.json'" hljs-language="json" class="hljs-main"></div>
+        <div class="tabcontent tab-data">
+            <div hljs hljs-include="'data/lineage_data.js'" hljs-language="javascript" class="hljs-main"></div>
+        </div>
+        <div class="tabcontent tab-layout">
+            <div hljs hljs-include="'data/lineage_layout.js'" hljs-language="javascript" class="hljs-main"></div>
         </div>
     </div>
     <h4>Directive</h4>
@@ -176,14 +179,17 @@
     <div id="tab-group-2">
         <ul class="tab">
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-2', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-2','json')">JSON</span></li>
+            <li><span class="tablinks data-tab" onclick="openTab('tab-group-2','data')">Data</span></li>
+            <li><span class="tablinks layout-tab" onclick="openTab('tab-group-2','layout')">Layout</span></li>
         </ul>
         <div class="tabcontent tab-plot">
-            <lineage-scatter-plot value="lineageScatterExampleData"></lineage-scatter-plot>
+            <lineage-scatter-plot plot-data="lineageScatterData" plot-layout="lineageScatterLayout"></lineage-scatter-plot>
         </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/lineage_scatter_data.json'" hljs-language="json"></div>
+        <div class="tabcontent tab-data">
+            <div hljs hljs-include="'data/lineage_scatter_data.js'" hljs-language="javascript"></div>
+        </div>
+        <div class="tabcontent tab-layout">
+            <div hljs hljs-include="'data/lineage_scatter_layout.js'" hljs-language="javascript"></div>
         </div>
     </div>
     <h4>Directive</h4>
@@ -290,14 +296,17 @@
     <div id="tab-group-3">
         <ul class="tab">
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-3','json')">JSON</span></li>
+            <li><span class="tablinks data-tab" onclick="openTab('tab-group-3','data')">Data</span></li>
+            <li><span class="tablinks layout-tab" onclick="openTab('tab-group-3','layout')">Layout</span></li>
         </ul>
         <div class="tabcontent tab-plot">
-            <radial-lineage-plot value="radialLineageExampleData"></radial-lineage-plot>
+            <radial-lineage-plot plot-data="radialLineageData" plot-layout="radialLineageLayout"></radial-lineage-plot>
         </div>
-
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_lineage_data.json'" hljs-language="json"></div>
+        <div class="tabcontent tab-data">
+            <div hljs hljs-include="'data/radial_lineage_data.js'" hljs-language="javascript"></div>
+        </div>
+        <div class="tabcontent tab-layout">
+            <div hljs hljs-include="'data/radial_lineage_layout.js'" hljs-language="javascript"></div>
         </div>
     </div>
     <h4>Directive</h4>
@@ -342,19 +351,20 @@
     <div id="tab-group-4">
         <ul class="tab">
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
-            <li><span class="tablinks json-tab" onclick="openTab('tab-group-4','json')">JSON</span></li>
+            <li><span class="tablinks data-tab" onclick="openTab('tab-group-4','json')">Data</span></li>
+            <li><span class="tablinks layout-tab" onclick="openTab('tab-group-4','json')">Layout</span></li>
         </ul>
         <div class="tabcontent tab-plot">
             <div id="phylo-tab">
-                <radial-phylogenetic-tree value="radialPhylogeneticTreeExampleData"
-                                          branchlength="showLengths"></radial-phylogenetic-tree>
-                <label id="show-length">
-                    <input type="checkbox" ng-model="showLengths"> Show branch length
-                </label>
+                <radial-phylogenetic-tree plot-data="radialPhylogeneticTreeData"
+                                          plot-layout="radialPhylogeneticTreeLayout"></radial-phylogenetic-tree>
             </div>
         </div>
-        <div class="tabcontent tab-json">
-            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.json'" hljs-language="json"></div>
+        <div class="tabcontent tab-data">
+            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.js'" hljs-language="javascript"></div>
+        </div>
+        <div class="tabcontent tab-layout">
+            <div hljs hljs-include="'data/radial_phylogenetic_tree_layout.js'" hljs-language="javascript"></div>
         </div>
     </div>
     <h4>Directive</h4>

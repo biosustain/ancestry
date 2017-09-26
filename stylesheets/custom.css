@@ -37,7 +37,7 @@ span.prop-type {
     font-size: 14px !important;
 }
 
-.tab-json pre {
+.tab-data pre, .tab-layout pre {
     overflow-x: hidden;
     overflow-y: scroll;
     max-height: 499px;

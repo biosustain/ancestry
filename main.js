@@ -1,27 +1,28 @@
 import angular from 'angular';
 import './lib/index.js';
-//import 'biosustain/ancestry/dist/ancestry.css!';
 import 'angular-highlightjs';
+import lineagePlotData from './data/lineage_data.js'
+import lineagePlotLayout from './data/lineage_layout.js'
+import lineageScatterPlotData from './data/lineage_scatter_data.js'
+import lineageScatterPlotLayout from './data/lineage_scatter_layout.js'
+import radialLineagePlotData from './data/radial_lineage_data.js'
+import radialLineagePlotLayout from './data/radial_lineage_layout.js'
+import radialPhylogeneticTreeData from './data/radial_phylogenetic_tree_data.js'
+import radialPhylogeneticTreeLayout from './data/radial_phylogenetic_tree_layout.js'
 
 class AppController {
     constructor($scope, $http) {
-        $http.get('data/lineage_data.json').then((response) => {
-            $scope.lineageExampleData = response.data;
-        });
+        $scope.lineageData = lineagePlotData;
+        $scope.lineageLayout = lineagePlotLayout;
 
-        $http.get('data/lineage_scatter_data.json').then((response) => {
-            $scope.lineageScatterExampleData = response.data;
-        });
+        $scope.lineageScatterData = lineageScatterPlotData;
+        $scope.lineageScatterLayout = lineageScatterPlotLayout;
 
-        $http.get('data/radial_lineage_data.json').then((response) => {
-            $scope.radialLineageExampleData = response.data;
-        });
+        $scope.radialLineageData = radialLineagePlotData;
+        $scope.radialLineageLayout = radialLineagePlotLayout;
 
-        $scope.showLengths = true;
-
-        $http.get('data/radial_phylogenetic_tree_data.json').then((response) => {
-            $scope.radialPhylogeneticTreeExampleData = response.data;
-        });
+        $scope.radialPhylogeneticTreeData = radialPhylogeneticTreeData;
+        $scope.radialPhylogeneticTreeLayout = radialPhylogeneticTreeLayout;
     }
 }
 
