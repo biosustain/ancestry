@@ -131,6 +131,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 /* harmony export (immutable) */ __webpack_exports__["j"] = testLabelLength;
 /* harmony export (immutable) */ __webpack_exports__["k"] = allocatePaddingInScale;
 /* unused harmony export getTranslation */
+/* unused harmony export attachActionOnResize2 */
 /* harmony export (immutable) */ __webpack_exports__["d"] = attachActionOnResize;
 /* unused harmony export toggleSelectionDisplay */
 
@@ -909,7 +910,7 @@ function getTranslation(transform) {
     return [matrix.e, matrix.f];
 }
 
-function attachActionOnResize(window, action) {
+function attachActionOnResize2(window, action) {
     window = angular.element(window);
     let width = window[0].innerWidth;
     let lastUpdate = performance.now();
@@ -929,6 +930,25 @@ function attachActionOnResize(window, action) {
             scheduleId = setTimeout(action, 500);
         }
     });
+}
+
+function attachActionOnResize(scope, action) {
+    let lastUpdate = performance.now(),
+        scheduleId = null;
+
+    scope.$watch(function() {
+        return {
+            'h': element[0].offsetHeight,
+            'w': element[0].offsetWidth
+        };
+    }, function() {
+        let now = performance.now();
+        if (now - lastUpdate < 500) {
+            clearTimeout(scheduleId);
+        }
+        lastUpdate = now;
+        scheduleId = setTimeout(action, 500);
+    }, true);
 }
 
 function toggleSelectionDisplay(selectionInViewport, selectionNotInViewport) {
@@ -1138,7 +1158,7 @@ class BaseLineagePlotController {
         this._$scope = $scope;
         this._$attrs = $attrs;
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* attachActionOnResize */])($window, () => {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* attachActionOnResize */])($scope, () => {
             this.axisSvgs = {};
             this.initializeData({isNewData: false});
             this.render({});
@@ -1188,6 +1208,7 @@ class BaseLineagePlotController {
     $onChanges(changes) {
         if ((changes.plotData && changes.plotData.currentValue) ||
             (changes.plotLayout && changes.plotLayout.currentValue)) {
+            if (this.plotData === undefined || this.plotLayout === undefined) return;
             this.initializeData();
             this.render();
         }
