@@ -129,10 +129,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 /* harmony export (immutable) */ __webpack_exports__["r"] = drawColorBar;
 /* harmony export (immutable) */ __webpack_exports__["q"] = calcColorBarSize;
 /* harmony export (immutable) */ __webpack_exports__["j"] = testLabelLength;
+/* harmony export (immutable) */ __webpack_exports__["w"] = adjustExtent;
 /* harmony export (immutable) */ __webpack_exports__["k"] = allocatePaddingInScale;
 /* unused harmony export getTranslation */
-/* unused harmony export attachActionOnResize2 */
 /* harmony export (immutable) */ __webpack_exports__["d"] = attachActionOnResize;
+/* unused harmony export attachActionOnResize2 */
 /* unused harmony export toggleSelectionDisplay */
 
 
@@ -892,6 +893,20 @@ function testLabelLength(svg, name, _attrs) {
     };
 }
 
+// if extent is [x, x], change to [x - 0.5, x + 0.5] (analogically for time extent, but use a day)
+function adjustExtent(extent, isTimeExtent=false) {
+    let offset = isTimeExtent ? 86400 : 0.5;
+
+    if (isTimeExtent) {
+        extent = extent.map(d => d.getTime() / 1000);
+    }
+
+    if (extent[0] == extent[1]) {
+        extent = [extent[0] - offset, extent[0] + offset];
+    }
+    return isTimeExtent ? extent.map(d => new Date(d * 1000)) : extent;
+}
+
 function allocatePaddingInScale(scale, padding) {
     let d = scale.domain()[0] instanceof Date ? scale.domain().map(x => x.getTime()) : scale.domain(),
         r = scale.range(),
@@ -910,7 +925,7 @@ function getTranslation(transform) {
     return [matrix.e, matrix.f];
 }
 
-function attachActionOnResize2(window, action) {
+function attachActionOnResize(window, action) {
     window = angular.element(window);
     let width = window[0].innerWidth;
     let lastUpdate = performance.now();
@@ -932,11 +947,12 @@ function attachActionOnResize2(window, action) {
     });
 }
 
-function attachActionOnResize(scope, action) {
+function attachActionOnResize2(scope, element, action) {
     let lastUpdate = performance.now(),
         scheduleId = null;
 
     scope.$watch(function() {
+        console.log(element[0].offsetHeight, element[0].offsetWidth);
         return {
             'h': element[0].offsetHeight,
             'w': element[0].offsetWidth
@@ -1158,7 +1174,7 @@ class BaseLineagePlotController {
         this._$scope = $scope;
         this._$attrs = $attrs;
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* attachActionOnResize */])($scope, () => {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_features_js__["d" /* attachActionOnResize */])($element, () => {
             this.axisSvgs = {};
             this.initializeData({isNewData: false});
             this.render({});
@@ -1209,10 +1225,22 @@ class BaseLineagePlotController {
         if ((changes.plotData && changes.plotData.currentValue) ||
             (changes.plotLayout && changes.plotLayout.currentValue)) {
             if (this.plotData === undefined || this.plotLayout === undefined) return;
+            this.prevContainerWidth = this._$element.offsetWidth;
+            this.prevContainerHeight = this._$element.offsetHeight;
             this.initializeData();
             this.render();
         }
     }
+
+    //$doCheck() { console.log('check!');
+    //    if (this.marker) { // if plot is initialized
+    //        if (this._$element.offsetWidth !== this.prevContainerWidth ||
+    //            this._$element.offsetHeight !== this.prevContainerHeight) {
+    //            // simulate data change for redrawing
+    //            this.onChanges({plotData: {currentValue: true}, plotLayout: {currentValue: true}});
+    //        }
+    //    }
+    //}
 
     render() {
         this.svg.selectAll('*').remove();
@@ -2495,7 +2523,8 @@ class LineagePlotController extends __WEBPACK_IMPORTED_MODULE_0__base_lineage_pl
     }
 
     setupScales() {
-        this.xExtent = d3.extent(this.nodes, node => this.isTimePlot ? new Date(node.data.date * 1000) : node.depth);
+        this.xExtent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__shared_features_js__["w" /* adjustExtent */])(d3.extent(this.nodes, node => this.isTimePlot ? new Date(node.data.date * 1000)
+            : node.depth), this.isTimePlot);
 
         this.xScale = (this.isTimePlot ? d3.scaleTime() : d3.scaleLinear())
             .domain(this.xExtent)
@@ -2507,12 +2536,12 @@ class LineagePlotController extends __WEBPACK_IMPORTED_MODULE_0__base_lineage_pl
     }
 
     drawMainAxes() {
-        this.drawAxis(this.treeFixedContainer, 'x-main', this.xScale, this.plotHeight, true, this.isTimePlot);
+        this.drawAxis(this.treeFixedContainer, 'x-main', this.xScale, this.plotHeight, this.isTimePlot, true);
     }
 
     drawBrushAxes() {
-        this.drawAxis(this.brushFixedContainer, 'x-brush', this.brushContext.xScale, this.brushContext.plotHeight, true,
-            this.isTimePlot);
+        this.drawAxis(this.brushFixedContainer, 'x-brush', this.brushContext.xScale, this.brushContext.plotHeight,
+            this.isTimePlot, true);
     }
 
     prepareNodes(data, context) {
@@ -2666,14 +2695,14 @@ class LineageScatterPlotController extends __WEBPACK_IMPORTED_MODULE_0__base_lin
     }
 
     setupScales() {
-        this.xExtent = d3.extent(this.nodes, node => node._x);
+        this.xExtent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__shared_features_js__["w" /* adjustExtent */])(d3.extent(this.nodes, node => node._x));
 
         this.xScale = (this.isTimePlot ? d3.scaleTime() : d3.scaleLinear())
             .domain(this.xExtent)
             .range([0, this.plotWidth]);
 
         this.yScale = d3.scaleLinear()
-            .domain(d3.extent(this.nodes, node => node._y).reverse())
+            .domain(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__shared_features_js__["w" /* adjustExtent */])(d3.extent(this.nodes, node => node._y)).reverse())
             .range([0, this.plotHeight]);
     }
 
