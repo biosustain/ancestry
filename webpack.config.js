@@ -5,14 +5,23 @@ module.exports = {
     entry: './lib/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        library: 'ancestry',
+        libraryTarget: 'umd'
     },
-    externals: {
-        "angular": "angular",
-        "d3": "d3"
-    },
+    externals: [
+        'angular',
+        'save-svg-as-png',
+        /d3-.*/
+    ],
     module: {
-        loaders: [
+        rules: [
+            {
+                test: /\.js$/,
+                include: [
+                    path.resolve(__dirname, 'lib')
+                ]
+            },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
