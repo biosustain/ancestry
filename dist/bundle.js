@@ -1893,7 +1893,7 @@ class BaseLineagePlotController {
             mouseStart = null;
 
         // expose click for toggleSelect
-        this.onNodeClick = onNodeClick;
+        this.nodeClick = onNodeClick;
 
         if (!this.layout.groupSelection.enabled) return;
 
@@ -2026,7 +2026,7 @@ class BaseLineagePlotController {
                 });
             }
 
-            that.marker.on('click', toggle ? that.onNodeClick : (that._$attrs.nodeClick ? nodeClickCallback : null));
+            that.marker.on('click', toggle ? that.nodeClick : (that._$attrs.nodeClick ? nodeClickCallback : null));
         }
     }
 
