@@ -4,7 +4,6 @@
 
 
 .ancestry-base-lineage-plot .link {
-    pointer-events: none;
     fill:none;
 }
 
@@ -42,7 +41,6 @@
     pointer-events: none;
 }
 .ancestry .link {
-    pointer-events: none;
     fill:none;
 }
 
@@ -67,12 +65,6 @@
     stroke-width: 1.5px;
 }
 
-.ancestry .voronoi path {
-    fill: none;
-    stroke: none;
-    pointer-events: all;
-}
-
 .ancestry-tooltip {
     z-index: 100;
     overflow: hidden;
@@ -88,22 +80,6 @@
     opacity: 0.9;
     transform: translate(-50%, -115%);
 }
-
-/* Creates a small triangle extender for the tooltip */
-/*.ancestry-tooltip:after {*/
-    /*box-sizing: border-box;*/
-    /*display: inline;*/
-    /*font-size: 10px;*/
-    /*width: 100%;*/
-    /*line-height: 1;*/
-    /*color: #323232;*/
-    /*content: "\25BC";*/
-    /*position: absolute;*/
-    /*text-align: center;*/
-    /*margin: -2px 0 0 0;*/
-    /*top: 100%;*/
-    /*left: 0;*/
-/*}*/
 
 .ancestry-tooltip div.tooltip-color-box {
     width: 100%;
@@ -156,4 +132,8 @@
 
 .ancestry div.svg-icon {
     opacity: 0.6;
+}
+
+.ancestry path.link-capture {
+    pointer-events: visibleStroke
 }

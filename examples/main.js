@@ -290,6 +290,12 @@ class AppController {
             }
         };
 
+        $scope.customLink = function($linkObject) {
+            let d = $linkObject;
+            return `M${d.sourceNode.x},${d.sourceNode.y}L${d.sourceNode.x},${d.targetNode.y
+                }L${d.targetNode.x},${d.targetNode.y}`;
+        };
+
         let clickedPath = [],
             mouseoveredPath = [],
             originalPathAttrs = baseLayoutTemplate.link,
@@ -374,6 +380,7 @@ class AppController {
 AppController.$$ngIsClass = true; // temporary Firefox fix
 const App = angular.module('Visualizer', ['ancestry', 'ngMaterial'])
     .controller('AppController', AppController);
+
 
 angular.element(document).ready(function () {
     return angular.bootstrap(document, [App.name], {
