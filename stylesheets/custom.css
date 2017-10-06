@@ -46,6 +46,11 @@ span.prop-type {
     font-size: 14px;
 }
 
+.tab-plot {
+    display: table;
+    min-width: 100%;
+}
+
 code {
     font-weight: 400 !important;
 }

@@ -21,8 +21,8 @@
 
     <h2 class="project-tagline"></h2>
     <a href="https://github.com/biosustain/ancestry" class="btn">View on GitHub</a>
-    <a href="https://github.com/biosustain/ancestry/archive/v1.4.0.zip" class="btn">Download .zip</a>
-    <a href="https://github.com/biosustain/ancestry/archive/v1.4.0.tar.gz" class="btn">Download .tar.gz</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v2.0.2.zip" class="btn">Download .zip</a>
+    <a href="https://github.com/biosustain/ancestry/archive/v2.0.2.tar.gz" class="btn">Download .tar.gz</a>
 </section>
 
 <section class="main-content">
@@ -454,6 +454,22 @@
                     </li>
                 </ul>
             </li>
+            <li><code class="hljs hljs-attr">plotPadding</code>
+                 <span class="prop-desc">In lineage and lineage-scatter plots: allows to specify lineage padding to prevent the lineage from occupying the whole plotting area.
+                     If <code class="hljs hljs-attr">x</code> or <code class="hljs hljs-attr">y</code> is <code class="hljs hljs-literal">null</code>, the padding in x or y direction will be adjusted to fit node labels.
+                     If <code class="hljs hljs-attr">x</code> or <code class="hljs hljs-attr">y</code> is a number, the padding will equal to the given number (in pixels).
+                     In radial-lineage and phylogenetic-tree, <code class="hljs hljs-attr">x</code> and <code class="hljs hljs-attr">y</code> are not discriminated and maximum of these is taken as plot padding leading to shrinking the lineages equally in both directions.</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">x</code> <span class="prop-type">(number | null || default: <code
+                            class="hljs hljs-literal">null</code>)</span><span
+                            class="prop-desc">Width of plot padding in direction x.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">y</code> <span class="prop-type">(number | null || default: <code
+                            class="hljs hljs-literal">null</code>)</span><span
+                            class="prop-desc">Height of plot padding in direction y.</span>
+                    </li>
+                </ul>
+            </li>
             <li><code class="hljs hljs-attr">backgroundColour</code> <span class="prop-type">(string || default: <code
                     class="hljs hljs-string">"none"</code>)</span><span
                     class="prop-desc">Background colour of the plot. If <code
@@ -473,18 +489,22 @@
                     <span class="prop-desc">Object with series ids as keys and colours as values. If this property is used, it is requried to specify series id for each node data object.</span>
             </li>
             <li><code class="hljs hljs-attr">nodeLabel</code> <span class="prop-type">(object || default: <span
-                    class="code-inline" hljs hljs-language="json">{"font-size": 12, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
+                    class="code-inline" hljs hljs-language="json">{"font-size": 12, "dy": 4, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
                     class="prop-desc">Object with SVG text attributes defining appearance of node labels</span></li>
+            <li><code class="hljs hljs-attr">linkLabel</code> <span class="prop-type">(object || default: <span
+                    class="code-inline" hljs hljs-language="json">{"font-size": 12, "dy": 4, "font-family": "Roboto,Helvetica Neue,sans-serif"}</span>)</span><span
+                    class="prop-desc">Object with SVG text attributes defining appearance of link labels</span></li>
             <li><code class="hljs hljs-attr">link</code> <span
                     class="prop-type">(object || default:
             <span class="code-inline" hljs
                   hljs-language="json">{"stroke": "#ccc", "stroke-width": 1}</span>)</span><span
                     class="prop-desc">Object with SVG path attributes defining appearance of links between nodes</span>
             </li>
-            <li><code class="hljs hljs-attr">maxZoom</code> <span class="prop-type">(number not smaller than <code
-                    class="hljs hljs-number">1</code> || default: <code class="hljs hljs-number">10</code>)</span><span
-                    class="prop-desc">Determines maximum zoom. If no zooming is intended, this should be set to <code
-                    class="hljs hljs-number">1</code>.</span>
+            <li><code class="hljs hljs-attr">linkCaptureWidth</code> <span class="prop-type">(number  || default: <code class="hljs hljs-number">10</code>)</span><span
+                    class="prop-desc">Determines the width of invisible link placed on top of the visible link to facilitate convenient mouse events.</span>
+            </li>
+            <li><code class="hljs hljs-attr">showLinkArrowhead</code> <span class="prop-type">(<code class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code>)</span><span
+                    class="prop-desc">Specifies whether links end with arrowheads. By default, this is <code class="hljs hljs-literal">true</code> only in lineage-scatter plot.</span>
             </li>
             <li><code class="hljs hljs-attr">labelCollisionDetection</code> <span class="prop-type">(object)</span>
                     <span class="prop-desc">Only available for lineage and lineage-scatter plots. Label collision detection takes care of hiding
@@ -545,14 +565,14 @@
                             class="hljs hljs-literal">null</code>)</span>
                         <span class="prop-desc">Title of the heatmap displayed with the colour bar.</span>
                     </li>
-                    <li><code class="hljs hljs-attr">colourScale</code> <span class="prop-type">(array of two element arrays || default: <span
+                    <li><code class="hljs hljs-attr">colorScale</code> <span class="prop-type">(array of two element arrays || default: <span
                             class="code-inline" hljs hljs-language="json">[[0, "#008ae5"], [1, "yellow"]]</span>)</span>
                         <span class="prop-desc">Determines the colour range used for the heatmap. Currently, the array should have form <span
                                 class="code-inline" hljs hljs-language="json">[[0, colour1], [1, colour2]]</span>, where <span
                                 class="code-inline"><code class="hljs">colour1</code></span> and <span
                                 class="code-inline"><code class="hljs">colour2</code></span> correspond respectively to minimum and maximum values in heatmap layer.</span>
                     </li>
-                    <li><code class="hljs hljs-attr">colourBar</code> <span class="prop-type">(object)</span>
+                    <li><code class="hljs hljs-attr">colorBar</code> <span class="prop-type">(object)</span>
                         <ul>
                             <li><code class="hljs hljs-attr">show</code> <span class="prop-type">(<code
                                     class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
@@ -569,10 +589,19 @@
                         <span class="prop-desc"> Determines the height of the colour bar. If a number is given, the colour bar will be that many pixels wide,
                             if a string with percentage is given, its width will be relative to the total plot width.</span>
                             </li>
-                            <li><code class="hljs hljs-attr">position</code> <span class="prop-type">(<code
-                                    class="hljs hljs-string">"right"</code> || default: <code class="hljs hljs-string">"right"</code>)</span>
-                                <span class="prop-desc"> Determines the position of the colour bar in reference to the chart. Currently, the only supported position is <code
-                                        class="hljs hljs-string">"right"</code>.</span>
+                            <li><code class="hljs hljs-attr">padding</code> <span class="prop-type">(object)</span>
+                                <ul>
+                                    <li>
+                                        <code class="hljs hljs-attr">left</code> <span class="prop-type">(number || default: <code
+                                            class="hljs hljs-number">10</code>)</span>
+                                <span class="prop-desc"> Determines the padding between the plot area and the color bar).</span>
+                                    </li>
+                                    <li>
+                                        <code class="hljs hljs-attr">right</code> <span class="prop-type">(number || default: <code
+                                            class="hljs hljs-number">0</code>)</span>
+                                <span class="prop-desc"> Determines the padding between the color bar and the legend.</span>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
@@ -595,35 +624,33 @@
                             class="hljs hljs-literal">false</code>)</span>
                         <span class="prop-desc"> Determines whether legend is shown.</span>
                     </li>
-                    <li><code class="hljs hljs-attr">position</code> <span class="prop-type">(object)</span>
-                        <ul>
-                            <li><code class="hljs hljs-attr">x</code> <span
-                                    class="prop-type">(<code class="hljs hljs-string">"left"</code> | <code
-                                    class="hljs hljs-string">"center"</code> | <code
-                                    class="hljs hljs-string">"right"</code> || default: <code class="hljs hljs-string">"right"</code>)</span>
-                                <span class="prop-desc"> Determines the horizontal position of the legend with reference to the chart.</span>
-                            </li>
-                            <li><code class="hljs hljs-attr">y</code> <span
-                                    class="prop-type">(<code class="hljs hljs-string">"top"</code> | <code
-                                    class="hljs hljs-string">"center"</code> | <code
-                                    class="hljs hljs-string">"bottom"</code> || default: <code class="hljs hljs-string">"center"</code>)</span>
-                                <span class="prop-desc"> Determines the vertical position of the legend with reference to the chart.</span>
-                            </li>
-                        </ul>
+                    <li><code class="hljs hljs-attr">x</code> <span
+                            class="prop-type">(number || default: <code class="hljs hljs-number">1</code>)</span>
+                        <span class="prop-desc"> Determines the horizontal position of the legend with reference to the plot area.
+                            <code class="hljs hljs-number">0</code> refers to the left border of the plot area and
+                            <code class="hljs hljs-number">1</code> refers to the right border of the plot area.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">y</code> <span
+                            class="prop-type">(number || default: <code class="hljs hljs-number">0.5</code>)</span>
+                        <span class="prop-desc"> Determines the vertical position of the legend with reference to the plot area.
+                            <code class="hljs hljs-number">0</code> refers to the top border of the plot area and
+                            <code class="hljs hljs-number">1</code> refers to the bottom border of the plot area.</span>
                     </li>
                     <li><code class="hljs hljs-attr">anchor</code> <span class="prop-type">(object)</span>
                         <ul>
                             <li><code class="hljs hljs-attr">x</code> <span class="prop-type">(<code
-                                    class="hljs hljs-string">"inside"</code> | <code
-                                    class="hljs hljs-string">"outside"</code> || default: <code
-                                    class="hljs hljs-string">"outside"</code>)</span>
-                                <span class="prop-desc"> Determines the horizontal anchor of the legend with reference to the chart.</span>
+                                    class="hljs hljs-string">"left"</code> | <code
+                                    class="hljs hljs-string">"center"</code> | <code
+                                    class="hljs hljs-string">"right"</code>|| default: <code
+                                    class="hljs hljs-string">"left"</code>)</span>
+                                <span class="prop-desc"> Determines the horizontal anchor point of the legend frame.</span>
                             </li>
                             <li><code class="hljs hljs-attr">y</code> <span class="prop-type">(<code
-                                    class="hljs hljs-string">"inside"</code> | <code
-                                    class="hljs hljs-string">"outside"</code> || default: <code
-                                    class="hljs hljs-string">"outside"</code>)</span>
-                                <span class="prop-desc"> Determines the vertical anchor of the legend with reference to the chart.</span>
+                                    class="hljs hljs-string">"top"</code> | <code
+                                    class="hljs hljs-string">"center"</code> | <code
+                                    class="hljs hljs-string">"bottom"</code> || default: <code
+                                    class="hljs hljs-string">"center"</code>)</span>
+                                <span class="prop-desc"> Determines the vertical anchor point of the legend frame.</span>
                             </li>
                         </ul>
                     </li>
@@ -639,16 +666,48 @@
                 </ul>
             </li>
             <li><code class="hljs hljs-attr">tooltip</code> <span class="prop-type">(object)</span>
-                    <span class="prop-desc">Only available for lineage and lineage-scatter plots. Tooltip provides basic information about a node on hover. Tooltip contents are customizable through nodes' <code class="hljs hljs-attr">tooltip</code> property.</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">show</code> <span
+                            class="prop-type">(<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code class="hljs hljs-literal">true</code>)</span>
+                        <span class="prop-desc"> Determines whether tooltip for nodes is shown.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">showSeriesBar</code> <span
+                            class="prop-type">(<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code class="hljs hljs-literal">false</code>)</span>
+                        <span class="prop-desc"> Determines whether a small horizontal bar indicating the series the mouseovered node belongs to is displayed.</span>
+                    </li>
+                    <li><code class="hljs hljs-attr">align</code> <span
+                            class="prop-type">(<code class="hljs hljs-string">"left"</code> | <code class="hljs hljs-string">"center"</code> | <code class="hljs hljs-string">"right"</code> || default: <code class="hljs hljs-string">"left"</code>)</span>
+                        <span class="prop-desc"> Determines the text align inside tooltip.</span>
+                    </li>
+                </ul>
             </li>
             <li><code class="hljs hljs-attr">nodeLabelPositions</code> <span class="prop-type">(array)</span>
-                <span class="prop-desc">Only available for lineage and lineage-scatter plots. The array specifies SVG text element positions relative to the corresponding node which are tried out in the given order in label collision detection.
+                <span class="prop-desc">The array specifies SVG text element positions relative to the corresponding node which are tried out in the given order in label collision detection.
                     The array's elements should be objects with <code class="hljs hljs-attr">x</code>, <code class="hljs hljs-attr">y</code>,
-                    <code class="hljs hljs-attr">text-anchor</code> properties.<br/> Default: <code class="hljs hljs-json">[{x: 10, y: 0, "text-anchor": "left"}, {x: -10, y: 0, "text-anchor": "right"}]</code>
+                    <code class="hljs hljs-attr">text-anchor</code> properties.<br/> Default: <span class="code-inline" hljs hljs-language="javascript">[{x: 10, y: 0, "text-anchor": "left"}, {x: -10, y: 0, "text-anchor": "right"}]</span>
                 </span>
             </li>
-            <li><code class="hljs hljs-attr">controlsEnabledOnStart</code> <span class="prop-type">(array)</span>
-                <span class="prop-desc">Specifies which plot controls are active on first render. Possible values for lineage / lineage-scatter plots are: <code class="hljs hljs-string">"label"</code>, <code class="hljs hljs-string">"zoom"</code> (zooming and panning), <code class="hljs hljs-string">"select"</code>. (Note: <code class="hljs hljs-string">"select"</code> should not be combined with <code class="hljs hljs-string">"zoom"</code>). The only possible value for radial and phylogenetic tree plots is <code class="hljs hljs-string">"zoom"</code>.</span>
+            <li><code class="hljs hljs-attr">controls</code> <span class="prop-type">(object)</span>
+                <span class="prop-desc">Determines the state of the control panel. <code class="hljs hljs-attr">show</code> attribute specifies whether a control is included in the control panel. <code class="hljs hljs-attr">active</code> determines the initial state of a control (on or off).
+                    <code class="hljs hljs-attr">position</code> is used to determine the order of controls in the control panel.</span>
+                    <ul>
+                        <li><code class="hljs hljs-attr">download</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, format: 'png', position: 0}</span>)</span>
+                            <span class="prop-desc">Control responsible for saving the plot. <code class="hljs hljs-attr">format</code> can be <code class="hljs hljs-string">"png"</code> or <code class="hljs hljs-string">"svg"</code>.</span>
+                        </li>
+                        <li><code class="hljs hljs-attr">zoom</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, active: false, position: 1}</span>)</span>
+                            <span class="prop-desc">Control responsible for zooming and panning the plot.</span>
+                        </li>
+                        <li><code class="hljs hljs-attr">brush</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, active: false, position: 2}</span>)</span>
+                            <span class="prop-desc">Control responsible for showing brush plot below the original plot.</span>
+                        </li>
+                        <li><code class="hljs hljs-attr">select</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, active: false, position: 3}</span>)</span>
+                            <span class="prop-desc">Control responsible for enabling node selection mode.</span>
+                        </li>
+                        <li><code class="hljs hljs-attr">label</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, active: true, position: 4}</span>)</span>
+                            <span class="prop-desc">Control responsible for showing node and link labels.</span>
+                        </li>
+                    </ul>
+
             </li>
         </ul>
     </div>

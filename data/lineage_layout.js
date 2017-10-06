@@ -2,7 +2,7 @@ export default {
     height: 500,
     margin: {
         right: 80,
-        bottom: 25
+        bottom: 15
     },
     axis: {
         gridOnly: true
