@@ -1,6 +1,6 @@
 {
   "name": "ancestry",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Ancestry: a package for visualization of lineage data",
   "main": "dist/bundle.js",
   "scripts": {
@@ -41,6 +41,7 @@
     "d3-selection-multi": "^1.0.1",
     "d3-xyzoom": "0.0.2",
     "d3-zoom": "^1.5.0",
+    "element-resize-detector": "^1.1.12",
     "save-svg-as-png": "^1.2.0"
   },
   "devDependencies": {

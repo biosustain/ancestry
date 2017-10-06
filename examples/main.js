@@ -1,7 +1,9 @@
 import angular from 'angular';
+import * as d3 from 'd3-selection'
 import 'angular-material';
 import '../lib/index.js';
 import {phyloData, phyloLayout} from './phylo_example.js'
+import baseLayoutTemplate from '../lib/base-lineage-plot/base-lineage-plot-default-layout.js'
 
 let nodesArray = createRandomLineageData(250, 7);
 
@@ -288,8 +290,60 @@ class AppController {
             }
         };
 
-        $scope.nodeClick = function($event, $node) {
-            console.log($event, $node);
+        $scope.customLink = function($linkObject) {
+            let d = $linkObject;
+            return `M${d.sourceNode.x},${d.sourceNode.y}L${d.sourceNode.x},${d.targetNode.y
+                }L${d.targetNode.x},${d.targetNode.y}`;
+        };
+
+        let clickedPath = [],
+            mouseoveredPath = [],
+            originalPathAttrs = baseLayoutTemplate.link,
+            highlightPathAttrs = {
+                'stroke-width': 2,
+                stroke: 'black'
+            },
+            originalNodeRadius = 4;
+
+        $scope.nodeClick = function($event, $object) {
+            if (clickedPath.length) {
+                d3.selectAll(clickedPath).attrs(originalPathAttrs);
+                let firstLink = clickedPath[0];
+                clickedPath = [];
+                if (firstLink.__data__.targetNode == $object) return;
+            }
+            while ($object.parent) {
+                clickedPath.push($object.inLink.DOMElement);
+                mouseoveredPath = mouseoveredPath.filter(d => d != $object.inLink.DOMElement);
+                $object = $object.parent;
+            }
+            d3.selectAll(clickedPath).attrs(highlightPathAttrs);
+
+        };
+
+        $scope.nodeMouseOver = function($event, $object) {
+            while ($object.parent) {
+                if (clickedPath.includes($object.inLink.DOMElement)) break;
+                mouseoveredPath.push($object.inLink.DOMElement);
+                $object = $object.parent;
+            }
+            d3.selectAll(mouseoveredPath).attrs(highlightPathAttrs);
+        };
+
+        $scope.nodeMouseOut = function() {
+            d3.selectAll(mouseoveredPath).attrs(originalPathAttrs);
+            mouseoveredPath = [];
+        };
+
+        $scope.linkClick = function($event, $object) {
+            console.log($object.sourceNode.data.name + '\t->\t' + ($object.label ? $object.label.text : '') + '\t->\t'
+                + $object.targetNode.data.name);
+        };
+        $scope.linkMouseOver = function($event, $object) {
+            d3.selectAll([$object.sourceNode.DOMElement, $object.targetNode.DOMElement]).attr('r', 6);
+        };
+        $scope.linkMouseOut = function($event, $object) {
+            d3.selectAll([$object.sourceNode.DOMElement, $object.targetNode.DOMElement]).attr('r', originalNodeRadius);
         };
 
         $scope.nodesSelection = function($nodes) {
@@ -326,6 +380,7 @@ class AppController {
 AppController.$$ngIsClass = true; // temporary Firefox fix
 const App = angular.module('Visualizer', ['ancestry', 'ngMaterial'])
     .controller('AppController', AppController);
+
 
 angular.element(document).ready(function () {
     return angular.bootstrap(document, [App.name], {

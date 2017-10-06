@@ -10,10 +10,62 @@
     </style>
 </head>
 <body ng-controller="AppController" layout="column" flex>
-<lineage-plot plot-data="lineagePlotData" plot-layout="lineagePlotLayout" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)"></lineage-plot>
-<lineage-plot plot-data="lineagePlotTimeData" plot-layout="lineagePlotTimeLayout" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)" custom-node="customNode($selection, $event)"></lineage-plot>
-<lineage-scatter-plot plot-data="lineageScatterPlotData" plot-layout="lineageScatterPlotLayout" nodes-selection="nodesSelection($nodes)" node-click="nodeClick($event, $node)" flex></lineage-scatter-plot>
-<radial-lineage-plot plot-data="radialPlotData" plot-layout="radialPlotLayout" node-click="nodeClick($event, $node)" nodes-selection="nodesSelection($nodes)"></radial-lineage-plot>
-<radial-phylogenetic-tree plot-data="phyloData" plot-layout="phyloLayout" node-click="nodeClick($event, $node)" nodes-selection="nodesSelection($nodes)"></radial-phylogenetic-tree>
+<lineage-plot
+        plot-data="lineagePlotData"
+        plot-layout="lineagePlotLayout"
+        nodes-selection="nodesSelection($nodes)"
+        node-click="nodeClick($event, $object)"
+        node-mouse-over="nodeMouseOver($event, $object)"
+        node-mouse-out="nodeMouseOut($event, $object)"
+        link-click="linkClick($event, $object)"
+        link-mouse-over="linkMouseOver($event, $object)"
+        link-mouse-out="linkMouseOut($event, $object)">
+</lineage-plot>
+<lineage-plot
+        plot-data="lineagePlotTimeData"
+        plot-layout="lineagePlotTimeLayout"
+        custom-link="customLink($linkObject)"
+        custom-node="customNode($selection, $event)"
+        nodes-selection="nodesSelection($nodes)"
+        node-click="nodeClick($event, $object)"
+        node-mouse-over="nodeMouseOver($event, $object)"
+        node-mouse-out="nodeMouseOut($event, $object)"
+        link-click="linkClick($event, $object)"
+        link-mouse-over="linkMouseOver($event, $object)"
+        link-mouse-out="linkMouseOut($event, $object)">
+</lineage-plot>
+<lineage-scatter-plot
+        plot-data="lineageScatterPlotData"
+        plot-layout="lineageScatterPlotLayout"
+        nodes-selection="nodesSelection($nodes)"
+        node-click="nodeClick($event, $object)"
+        node-mouse-over="nodeMouseOver($event, $object)"
+        node-mouse-out="nodeMouseOut($event, $object)"
+        link-click="linkClick($event, $object)"
+        link-mouse-over="linkMouseOver($event, $object)"
+        link-mouse-out="linkMouseOut($event, $object)">
+</lineage-scatter-plot>
+<radial-lineage-plot
+        plot-data="radialPlotData"
+        plot-layout="radialPlotLayout"
+        nodes-selection="nodesSelection($nodes)"
+        node-click="nodeClick($event, $object)"
+        node-mouse-over="nodeMouseOver($event, $object)"
+        node-mouse-out="nodeMouseOut($event, $object)"
+        link-click="linkClick($event, $object)"
+        link-mouse-over="linkMouseOver($event, $object)"
+        link-mouse-out="linkMouseOut($event, $object)">
+</radial-lineage-plot>
+<radial-phylogenetic-tree
+        plot-data="phyloData"
+        plot-layout="phyloLayout"
+        nodes-selection="nodesSelection($nodes)"
+        node-click="nodeClick($event, $object)"
+        node-mouse-over="nodeMouseOver($event, $object)"
+        node-mouse-out="nodeMouseOut($event, $object)"
+        link-click="linkClick($event, $object)"
+        link-mouse-over="linkMouseOver($event, $object)"
+        link-mouse-out="linkMouseOut($event, $object)">
+</radial-phylogenetic-tree>
 </body>
 </html>
