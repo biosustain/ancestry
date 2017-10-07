@@ -933,8 +933,9 @@ function attachActionOnResize(element, action) {
 
     __WEBPACK_IMPORTED_MODULE_0_element_resize_detector___default()({
         strategy: "scroll"
-    }).listenTo(element, function () {let newWidth = element.innerWidth,
-        now = performance.now();
+    }).listenTo(element, function () {
+        let now = performance.now();
+
         if (now - lastUpdate < 500) {
             clearTimeout(scheduleId);
         }
@@ -1118,8 +1119,8 @@ class BaseLineagePlotController {
         this.makeNodeSelection();
         this.makeLCD();
         this.makeBrush();
-        this.makeTooltip();
         this.attachNodeLinkCallbacks();
+        this.makeTooltip();
 
         this.makeControlPanel();
         this.zoomToMinimumWidth();
@@ -1581,6 +1582,7 @@ class BaseLineagePlotController {
             that.makeBrush();
             that.treeFixedContainer.call(that.zoom.transform, d3.xyzoomIdentity);
             that.makeLCD();
+            that.attachNodeLinkCallbacks();
             that.makeTooltip();
         }
 
@@ -2259,7 +2261,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
         backgroundColor: null
     },
     tooltip: {
-        show: true,
+        show: false,
         showSeriesBar: false,
         align: 'left'
     },
