@@ -2301,22 +2301,22 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
         zoom: {
             show: true,
             active: false,
-            position: 2
+            position: 1
         },
         brush: {
             show: true,
             active: false,
-            position: 3
+            position: 2
         },
         select: {
             show: true,
             active: false,
-            position: 4
+            position: 3
         },
         label: {
             show: true,
             active: true,
-            position: 5
+            position: 4
         }
     }
 };
@@ -2365,7 +2365,7 @@ let baseRadialLineageLayout = {
         rotate: {
             show: true,
             enabled: false,
-            position: 2.5
+            position: 1.5
         }
     }
 };
