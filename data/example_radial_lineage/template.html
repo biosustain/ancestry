@@ -1,0 +1,21 @@
+<div ng-controller="RadialLineageExampleController as ctrl">
+    <md-chips
+            ng-model="ctrl.selectedNodes"
+            readonly="true"
+            md-removable="true"
+            md-on-remove="ctrl.onChipRemove()">
+        <md-chip-template>
+            <span>
+                {{$chip.name}}
+            </span>
+        </md-chip-template>
+        <button md-chip-remove="" class="md-primary md-chip-remove">
+            <md-icon md-svg-icon="md-close"></md-icon>
+        </button>
+    </md-chips>
+    <radial-lineage-plot
+            plot-data="ctrl.plotData"
+            plot-layout="ctrl.plotLayout"
+            nodes-selection="ctrl.nodesSelection($nodes)">
+    </radial-lineage-plot>
+</div>

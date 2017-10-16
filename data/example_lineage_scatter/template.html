@@ -1,9 +1,9 @@
-<div ng-controller="LineageScatterExampleController">
+<div ng-controller="LineageScatterExampleController as ctrl">
     <lineage-scatter-plot
-            plot-data="plotData"
-            plot-layout="plotLayout"
-            link-click="linkClick($object)"
-            link-mouse-over="linkMouseOver($object)"
-            link-mouse-out="linkMouseOut($object)">
+            plot-data="ctrl.plotData"
+            plot-layout="ctrl.plotLayout"
+            link-click="ctrl.linkClick($object)"
+            link-mouse-over="ctrl.linkMouseOver($object)"
+            link-mouse-out="ctrl.linkMouseOut($object)">
     </lineage-scatter-plot>
 </div>

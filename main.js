@@ -1,23 +1,25 @@
 import angular from 'angular';
 import './lib/index.js';
 import 'angular-highlightjs';
-//import lineagePlotData from './data/lineage_data.js'
-//import lineagePlotLayout from './data/lineage_layout.js'
-//import lineageScatterPlotData from './data/lineage_scatter_data.js'
-//import lineageScatterPlotLayout from './data/lineage_scatter_layout.js'
-//import radialLineagePlotData from './data/radial_lineage_data.js'
-//import radialLineagePlotLayout from './data/radial_lineage_layout.js'
-//import radialPhylogeneticTreeData from './data/radial_phylogenetic_tree_data.js'
-//import radialPhylogeneticTreeLayout from './data/radial_phylogenetic_tree_layout.js'
+import 'angular-material';
+import 'angular-material/angular-material.min.css'
+
 import LineageExampleController from './data/example_lineage/controller.js'
 import TimeLineageExampleController from './data/example_lineage_time/controller.js'
 import LineageScatterExampleController from './data/example_lineage_scatter/controller.js'
+import RadialLineageExampleController from './data/example_radial_lineage/controller.js'
+import PhylogeneticTreeExampleController from './data/example_phylogenetic_tree/controller.js'
 
 
-const App = angular.module('Visualizer', ["ancestry", "hljs"])
+const App = angular.module('Visualizer', ['ancestry', 'hljs', 'ngMaterial'])
+    .config(['$mdIconProvider', function($mdIconProvider) {
+        $mdIconProvider.icon('md-close', './icons/ic_close_black_24px.svg', 24);
+    }])
     .controller('LineageExampleController', LineageExampleController)
     .controller('TimeLineageExampleController', TimeLineageExampleController)
-    .controller('LineageScatterExampleController', LineageScatterExampleController);
+    .controller('LineageScatterExampleController', LineageScatterExampleController)
+    .controller('RadialLineageExampleController', RadialLineageExampleController)
+    .controller('PhylogeneticTreeExampleController', PhylogeneticTreeExampleController);
 
 angular.element(document).ready(function () {
     return angular.bootstrap(document, [App.name], {

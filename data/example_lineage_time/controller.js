@@ -2,11 +2,11 @@ import lineageTimePlotData from './data.js'
 import lineageTimePlotLayout from './layout.js'
 
 export default class TimeLineageExampleController {
-    constructor($scope) {
-        $scope.plotData = lineageTimePlotData;
-        $scope.plotLayout = lineageTimePlotLayout;
+    constructor() {
+        this.plotData = lineageTimePlotData;
+        this.plotLayout = lineageTimePlotLayout;
 
-        $scope.customNode = function($selection, $event) {
+        this.customNode = function($selection, $event) {
             if ($event == 'draw') {
                 return $selection.append('rect')
                     .attr('width', 8)
@@ -27,7 +27,7 @@ export default class TimeLineageExampleController {
             }
         };
 
-        $scope.customLink = function($linkObject) {
+        this.customLink = function($linkObject) {
             let d = $linkObject;
             return `M${d.sourceNode.x},${d.sourceNode.y}L${d.sourceNode.x},${d.targetNode.y
                 }L${d.targetNode.x},${d.targetNode.y}`;

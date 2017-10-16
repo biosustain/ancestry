@@ -3,9 +3,9 @@ import lineagePlotData from './data.js'
 import lineagePlotLayout from './layout.js'
 
 export default class LineageExampleController {
-    constructor($scope) {
-        $scope.plotData = lineagePlotData;
-        $scope.plotLayout = lineagePlotLayout;
+    constructor() {
+        this.plotData = lineagePlotData;
+        this.plotLayout = lineagePlotLayout;
 
         let clickedPath = [],
             mouseoveredPath = [],
@@ -18,7 +18,7 @@ export default class LineageExampleController {
                 stroke: 'black'
             };
 
-        $scope.nodeClick = function($object) {
+        this.nodeClick = function($object) {
             if (clickedPath.length) {
                 d3.selectAll(clickedPath).attrs(originalPathAttrs);
                 let firstLink = clickedPath[0];
@@ -34,7 +34,7 @@ export default class LineageExampleController {
 
         };
 
-        $scope.nodeMouseOver = function($object) {
+        this.nodeMouseOver = function($object) {
             while ($object.parent) {
                 if (clickedPath.includes($object.inLink.DOMElement)) break;
                 mouseoveredPath.push($object.inLink.DOMElement);
@@ -43,7 +43,7 @@ export default class LineageExampleController {
             d3.selectAll(mouseoveredPath).attrs(highlightPathAttrs);
         };
 
-        $scope.nodeMouseOut = function() {
+        this.nodeMouseOut = function() {
             d3.selectAll(mouseoveredPath).attrs(originalPathAttrs);
             mouseoveredPath = [];
         };

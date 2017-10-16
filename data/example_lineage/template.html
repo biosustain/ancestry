@@ -1,9 +1,9 @@
-<div ng-controller="LineageExampleController">
+<div ng-controller="LineageExampleController as ctrl">
     <lineage-plot
-            plot-data="plotData"
-            plot-layout="plotLayout"
-            node-click="nodeClick($object)"
-            node-mouse-over="nodeMouseOver($object)"
-            node-mouse-out="nodeMouseOut($object)">
+            plot-data="ctrl.plotData"
+            plot-layout="ctrl.plotLayout"
+            node-click="ctrl.nodeClick($object)"
+            node-mouse-over="ctrl.nodeMouseOver($object)"
+            node-mouse-out="ctrl.nodeMouseOut($object)">
     </lineage-plot>
 </div>

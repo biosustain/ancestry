@@ -333,15 +333,21 @@
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-3', 'plot')">Plot</span></li>
             <li><span class="tablinks data-tab" onclick="openTab('tab-group-3','data')">Data</span></li>
             <li><span class="tablinks layout-tab" onclick="openTab('tab-group-3','layout')">Layout</span></li>
+            <li><span class="tablinks js-tab" onclick="openTab('tab-group-3','js')">JS</span></li>
+            <li><span class="tablinks html-tab" onclick="openTab('tab-group-3','html')">HTML</span></li>
         </ul>
-        <div class="tabcontent tab-plot">
-            <radial-lineage-plot plot-data="radialLineageData" plot-layout="radialLineageLayout"></radial-lineage-plot>
-        </div>
+        <div class="tabcontent tab-plot" ng-include="'./data/example_radial_lineage/template.html'"></div>
         <div class="tabcontent tab-data">
-            <div hljs hljs-include="'data/radial_lineage_data.js'" hljs-language="javascript"></div>
+            <div hljs hljs-include="'./data/example_radial_lineage/data.js'" hljs-language="javascript"></div>
         </div>
         <div class="tabcontent tab-layout">
-            <div hljs hljs-include="'data/radial_lineage_layout.js'" hljs-language="javascript"></div>
+            <div hljs hljs-include="'./data/example_radial_lineage/layout.js'" hljs-language="javascript"></div>
+        </div>
+        <div class="tabcontent tab-js">
+            <div hljs hljs-include="'./data/example_radial_lineage/controller.js'" hljs-language="javascript" class="hljs-main"></div>
+        </div>
+        <div class="tabcontent tab-html">
+            <div hljs hljs-include="'./data/example_radial_lineage/template.html'" hljs-language="html" class="hljs-main"></div>
         </div>
     </div>
     <h4>Directive</h4>
@@ -388,18 +394,21 @@
             <li><span class="tablinks plot-tab" onclick="openTab('tab-group-4', 'plot')">Plot</span></li>
             <li><span class="tablinks data-tab" onclick="openTab('tab-group-4','json')">Data</span></li>
             <li><span class="tablinks layout-tab" onclick="openTab('tab-group-4','json')">Layout</span></li>
+            <li><span class="tablinks js-tab" onclick="openTab('tab-group-4','js')">JS</span></li>
+            <li><span class="tablinks html-tab" onclick="openTab('tab-group-4','html')">HTML</span></li>
         </ul>
-        <div class="tabcontent tab-plot">
-            <div id="phylo-tab">
-                <radial-phylogenetic-tree plot-data="radialPhylogeneticTreeData"
-                                          plot-layout="radialPhylogeneticTreeLayout"></radial-phylogenetic-tree>
-            </div>
-        </div>
+        <div class="tabcontent tab-plot" ng-include="'./data/example_phylogenetic_tree/template.html'"></div>
         <div class="tabcontent tab-data">
-            <div hljs hljs-include="'data/radial_phylogenetic_tree_data.js'" hljs-language="javascript"></div>
+            <div hljs hljs-include="'./data/example_phylogenetic_tree/data.js'" hljs-language="javascript"></div>
         </div>
         <div class="tabcontent tab-layout">
-            <div hljs hljs-include="'data/radial_phylogenetic_tree_layout.js'" hljs-language="javascript"></div>
+            <div hljs hljs-include="'./data/example_phylogenetic_tree/layout.js'" hljs-language="javascript"></div>
+        </div>
+        <div class="tabcontent tab-js">
+            <div hljs hljs-include="'./data/example_phylogenetic_tree/controller.js'" hljs-language="javascript" class="hljs-main"></div>
+        </div>
+        <div class="tabcontent tab-html">
+            <div hljs hljs-include="'./data/example_phylogenetic_tree/template.html'" hljs-language="html" class="hljs-main"></div>
         </div>
     </div>
     <h4>Directive</h4>
@@ -786,8 +795,8 @@
             </li>
         </ul>
     </div>
-    <h2>Basic usage</h2>
-    <iframe src="http://embed.plnkr.co/UOPtev/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+    <!--<h2>Basic usage</h2>-->
+    <!--<iframe src="http://embed.plnkr.co/UOPtev/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>-->
 
     <h4>Directive attributes</h4>
     <hr>
@@ -797,11 +806,11 @@
             <li><code class="hljs hljs-attr">plot-data</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot's data.</span></li>
             <li><code class="hljs hljs-attr">plot-layout</code> <span class="prop-type">(array)</span> <span class="prop-desc">Input for plots configuration</span></li>
         </ul>
-        Output
+        Output:
         <ul>
             <li>
                 <code class="hljs hljs-attr">nodes-selection</code>
-                <span class="prop-desc">Allows to attach action upon node selection event (both individual and group). Injected parameters:</span>
+                <span class="prop-desc">Allows to attach action upon node selection event (both individual and group). Check out <a href="#tab-group-3">this example</a> to see an example usage. Injected parameters:</span>
                 <ul>
                     <li>
                         <code class="hljs hljs-attr">$nodes</code>
@@ -811,7 +820,7 @@
                 </ul>
             </li>
             <li><code class="hljs hljs-attr">custom-node</code>
-                <span class="prop-desc">Allows to create custom nodes instead of default circles. Injected parameters:</span>
+                <span class="prop-desc">Allows to create custom nodes instead of default circles. Check out <a href="#tab-group-5">this example</a> to see an example usage. Injected parameters:</span>
                 <ul>
                     <li>
                         <code class="hljs hljs-attr">$event</code> <span class="prop-type">(<code class="hljs hljs-string">'draw'</code> | <code class="hljs hljs-string">'update'</code> | <code class="hljs hljs-string">'select'</code>)</span>
@@ -827,7 +836,7 @@
             </li>
             <li>
                 <code class="hljs hljs-attr">custom-link</code>
-                <span class="prop-desc">Allows to create custom links. Function should return a string corresponding to SVG path definition. Injected parameters:</span>
+                <span class="prop-desc">Allows to create custom links. Function should return a string corresponding to SVG path definition. Check out <a href="#tab-group-5">this example</a> to see an example usage. Injected parameters:</span>
                 <ul>
                     <li>
                         <code class="hljs hljs-attr">$linkObject</code>
@@ -838,7 +847,7 @@
             </li>
             <li>
                 <code class="hljs hljs-attr">node-click</code> / <code class="hljs hljs-attr">node-mouse-over</code> / <code class="hljs hljs-attr">node-mouse-out</code>
-                <span class="prop-desc">Allows to attach action upon node click / mouse over / mouse out events. Injected parameters:</span>
+                <span class="prop-desc">Allows to attach action upon node click / mouse over / mouse out events. Check out <a href="#tab-group-1">this example</a> to see an example usage. Injected parameters:</span>
                 <ul>
                     <li>
                         <code class="hljs hljs-attr">$event</code>
@@ -854,7 +863,7 @@
             </li>
             <li>
                 <code class="hljs hljs-attr">link-click</code> / <code class="hljs hljs-attr">link-mouse-over</code> / <code class="hljs hljs-attr">link-mouse-out</code>
-                <span class="prop-desc">Allows to attach action upon link click / mouse over / mouse out events. Injected parameters:</span>
+                <span class="prop-desc">Allows to attach action upon link click / mouse over / mouse out events. Check out <a href="#tab-group-2">this example</a> to see an example usage. Injected parameters:</span>
                 <ul>
                     <li>
                         <code class="hljs hljs-attr">$event</code>

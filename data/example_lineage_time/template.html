@@ -1,8 +1,8 @@
-<div ng-controller="TimeLineageExampleController">
+<div ng-controller="TimeLineageExampleController as ctrl">
     <lineage-plot
-            plot-data="plotData"
-            plot-layout="plotLayout"
-            custom-link="customLink($linkObject)"
-            custom-node="customNode($selection, $event)">
+            plot-data="ctrl.plotData"
+            plot-layout="ctrl.plotLayout"
+            custom-link="ctrl.customLink($linkObject)"
+            custom-node="ctrl.customNode($selection, $event)">
     </lineage-plot>
 </div>

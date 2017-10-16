@@ -97,7 +97,8 @@ export default [
     {
         name: "node_3H",
         parent: "node_2C",
-        type: "type2"
+        type: "type2",
+        selected: true
     },
     {
         name: "node_4E",
@@ -115,7 +116,8 @@ export default [
         name: "node_4G",
         z: 0.4,
         parent: "node_3F",
-        type: "type1"
+        type: "type1",
+        selected: true
     },
     {
         name: "node_5A",
@@ -137,7 +139,8 @@ export default [
         name: "node_6A",
         z: 8.7,
         parent: "node_5A",
-        type: "type2"
+        type: "type2",
+        selected: true
     },
     {
         name: "node_7A",

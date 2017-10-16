@@ -25,5 +25,13 @@ export default {
     },
     labelCollisionDetection: {
         enabled: 'onEveryChange'
+    },
+    groupSelection: {
+        enabled: true
+    },
+    controls: {
+        select: {
+            active: true
+        }
     }
 };
