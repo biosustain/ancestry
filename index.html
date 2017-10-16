@@ -536,9 +536,8 @@
                 </ul>
             </li>
             <li><code class="hljs hljs-attr">groupSelection</code> <span class="prop-type">(object)</span>
-                    <span class="prop-desc">Only available for lineage and lineage-scatter plots.Group selection allows for selecting
-                    multiple nodes at once. To start the selection, hold CTRL key and press left mouse button and perform a drag choosing desired area.
-                        All the selected nodes are externally available through <code class="hljs hljs-attr">selectedNodes</code> attribute.</span>
+                    <span class="prop-desc">Group selection allows for selecting
+                    multiple nodes at once. </span>
                 <ul>
                     <li><code class="hljs hljs-attr">enabled</code> <span class="prop-type">(<code
                             class="hljs hljs-literal">false</code> | <code class="hljs hljs-literal">true</code> || default: <code
@@ -681,6 +680,47 @@
                     </li>
                 </ul>
             </li>
+            <li><code class="hljs hljs-attr">brush</code> <span class="prop-type">(object)</span>
+                <ul>
+                    <li><code class="hljs hljs-attr">margin</code>
+                        <ul>
+                            <li><code class="hljs hljs-attr">top</code> <span class="prop-type">(number || default: <code
+                                    class="hljs hljs-number">20</code>)</span><span
+                                    class="prop-desc">Size of the margin above the bush panel.</span>
+                            </li>
+                            <li><code class="hljs hljs-attr">bottom</code> <span class="prop-type">(number || default: <code
+                                    class="hljs hljs-number">0</code>)</span><span
+                                    class="prop-desc">Size of the margin below the brush panel.</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">height</code> <span class="prop-type">(number || default: <code
+                            class="hljs hljs-number">200</code>)</span><span
+                            class="prop-desc">Height of the bush panel.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">lockY</code> <span class="prop-type">(<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code class="hljs hljs-literal">false</code>)</span><span
+                            class="prop-desc">Disables brushing in Y direction. Useful especially when brush serves as a scroll bar.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">boxRectangle</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{'stroke-width': 1, stroke: '#aaa'}</span>)</span><span
+                            class="prop-desc">Specifies the layout of the border of the brush panel which is an SVG rect element.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">drawTrees</code> <span class="prop-type">(<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code class="hljs hljs-literal">true</code>)</span><span
+                            class="prop-desc">Determines whether trees (nodes and links) are rendered in the brush panel area.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">brushRectangleOnFullView</code> <span class="prop-type">(<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> || default: <code class="hljs hljs-literal">true</code>)</span><span
+                            class="prop-desc">If <code class="hljs hljs-literal">true</code>, when the full plot extent is shown, the brush selection rectangle is visible. If <code class="hljs hljs-literal">false</code>, it disappears when the full plot extent is shown.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">axis</code> <span class="prop-type">(object)</span><span
+                            class="prop-desc">Specifies the axis layout for the brush panel. Refer to the plot specific layout <code class="hljs hljs-attr">layout.axis</code> for the specific configuration options.</span>
+                    </li>
+                </ul>
+            </li>
             <li><code class="hljs hljs-attr">nodeLabelPositions</code> <span class="prop-type">(array)</span>
                 <span class="prop-desc">The array specifies SVG text element positions relative to the corresponding node which are tried out in the given order in label collision detection.
                     The array's elements should be objects with <code class="hljs hljs-attr">x</code>, <code class="hljs hljs-attr">y</code>,
@@ -692,7 +732,7 @@
                     <code class="hljs hljs-attr">position</code> is used to determine the order of controls in the control panel.</span>
                     <ul>
                         <li><code class="hljs hljs-attr">download</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, format: 'png', position: 0}</span>)</span>
-                            <span class="prop-desc">Control responsible for saving the plot. <code class="hljs hljs-attr">format</code> can be <code class="hljs hljs-string">"png"</code> or <code class="hljs hljs-string">"svg"</code>.</span>
+                            <span class="prop-desc">Control responsible for saving the plot. <code class="hljs hljs-attr">format</code> can be <code class="hljs hljs-string">'png'</code> or <code class="hljs hljs-string">'svg'</code>.</span>
                         </li>
                         <li><code class="hljs hljs-attr">zoom</code> <span class="prop-type">(object || default: <span class="code-inline" hljs hljs-language="javascript">{show: true, active: false, position: 1}</span>)</span>
                             <span class="prop-desc">Control responsible for zooming and panning the plot.</span>
@@ -712,7 +752,80 @@
         </ul>
     </div>
     <h2>Basic usage</h2>
-    <iframe src="http://embed.plnkr.co/UOPtev/" frameborder="0" allowfullscren="allowfullscren"></iframe>
+    <iframe src="http://embed.plnkr.co/UOPtev/" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+    <h4>Directive attributes</h4>
+    <hr>
+    <div class="layout-definition code-inline">
+        Input:
+        <ul>
+            <li><code class="hljs hljs-attr">plot-data</code> <span class="prop-type">(object)</span> <span class="prop-desc">Input for plot's data.</span></li>
+            <li><code class="hljs hljs-attr">plot-layout</code> <span class="prop-type">(array)</span> <span class="prop-desc">Input for plots configuration</span></li>
+        </ul>
+        Output
+        <ul>
+            <li><code class="hljs hljs-attr">nodes-selection</code> <span class="prop-type">(object)</span> <span class="prop-desc">Called</span></li>
+            <li><code class="hljs hljs-attr">custom-node</code>
+                <span class="prop-desc">Allows to create custom nodes instead of default circles. Injected parameters:</span>
+                <ul>
+                    <li>
+                        <code class="hljs hljs-attr">$event</code> <span class="prop-type">(<code class="hljs hljs-string">'draw'</code> | <code class="hljs hljs-string">'update'</code> | <code class="hljs hljs-string">'select'</code>)</span>
+                        <span class="prop-desc">Specifies type of the event: <code class="hljs hljs-string">'draw'</code>
+                            - nodes are being rendered for the first time. Upon this event, nodes' DOM elements should be appended to the <code class="hljs hljs-attr">$selection</code>. <code class="hljs hljs-string">'update'</code>
+                            - the nodes are redrawn upon zoom/pan/rotate actions (also called after <code class="hljs hljs-string">'draw'</code>). It should be used to update nodes' positions. <code class="hljs hljs-string">'select'</code>  - node(s) has been selected. It should be used to mark the selected nodes in a specific way. This event is triggered only in select mode.</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">$selection</code> <span class="prop-type">(d3 selection)</span>
+                        <span class="prop-desc">If <code class="hljs hljs-attr">$event</code> is <code class="hljs hljs-string">'draw'</code>, <code class="hljs hljs-attr">$selection</code> is an enter selection ready for creating new DOM elements. If <code class="hljs hljs-string">'update'</code> or <code class="hljs hljs-string">'select'</code>, <code class="hljs hljs-attr">$selection</code> is a normal selection holding all drawable nodes.</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code class="hljs hljs-attr">custom-link</code>
+                <span class="prop-desc">Allows to create custom links. Injected parameters:</span>
+                <ul>
+                    <li>
+                        <code class="hljs hljs-attr">$linkObject</code>
+                        <span class="prop-type">(object)</span>
+                        <span class="prop-desc">Object representing a link.</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code class="hljs hljs-attr">node-click</code> / <code class="hljs hljs-attr">node-mouse-over</code> / <code class="hljs hljs-attr">node-mouse-out</code>
+                <span class="prop-desc">Allows to attach action upon node click / mouse over / mouse out events. Injected parameters:</span>
+                <ul>
+                    <li>
+                        <code class="hljs hljs-attr">$event</code>
+                        <span class="prop-type">(object)</span>
+                        <span class="prop-desc">current d3 event object</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">$object</code>
+                        <span class="prop-type">(object)</span>
+                        <span class="prop-desc">Corresponding node's object</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code class="hljs hljs-attr">link-click</code> / <code class="hljs hljs-attr">link-mouse-over</code> / <code class="hljs hljs-attr">link-mouse-out</code>
+                <span class="prop-desc">Allows to attach action upon link click / mouse over / mouse out events. Injected parameters:</span>
+                <ul>
+                    <li>
+                        <code class="hljs hljs-attr">$event</code>
+                        <span class="prop-type">(object)</span>
+                        <span class="prop-desc">current d3 event object</span>
+                    </li>
+                    <li>
+                        <code class="hljs hljs-attr">$object</code>
+                        <span class="prop-type">(object)</span>
+                        <span class="prop-desc">Corresponding link's object</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/biosustain/ancestry">Ancestry</a> is maintained by <a
                 href="https://github.com/biosustain">biosustain</a>.</span>
