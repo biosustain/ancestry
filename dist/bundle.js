@@ -1522,6 +1522,7 @@ class BaseLineagePlotController {
                 .attr('marker-end', this.layout.showLinkArrowhead ?
                     `url(#marker-arrowhead)` : '')
                 .attrs(this.layout.link)
+                .attr('stroke-dasharray', 'none')
                 .attr('stroke', 'transparent')
                 .attr('stroke-width', this.layout.linkCaptureWidth)
 
@@ -1788,7 +1789,7 @@ class BaseLineagePlotController {
                 that.selectedNodesSet = newSelected;
                 if (that._$attrs.nodesSelection) {
                     that._$scope.$apply(() => {
-                        that.nodesSelection({$nodes: Array.from(that.selectedNodesSet)});
+                        that.nodesSelection({$nodes: that.marker.filter(d => d.data.selected).data()});
                     });
                 }
             }
