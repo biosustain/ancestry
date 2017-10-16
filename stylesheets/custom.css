@@ -37,18 +37,13 @@ span.prop-type {
     font-size: 14px !important;
 }
 
-.tab-data pre, .tab-layout pre {
+.tab-data pre, .tab-layout pre, .tab-js pre, .tab-html pre {
     overflow-x: hidden;
     overflow-y: scroll;
     max-height: 499px;
     border: none;
     border-radius: 0;
     font-size: 14px;
-}
-
-.tab-plot {
-    display: table;
-    min-width: 100%;
 }
 
 code {
