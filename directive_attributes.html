@@ -1,0 +1,198 @@
+<h3>Directive attributes</h3>
+
+<div class="layout-definition code-inline">
+    <h4>Input:</h4>
+    <hr/>
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                plot-data
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <span class="prop-desc">
+                Input for plot's data.
+            </span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                plot-layout
+            </code>
+            <span class="prop-type">
+                (array)
+            </span>
+            <span class="prop-desc">
+                Input for plot's layout.
+            </span>
+        </li>
+    </ul>
+    <h4>Output:</h4>
+    <hr/>
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                nodes-selection
+            </code>
+            <span class="prop-desc">
+                Allows to attach action upon node selection event (both individual and group).
+                Check out <a href="#tab-group-3">this example</a> to see an example usage. Injected parameters:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $nodes
+                    </code>
+                    <span class="prop-type">
+                        (array of objects)
+                    </span>
+                    <span class="prop-desc">
+                        Array of the node objects that are currently in the selection.
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li><code class="hljs hljs-attr">custom-node</code>
+            <span class="prop-desc">
+                Allows to create custom nodes instead of default circles.
+                Check out <a href="#tab-group-5">this example</a> to see an example usage. Injected parameters:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $event
+                    </code>
+                    <span class="prop-type">
+                        (<code class="hljs hljs-string">'draw'</code> | <code class="hljs hljs-string">'update'</code> |
+                        <code class="hljs hljs-string">'select'</code>)
+                    </span>
+                    <span class="prop-desc">
+                        Specifies type of the event: <code class="hljs hljs-string">'draw'</code>
+                        - nodes are being rendered for the first time. Upon this event, nodes' DOM elements should be
+                        appended to the <code class="hljs hljs-attr">$selection</code>.
+                        <code class="hljs hljs-string">'update'</code> - the nodes are redrawn upon zoom/pan/rotate
+                        actions (also called after <code class="hljs hljs-string">'draw'</code>).
+                        It should be used to update nodes' positions. <code class="hljs hljs-string">'select'</code>
+                        - node(s) has been selected. It should be used to mark the selected nodes in a specific way.
+                        This event is triggered only in select mode.
+                    </span>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $selection
+                    </code>
+                    <span class="prop-type">
+                        (d3 selection)
+                    </span>
+                    <span class="prop-desc">
+                        If <code class="hljs hljs-attr">$event</code> is <code class="hljs hljs-string">'draw'</code>,
+                        <code class="hljs hljs-attr">$selection</code> is an enter selection ready for creating new
+                        DOM elements. If <code class="hljs hljs-string">'update'</code> or
+                        <code class="hljs hljs-string">'select'</code>, <code class="hljs hljs-attr">$selection</code>
+                        is a normal selection holding all drawable nodes.
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                custom-link
+            </code>
+            <span class="prop-desc">
+                Allows to create custom links. Function should return a string corresponding to SVG path definition.
+                Check out <a href="#tab-group-5">this example</a> to see an example usage. Injected parameters:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $linkObject
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        Object representing a link.
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                node-click
+            </code> /
+            <code class="hljs hljs-attr">
+                node-mouse-over
+            </code> /
+            <code class="hljs hljs-attr">
+                node-mouse-out
+            </code>
+            <span class="prop-desc">
+                Allows to attach action upon node click / mouse over / mouse out events.
+                Check out <a href="#tab-group-1">this example</a> to see an example usage. Injected parameters:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $event
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        current d3 event object
+                    </span>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $object
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        Corresponding node's object
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                link-click
+            </code> /
+            <code class="hljs hljs-attr">
+                link-mouse-over
+            </code> /
+            <code class="hljs hljs-attr">
+                link-mouse-out
+            </code>
+            <span class="prop-desc">
+                Allows to attach action upon link click / mouse over / mouse out events.
+                Check out <a href="#tab-group-2">this example</a> to see an example usage. Injected parameters:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $event
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        current d3 event object
+                    </span>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        $object
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        Corresponding link's object
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

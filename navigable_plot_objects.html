@@ -1,0 +1,209 @@
+<h3>Navigable plot objects</h3>
+
+<p>
+    All lineage plot elements (node / link / node label / link label) have object with contextual information.
+    For example, node object stores not only the input data that was used to create it,
+    but it also keeps a reference to its DOM object, parent and children objects,
+    ingoing link object and the node's x and y position. Node and link objects are injected as parameters in
+    node/link click/mouse over/mouse out events. This makes it easy to create interactions with the plot.
+    For example, upon a node click, the whole path leading through all ancestor nodes can be highlighted by traversing
+    all the ancestor nodes iteratively. Most of the parameters available in the objects are listed below.</p>
+<div class="layout-definition code-inline">
+    Node:
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">data</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">The original node object as specified by user in plot-data data input.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">DOMElement</code>
+            <span class="prop-type">(DOM)</span>
+            <span class="prop-desc">Node's DOM element.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">parent</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Parent node's object.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">children</code>
+            <span class="prop-type">(array)</span>
+            <span class="prop-desc">Array of children node objects.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">inLink</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Ingoing link's object.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">label</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Node's label object.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">bbox</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Bounding rectangle for label collision detection purposes.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">depth</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Generation index of the node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">x</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position x of the node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">y</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position y of the node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">_x</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Original position x of the node (after creating d3 tree layout).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">_y</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position y of the node (after creating d3 tree layout).</span>
+        </li>
+    </ul>
+    Link:
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">DOMElement</code>
+            <span class="prop-type">(DOM)</span>
+            <span class="prop-desc">Links's DOM element (SVG's path).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">sourceNode</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Object of the node that the link originated from.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">targetNode</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Object of the node that the link goes to.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">label</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Link's label object.</span>
+        </li>
+    </ul>
+    Node's label:
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">DOMElement</code>
+            <span class="prop-type">(DOM)</span>
+            <span class="prop-desc">Node label's DOM element (SVG's text).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">text</code>
+            <span class="prop-type">(string)</span>
+            <span class="prop-desc">Text of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">node</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Corresponding node's object.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">currentLabelPos</code>
+            <span class="prop-type">(string)</span>
+            <span class="prop-desc">Determines the current position of the label with reference to the node. One of objects from <code class="hljs hljs-attr">layout.nodeLabelPositions</code> array.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">x</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position x of the label (anchored according to <code class="hljs hljs-attr">currentLabelPos</code>).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">y</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position y of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">dy</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Vertical offset of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">width</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Width of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">height</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Height of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">bbox</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Bounding rectangle for label collision detection purposes.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">isColliding</code>
+            <span class="prop-type">(boolean)</span>
+            <span class="prop-desc">Specifies whether collisions has been detected for the label.</span>
+        </li>
+    </ul>
+    Link's label:
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">DOMElement</code>
+            <span class="prop-type">(DOM)</span>
+            <span class="prop-desc">Link label's DOM element (SVG's text).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">text</code>
+            <span class="prop-type">(string)</span>
+            <span class="prop-desc">Text of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">link</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Corresponding link's object.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">x</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position x of the label (anchored at the center).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">y</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Current position y of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">dy</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Vertical offset of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">width</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Width of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">height</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Height of the label.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">bbox</code>
+            <span class="prop-type">(object)</span>
+            <span class="prop-desc">Bounding rectangle for label collision detection purposes.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">isColliding</code>
+            <span class="prop-type">(boolean)</span>
+            <span class="prop-desc">Specifies whether collisions has been detected for the label.</span>
+        </li>
+    </ul>
+</div>

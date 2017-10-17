@@ -1,0 +1,381 @@
+<h3>Plot-specific layout</h3>
+<h4>Lineage plot</h4>
+<hr/>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                axis
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        x
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <ul>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                title
+                            </code>
+                            <span class="prop-type">
+                                (string || default: <code class="hljs hljs-string">""</code>)
+                            </span>
+                            <span class="prop-desc">
+                                The title of the (horizontal) axis.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showAxisLine
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">false</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the axis horizontal line is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showGrid
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the grid connected with the axis is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showTickText
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the labels of the axis ticks is visible.
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                brush
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <span class="prop-desc">
+                The general layout of brush can be extended by plot specific properties:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        axis
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        Identical to plot-specific <code class="hljs hljs-attr">layout.axis</code>.
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                minViewportWidth
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <span class="prop-desc">
+                If standard lineage plot, set width of a single generation to the number of pixels equal to
+                <code class="hljs hljs-attr">generationWidth</code>. If time lineage plot, ensure that the time interval
+                in seconds specified by <code class="hljs hljs-attr">timeIntervalInSeconds</code> has the number of
+                pixels equal to <code class="hljs hljs-attr">timeIntervalInPixels</code>.
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        generationWidth
+                    </code>
+                    <span class="prop-type">
+                        (number || default: <code class="hljs hljs-number">0</code>)
+                    </span>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        timeIntervalInSeconds
+                    </code>
+                    <span class="prop-type">
+                        (number || default: <code class="hljs hljs-number">2592000</code> (month))
+                    </span>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        timeIntervalInPixels
+                    </code>
+                    <span class="prop-type">
+                        (number || default: <code class="hljs hljs-number">0</code>)
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h4>Lineage-scatter plot</h4>
+<hr/>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                axis
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        x
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <ul>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                title
+                            </code>
+                            <span class="prop-type">
+                                (string || default: <code class="hljs hljs-string">""</code>)
+                            </span>
+                            <span class="prop-desc">
+                                The title of the (horizontal) axis.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                format
+                            </code>
+                            <span class="prop-type">
+                                (string || default: <code class="hljs hljs-string">"g"</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Format of the tick labels of the axis according to
+                                <a href="https://github.com/d3/d3-format">d3-format</a>.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showAxisLine
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the axis horizontal line is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showGrid
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the vertical grid connected with the axis is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showTickText
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the labels of the axis ticks is visible.
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <code class="hljs hljs-attr">
+                        y
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <ul>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                title
+                            </code>
+                            <span class="prop-type">
+                                (string || default: <code class="hljs hljs-string">""</code>)
+                            </span>
+                            <span class="prop-desc">
+                                The title of the (vertical) axis.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                format
+                            </code>
+                            <span class="prop-type">
+                                (string || default: <code class="hljs hljs-string">"g"</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Format of the tick labels of the axis according to
+                                <a href="https://github.com/d3/d3-format">d3-format</a>.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showAxisLine
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the axis vertical line is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showGrid
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the horizontal grid connected with the axis is drawn.
+                            </span>
+                        </li>
+                        <li>
+                            <code class="hljs hljs-attr">
+                                showTickText
+                            </code>
+                            <span class="prop-type">
+                                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                                default: <code class="hljs hljs-literal">true</code>)
+                            </span>
+                            <span class="prop-desc">
+                                Determines whether the labels of the axis ticks is visible.
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                brush
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <span class="prop-desc">
+                The general layout of brush can be extended by plot specific properties:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        axis
+                    </code>
+                    <span class="prop-type">
+                        (object)
+                    </span>
+                    <span class="prop-desc">
+                        Identical to plot-specific <code class="hljs hljs-attr">layout.axis</code>.
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">
+                link
+            </code>
+            <span class="prop-type">
+                (object)
+            </span>
+            <span class="prop-desc">
+                Additional link properties defined for lineage-scatter plot:
+            </span>
+            <ul>
+                <li>
+                    <code class="hljs hljs-attr">
+                        stroke-dasharray
+                    </code>
+                    <span class="prop-type">
+                        (string || default: <code class="hljs hljs-string">'4 4'</code>)
+                    </span>
+                    <span class="prop-desc">
+                        Dashed line specification.
+                        Check <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray">
+                        here</a> for the appropriate format.
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h4>Radial-lineage plot</h4>
+<hr/>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                sameLevel
+            </code>
+            <span class="prop-type">
+                (<code class="hljs hljs-string">'roots'</code> | <code class="hljs hljs-string">'leaves'</code> |
+                <code class="hljs hljs-string">'both'</code> || default: <code class="hljs hljs-string">'both'</code>)
+            </span>
+            <span class="prop-desc">
+                Determines whether <code class="hljs hljs-string">'roots'</code> should be places at the same level, or
+                <code class="hljs hljs-string">'leaves'</code>, or <code class="hljs hljs-string">'both'</code>.
+            </span>
+        </li>
+    </ul>
+</div>
+<h4>Phylogenetic-tree plot</h4>
+<hr/>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">
+                showBranchLength
+            </code>
+            <span class="prop-type">
+                (<code class="hljs hljs-literal">true</code> | <code class="hljs hljs-literal">false</code> ||
+                default: <code class="hljs hljs-literal">true</code>)
+            </span>
+            <span class="prop-desc">
+                If <code class="hljs hljs-literal">true</code>, branches have lengths proportional to the length
+                properties specified in the input data. If <code class="hljs hljs-literal">false</code>, the length
+                information is ignored and the nodes are spread as much as possible.
+            </span>
+        </li>
+    </ul>
+</div>

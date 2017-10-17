@@ -1,0 +1,110 @@
+<h3 id="lineage-data-format">Data format</h3>
+<h4 id="lineage-data-format-basic">Basic format</h4>
+<hr>
+<p>
+    The data for lineage plot should be arranged as an array of node objects. Each object should have
+    following properties:
+</p>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">name</code>
+            <span class="prop-type">(string)</span>
+            <span class="prop-desc">Name of the node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">parent</code>
+            <span class="prop-type">(string | <code class="hljs hljs-literal">null</code>)</span>
+            <span class="prop-desc">Name of the parent node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">x</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Value x (applicable only in lineage-scatter plot).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">y</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Value y (applicable only in lineage-scatter plot).</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">z</code>
+            <span class="prop-type">(optional: number)</span>
+            <span class="prop-desc">Value for the heatmap layer.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">date</code>
+            <span class="prop-type">(optional: number - UNIX timestamp)</span>
+            <span class="prop-desc">If specified, plot will have time axis and the property will be used as x value.
+                    Applicable only in lineage-plot.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">inLinkLabel</code>
+            <span class="prop-type">(string | <code class="hljs hljs-literal">null</code>)</span>
+            <span class="prop-desc">Name of the ingoing link.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">type</code>
+            <span class="prop-type">(optional: string)</span>
+            <span class="prop-desc">Type of the node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">series</code>
+            <span class="prop-type">(optional: string)</span>
+            <span class="prop-desc">Name of the series the node belongs to.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">selected</code>
+            <span class="prop-type">(optional: boolean)</span>
+            <span class="prop-desc">Specifies whether a node should be selected on render.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">tooltip</code>
+            <span class="prop-type">(optional: array of strings)</span>
+                <span class="prop-desc">Array with strings corresponding to lines in a tooltip.
+                    If not used, <code class="hljs hljs-attr">name</code> property is used for tooltip.</span>
+        </li>
+    </ul>
+</div>
+<h4 id="lineage-data-format-phylo">Phylogenetic tree format</h4>
+<hr>
+<p>
+    This plot requires slightly more complex data format. It takes an array of tree node objects.
+    A tree node should consist of:
+</p>
+<div class="layout-definition code-inline">
+    <ul>
+        <li>
+            <code class="hljs hljs-attr">length</code>
+            <span class="prop-type">(number)</span>
+            <span class="prop-desc">Length of the branch with respect to the parent tree node.</span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">taxon</code>
+            <span class="prop-type">(<code class="hljs hljs-literal">null</code> | object)</span>
+                <span class="prop-desc">
+                    If <code class="hljs hljs-literal">null</code>, then the node is non-leaf and 
+                    <code class="hljs hljs-attr">children</code> property must be defined. Otherwise, the node is a leaf
+                    and the object should have the same format as a <a href="#lineage-data-format"
+                        >lineage plot's node</a> except <code class="hljs hljs-attr">parent</code> property which is not
+                    needed here.
+                </span>
+        </li>
+        <li>
+            <code class="hljs hljs-attr">children</code>
+            <span class="prop-type">(<code class="hljs hljs-literal">null</code> | two element array)</span>
+                <span class="prop-desc">
+                    If <code class="hljs hljs-attr">taxon</code> is defined, then 
+                    <code class="hljs hljs-attr">children</code> must be either not defined or set to 
+                    <code class="hljs hljs-literal">null</code>. If <code class="hljs hljs-attr">taxon</code> is 
+                    <code class="hljs hljs-literal">null</code>, <code class="hljs hljs-attr">children</code> should be 
+                    an array containing two other tree nodes.
+                </span>
+        </li>
+    </ul>
+</div>
+<p>
+    The required data format can be generated using
+    <a href="https://www.npmjs.com/package/neighbor-joining">Neighbor Joining</a> NPM package
+    based on a distance matrix.
+</p>
