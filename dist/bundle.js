@@ -8542,6 +8542,7 @@ module.exports = 'ngMaterial';
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = {
     height: 500,
+    backgroundColor: 'white',
     margin: {
         right: 80,
         bottom: 20
@@ -8765,6 +8766,7 @@ module.exports = 'ngMaterial';
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = {
     height: 500,
+    backgroundColor: 'white',
     margin: {
         top: 35,
         left: 40,
@@ -8943,6 +8945,7 @@ module.exports = 'ngMaterial';
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = {
     height: 500,
+    backgroundColor: 'white',
     margin: {
         right: 30,
         left: 30,
@@ -8956,6 +8959,27 @@ module.exports = 'ngMaterial';
     },
     labelCollisionDetection: {
         enabled: 'onEveryChange'
+    },
+    minViewportWidth: {
+        timeIntervalInPixels: 150
+    },
+    brush: {
+        drawTrees: false,
+        lockY: true,
+        height: 12,
+        margin: {
+            top: 35
+        },
+        axis: {
+            x: {
+                showGrid: false
+            }
+        }
+    },
+    controls: {
+        brush: {
+            active: true
+        }
     }
 };
 

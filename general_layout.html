@@ -132,25 +132,25 @@
         </li>
         <li>
 			<code class="hljs hljs-attr">
-                backgroundColour
+                backgroundColor
             </code>
             <span class="prop-type">
                 (string || default: <code class="hljs hljs-string">"none"</code>)
             </span>
             <span class="prop-desc">
-                Background colour of the plot. If <code class="hljs hljs-string">"none"</code>,
+                Background color of the plot. If <code class="hljs hljs-string">"none"</code>,
                 background is transparent.
             </span>
         </li>
         <li>
 			<code class="hljs hljs-attr">
-                textColour
+                textColor
             </code>
             <span class="prop-type">
                 (string || default: <code class="hljs hljs-string">"black"</code>)
             </span>
             <span class="prop-desc">
-                Colour of all text elements in the plot.
+                Color of all text elements in the plot.
             </span>
         </li>
         <li>
@@ -163,19 +163,19 @@
             <span class="prop-desc">
                 Dictionary with node types. Node types should be string keys, values should be objects with attributes
                 of SVG circle such as <code class="hljs hljs-attr">"stroke-width"</code>,
-                <code class="hljs hljs-attr">"r"</code> etc. Changing colours should be avoided as it is also controlled
+                <code class="hljs hljs-attr">"r"</code> etc. Changing colors should be avoided as it is also controlled
                 by series and could interfere.
             </span>
         </li>
         <li>
 			<code class="hljs hljs-attr">
-                seriesColours
+                seriesColors
             </code>
             <span class="prop-type">
                 (object || default: <code class="code-inline" hljs hljs-literal>null</code>)
             </span>
             <span class="prop-desc">
-                Object with series ids as keys and colours as values. If this property is used, it is requried to
+                Object with series ids as keys and colors as values. If this property is used, it is requried to
                 specify series id for each node data object.
             </span>
         </li>
@@ -380,7 +380,7 @@
                         default: <code class="hljs hljs-literal">null</code>)
                     </span>
                     <span class="prop-desc">
-                        Title of the heatmap displayed with the colour bar.
+                        Title of the heatmap displayed with the color bar.
                     </span>
                 </li>
                 <li>
@@ -392,10 +392,10 @@
                         <span class="code-inline" hljs hljs-language="json">[[0, "#008ae5"], [1, "yellow"]]</span>)
                     </span>
                     <span class="prop-desc">
-                        Determines the colour range used for the heatmap. Currently, the array should have form
-                        <span class="code-inline" hljs hljs-language="json">[[0, colour1], [1, colour2]]</span>, where
-                        <span class="code-inline"><code class="hljs">colour1</code></span> and
-                        <span class="code-inline"><code class="hljs">colour2</code></span> correspond respectively
+                        Determines the color range used for the heatmap. Currently, the array should have form
+                        <span class="code-inline" hljs hljs-language="json">[[0, color1], [1, color2]]</span>, where
+                        <span class="code-inline"><code class="hljs">color1</code></span> and
+                        <span class="code-inline"><code class="hljs">color2</code></span> correspond respectively
                         to minimum and maximum values in heatmap layer.
                     </span>
                 </li>
@@ -416,7 +416,7 @@
                                 default: <code class="hljs hljs-literal">true</code>)
                             </span>
                             <span class="prop-desc">
-                                Determines whether heatmap's colour bar is shown.
+                                Determines whether heatmap's color bar is shown.
                             </span>
                         </li>
                         <li>
@@ -428,7 +428,7 @@
                                 default: <code class="hljs hljs-string">"90%"</code>)
                             </span>
                             <span class="prop-desc">
-                                Determines the height of the colour bar. If a number is given, the colour bar will be that many
+                                Determines the height of the color bar. If a number is given, the color bar will be that many
                                 pixels high, if a string with percentage is given, its height will be relative to the total plot
                                 height.
                             </span>
@@ -442,7 +442,7 @@
                                 default: <code class="hljs hljs-number">30</code>)
                             </span>
                             <span class="prop-desc">
-                                Determines the height of the colour bar. If a number is given, the colour bar will be that many
+                                Determines the height of the color bar. If a number is given, the color bar will be that many
                                 pixels wide, if a string with percentage is given, its width will be relative to the total plot
                                 width.
                             </span>
@@ -498,7 +498,7 @@
                                 (number || default: <code class="hljs hljs-number">0.4</code>)
                             </span>
                             <span class="prop-desc">
-                                Determines the opacity of heatmap circles and the colour bar.
+                                Determines the opacity of heatmap circles and the color bar.
                             </span>
                         </li>
                     </ul>
@@ -608,15 +608,15 @@
                 </li>
                 <li>
 			        <code class="hljs hljs-attr">
-                        backgroundColour
+                        backgroundColor
                     </code>
                     <span class="prop-type">
                         (<code class="hljs hljs-literal">null</code> | string || default:
                         <code class="hljs hljs-literal">null</code>)
                     </span>
                     <span class="prop-desc">
-                        If <code class="hljs hljs-literal">null</code>, legend inherits plot's background colour.
-                        If string, specific colour is used.
+                        If <code class="hljs hljs-literal">null</code>, legend inherits plot's background color.
+                        If string, specific color is used.
                     </span>
                 </li>
             </ul>

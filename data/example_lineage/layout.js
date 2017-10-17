@@ -1,5 +1,6 @@
 export default {
     height: 500,
+    backgroundColor: 'white',
     margin: {
         right: 80,
         bottom: 20

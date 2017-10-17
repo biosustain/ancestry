@@ -37,5 +37,8 @@ ul.tab li span:focus, .active {background-color: #ccc;}
     border: 1px solid #ccc;
     border-top: none;
     width: inherit;
-    max-height: 500px;
+}
+
+.tabcontent svg {
+    vertical-align: top;
 }
